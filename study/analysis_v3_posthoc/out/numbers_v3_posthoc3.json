@@ -1,0 +1,906 @@
+{
+ "O": {
+  "nc2": {
+   "classify|hosted": {
+    "A": {
+     "do_it_nhat_mot_lan": 2,
+     "moi_lan_hi": 0.063158,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.05,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.025,
+     "n_test": 40
+    },
+    "D": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "D_do_ma_A_khong": 0,
+    "E": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "so_lan": 19,
+    "so_test": 40
+   },
+   "classify|local": {
+    "A": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "D": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "D_do_ma_A_khong": 0,
+    "E": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "so_lan": 19,
+    "so_test": 40
+   },
+   "generate|hosted": {
+    "A": {
+     "do_it_nhat_mot_lan": 7,
+     "moi_lan_hi": 0.151316,
+     "moi_lan_lo": 0.027632,
+     "moi_lan_max": 0.125,
+     "moi_lan_min": 0.05,
+     "moi_lan_tb": 0.086842,
+     "n_test": 40
+    },
+    "D": {
+     "do_it_nhat_mot_lan": 1,
+     "moi_lan_hi": 0.043421,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.025,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.014474,
+     "n_test": 40
+    },
+    "D_do_ma_A_khong": 0,
+    "E": {
+     "do_it_nhat_mot_lan": 1,
+     "moi_lan_hi": 0.043421,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.025,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.014474,
+     "n_test": 40
+    },
+    "F1<0.5": {
+     "do_it_nhat_mot_lan": 1,
+     "moi_lan_hi": 0.043421,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.025,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.014474,
+     "n_test": 40
+    },
+    "F1<0.8": {
+     "do_it_nhat_mot_lan": 2,
+     "moi_lan_hi": 0.061842,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.05,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.023684,
+     "n_test": 40
+    },
+    "so_lan": 19,
+    "so_test": 40
+   },
+   "generate|local": {
+    "A": {
+     "do_it_nhat_mot_lan": 14,
+     "moi_lan_hi": 0.065789,
+     "moi_lan_lo": 0.023684,
+     "moi_lan_max": 0.3,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.043421,
+     "n_test": 40
+    },
+    "D": {
+     "do_it_nhat_mot_lan": 3,
+     "moi_lan_hi": 0.028947,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.075,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.011842,
+     "n_test": 40
+    },
+    "D_do_ma_A_khong": 0,
+    "E": {
+     "do_it_nhat_mot_lan": 2,
+     "moi_lan_hi": 0.026316,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.05,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.009211,
+     "n_test": 40
+    },
+    "F1<0.5": {
+     "do_it_nhat_mot_lan": 4,
+     "moi_lan_hi": 0.031579,
+     "moi_lan_lo": 0.002632,
+     "moi_lan_max": 0.1,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.014474,
+     "n_test": 40
+    },
+    "F1<0.8": {
+     "do_it_nhat_mot_lan": 12,
+     "moi_lan_hi": 0.057895,
+     "moi_lan_lo": 0.017105,
+     "moi_lan_max": 0.25,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.036842,
+     "n_test": 40
+    },
+    "so_lan": 19,
+    "so_test": 40
+   },
+   "route|hosted": {
+    "A": {
+     "do_it_nhat_mot_lan": 23,
+     "moi_lan_hi": 0.371053,
+     "moi_lan_lo": 0.201316,
+     "moi_lan_max": 0.375,
+     "moi_lan_min": 0.15,
+     "moi_lan_tb": 0.286842,
+     "n_test": 40
+    },
+    "A_route": {
+     "do_it_nhat_mot_lan": 3,
+     "moi_lan_hi": 0.097368,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.075,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.043421,
+     "n_test": 40
+    },
+    "D": {
+     "do_it_nhat_mot_lan": 2,
+     "moi_lan_hi": 0.088158,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.05,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.034211,
+     "n_test": 40
+    },
+    "D_do_ma_A_khong": 0,
+    "so_lan": 19,
+    "so_test": 40
+   },
+   "route|local": {
+    "A": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "A_route": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "D": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "D_do_ma_A_khong": 0,
+    "so_lan": 19,
+    "so_test": 40
+   }
+  },
+  "nc2_so_lan_hosted": 19,
+  "nc2_so_lan_local": 19,
+  "s3_doi_chung": {
+   "classify|hosted": {
+    "A": {
+     "do_it_nhat_mot_lan": 1,
+     "moi_lan_hi": 0.05,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.025,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.016667,
+     "n_test": 40
+    },
+    "D": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "D_do_ma_A_khong": 0,
+    "E": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "so_lan": 3,
+    "so_test": 40
+   },
+   "classify|local": {
+    "A": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "D": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "D_do_ma_A_khong": 0,
+    "E": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "so_lan": 3,
+    "so_test": 40
+   },
+   "generate|hosted": {
+    "A": {
+     "do_it_nhat_mot_lan": 6,
+     "moi_lan_hi": 0.158333,
+     "moi_lan_lo": 0.025,
+     "moi_lan_max": 0.125,
+     "moi_lan_min": 0.05,
+     "moi_lan_tb": 0.083333,
+     "n_test": 40
+    },
+    "D": {
+     "do_it_nhat_mot_lan": 1,
+     "moi_lan_hi": 0.05,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.025,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.016667,
+     "n_test": 40
+    },
+    "D_do_ma_A_khong": 0,
+    "E": {
+     "do_it_nhat_mot_lan": 1,
+     "moi_lan_hi": 0.05,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.025,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.016667,
+     "n_test": 40
+    },
+    "F1<0.5": {
+     "do_it_nhat_mot_lan": 1,
+     "moi_lan_hi": 0.05,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.025,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.016667,
+     "n_test": 40
+    },
+    "F1<0.8": {
+     "do_it_nhat_mot_lan": 1,
+     "moi_lan_hi": 0.05,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.025,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.016667,
+     "n_test": 40
+    },
+    "so_lan": 3,
+    "so_test": 40
+   },
+   "generate|local": {
+    "A": {
+     "do_it_nhat_mot_lan": 24,
+     "moi_lan_hi": 0.658333,
+     "moi_lan_lo": 0.375,
+     "moi_lan_max": 0.55,
+     "moi_lan_min": 0.45,
+     "moi_lan_tb": 0.516667,
+     "n_test": 40
+    },
+    "D": {
+     "do_it_nhat_mot_lan": 8,
+     "moi_lan_hi": 0.283333,
+     "moi_lan_lo": 0.066667,
+     "moi_lan_max": 0.2,
+     "moi_lan_min": 0.1,
+     "moi_lan_tb": 0.166667,
+     "n_test": 40
+    },
+    "D_do_ma_A_khong": 0,
+    "E": {
+     "do_it_nhat_mot_lan": 3,
+     "moi_lan_hi": 0.15,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.075,
+     "moi_lan_min": 0.05,
+     "moi_lan_tb": 0.066667,
+     "n_test": 40
+    },
+    "F1<0.5": {
+     "do_it_nhat_mot_lan": 10,
+     "moi_lan_hi": 0.35,
+     "moi_lan_lo": 0.1,
+     "moi_lan_max": 0.25,
+     "moi_lan_min": 0.15,
+     "moi_lan_tb": 0.216667,
+     "n_test": 40
+    },
+    "F1<0.8": {
+     "do_it_nhat_mot_lan": 21,
+     "moi_lan_hi": 0.6,
+     "moi_lan_lo": 0.308333,
+     "moi_lan_max": 0.475,
+     "moi_lan_min": 0.4,
+     "moi_lan_tb": 0.45,
+     "n_test": 40
+    },
+    "so_lan": 3,
+    "so_test": 40
+   },
+   "route|hosted": {
+    "A": {
+     "do_it_nhat_mot_lan": 19,
+     "moi_lan_hi": 0.35,
+     "moi_lan_lo": 0.15,
+     "moi_lan_max": 0.3,
+     "moi_lan_min": 0.2,
+     "moi_lan_tb": 0.241667,
+     "n_test": 40
+    },
+    "A_route": {
+     "do_it_nhat_mot_lan": 3,
+     "moi_lan_hi": 0.058333,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.05,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.025,
+     "n_test": 40
+    },
+    "D": {
+     "do_it_nhat_mot_lan": 2,
+     "moi_lan_hi": 0.041667,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.025,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.016667,
+     "n_test": 40
+    },
+    "D_do_ma_A_khong": 0,
+    "so_lan": 3,
+    "so_test": 40
+   },
+   "route|local": {
+    "A": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "A_route": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "D": {
+     "do_it_nhat_mot_lan": 0,
+     "moi_lan_hi": 0.0,
+     "moi_lan_lo": 0.0,
+     "moi_lan_max": 0.0,
+     "moi_lan_min": 0.0,
+     "moi_lan_tb": 0.0,
+     "n_test": 40
+    },
+    "D_do_ma_A_khong": 0,
+    "so_lan": 3,
+    "so_test": 40
+   }
+  },
+  "tau": [
+   0.8,
+   0.5
+  ]
+ },
+ "Q": {
+  "bang_cheo": {
+   "hosted|dung_sang_sai|khong_tra_loi_duoc": {
+    "sot": 0,
+    "thay_doi": 4
+   },
+   "hosted|dung_sang_sai|tra_loi_duoc": {
+    "sot": 1,
+    "thay_doi": 8
+   },
+   "hosted|sai_sang_dung|khong_tra_loi_duoc": {
+    "sot": 0,
+    "thay_doi": 3
+   },
+   "local|dung_sang_sai|khong_tra_loi_duoc": {
+    "sot": 0,
+    "thay_doi": 14
+   },
+   "local|sai_sang_dung|khong_tra_loi_duoc": {
+    "sot": 0,
+    "thay_doi": 9
+   },
+   "local|sai_sang_dung|tra_loi_duoc": {
+    "sot": 9,
+    "thay_doi": 20
+   }
+  },
+  "cau_co_ca_sot": 5,
+  "cau_co_thay_doi_tat_ca": 22,
+  "cau_tra_loi_duoc_co_ca_sot": 5,
+  "cau_tra_loi_duoc_co_thay_doi": 9,
+  "chieu_trung_nhanh": true,
+  "cluster_10_28": {
+   "hi": 0.653846,
+   "k": 10,
+   "lo": 0.125,
+   "n": 28,
+   "so_cum": 9,
+   "ty_le": 0.357143
+  },
+  "cluster_10_58": {
+   "hi": 0.333333,
+   "k": 10,
+   "lo": 0.041667,
+   "n": 58,
+   "so_cum": 22,
+   "ty_le": 0.172414
+  },
+  "mo_ta_cau_sot": [
+   {
+    "ca": [
+     {
+      "arm": "local",
+      "chieu": "sai_sang_dung",
+      "decision": "gold",
+      "golden": "In a nuclear power plant, the steam turbines are typically directly connected to generators without reduction gearing. This connection allows for efficient oper",
+      "lan_chay": "In a nuclear power plant, the steam turbine is connected to an electrical generator [d0261].",
+      "run": "M1"
+     },
+     {
+      "arm": "local",
+      "chieu": "sai_sang_dung",
+      "decision": "gold",
+      "golden": "In a nuclear power plant, the steam turbines are typically directly connected to generators without reduction gearing. This connection allows for efficient oper",
+      "lan_chay": "In a nuclear power plant, the steam turbine is directly connected to an electrical generator. [d0261]",
+      "run": "P1"
+     }
+    ],
+    "cau_hoi": "In a nuclear power plant, what is the steam turbine connected to?",
+    "dap_an_vang": [
+     "electrical generator",
+     "a turbo generator set with propulsion provided by electric motors"
+    ],
+    "qid": "571166352419e314009555f3"
+   },
+   {
+    "ca": [
+     {
+      "arm": "local",
+      "chieu": "sai_sang_dung",
+      "decision": "gold",
+      "golden": "Funding for private schools comes from several sources including tuition, scholarships, vouchers, donations, and grants. Additionally, it can also include gover",
+      "lan_chay": "Funding for private schools comes from student tuition, endowments, scholarship/voucher funds, donations and grants from religious organizations or private indi",
+      "run": "P1"
+     },
+     {
+      "arm": "local",
+      "chieu": "sai_sang_dung",
+      "decision": "gold",
+      "golden": "Funding for private schools comes from several sources including tuition, scholarships, vouchers, donations, and grants. Additionally, it can also include gover",
+      "lan_chay": "Funding for private schools comes from multiple sources including student tuition, endowments, scholarship/voucher funds, and donations and grants from religiou",
+      "run": "T1"
+     }
+    ],
+    "cau_hoi": "Along with tuition, scholarships, vouchers, donations and grants, where does funding for private schools come from?",
+    "dap_an_vang": [
+     "endowments"
+    ],
+    "qid": "572758e0f1498d1400e8f6ae"
+   },
+   {
+    "ca": [
+     {
+      "arm": "hosted",
+      "chieu": "dung_sang_sai",
+      "decision": "gold",
+      "golden": "An example of illegal disobedience is trespassing at a nuclear-missile installation [d0559]. Other examples include illegal boycotts, refusals to pay taxes, dra",
+      "lan_chay": "Julia Butterfly Hill lived in a 600-year-old California Redwood tree for 738 days, successfully preventing it from being cut down [d0559]. The Plowshares organi",
+      "run": "P1"
+     },
+     {
+      "arm": "local",
+      "chieu": "sai_sang_dung",
+      "decision": "other",
+      "golden": "An example of illegal disobedience includes actions such as trespassing on U.S. Navy property to stop military exercises [d0568], which can be considered a form",
+      "lan_chay": "Illegal disobedience can involve a variety of acts such as trespassing at a nuclear-missile installation (as mentioned in [d0571]), which Bedau describes as oft",
+      "run": "P1"
+     }
+    ],
+    "cau_hoi": "What is an example of illegal disobedience?",
+    "dap_an_vang": [
+     "trespassing at a nuclear-missile installation",
+     "symbolic illegal protests",
+     "the proprietors of illegal medical cannabis dispensaries"
+    ],
+    "qid": "5728e5224b864d1900165033"
+   },
+   {
+    "ca": [
+     {
+      "arm": "local",
+      "chieu": "sai_sang_dung",
+      "decision": "gold",
+      "golden": "The IPCC prepares Special Reports following the same procedures as for its Assessment Reports [d0858]. This document states that in 2011, two IPCC Special Repor",
+      "lan_chay": "The preparation of IPCC Special Reports follows the same procedures as for IPCC Assessment Reports. This information can be found in [d0858].",
+      "run": "K1"
+     },
+     {
+      "arm": "local",
+      "chieu": "sai_sang_dung",
+      "decision": "gold",
+      "golden": "The IPCC prepares Special Reports following the same procedures as for its Assessment Reports [d0858]. This document states that in 2011, two IPCC Special Repor",
+      "lan_chay": "The preparation and approval process for all IPCC Special Reports follows the same procedures as for IPCC Assessment Reports, as stated in [d0858]. Two IPCC Spe",
+      "run": "P1"
+     },
+     {
+      "arm": "local",
+      "chieu": "sai_sang_dung",
+      "decision": "gold",
+      "golden": "The IPCC prepares Special Reports following the same procedures as for its Assessment Reports [d0858]. This document states that in 2011, two IPCC Special Repor",
+      "lan_chay": "The IPCC prepares Special Reports following the same procedures as for its Assessment Reports. This information is directly stated in [d0858], where it is menti",
+      "run": "R1-B"
+     }
+    ],
+    "cau_hoi": "How does the IPCC prepare Special Reports?",
+    "dap_an_vang": [
+     "the same procedures as for IPCC Assessment Reports",
+     "follows the same procedures as for IPCC Assessment Reports"
+    ],
+    "qid": "57293f8a6aef051400154bde"
+   },
+   {
+    "ca": [
+     {
+      "arm": "local",
+      "chieu": "sai_sang_dung",
+      "decision": "other",
+      "golden": "An object's mass is directly proportional to the gravitational acceleration on its surface. This relationship can be described using Newton's Law of Gravitation",
+      "lan_chay": "An object's mass is directly proportional to the force of gravity it experiences at the surface of the Earth. This relationship can be described by Newton's Law",
+      "run": "K1"
+     }
+    ],
+    "cau_hoi": "What is an object's mass proportional to at the surface of the Earth?",
+    "dap_an_vang": [
+     "force of gravity",
+     "the force of gravity on an object"
+    ],
+    "qid": "573784fa1c45671900574487"
+   }
+  ],
+  "muc_nen": {
+   "hosted": {
+    "doi_chung_s3": [
+     0,
+     1,
+     1
+    ],
+    "ky_vong_s3": 2.666667,
+    "so_lan_thay_doi": 4,
+    "truly_changed_quan_sat": 15,
+    "vuot_s3": 12.333333
+   },
+   "local": {
+    "doi_chung_s3": [
+     3,
+     2,
+     3
+    ],
+    "doi_chung_v209": [
+     3,
+     3,
+     3
+    ],
+    "ky_vong_s3": 18.666667,
+    "ky_vong_v209": 21.0,
+    "so_lan_thay_doi": 7,
+    "truly_changed_quan_sat": 43,
+    "vuot_s3": 24.333333,
+    "vuot_v209": 22.0
+   }
+  }
+ },
+ "S": {
+  "P2_20261102_v1.jsonl": {
+   "prompt_co_nhieu_gia_tri": 0,
+   "so_loi_goi": 6120,
+   "so_prompt": 720
+  },
+  "P3_20261102_v1.jsonl": {
+   "prompt_co_nhieu_gia_tri": 0,
+   "so_loi_goi": 4080,
+   "so_prompt": 480
+  },
+  "nc2_local_generate": {
+   "dem_lech": 5,
+   "dem_trung": 3,
+   "fisher_p": 0.004816,
+   "lan": [
+    {
+     "cach_lan_truoc_h": null,
+     "dem": false,
+     "gio_moc": 12,
+     "golden": true,
+     "lan": 1,
+     "phut": 24.9,
+     "trung_golden": true,
+     "ts": "2026-11-03T12:01:14.882+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 96.0,
+     "dem": false,
+     "gio_moc": 12,
+     "golden": false,
+     "lan": 17,
+     "phut": 27.5,
+     "trung_golden": true,
+     "ts": "2026-11-07T12:00:38.397+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 6.4,
+     "dem": false,
+     "gio_moc": 18,
+     "golden": false,
+     "lan": 18,
+     "phut": 28.6,
+     "trung_golden": true,
+     "ts": "2026-11-07T18:25:38.969+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 5.7,
+     "dem": true,
+     "gio_moc": 0,
+     "golden": false,
+     "lan": 19,
+     "phut": 18.3,
+     "trung_golden": false,
+     "ts": "2026-11-08T00:10:27.459+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 11.9,
+     "dem": false,
+     "gio_moc": 12,
+     "golden": false,
+     "lan": 21,
+     "phut": 29.1,
+     "trung_golden": true,
+     "ts": "2026-11-08T12:02:30.575+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 6.0,
+     "dem": false,
+     "gio_moc": 18,
+     "golden": false,
+     "lan": 22,
+     "phut": 27.3,
+     "trung_golden": true,
+     "ts": "2026-11-08T18:04:31.008+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 5.9,
+     "dem": true,
+     "gio_moc": 0,
+     "golden": false,
+     "lan": 23,
+     "phut": 20.6,
+     "trung_golden": true,
+     "ts": "2026-11-09T00:00:25.328+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 6.0,
+     "dem": true,
+     "gio_moc": 6,
+     "golden": false,
+     "lan": 24,
+     "phut": 21.1,
+     "trung_golden": true,
+     "ts": "2026-11-09T06:00:09.780+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 6.0,
+     "dem": false,
+     "gio_moc": 12,
+     "golden": false,
+     "lan": 25,
+     "phut": 22.4,
+     "trung_golden": true,
+     "ts": "2026-11-09T12:00:00.255+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 6.9,
+     "dem": false,
+     "gio_moc": 18,
+     "golden": false,
+     "lan": 26,
+     "phut": 23.8,
+     "trung_golden": true,
+     "ts": "2026-11-09T18:54:42.628+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 5.1,
+     "dem": true,
+     "gio_moc": 0,
+     "golden": false,
+     "lan": 27,
+     "phut": 24.0,
+     "trung_golden": false,
+     "ts": "2026-11-10T00:00:25.533+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 6.0,
+     "dem": true,
+     "gio_moc": 6,
+     "golden": false,
+     "lan": 28,
+     "phut": 24.6,
+     "trung_golden": false,
+     "ts": "2026-11-10T06:00:20.072+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 6.0,
+     "dem": false,
+     "gio_moc": 12,
+     "golden": false,
+     "lan": 29,
+     "phut": 26.7,
+     "trung_golden": true,
+     "ts": "2026-11-10T12:00:30.381+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 6.0,
+     "dem": false,
+     "gio_moc": 18,
+     "golden": false,
+     "lan": 30,
+     "phut": 26.1,
+     "trung_golden": true,
+     "ts": "2026-11-10T18:00:30.349+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 6.0,
+     "dem": true,
+     "gio_moc": 0,
+     "golden": false,
+     "lan": 31,
+     "phut": 17.7,
+     "trung_golden": false,
+     "ts": "2026-11-11T00:00:16.747+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 6.0,
+     "dem": true,
+     "gio_moc": 6,
+     "golden": false,
+     "lan": 32,
+     "phut": 14.9,
+     "trung_golden": false,
+     "ts": "2026-11-11T06:00:00.277+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 6.0,
+     "dem": false,
+     "gio_moc": 12,
+     "golden": false,
+     "lan": 33,
+     "phut": 21.7,
+     "trung_golden": true,
+     "ts": "2026-11-11T12:00:30.371+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 6.4,
+     "dem": false,
+     "gio_moc": 18,
+     "golden": false,
+     "lan": 34,
+     "phut": 26.8,
+     "trung_golden": true,
+     "ts": "2026-11-11T18:26:56.614+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 5.6,
+     "dem": true,
+     "gio_moc": 0,
+     "golden": false,
+     "lan": 35,
+     "phut": 20.9,
+     "trung_golden": true,
+     "ts": "2026-11-12T00:00:30.345+07:00"
+    },
+    {
+     "cach_lan_truoc_h": 12.0,
+     "dem": false,
+     "gio_moc": 12,
+     "golden": false,
+     "lan": 37,
+     "phut": 21.5,
+     "trung_golden": true,
+     "ts": "2026-11-12T12:00:30.489+07:00"
+    }
+   ],
+   "ngay_lech": 0,
+   "ngay_trung": 11,
+   "phut_lech_tb": 19.9,
+   "phut_trung_tb": 24.578571
+  }
+ },
+ "_nhan": "post hoc lần 3 — 14-11-2026, sau phản biện vòng 4; kế hoạch PLAN_POSTHOC3.md (commit 6091f5a)"
+}

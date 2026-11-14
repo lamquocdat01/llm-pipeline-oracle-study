@@ -1,0 +1,563 @@
+# PREREG_V2 — Pipeline 2 + họ model thứ 3 (Microduck đợt 32, TSE v2.0)
+
+**Viết:** 01-11-2026, TRƯỚC mọi bản ghi đo của plan `study/pipeline2/runner/plan_p2.json` (chưa runner nào chạy plan
+này; các file `results/P2_*`, `P2O_*`, `P3_*`, `MD3_*` chưa tồn tại).
+Commit đăng ký: `203c724788d312e0a64f5159e14b9c6cd2b15a47` (01-11-2026; commit chứa bản này + mã + plan, trước mọi bản ghi đo).
+Dòng này được thêm ở commit kế tiếp — nội dung đăng ký là bản tại commit trên (`git show 203c724:study/pipeline2/prereg/PREREG_V2.md`).
+
+Khung luật kế thừa nguyên văn từ `docs/benchmark/PREREG_M1-M4_20260916.md` (A04.4 luật chấm, A04.5 kiểm lực, A06.1–A06.4
+ô suy máy móc và kiểm depth). Chỗ nào văn bản này không nói, luật v1.1 áp dụng. Đổi bất kỳ điều gì dưới đây sau khi
+đo bắt đầu = amendment có ngày giờ, commit trước dữ liệu nó chi phối.
+
+## 0. Dự đoán sinh từ đâu — và KHÔNG từ đâu
+
+- Mọi dự đoán ô ở §6 sinh **máy móc từ luật của matrix Pin–Observe** (§1), không từ dữ liệu.
+- **Không dùng:** smoke N1 (`results/smoke_20261101.jsonl`, 20 câu — bị loại khỏi mẫu, §2); số pilot và số M1–M7 v1.1.
+- **Khai báo những gì đã thấy trước khi đăng ký** (để người đọc tự cân): (i) smoke 20 câu N1 (một lượt mỗi stage,
+  không lặp lại — không cho biết gì về ổn định); (ii) 01-11 ~09:15, kiểm đường chạy executor trên **2 câu smoke**:
+  oracle chạy 2 lần liền, artefact route đổi ở cả nhánh hosted lẫn qwen2.5:3b local (2/14 test artefact đỏ,
+  0/14 decision). Cả hai câu không thuộc mẫu. (iii) v1.1 đã thấy ô 12 (text trả lời qwen ghim đủ) **sai** — matrix
+  vẫn dự đoán "ổn định" cho artefact pinnable; dự đoán ở đây giữ đúng luật matrix, không chỉnh theo kết quả cũ.
+
+## 1. Luật matrix dùng để sinh dự đoán
+
+- Trục **Pin**: stage *caller-pinnable* khi caller ghim được mọi đầu vào quyết định output (model ghim hash, seed,
+  temperature, num_thread, prompt hash, index hash); *delegated* khi một bên khác vận hành thành phần (hosted Gemini,
+  Google Search).
+- Trục **Observe**: *decision* (nhãn rời rạc) / *artefact* (chuỗi mang decision).
+- Dự đoán: **decision → ổn định** (mọi pinnability); **artefact → không ổn định nếu delegated, ổn định nếu pinnable**.
+- Depth không thêm thông tin khi đã biết pinnability (H1). Độ sâu: classify 1, route 2, retrieve/live 3, generate 4.
+
+## 2. Mẫu
+
+- Corpus: SQuAD 2.0 dev (`$THS_DATASETS/pipeline2_corpus/dev-v2.0.json`, SHA-256 `80a5225e…82d8`), 11 873 câu.
+- **Loại 20 id smoke** = `random.Random(20261101).sample(câu, 200)[:20]` (danh sách trong plan `mau.smoke_qids_loai`).
+- **Mẫu N2**: `random.Random(20261102).sample(câu trừ smoke, 200)` → 200 câu (94 không trả lời được).
+  **Live**: 50 câu đầu của mẫu N2. **Oracle**: `random.Random(20261103).sample(mẫu N2, 40)`.
+- Danh sách id cố định trong `plan_p2.json` (`mau.n2_qids`, `live_qids`, `oracle_qids`); `p2.corpus.mau_n2` tái lập được.
+- Microduck N3: khối A `docs/benchmark/lookup_set_v1.jsonl` (100 câu, như M2 v1.1); 50 prompt M4 (`kehoach._m4_items`).
+
+## 3. Decision / artefact và luật trích xuất (hàm thuần trong `p2/stages.py`, test ở `tests/test_p2_offline.py`)
+
+| Stage | Đầu vào cố định | Decision | Artefact |
+|---|---|---|---|
+| classify | câu hỏi + **đoạn vàng** | `answerable`/`unanswerable` (trường JSON `answerable`; nhãn vàng = `is_impossible`) | JSON thô. Ngôn ngữ: **chỉ log** |
+| route | câu hỏi | `RETRIEVE`/`ANSWER`/`REFUSE` — khớp sau khi **bỏ dấu** (NFKD) | văn bản thô |
+| retrieve BM25 | câu hỏi | top-5 doc id có thứ tự | 5 đoạn trích (suy từ decision) |
+| live | câu hỏi | `SOURCES`/`NO_SOURCES` | (A) tập tên miền; (B) văn bản trả lời |
+| generate | câu hỏi + top-5 BM25 | `gold`/`other`/`nocite`/`abstain` | văn bản trả lời. Ngôn ngữ: **chỉ log** |
+
+**PARSE_FAIL** (định dạng không đọc được) là một **giá trị decision** — thất bại ở tầng decision — **không loại khỏi mẫu**:
+hai lượt cùng PARSE_FAIL là "không đổi"; PARSE_FAIL ↔ nhãn khác là "đổi".
+"Đổi" của artefact (M-protocol, §6): khác byte sau khi bỏ khoảng trắng đầu/cuối (luật v1.1); tập tên miền so như tập.
+
+## 4. Protocol đo (runner `scripts/run_p2.py`, lõi `desktop/mrunner/core.py`)
+
+- **P2** (N2): mỗi câu × {classify, route, generate} × {hosted `gemini-2.5-flash`, local `qwen2.5:3b`} + BM25: **10 lần**,
+  lần k chạy ≥ 6 h sau lúc bắt đầu lần k−1 của cùng (câu × stage × nhánh). Live: 50 câu × 10 lần, cùng luật.
+  temperature 0; hosted `thinking_budget=0`; local `seed=0`, `num_thread = cpu_count − 2`; `max_output 400`.
+- **Boundary probe (C2)**, 20 câu đầu, ngay sau lần 1: hosted `temperature 0.8` (classify, route, generate, live);
+  local `temperature 0.8` và `seed 1`. Kỳ vọng: probe đổi artefact so lần 1 **nhiều hơn** cặp lần 1→2 cùng câu; nếu
+  không ⇒ tham số ấy có thể không tới model (báo như sự cố biên, không chấm).
+- **P3** (N3, pipeline 2): `llama3.1:8b` (ghim digest `46e0c10c…` + SHA-256 trọng số `667b0c19…`), route + generate,
+  cùng protocol P2 (10 lần, ≥ 6 h, probe t0.8/seed1 trên 20 câu).
+- **MD3** (N3, Microduck): `llama3.1:8b` thay qwen ở routing (kind `m2_local`, system prompt persona v1.1) và reply
+  (`m4_local`), protocol v1.1: t0, t0p (ngay), t24h; probe seed1/t0.8 như v1.1. Ghim kiểm trước mỗi lời gọi.
+- Ghim local kiểm **mỗi lời gọi** (digest + băm lại file trọng số); lệch ⇒ task lỗi, không bản ghi "ok".
+- Trần USD: cả đợt 5,00, **dừng 4,50**; plan đặt `budget_usd = 4,4704` (= 4,50 − 0,0296 đã tiêu trước plan). Grounding
+  đếm theo ngày Pacific, hạn **500 RPD**.
+
+## 5. Oracle (RQ3)
+
+- 40 câu oracle × {classify, route, generate} × {hosted, local qwen} + BM25 (7 ô) = 280 test mỗi bộ. Không live.
+- Hai bộ pytest: `tests_p2_decision/` (decision == golden), `tests_p2_artefact/` (`mrunner.oracle.chuan_hoa` == golden).
+- **Lịch**: 24 mốc 09:00 và 21:00 (+07), 02-11 → 13-11-2026; luật missed như M6 sau A08 (trễ > 2 h ⇒ missed, không bù).
+  Golden = lần hợp lệ đầu tiên. **Đọc 20 lần hợp lệ đầu tiên** (lần 2..20 so golden); < 20 ⇒ báo số thực.
+- Ước lượng: re-execution failure rate của bộ B ở ô c = số test đỏ ≥ 1 lần trong lần 2..20 / số test, Wilson 95 %;
+  **margin** = rate(artefact) − rate(decision), Newcombe hybrid 95 %. Bảng 2×2 ghép cặp (decision đỏ mà artefact không
+  ⇒ kiểm nhất quán, A06.1).
+
+## 6. Ô dự đoán và luật chấm
+
+**Cặp chấm:** P2/P3 lần 1 → lần 5 (≥ 24 h, tương đương t0→t24h v1.1); MD3 t0 → t24h. Mọi cặp khác (1→k, "đổi ở bất kỳ
+lần nào") in ra, nhãn exploratory. **Luật (A04.4, nguyên văn):** dự đoán ổn định *đúng* ⇔ k/n ≤ 5 % **và** cận trên
+Wilson ≤ 10 %; *sai* ⇔ k/n ≥ 20 %. Dự đoán không ổn định *đúng* ⇔ k/n ≥ 20 %; *sai* ⇔ k/n ≤ 5 %. Vùng giữa: không phân
+định, nhưng tính *sai* nếu ước lượng điểm ở nửa ngược chiều (ranh 12,5 %). **Kiểm lực:** 0/n đạt cận trên ≤ 10 % khi
+n ≥ 35 (n = 200 → k ≤ 10 cho phép đúng; n = 100 → k ≤ 4; n = 50 → chỉ k = 0, cận trên 7,1 %). Cặp nào thiếu (lỗi, missed)
+⇒ n giảm; đơn vị n < 35 mang nhãn **thiếu lực** cho dự đoán ổn định (vẫn có thể sai).
+
+| # | Nguồn | Stage (độ sâu) | Observable | Pinnability | Dự đoán | n | Tính điểm? |
+|---|---|---|---|---|---|---|---|
+| 1 | P2 | classify (1) | answerable (dec) | delegated (gemini) | ổn định | 200 | có |
+| 2 | P2 | classify (1) | JSON thô (art) | delegated | **không** | 200 | có |
+| 3 | P2 | classify (1) | answerable (dec) | pinnable (qwen 3b) | ổn định | 200 | không — suy từ ô 4 (A06.1) |
+| 4 | P2 | classify (1) | JSON thô (art) | pinnable | ổn định | 200 | có |
+| 5 | P2 | route (2) | route (dec) | delegated | ổn định | 200 | có |
+| 6 | P2 | route (2) | text thô (art) | delegated | **không** | 200 | có |
+| 7 | P2 | route (2) | route (dec) | pinnable | ổn định | 200 | không — suy từ ô 8 |
+| 8 | P2 | route (2) | text thô (art) | pinnable | ổn định | 200 | có |
+| 9 | P2 | retrieve BM25 (3) | top-5 id (dec) | pinnable | ổn định | 200 | có |
+| 10 | P2 | retrieve BM25 (3) | đoạn trích (art) | pinnable | ổn định | 200 | không — suy từ ô 9 |
+| 11 | P2 | live (3) | SOURCES (dec) | delegated | ổn định | 50 | có (n = 50: đúng chỉ khi 0/50) |
+| 12 | P2 | live (3) | tập tên miền (art A) | delegated | **không** | 50 | có |
+| 13 | P2 | live (3) | văn bản (art B) | delegated | **không** | 50 | có |
+| 14 | P2 | generate (4) | kết cục (dec) | delegated | ổn định | 200 | có |
+| 15 | P2 | generate (4) | văn bản (art) | delegated | **không** | 200 | có |
+| 16 | P2 | generate (4) | kết cục (dec) | pinnable | ổn định | 200 | không — suy từ ô 17 |
+| 17 | P2 | generate (4) | văn bản (art) | pinnable | ổn định | 200 | có |
+| 18 | P3 | route (2) | route (dec) | pinnable (llama 8b) | ổn định | 200 | không — suy từ ô 19 |
+| 19 | P3 | route (2) | text thô (art) | pinnable (llama 8b) | ổn định | 200 | có |
+| 20 | P3 | generate (4) | kết cục (dec) | pinnable (llama 8b) | ổn định | 200 | không — suy từ ô 21 |
+| 21 | P3 | generate (4) | văn bản (art) | pinnable (llama 8b) | ổn định | 200 | có |
+| 22 | MD3 | routing (2) | `lookup` (dec) | pinnable (llama 8b) | ổn định | 100 | không — suy từ ô 23 |
+| 23 | MD3 | routing (2) | text thô (art) | pinnable (llama 8b) | ổn định | 100 | có |
+| 24 | MD3 | reply (4) | nhãn ngôn ngữ (dec) | pinnable (llama 8b) | ổn định | 50 | không — suy từ ô 25 |
+| 25 | MD3 | reply (4) | `reply_text` (art) | pinnable (llama 8b) | ổn định | 50 | có (n = 50) |
+
+Lưới pipeline 2 có **17 ô** (cùng lưới 17 ô của Microduck v1.1; kế hoạch ghi "15" là số đơn vị v1.1). **Đơn vị tính điểm:
+pipeline 2 = 13** (ô 1, 2, 4, 5, 6, 8, 9, 11, 12, 13, 14, 15, 17); N3 = 4 (19, 21, 23, 25). Tổng 17.
+**H3 (phần dự đoán):** ≥ 2/3 đơn vị pipeline 2 đã phân định là *đúng*, tức ≥ ⌈2/3 × số đã phân định⌉; báo cả đúng/13.
+
+## 7. Kiểm depth (H1)
+
+(a) Nhóm A06.4 trên đơn vị §6: delegated × decision {1(1), 5(2), 11(3), 14(4)}; delegated × artefact {2(1), 6(2), 12(3),
+13(3), 15(4)}; pinnable × artefact {4(1), 8(2), 17(4), 19(2), 21(4)}; pinnable × decision chỉ ô 9 — không so. Luật hỗ trợ /
+bác / không phân định như A06.4.
+(b) **Hồi quy logistic** (N4): đơn vị = cặp (lần 1, lần 5) của mỗi (câu × ô tính điểm, P2 + P3); biến phụ thuộc = không
+đổi (1/0); biến độc lập = depth (1–4, số) và pinnable (0/1), + observable (dec/art); báo hệ số + 95 % CI (cluster theo câu
+hỏi); H1 được ủng hộ khi CI hệ số pinnable > 0 và CI hệ số depth chứa 0. Bootstrap/MC ≥ 5 seed.
+
+## 8. H2 — margin qua pipeline và họ
+
+Margin M-protocol từng stage × nhánh = R^dec − R^art trên cặp (1→5), Newcombe 95 %. **H2 ủng hộ** khi: (i) ở mọi stage
+delegated của P2 (classify, route, generate; live A/B so với SOURCES) cận dưới Newcombe > 0; (ii) ở stage pinnable (qwen P2,
+llama P3, llama MD3) |margin| ≤ 0,05 hoặc khoảng chứa 0; (iii) dấu và bậc độ lớn (cùng thập phân bậc, tỉ ≤ 10) của margin
+delegated trùng giữa Microduck v1.1 (M6 routing 0,750) và P2 route. Bất kỳ phần nào ngược ⇒ in như kết quả.
+
+## 9. H3 — oracle
+
+Biết trước: ở mọi ô decision tính từ artefact, rate(decision) ≤ rate(artefact) **theo cấu trúc** (A06.1) — không phải bằng
+chứng. Nội dung thực nghiệm là **độ lớn**: H3 ủng hộ khi ở ô oracle delegated (classify, route, generate hosted) cận dưới
+Newcombe của margin > 0, và ở ô pinnable (qwen, BM25) khoảng chứa 0. Cùng với phần dự đoán ô (§6).
+
+## 10. Vận hành, lệch, dừng
+
+- Một runner (LOCK chung `docs/benchmark/runner`); watchdog Task Scheduler 15 phút gọi `run_p2.py --ensure`.
+- Việc nặng hoãn khi CPU bận do tiến trình khác hoặc RAM trống < 6 GB. Pytest/commit chỉ qua `runner_safe` / `commit_safe`.
+- Dừng hosted ở trần; task local chạy tiếp. Lỗi API ⇒ file `.errors.jsonl`, thử lại theo backoff của core.
+- Báo mọi lệch lịch (`late_by_s`), missed, lỗi ghim; không sửa bản ghi.
+
+---
+
+## AMENDMENT V2-01 — 01-11-2026 ~09:35 (+07:00) — đổi tên script runner (vận hành; không đổi thiết kế, mẫu, ô, luật chấm)
+
+- Runner khởi động 09:20:53 bằng `scripts/run_p2.py`. `mrunner.core.pid_song` và `mrunner.gate` chỉ nhận runner khi
+  cmdline chứa `run_m_all` ⇒ runner p2 bị coi là chết: một lần chạy tiền cảnh (`run --max-steps 1`, 09:21:02) chiếm
+  LOCK như khoá cũ, chạy một bước (task BM25 — bản ghi trùng bị core từ chối, không ghi) rồi thoát và xoá LOCK.
+  Trong ~2 phút, gate có thể báo `free`. Không pytest/commit nào chạy trong khoảng ấy.
+- 09:23 PAUSE → PAUSED_ACK → dừng runner. Trên đĩa: `results/P2_20261102_v1.jsonl` 221 bản ghi ok, 0 trùng (200 BM25 r01,
+  9 classify local r01, 6 route local r01, 6 generate local r01), mọi bản ghi sau commit đăng ký `203c724`. **Giữ nguyên.**
+- Sửa: đổi tên `scripts/run_p2.py` → `scripts/run_m_all_p2.py` (khớp định danh cổng; không sửa `desktop/`), thêm test
+  `test_ten_runner_duoc_gate_nhan`. Mọi nhắc `run_p2.py` ở trên đọc là `run_m_all_p2.py`.
+
+## AMENDMENT V2-02 — 03-11-2026 ~10:30 (+07:00) — lịch oracle P2O 2 mốc/ngày → 4 mốc/ngày (vận hành; không đổi mẫu, ô, luật chấm, dự đoán)
+
+- Bối cảnh: runner dừng sạch 02-11 07:35 (tắt máy), mở lại 03-11 ~10:00. Theo lịch §5 gốc, 02-11 09:00 và 21:00 đã lỡ
+  (chưa ghi `missed` vì runner không sống); 03-11 09:00 còn trong cửa sổ 2 h nhưng **không đo**. P2O **chưa có bản ghi
+  nào** (không có `results/P2O_*`, không có `results/oracle/obs_lan*`) ⇒ amendment này viết và commit trước mọi dữ liệu
+  oracle nó chi phối. Runner chỉ được bật lại sau commit này.
+- Lý do: máy chỉ bật theo giờ làm việc, lịch 09:00/21:00 dễ lỡ quá 4 mốc cho phép; oracle chưa có dữ liệu nên đổi lịch
+  không chọn theo kết quả; 20 lần hợp lệ ở 4 mốc/ngày vẫn trải ≥ 4 ngày (tối thiểu 20 × 6 h − 6 h = 114 h ≈ 4,75 ngày).
+- Thay §5 "Lịch": **28 mốc cách 6 h, 06:00 / 12:00 / 18:00 / 24:00 (+07; 24:00 = 00:00 ngày sau), 7 ngày, từ
+  03-11-2026 12:00 đến 10-11-2026 06:00** (`P2O|lan01` … `P2O|lan28`, `params.lan` 1…28, cùng 40 câu `oracle_qids`).
+- Giữ nguyên: cửa sổ trễ 2 h (`late_missed_s` 7200, trễ hơn ⇒ missed, không bù); golden = lần hợp lệ đầu tiên;
+  **đọc 20 lần hợp lệ đầu tiên** theo thứ tự thời gian (lần 2..20 so golden), các lần hợp lệ sau lần thứ 20 vẫn chạy và
+  ghi nhưng không vào ước lượng; < 20 ⇒ báo số thực. Ước lượng, Wilson/Newcombe, H3, ô dự đoán §6 không đổi.
+- Thực thi: `run_m_all_p2.py amend-v2-02` (hàm `amend_v2_02`) chỉ thay 24 task P2O bằng 28 task, mọi task khác giữ
+  nguyên từng phần tử và thứ tự (đã đối chiếu: 19 450 task không phải P2O trùng khít); plan ghi khoá `amendment_v2_02`.
+  Test: `tests/test_p2_offline.py::test_plan_oracle_amendment_v2_02`.
+- USD: ≈ 0,023 USD/mốc (từ usage hosted P2 thực) ⇒ 28 mốc ≈ 0,64 so với 0,55 của 24 mốc; trần `budget_usd` không đổi.
+
+## AMENDMENT V2-03 — 03-11-2026 ~11:15 (+07:00) — ngưỡng hoãn RAM ban đêm 3 GB + chọn task theo giờ (vận hành; không đổi mẫu, task, mốc, ô, luật chấm, dự đoán)
+
+- Bối cảnh: máy bật 23:00–08:00 không có người dùng; 08:00–23:00 người dùng làm việc trên máy. Từ 01-11 10:10 đến
+  03-11 sáng có 112 lần hoãn việc nặng vì RAM trống < 6 GB (≈ 3,7 h).
+- Sửa §10 "Việc nặng hoãn khi … RAM trống < 6 GB": **23:00–08:00 ngưỡng là 3 GB** (không có tiến trình khác);
+  08:00–23:00 vẫn 6 GB. Cảm biến CPU giữ nguyên.
+- Thứ tự chọn task (`study/pipeline2/p2/lich_gio.py`, commit `4e22297`, runner chạy mã này từ 03-11 10:57:38):
+  đêm: oracle, P3, MD3 chọn trước, P2 sau; ngày: chỉ oracle (đúng mốc), P2 hosted + retrieve, P3 khi RAM trống ≥ 8 GB,
+  P2 local qwen và MD3 không chạy. Chỉ đổi lúc/thứ tự chạy; mỗi lần đo vẫn đúng task, params, ghim, khoảng ≥ 6 h, luật
+  missed như plan đã đăng ký (V2-02).
+- Commit trước mọi bản ghi chịu ngưỡng 3 GB (khung đêm đầu tiên bắt đầu 03-11 23:00). Bản ghi có `ts` cho biết khung
+  giờ; báo cáo có thể tách đêm/ngày nếu cần, không loại bản ghi nào.
+
+## AMENDMENT V2-04 — 07-11-2026 ~11:00 (+07:00) — nới mốc cuối oracle P2O + ghim runtime Ollama (vận hành; không đổi ô dự đoán, ngưỡng, mẫu, task khác)
+
+- **Khoảng trống:** runner dừng từ 04-11-2026 06:57 đến lúc chạy lại 07-11-2026 do máy tắt, không do kết quả. Khi viết amendment
+  này chỉ đọc bộ đếm tiến độ/missed/USD và các cột `task_id, status, ts, due, late_by_s` của P2O; không đọc decision, artefact
+  hay kết quả suite của bất kỳ ô nào.
+- **Tính khả thi** (đếm lúc 10:44, `P0/ORACLE_FEASIBILITY_MD.md`): v = 3 lần hợp lệ (lan01, lan03, lan04); m = 13 mốc lỡ
+  (lan02 đã ghi `missed`; lan05…lan16 quá hạn, runner sẽ ghi `missed` khi chạy lại); còn lan17…lan28 = 12 mốc. Tối đa
+  3 + 12 = 15 < 20 trong cửa sổ V2-02 (tới 10-11 06:00) ⇒ không khả thi.
+- **Sửa §5 "Lịch" (bản V2-02):** giữ nguyên lan01…lan28, nhịp 6 h (06/12/18/24 giờ, +07) và cửa sổ trễ 2 h (`late_missed_s` 7200).
+  Nới mốc cuối T sao cho số mốc từ mốc kế tiếp tới T ≥ (20 − v) + 8 = 25: mốc kế tiếp lan17 = 07-11 12:00, thêm **lan29…lan41**,
+  **T = 13-11-2026 12:00** (41 mốc). Prompt dự kiến T ≈ 13-11 06:00; luật cho 12:00 vì lan16 (07-11 06:00) đã quá hạn.
+- **Giữ nguyên:** đọc **20 lần hợp lệ đầu tiên** theo thứ tự thời gian (lần 2..20 so golden; lần hợp lệ sau lần 20 vẫn chạy và
+  ghi nhưng không vào ước lượng; < 20 ⇒ báo số thực); golden = lan01; 40 câu oracle; ước lượng Wilson/Newcombe; H1–H3; 25 ô §6
+  và luật chấm; mẫu; ghim model; trần `budget_usd`. Chi phí oracle không tăng so với V2-02: tối đa 3 + 25 = 28 lần chạy ≈ 0,64 USD.
+- **Runtime Ollama (khai báo sự cố).** Bằng chứng: (i) `/api/version` trả `0.30.10` lúc 03-11 10:17; (ii) `app.log` 05-11 09:06 đã là
+  0.40.14; (iii) 06-11 10:32 tray app tự cài 0.40.15 (`upgrade.log`). Digest và SHA-256 trọng số vẫn khớp ghim, nhưng §1/§4 chưa
+  ghim runtime và manifest không ghi phiên bản. **Không xác định trực tiếp được** bản ghi trước 04-11 06:57 có đều chạy trên 0.30.10
+  không: log server trước 05-11 đã xoay vòng. ~~Suy luận nghiêng về "có": updater chỉ cài khi tray app khởi động, lệnh khởi động
+  tray chỉ bật lại từ 03-11 ~10:57, và log runner + `.errors` không có lỗi kết nối Ollama nào trong mẻ đo. Đây là suy luận,
+  không phải đo được.~~ **[Tiền đề này sai, đã đính chính: xem AMENDMENT V2-07(a).]**
+- **Xử lý, quyết trước khi có bản ghi mới (anh Đạt chọn 07-11 ~10:42):** hạ runtime về **0.30.10** (OllamaSetup.exe của release
+  v0.30.10, SHA-256 `eb18bfb0cc74c011…acd4f99f` khớp GitHub); tắt mục khởi động `Ollama.lnk` và tray app, chỉ chạy `ollama serve`
+  (updater nằm ở tray); `p2.pin.OLLAMA_RUNTIME = "0.30.10"`: `kiem()` kiểm phiên bản mỗi lời gọi, lệch hoặc không hỏi được ⇒ task
+  lỗi, không có bản ghi "ok". Runtime thêm vào danh sách đầu vào caller ghim được ở §1. Không đổi dự đoán. Mọi bản ghi từ lần chạy
+  lại trở đi chạy trên 0.30.10 (`KHỚP GHIM` cả hai model đã kiểm lại sau khi hạ). Phân tích nhạy theo đoạn thời gian: nháp V2-05.
+- **Thực thi:** `run_m_all_p2.py amend-v2-04` (hàm `amend_v2_04`) chỉ thêm 13 task P2O sau lan28; **19 450 task không phải P2O trùng
+  khít, đúng thứ tự** (`amendment_v2_04.sha256_task_khac` = `e426404a…86f4a6`). `status` in thêm mốc oracle kế tiếp. Test:
+  `tests/test_p2_offline.py::{test_amend_v2_04_luat_noi_moc, test_plan_oracle_amendment_v2_04, test_kiem_tu_choi_runtime_lech}`.
+- Commit trước mọi bản ghi mới và trước mốc lan17; hash commit ghi ở dòng dưới (thêm ở commit kế tiếp, như dòng "Commit đăng ký").
+- Commit Amendment V2-04: `04408b56a07529843d82b18e600252e5a67afef1` (07-11-2026 10:57; runner chạy lại 10:57 trên commit này).
+
+## AMENDMENT V2-05 — 07-11-2026 ~13:58 (+07:00) — kế hoạch phân tích (không đổi ô, ngưỡng, mẫu, luật chấm); commit trước N4; soạn và duyệt không xem outcome; duyệt CP0 07-11-2026.
+
+**Khai báo:** soạn mà **không xem outcome** của ô nào. Chỉ đọc văn bản PREREG, bộ đếm tiến độ/missed/USD, cột `task_id, status, ts, due, late_by_s` của P2O, và số v1.1 đã công bố. Đếm cặp bắc cầu chỉ dùng `task_id` + `status`.
+
+Không đổi ô dự đoán, ngưỡng §6, mẫu, task, luật chấm. Chỉ định rõ những gì §7–§9 để ngỏ. Nhãn **chính** = kết luận H1/H2/H3 đọc từ đó; **khám phá** = in ra, không dùng làm kết luận H.
+
+## D1. Đếm đơn vị và câu headline
+Đơn vị của v2 là **17** (13 pipeline 2 + 4 N3); H3 chấm trên 13 như §6. 15 đơn vị v1.1 báo riêng, không cộng vào tử số/mẫu số H3 vì đã biết kết quả trước khi đăng ký v2. Bài không viết "30 predictions"; được viết "17 newly registered units, reported alongside the 15 of the first study".
+
+## D2. Đóng băng trước khi đọc
+Script phân tích `study/analysis_v2/` commit trước khi đọc lần đầu cột kết quả, chạy thử trên dữ liệu giả. N4 chạy khi P2, P3, MD3 không còn task đến hạn **và** P2O có lần hợp lệ thứ 20 hoặc qua T của V2-04. "Lần P2O hợp lệ" = `status: ok`, đủ 280 test ở cả hai bộ.
+
+## D3. Hồi quy logistic H1 (§7b), mô hình chính
+- Đơn vị: cặp (lần 1, lần 5) của mỗi câu × ô tính điểm trong {1, 2, 4, 5, 6, 8, 9, 11, 12, 13, 14, 15, 17, 19, 21}. Biến phụ thuộc: không đổi = 1.
+- Mô hình: `logit P(không đổi) ~ depth + pinnable + observable`; depth số 1–4, không có tương tác.
+- Suy luận: sai số cluster theo câu hỏi. Nếu tách hoàn toàn (ví dụ BM25 không đổi cặp nào): hồi quy Firth + bootstrap cluster theo câu, B = 2 000, 5 seed, báo khoảng rộng nhất.
+- Luật quyết định giữ nguyên §7(b). Vì n lớn nên CI depth có thể loại 0 với hiệu ứng rất nhỏ: báo thêm thay đổi xác suất dự đoán theo từng bậc depth, không đổi luật.
+- **Khám phá:** thêm `depth × pinnable`; depth phân loại; thêm ô MD3 và v1.1 với hiệu ứng cố định `pipeline`. Không gộp tỉ lệ thô giữa hai pipeline; mỗi pipeline báo riêng.
+
+## D4. Kiểm depth §7(a)
+Chính: nhóm như §7(a). Thêm một dòng in riêng: pinnable × artefact có cả 23(2), 25(4). Hai dòng khác kết luận thì báo cả hai và lấy dòng §7(a) làm kết luận.
+
+## D5. Đại lượng so ở H2(iii)
+So cùng đại lượng. **Chính:** margin oracle M6 routing (0,750) với margin oracle P2O route hosted (lần 2..20). **Phụ:** margin M-protocol cặp 1→5 P2 route với margin t0→t24h v1.1 tương ứng. "Cùng bậc" = tỉ số trong [0,1; 10] và cùng dấu, đọc trên ước lượng điểm; in kèm Newcombe.
+
+## D6. Mốc oracle lỡ và khoảng cách thời gian
+Không bù, không nội suy. In bảng từng lần: `lan`, thời điểm, khoảng cách tới golden, `late_by_s`. < 20 lần hợp lệ ở T ⇒ báo số thực với mẫu số đó. Vì có khoảng trống 04-11 → 07-11, **khám phá:** tỉ lệ đỏ theo từng lần so với khoảng cách tới golden.
+
+## D7. Runtime Ollama (V2-04)
+Giữ mọi bản ghi. **Khám phá:** ở ô local, tách cặp theo đoạn: cả hai quan sát trước 04-11 06:57; hai bên khoảng trống; cả hai sau lần chạy lại. Tách thêm mốc 03-11 20:05 vì không có bằng chứng trực tiếp về phiên bản từ đó tới 04-11 06:57. Mẫu con không ngẫu nhiên (thứ tự chạy theo plan), nên chỉ báo mô tả. Nếu cặp hai bên khoảng trống đổi nhiều hơn rõ rệt, báo như rủi ro nội tại của ô đó và bàn ở "Where the matrix was wrong".
+
+## D8. Khoảng cách trong cặp chấm
+Cặp 1→5 có khoảng cách ≥ 24 h nhưng không đều vì máy tắt. In median và khoảng. **Khám phá:** chỉ cặp ≤ 72 h. Không loại cặp ở phân tích chính.
+
+## D9. Họ model trùng với pinnability
+Bài khai rõ: ở P2/P3 hệ số `pinnable` không tách được khỏi họ và hạ tầng. **Khám phá:** qwen vs llama trên route, generate (cùng pinnable, khác họ), margin + Newcombe. Nhánh đối chứng mới (nếu anh chọn ở CP0 câu 7) là amendment riêng, không thuộc nháp này.
+
+## D10. Ô n nhỏ, nhiều so sánh, probe
+- Luật §6 giữ nguyên: n < 35 mang nhãn thiếu lực; n = 50 chỉ k = 0 mới đúng cho dự đoán ổn định. Không gộp ô để tăng n.
+- Wilson/Newcombe không hiệu chỉnh đa so sánh; bài không khẳng định theo họ giả thuyết ngoài các luật H1–H3 đã đăng ký.
+- Boundary probe §4: mô tả (số câu đổi / 20 so với cặp 1→2), không kiểm định; không phân biệt được thì báo "không xác nhận được", đúng C2.
+- PARSE_FAIL: theo §3, in tỉ lệ theo nhánh.
+
+- Commit Amendment V2-05: `d76d70eb503d73363b41db771188701787943612` (07-11-2026 14:01; dòng này thêm ở commit kế tiếp, như V2-04).
+
+## AMENDMENT V2-07 — 07-11-2026 ~15:00 (+07:00) — xử lý bản ghi bắc cầu runtime Ollama: đính chính V2-04, đổi cặp chính ô local, đọc oracle ô local, thêm khối MD3R (không đổi ô dự đoán, ngưỡng §6, mẫu, luật chấm); commit trước N4; soạn không xem outcome; duyệt CP2A 07-11-2026.
+
+**Khai báo:** soạn mà **không xem outcome** của ô nào. Chỉ đọc log hệ thống Windows, log phiên làm việc, log Ollama, các cột `task_id, status, ts, ts_end, due, late_by_s`, và token count (`prompt_eval_count` so giữa các đoạn; `eval_count` chỉ lấy trung vị theo nhóm). Lý do thay đổi là bằng chứng log về runtime (`P2/OLLAMA_RUNTIME_AUDIT_MD.md`), không phải dữ liệu đo.
+
+### (a) Đính chính V2-04
+
+Câu gạch trong V2-04 sai: tray không phải "chỉ bật lại từ 03-11 ~10:57". Dòng thời gian (+07):
+- 03-11 10:17:10: phiên đợt 32 chạy `Start-Process "ollama app.exe"`, tức tray có updater; 10:17:25 `/api/version` = `0.30.10`.
+- 03-11 18:06:27 đăng xuất; 20:01:15 đăng nhập, `Ollama.lnk` đã bật lại từ ~10:57.
+- 03-11 20:07:00 → 20:10:08: phiên RestartManager đóng `ollama.exe`, cùng chữ ký với lần cài 0.40.15 ngày 06-11 (phiên RestartManager 10:32:48 → 10:34:43 khớp `upgrade.log` 10:32:48 → 10:34:43).
+- 03-11 20:15:55: bản ghi local đầu tiên sau đó, nên lập luận "không có lỗi kết nối" không loại trừ được việc cài. Không có phiên RestartManager nào quanh các lần tray khởi động 04-11 và 05-11, và 05-11 09:06 tray đã ở 0.40.14.
+
+**Kết luận thay thế:** ba đoạn, định nghĩa trong `p2/runtime_doan.py`: **A** `ts` ≤ 03-11 18:06:27 (0.30.10); **B** giữa A và D (0.40.14, suy luận từ log hệ thống, **không có số đo phiên bản trực tiếp**); **D** `ts` ≥ 07-11 10:57:17 (0.30.10, `kiem()` xác nhận mỗi lời gọi). Đoạn B có 1 250 bản ghi local (P2 qwen 325, P3 llama 417, MD3 llama 508) và 2 lần oracle (lan03, lan04). Không bản ghi nào chạy trên 0.40.15.
+
+**Khai nguyên văn:** lỗi tiền đề V2-04 là của quy trình (tray do script khởi động; mục khởi động bị bật lại). V2-04 được viết mà không đối chiếu log phiên ngày 03-11 và log hệ thống.
+
+Ở cặp bắc cầu, điều kiện của luật §1 ("ghim mọi đầu vào", runtime thêm từ V2-04) không còn thoả, nên một lần đổi không tách được giữa bất định và đổi runtime. Các mục (b)–(e) xử lý điều này.
+
+### (b) Cặp chính của ô local P2, P3
+
+Áp cho ô 3, 4, 7, 8, 16, 17 (qwen) và 18, 19, 20, 21 (llama). **Cặp chính = lần 1 → lần k**, với k nhỏ nhất ≥ 5 sao cho cả hai lần đều thuộc đoạn A hoặc D và cách nhau ≥ 24 h (`p2.runtime_doan.chon_k`, chỉ dùng `task_id` + `ts`). Không có k thoả ⇒ cặp thiếu, n giảm theo §6. Không cần đo thêm: r06–r10 đều sẽ ở D.
+
+Cặp 1→5 đã đăng ký **vẫn in cạnh** ở mọi bảng local. Ô BM25 (9, 10) không qua Ollama và ô hosted giữ cặp 1→5. Thay đổi này áp cho mọi chỗ dùng cặp chấm của các ô trên: §6, §7, §8(ii), V2-05 D3, D4.
+
+### (c) Oracle
+
+- **Ô local (qwen classify, route, generate):** đọc **20 lần hợp lệ đầu tiên thuộc đoạn A/D** (`p2.runtime_doan.lan_oracle_local`): lan01 (golden), lan17, lan18…; lần 2..20 của danh sách này so golden. Ô hosted và BM25 (không qua Ollama) giữ 20 lần hợp lệ đầu như cũ. Bảng có lan03, lan04 **in riêng**.
+- **Tính lại (lúc viết):** hosted có 4 lần hợp lệ, local có 2. Còn 24 mốc lan18…lan41 trước T = 13-11-2026 12:00, cửa sổ trễ 2 h giữ nguyên.
+
+| Nhánh | Cần thêm | Lần thứ 20 sớm nhất | Chậm nhất | Dư lần lỡ |
+|---|---|---|---|---|
+| Hosted, BM25 | 16 | lan33, 11-11 12:00 | 13-11 12:00 | 8 |
+| Local | 18 | lan35, 12-11 00:00 | 13-11 12:00 | 6 |
+
+Khả thi. Không đủ 20 ở T ⇒ báo số thực với mẫu số đó (V2-05 D6), nhãn thiếu lực nếu n dưới mức §6.
+
+### (d) Khối MD3R
+
+Đo lại t0 + t24h của 150 mục MD3 (100 routing M2, 50 reply M4) trên 0.30.10: **300 task**, cùng `kind`, cùng `params`, `t24h` sau `t0` ≥ 24 h, ghim như MD3 (kiểm runtime mỗi lời gọi). Không đo lại t0p và probe. Ô 22–25 **chấm trên MD3R**; n = 100 và 50 như §6. MD3 cũ giữ nguyên, chạy nốt, in như phép đo bắc cầu.
+
+Lịch: chỉ ban đêm; `lich_gio.py` chọn MD3R trước P3 (chỉ đổi thứ tự, ước ~35 phút CPU cả khối). Kết quả ở `results/MD3R_20261102_v1.jsonl`.
+
+### (e) Phép đo khám phá "silent runtime update"
+
+Cặp A→B của P2 qwen và P3 llama, cùng MD3 cũ (A→B, B→D), được in dưới tên **"silent runtime update"**: tỉ lệ đổi theo stage × họ, Wilson 95 %, tách decision và artefact. Oracle lan03, lan04 so golden in cùng mục. **Không dùng làm kết luận H1, H2, H3.** Mẫu con không ngẫu nhiên (thứ tự chạy theo plan), nên cặp cùng runtime in cạnh chỉ để mô tả, không kiểm định. V2-05 D7 giữ nguyên; mục này đặt tên cho phần của nó.
+
+### Điều chỉnh liên quan
+
+- **V2-05 D2:** N4 chạy khi P2, P3, MD3, MD3R (và nhánh của V2-06 nếu có) không còn task đến hạn **và** oracle đủ 20 lần ở cả hai nhánh theo (c), hoặc qua T.
+- **Ghi chú cho V2-06:** so nhánh đối chứng hosted với P3 local **chỉ dùng cặp cùng runtime của P3** theo (b).
+
+### Thực thi
+
+`run_m_all_p2.py amend-v2-07` (hàm `amend_v2_07`) chỉ thêm 300 task MD3R ở cuối plan; 19 491 task cũ trùng khít, đúng thứ tự (`amendment_v2_07.sha256_task_cu`). `status` in thêm số lần oracle theo nhánh. Test: `tests/test_p2_offline.py::{test_amend_v2_07_chi_them_md3r, test_plan_amendment_v2_07, test_doan_runtime, test_chon_k_cung_runtime, test_lan_oracle_local_bo_doan_b}`, `tests/test_lich_gio.py::test_md3r_dem_truoc_p3_ngay_khong_chay`. Commit trước mọi bản ghi MD3R và trước N4; hash ghi ở dòng dưới (thêm ở commit kế tiếp).
+
+- Commit Amendment V2-07: `2a875a94000714eeb81c5751ee3a379dff8f0d82` (07-11-2026 ~15:03; runner chạy mã này từ 15:06:52).
+
+## AMENDMENT V2-06 — 07-11-2026 ~15:25 (+07:00) — nhánh đối chứng P3H: cùng model Llama 3.1 8B nhưng delegated, tách họ model khỏi pinnability (thêm ô, không đổi 25 ô cũ, ngưỡng §6, mẫu, luật chấm); viết và commit trước mọi lời gọi; soạn không xem outcome; duyệt CP0 câu 7, CP2A câu 2, đổi nhà cung cấp theo phiếu hỏi 07-11-2026. Viết sau V2-07 nên số thứ tự đảo.
+
+**Khai báo:** chưa nhìn outcome P2, P3, MD3, MD3R. Chỉ đọc token count trung bình của P3 để ước chi phí. Nhánh được thêm **sau** đăng ký gốc. Lý do là phản biện đe doạ thiết kế nêu ở P0 (họ model trùng pinnability: delegated ⇔ Gemini, pinnable ⇔ qwen/llama; V2-05 D9), không phải kết quả đo.
+
+**Đổi so với quyết định trước (khai nguyên văn):** CP0 và CP2A chốt Together AI. Trang chính chủ Together đọc 07-11 cho thấy model này đã gỡ khỏi serverless từ 06-03-2026 và không còn Llama serverless nào. Anh Đạt chọn lại: **OpenRouter, ghim endpoint `deepinfra/fp8`**. Chi tiết: `study/pipeline2/TOGETHER_MODEL_NOTE.md`.
+
+### Mục đích
+
+Đây là **đối chứng duy nhất tách được họ**: cùng họ llama, cùng model 3.1 8B, cùng prompt, cùng tham số, khác ở chỗ ai vận hành. Nó **không** tách được serving stack: bản hosted là `fp8` trên hạ tầng DeepInfra, bản local là Q4_K_M trên Ollama 0.30.10. Khác biệt đo được vì vậy thuộc về cả gói "delegated", đúng với định nghĩa §1, không quy riêng cho lượng tử hoá.
+
+### Thiết kế nhánh P3H
+
+- **Model:** `meta-llama/llama-3.1-8b-instruct`, `provider.order = ["deepinfra/fp8"]`, `allow_fallbacks = false`, `require_parameters = true`.
+- **Đầu vào:** 200 câu mẫu N2, stage route + generate, đúng hàm stage và khuôn prompt của P3 local (`prompt_sha256` trong manifest), generate nhận top-5 BM25 của index ghim. `temperature` 0, `seed` 0, `max_tokens` 400. Không chạy classify, retrieve.
+- **Lịch:** **5 lần**, lần k ≥ 6 h sau lúc bắt đầu lần k−1, tức **2 000 task**. Cặp chấm 1→5 (≥ 24 h, như P3). Chỉ 5 lần vì chỉ cần cặp chấm và để không kéo trễ N4. **Không chạy probe biên**, nên không xác nhận được `seed` có tới model hay không; khai như giới hạn.
+- **Smoke:** 3 task đầu (`P3HS`, route, generate, route) trên 3 id **smoke_qids_loai**, ghi `results/smoke_openrouter_20261107.jsonl`, **không chấm**. Lần 1 của mẫu chỉ chạy sau smoke cuối ok. Không kết luận gì từ smoke.
+- **Cổng key:** thiếu `OPENROUTER_API_KEY` trong `.env` ⇒ runner bỏ qua task, không lỗi, không missed, `status` in `P3H: waiting_key`. Có key thì tự chạy, không cần khởi động lại. **Tới 13-11-2026 12:00 chưa có key:** smoke không khởi động nữa, `status` in một dòng, P2B viết dòng amendment bỏ nhánh, khai ở Threats theo V2-05 D9.
+
+### Ô dự đoán mới (sinh máy móc từ luật §1: delegated)
+
+| # | Nguồn | Stage (độ sâu) | Observable | Pinnability | Dự đoán | n | Tính điểm? |
+|---|---|---|---|---|---|---|---|
+| 26 | P3H | route (2) | route (dec) | delegated (llama 8b, DeepInfra) | ổn định | 200 | có |
+| 27 | P3H | route (2) | text thô (art) | delegated | **không** | 200 | có |
+| 28 | P3H | generate (4) | kết cục (dec) | delegated | ổn định | 200 | có |
+| 29 | P3H | generate (4) | văn bản (art) | delegated | **không** | 200 | có |
+
+Luật chấm §6 nguyên văn; n = 200 ⇒ dự đoán ổn định đúng khi k ≤ 10 và cận trên Wilson ≤ 10 %; thiếu cặp thì n giảm. Sinh từ luật, **không** từ *Same Weights* hay dữ liệu nào khác.
+
+**Đếm đơn vị (V2-05 D1): 17 + 4 = 21**, viết rõ "17 + k" với k = 4, chỉ khi nhánh chạy đủ. H3 vẫn chấm trên 13 đơn vị pipeline 2 như §6. Hồi quy H1 chính (V2-05 D3) không đổi; thêm P3H chỉ ở mức khám phá.
+
+### Phân tích chính bổ sung
+
+So P3H với P3 local, route và generate riêng, **chỉ dùng cặp cùng runtime của P3** (V2-07(b)):
+- Tỉ lệ đổi R^dec, R^art trên mỗi nhánh, Wilson 95 %.
+- Margin = R^art − R^dec mỗi nhánh, Newcombe hybrid 95 %.
+- Tương phản Δ = R^art(P3H) − R^art(P3 local), Newcombe hybrid 95 %.
+
+**Đọc kết quả (đăng ký trước):** cận dưới Δ > 0 ở cả hai stage ⇒ trong cùng họ, nhánh delegated đổi artefact nhiều hơn: hệ số pinnable không chỉ là hiệu ứng họ. Khoảng chứa 0 hoặc cận trên Δ < 0 ⇒ **báo nguyên văn rằng đối chứng không ủng hộ**: khác biệt ở P2 có thể do họ model. Hai stage trái nhau ⇒ báo riêng từng stage, không gộp.
+
+### Chi phí
+
+Token trung bình thật của P3 (chỉ cột token, 929 và 927 bản ghi): route 103,2 vào / 32,1 ra; generate 924,2 vào / 32,3 ra. Ước = (1 027,4 vào + 64,4 ra) × 200 câu × 5 lần = 1 027 400 vào, 64 400 ra. × $0,02 / $0,04 mỗi 1M = **≈ 0,023 USD**, smoke không đáng kể. Chat template phía DeepInfra có thể làm số token vào lệch. **Trần chung giữ nguyên:** `budget_usd` 4,4704 + 0,0296 = dừng ở 4,50, tính cả hai nhà (`RunnerTheoGio._cong_tien`). `USD_LEDGER.md` tách dòng.
+
+### Điều chỉnh liên quan và thực thi
+
+- **V2-05 D2:** nhánh của V2-06 trong điều kiện N4 ở V2-07 là P3H. Nếu nhánh bị bỏ theo hạn key thì không còn trong điều kiện.
+- `run_m_all_p2.py amend-v2-06` chỉ thêm 2 003 task ở cuối plan; **19 791 task cũ trùng khít, đúng thứ tự** (`amendment_v2_06.sha256_task_cu`). Test: `tests/test_p3h.py`, gọi giả, không có lời gọi thật nào trong test.
+- Commit trước mọi lời gọi OpenRouter; hash ghi ở dòng dưới (thêm ở commit kế tiếp).
+
+- Commit Amendment V2-06: `1a9d2a8a4ff801d54ba06cd2901280e786f5ed16` (07-11-2026 15:27:56; runner chạy mã này từ 15:30:59, pid 1936, trước mọi lời gọi OpenRouter).
+
+## AMENDMENT V2-08 — 12-11-2026 ~17:00 (+07:00) — NGHIÊN CỨU 3: độ nhạy của oracle (tiêm thay đổi có chủ ý); viết và commit TRƯỚC mọi lời gọi của nghiên cứu 3; duyệt CP3 12-11-2026 (thiết kế ở `P3/CP3_DECISION_MD_20261112.md`)
+
+**Khai báo bắt buộc (sẽ in trong bài).** Nghiên cứu 3 được thêm **sau** khi đã biết toàn bộ kết quả nghiên cứu 2 (N4, `numbers_v2.json`, 12-11) và sau phản biện nội bộ R2 (`P3/R2_REVIEW_MD_20261112.md`, mục F3). Nó không thay, không chấm lại, không đổi kết luận nào của H1–H3 hay V2-06. Dữ liệu nghiên cứu 2 (`results/*_20261102_v1.jsonl`) giữ khoá; nghiên cứu 3 ghi file mới. Số V2-08 trước đây được giữ cho một amendment bỏ P3H, amendment đó không cần (P3H chạy đủ); nháp "dừng sớm" `P3/AMENDMENT_V2-08_DRAFT.md` vẫn là nháp không hiệu lực và không liên quan.
+
+**Thay đổi tiêm được chọn thế nào.** Chọn trên nội dung prompt và cấu hình, không nhìn outcome nào của nghiên cứu 2 theo câu hay theo ô để chọn. Thiết kế (đối tượng, nhánh, loại thay đổi, nhãn kỳ vọng, chuẩn ngoài, ba câu hỏi S1–S3) là của CP3, không đổi ở đây; mục này chỉ thêm phần thực thi chính xác.
+
+### (a) Đối tượng
+40 câu oracle (`plan_p2.json` `oracle_qids`, như §5) × 3 stage (classify, route, generate) × 2 nhánh: **hosted** `gemini-2.5-flash` (temperature 0, `thinking_budget` 0, `max_output_tokens` 400) và **local** `qwen2.5:3b` (digest `357c53fb…9e4b`, SHA-256 trọng số `5ee4f07c…caa6`, Q4_K_M) trên Ollama **0.30.10**, temperature 0, seed 0, `num_predict` 400, `num_thread` như §4. Đầu vào cố định như §3 (classify nhận đoạn vàng; generate nhận top-5 BM25 của index ghim). Không có live, không có BM25 làm đối tượng tiêm. Một **test** = (stage, câu); 40 test mỗi stage mỗi nhánh.
+
+### (b) Lần chạy và thứ tự
+Mỗi nhánh, trong **một cửa sổ ≤ 12 giờ**: 1 lần **golden mới** (chạy đầu tiên; golden của nghiên cứu 2 không dùng), 3 lần **đối chứng** C1–C3 (không đổi gì), mỗi thay đổi tiêm 1 lần. Thứ tự các lần sau golden xáo bằng `random.Random(20261112)` (hosted) và `random.Random(20261113)` (local) trên danh sách tên lần theo thứ tự viết ở (c); R1 ở ngoài phép xáo, chạy sau cùng (mục (d)). Mỗi lần gọi đủ 120 lời gọi (40 câu × 3 stage; K1 chỉ generate: 40), tuần tự.
+
+### (c) Thay đổi tiêm (nguyên văn) và nhãn kỳ vọng
+Prompt gốc là `p2/prompts.py` (CLASSIFY, ROUTE, GENERATE, SHA-256 trong manifest). Bản thay thế nằm trong `p2/s3.py` (`PROMPT_P1`, `PROMPT_P2`), nguyên văn:
+
+**P1 — sửa prompt giữ nghĩa** (diễn đạt lại, đổi thứ tự câu; giữ nguyên định dạng đầu ra). Kỳ vọng: **hành vi không đổi**.
+- classify: `Here is a question and a passage. Your task: say whether the answer to the question can be found in the passage. Output only JSON, nothing else: {"language": "<ISO 639-1 code of the question>", "answerable": <true or false>}` + `Question: {q}` + `Passage: {p}`
+- route: `You route questions for a question-answering service that has a document index. Choose exactly one route. RETRIEVE means the answer needs the index; ANSWER means general knowledge is enough; REFUSE means the question is unanswerable or unsafe.` + `Question: {q}` + `Reply exactly in the form: ROUTE: <RETRIEVE|ANSWER|REFUSE>. REASON: <one sentence>.`
+- generate: `Use only the documents below to answer the question, in at most three sentences and in the language of the question. Every claim needs its document id in square brackets, e.g. [d0123]. If the answer is not in the documents, reply exactly "NOT IN DOCUMENTS".` + `{docs}` + `Question: {q}`
+
+**P2 — sửa prompt đổi hành vi** (bỏ một ràng buộc của stage). Kỳ vọng: **đổi**.
+- classify: bỏ ràng buộc "trong đoạn văn": `Read the passage and the question. Decide whether the question can be answered at all, using the passage or your own general knowledge. Reply with JSON only, no other text: {...}` (cùng khuôn JSON, cùng thứ tự Passage, Question).
+- route: bỏ lựa chọn REFUSE: `You are the router of a question-answering service that has a document index. Decide one route: RETRIEVE (the answer needs the index) or ANSWER (general knowledge suffices). Reply exactly in the form: ROUTE: <RETRIEVE|ANSWER>. REASON: <one sentence>.` + `Question: {q}`
+- generate: bỏ ràng buộc trích dẫn: `Answer the question using only the documents below. If the documents do not contain the answer, reply exactly "NOT IN DOCUMENTS". Answer in the language of the question, in at most three sentences.` + `{docs}` + `Question: {q}`
+
+Trình phân tích decision giữ nguyên `p2/stages.py` cho mọi lần (P2 route vẫn nhận REFUSE nếu model tự viết).
+
+**M1 — đổi model cùng họ.** Kỳ vọng: **đổi**. Hosted: `gemini-2.5-flash-lite` (cùng thế hệ 2.5; cùng cấu hình, `thinking_budget` 0). Local: `qwen2.5:7b` (digest `845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e`, blob trọng số `sha256:2bada8a7450677000f678be90653b85d364de7db25eb5ea54136ada5f3933730`, Q4_K_M; đã có trên máy từ nghiên cứu 1, vừa RAM).
+
+**Q1 — đổi lượng tử hoá (local).** **BỎ trước khi chạy.** Không có bản lượng tử hoá khác của `qwen2.5:3b` trên máy; luật dataset/model (`CLAUDE.md` gốc) đòi tải vào `D:\Datasets\` với dung lượng trống ≥ 1,5 × kích thước + 20 GB, mà ổ D còn 19,6 GB (12-11 16:15) ⇒ không tải được. Không thay bằng thay đổi khác.
+
+**T1 — temperature 0 → 0,8** (mọi stage, cả hai nhánh; local giữ seed 0). Kỳ vọng: **artefact đổi, decision không rõ**.
+
+**K1 — retrieval top-5 → top-3** (chỉ generate; 3 tài liệu BM25 đầu của cùng index). Kỳ vọng: **đổi**.
+
+**R1 — runtime A → B → A (chỉ local, chạy sau cùng).** Kỳ vọng: **không rõ**. B = Ollama **0.40.16** (bản phát hành hiện hành, GitHub 2026-11-09), chạy bằng `ollama serve` từ gói chính thức `ollama-windows-amd64.zip` giải nén ở thư mục scratchpad của phiên (phần mềm, không phải dataset/model; SHA-256 gói ghi vào manifest), **không chạy bộ cài**, không đụng bản cài 0.30.10, cùng thư mục model, đặt `OLLAMA_NOPRUNE=1`. Trình tự: (1) đo `ollama --version` và `/api/version` của 0.30.10; (2) dừng server 0.30.10; (3) chạy server 0.40.16, đo hai số trên, kiểm digest + SHA-256 trọng số `qwen2.5:3b`; (4) **lần R1-B**; (5) dừng 0.40.16, chạy lại server 0.30.10 đã cài, đo lại phiên bản, digest, SHA-256; (6) **lần R1-A2** (A thứ hai). Bước (5) không về được 0.30.10 hoặc digest/SHA-256 lệch ⇒ dừng, ghi sự cố, không chạy gì thêm trên local.
+
+### (d) Cửa sổ, lịch, thứ tự ưu tiên khi thiếu giờ
+- Hosted: chạy ngay sau commit amendment này (ban ngày được, dùng mạng).
+- Local: chỉ trong khung đêm 23:00–08:00 (`p2/lich_gio.py`). Ước thời lượng từ P2O (một lần oracle 40 câu × 7 ô, gồm local qwen: 15–27 phút): ≈ 15 phút mỗi lần qwen 3B, ≈ 35 phút lần M1 (7B), tổng ≈ 3,5 giờ cho 11 lần.
+- Thứ tự ưu tiên giữ lại nếu thiếu giờ (bỏ từ cuối, ghi trước khi chạy): golden, C1, P2, M1, P1, C2, K1, T1, C3; R1 đi sau cùng. Một lần chưa bắt đầu trước 08:00 ⇒ bỏ. R1 chỉ bắt đầu nếu trước 06:00; nếu không, R1 dời sang đêm 13→14 thành **khối tự đủ**: golden' + C' + R1-B + R1-A2 trong một cửa sổ, so với golden'.
+
+### (e) Ghi kết quả
+`results/S3_20261112_v1.jsonl` + `results/S3_20261112_v1.manifest.jsonl` (mỗi lần: nhánh, tên lần, thứ tự, giờ bắt đầu/kết thúc, prompt SHA-256 mỗi stage, model, digest, SHA-256 trọng số, `ollama --version` và `/api/version` **đo trực tiếp ngay trước lần chạy** cho local, `model_version` trả về cho hosted, usage). Mỗi item: `run, arm, stage, qid, decision, artefact, ok, err`. Không sửa, không ghi đè; một lần chạy lại (nếu có) mang tên mới.
+
+### (f) Lỗi, lần hỏng, PARSE_FAIL
+- 429/503/timeout: thử lại tối đa 6 lần, lùi 2, 4, 8, 16, 32, 60 s (như backoff của core). Hết lượt ⇒ item `ok=false`.
+- Một lần chạy có > 10 % item lỗi (> 12/120) là **hỏng**: chạy lại một lần trong cửa sổ, tên `<lần>_r`; vẫn hỏng ⇒ loại lần đó, báo. Item lỗi lẻ trong lần không hỏng ⇒ test đó bị loại khỏi so sánh của riêng lần đó (ghép cặp chỉ trên test có đủ dữ liệu).
+- PARSE_FAIL là một giá trị decision (§3), so như mọi nhãn.
+- Trần USD: hosted của nghiên cứu 3 ≤ 1,00 USD (đếm từ usage × giá `gemini-2.5-flash` $0,30/$2,50, `flash-lite` $0,10/$0,40 mỗi 1M); chung với mọi phần trước, dừng cứng 4,50 (đã tiêu 1,9035 tới 12-11 16:14).
+
+### (g) Đo và luật chấm (số hoá)
+Với mỗi lần L ≠ golden, nhánh a, stage s: test i **đỏ ở suite decision** ⇔ decision(L,i) ≠ decision(golden,i); **đỏ ở suite artefact** ⇔ `mrunner.oracle.chuan_hoa`(artefact(L,i)) ≠ `chuan_hoa`(artefact(golden,i)) (như §5).
+- Đối chứng mỗi test: m_i = tỉ lệ đỏ của test i qua C1–C3 (0, ⅓, ⅔, 1). Hiệu ghép cặp của thay đổi X: Δ = (1/n) Σ_i (x_i − m_i), n = số test có đủ dữ liệu (≤ 40). Khoảng 95 %: bootstrap theo test (ghép cặp, lấy lại 40 test có hoàn lại), B = 2000, 5 seed 20261112…20261116, báo **khoảng rộng nhất** qua 5 seed (như V2-05 D3).
+- **S1** (thay đổi kỳ vọng "đổi": P2, M1, K1; mỗi nhánh × stage): suite decision đỏ nhiều hơn đối chứng ⇔ **cận dưới Δ_dec > 0**. Báo thêm Δ_art.
+- **S2** (thay đổi "giữ nghĩa": P1; mỗi nhánh × stage): "decision yên trong khi artefact đỏ" ⇔ **khoảng Δ_dec chứa 0 và cận dưới Δ_art > 0**. Báo riêng hai vế.
+- **S3** (chuẩn ngoài; classify và generate; mọi thay đổi): test **đúng** ở một lần ⇔ classify: decision = `unanswerable` khi `impossible`, `answerable` khi không; generate: (`impossible` và decision = `abstain`) hoặc (không `impossible`, decision ≠ `abstain`, và `chuan_hoa`(artefact) chứa `chuan_hoa` của ít nhất một đáp án vàng). Test **đổi thật** ở L ⇔ tính đúng/sai của nó khác golden. Báo, cho mỗi oracle: (i) trong test đổi thật, số test đỏ (Wilson 95 %); (ii) trong test đỏ, số test đổi thật; (iii) **bỏ sót của decision mà artefact bắt**: số test đổi thật, artefact đỏ, decision không đỏ. Không có ngưỡng; S3 là mô tả.
+- Route không có chuẩn ngoài ⇒ chỉ S1, S2 (mức suite).
+- R1: so R1-B và R1-A2 với golden local như một thay đổi (Δ so với C1–C3); nhãn **có kiểm soát** cho phép so A→B→A, nhưng là một lần chạy mỗi phía.
+- Khoảng không hiệu chỉnh cho nhiều so sánh; không có kết luận family-wise. Không có kết quả nào là "thất bại của nghiên cứu".
+
+### (h) Phân tích đóng băng
+`study/analysis_v3/` viết và test trên dữ liệu giả, commit, hash ghi vào `study/analysis_v3/FROZEN.md` **trước** lần đọc dữ liệu thật đầu tiên; xuất `numbers_v3.json` tất định; chạy lại trong venv mới, so byte. Đổi luật sau khi thấy số ⇒ không; phân tích thêm ⇒ nhãn post hoc.
+
+### Thực thi
+- Mã: `p2/s3.py`, `scripts/run_s3.py`, test `tests/test_s3.py` (gọi giả, không lời gọi thật).
+- Commit amendment này + mã trước mọi lời gọi của nghiên cứu 3; hash ghi ở dòng dưới (commit kế tiếp).
+
+- Commit Amendment V2-08: `b099b11a0f2429c58806d3a7c52a8413cee422db` (12-11-2026 16:20:43 +07:00), trước mọi lời gọi của nghiên cứu 3. Lời gọi kỹ thuật duy nhất trước nhánh hosted: một câu "Reply OK." tới `gemini-2.5-flash-lite` để kiểm cấu hình `thinking_budget` 0 (không phải dữ liệu, không ghi vào S3).
+- **Phụ lục V2-08 (12-11-2026 ~16:30, TRƯỚC mọi lời gọi dữ liệu): M1 nhánh hosted BỎ.** Lời gọi kỹ thuật "Reply OK." trả `404 NOT_FOUND`: "This model models/gemini-2.5-flash-lite is no longer available to new users" và với `gemini-2.5-pro`: "…is no longer available to new users"; gợi ý của API là model thế hệ 3.x. CP3 đòi "một model Gemini khác cùng thế hệ"; không còn model văn bản thế hệ 2.5 nào khác phục vụ khoá này ⇒ theo luật (c) của amendment, ghi lý do, bỏ, không thay bằng thế hệ khác. M1 local (`qwen2.5:7b`) giữ. Nhánh hosted còn: golden, C1–C3, P1, P2, T1, K1 (thứ tự xáo lại bằng cùng seed 20261112 trên danh sách không có M1).
+
+- **Đính chính V2-08 (13-11-2026, P3D, phản biện vòng 2 N10/N16; không sửa văn bản phía trên).** Giờ ghi trong tiêu đề V2-08 ("~17:00") và trong phụ lục bỏ M1 hosted ("~16:30") là giờ ước, viết sai. Giờ thật lấy từ git:
+  - commit V2-08 `b099b11`: 2026-11-12 16:20:43 +07:00;
+  - commit phụ lục `b2a3dd6`: 16:21:30;
+  - lời gọi dữ liệu đầu tiên (hosted golden): 16:21:54, theo manifest.
+
+  Cả amendment lẫn phụ lục đều được commit trước mọi lời gọi dữ liệu. Commit đóng băng phân tích `9da8209` (16:23:12) diễn ra **sau** khi hosted golden đã bắt đầu, nhưng trước lần đọc dữ liệu thật đầu tiên (16:34:27). Chữ "trước mọi lời gọi" chỉ đúng cho amendment và mã chạy, không đúng cho script phân tích.
+
+## AMENDMENT V2-09 — 13-11-2026 (+07:00) — ĐO BÙ: đối chứng local, P1′, R1 lặp; viết và commit TRƯỚC mọi lời gọi của đợt đo bù; duyệt CP4 câu 2 (`P3/CP4_DECISION_MD_20261113.md`)
+
+**Khai báo bắt buộc (sẽ in trong bài).**
+- V2-09 được thêm **sau** khi đã biết toàn bộ kết quả nghiên cứu 3 (`numbers_v3.json`, 13-11) và sau phản biện nội bộ vòng 2 (`P3/R2_CLOSURE_MD_20261113.md`, N2, N4, N6).
+- V2-09 không sửa, không chấm lại, không đổi verdict S1, S2, S3 của V2-08.
+- Dữ liệu nghiên cứu 2 và nghiên cứu 3 giữ khoá. Đợt đo bù ghi vào file mới `results/S3B_20261113_v1.jsonl` (+ `.manifest.jsonl`).
+- Mã: `p2/s3b.py` (dùng lại các hàm của `p2/s3.py`, không đổi file đó) và `scripts/run_s3b.py`.
+
+### (a) Đối chứng local: tách trạng thái server khỏi bất định trong cùng runtime (N2)
+
+**Đối tượng.** Như V2-08 (a): 40 câu oracle × classify, route, generate; `qwen2.5:3b` (digest và SHA-256 trọng số như V2-08) trên Ollama 0.30.10; temperature 0, seed 0, `num_predict` 400.
+
+**Trình tự cố định, không xáo:**
+1. Dừng mọi tiến trình ollama, khởi động lại `ollama serve` bản cài 0.30.10.
+2. Đo `ollama --version` và `/api/version` trực tiếp; kiểm ghim.
+3. **G′** (golden mới).
+4. **C1′, C2′, C3′** liền nhau. Không nạp model nào khác xen giữa.
+5. **P1′** (khối b).
+6. Nạp `qwen2.5:7b` và gọi một lời gọi "Reply OK." (không ghi vào dữ liệu).
+7. Gọi `qwen2.5:3b` lại.
+8. **D1, D2, D3** liền nhau.
+
+**Đo.** Test i đỏ ở suite decision hoặc artefact khi khác G′, theo luật như V2-08 (g).
+
+**Câu hỏi và luật.**
+- **A1:** số test đỏ của C1′–C3′ và D1–D3 so với G′, mỗi stage × suite. Mô tả, có Wilson.
+- **A2 (C′ và D có khác nhau không):** với mỗi stage × suite, lấy m_i^C = tỉ lệ đỏ của test i qua C1′–C3′ và m_i^D = tỉ lệ đỏ qua D1–D3. Δ_DC = (1/n) Σ (m_i^D − m_i^C). Khoảng 95 % bootstrap ghép cặp theo test như V2-08 (g): B = 2000, 5 seed 20261112…16, lấy khoảng rộng nhất.
+  - "Khác nhau" ⇔ khoảng không chứa 0.
+  - "Không phát hiện khác nhau" ⇔ khoảng chứa 0.
+- **A3 (mô tả):** C′ có "sạch hơn" đối chứng V2-08 không. So số test đỏ ở generate (decision, artefact) của C1′–C3′ với C1–C3 của V2-08 (8, 4, 8 decision; 22, 18, 22 artefact). Không có ngưỡng.
+
+**Dùng trong bài.** Nếu C′ ở generate có tổng test decision đỏ (cộng ba lần) nhỏ hơn C1–C3 của V2-08, C′ là mức nền chính; in cả hai.
+
+### (b) P1′: sửa prompt thật sự vô hại (N4)
+
+**Văn bản P1′, nguyên văn.** Mỗi stage chỉ đổi **một từ đồng nghĩa**; không đổi khoảng trắng nào khác, không đảo thứ tự, không đổi ràng buộc. So với `p2/prompts.py`:
+
+| Stage | Gốc | P1′ |
+|---|---|---|
+| classify | "Decide whether the passage contains the answer" | "**Determine** whether the passage contains the answer" |
+| route | "Decide one route:" | "**Choose** one route:" |
+| generate | "Cite every claim with its document id" | "Cite **each** claim with its document id" |
+
+**Kiểm thao tác (manipulation check), chạy trước P1′ trên câu oracle.**
+- **Câu hỏi:** 40 câu **ngoài** mẫu oracle, rút bằng `random.Random(20261114).sample(sorted(n2_qids − oracle_qids), 40)` (160 câu còn lại; kết quả sắp xếp; 21/40 không trả lời được). Danh sách qid nằm trong `p2/s3b.py` `MC_QIDS`.
+- **Lần chạy, mỗi nhánh:** MC-goc (prompt gốc) rồi MC-P1′ (P1′), mỗi lần 40 câu × 3 stage.
+- **Luật "thao tác đạt", mỗi nhánh:** cả ba điều sau đều đúng.
+  - classify: số câu có tính đúng theo SQuAD (luật V2-08 (g)) khác giữa MC-goc và MC-P1′ ≤ **2**;
+  - generate: số câu như vậy ≤ **2**;
+  - route: số câu có decision khác ≤ **2**.
+- **Không đạt:** vẫn chạy P1′ trên 40 câu oracle và báo là "failed manipulation check" lần hai. Không thử bản P1″.
+
+**P1′ trên 40 câu oracle.**
+- **Local:** chạy theo trình tự (a), sau C3′, so với G′ và C1′–C3′.
+- **Hosted:** trình tự cố định MC-goc → MC-P1′ → G′ → C1′ → C2′ → C3′ → P1′. Không có D.
+
+**Luật S2′** (như S2 của V2-08): khoảng Δ_dec chứa 0 **và** cận dưới Δ_art > 0, với Δ so với C1′–C3′ của cùng nhánh. Có báo thêm:
+- S3 (chuẩn ngoài) của P1′ so với G′;
+- S3 của từng C′ so với G′ (mức nền).
+
+### (c) R1 lặp: runtime A ↔ B, ba lần mỗi phía (N6)
+
+**Trình tự.** Sau D3, trên server A (0.30.10), chạy B1 → A1 → B2 → A2 → B3 → A3. B = Ollama 0.40.16 từ gói zip như V2-08 (c); A = bản cài 0.30.10.
+- Mỗi lần đổi server: dừng mọi tiến trình ollama, khởi động server mới, đo `/api/version` (và `ollama --version` với A) trực tiếp, kiểm ghim.
+- Mỗi lần chạy: 40 câu oracle × 3 stage, so với G′.
+
+**Luật.**
+- Với mỗi stage × suite: Δ_BA = (1/n) Σ (m_i^B − m_i^A), với m^B là tỉ lệ đỏ qua B1–B3 và m^A qua A1–A3; bootstrap như (a).
+- "Runtime đổi decision có lặp lại" ⇔ cận dưới Δ_BA > 0.
+- Báo thêm:
+  - số PARSE_FAIL trong các decision khác G′ ở mỗi lần B;
+  - số test đỏ ở từng lần.
+
+**Dừng.** Về 0.30.10 hỏng (phiên bản hoặc ghim lệch) ⇒ dừng mọi việc local, ghi `R1-SU-CO`.
+
+### (d) Thứ tự, cửa sổ, ưu tiên
+
+**Thứ tự cố định, không xáo** (khác V2-08 (b), có chủ ý). Ở V2-08 ba đối chứng local đã rơi sau M1, T1, K1 (N2). V2-09 đặt đối chứng **trước** mọi thay đổi để mức nền đo ở cùng trạng thái server với golden.
+
+**Hosted.** Chạy ngay sau commit amendment này.
+
+**Local.** Trong khung 23:00–08:00 ngày 13→14-11, bằng scheduled task một lần. Trình tự local:
+1. khởi động lại A;
+2. MC-goc, MC-P1′;
+3. khởi động lại A;
+4. G′, C1′, C2′, C3′, P1′;
+5. nạp 7b, rồi D1, D2, D3;
+6. B1, A1, B2, A2, B3, A3.
+
+**Ước thời lượng.** Khoảng 16 lần × 12–20 phút ≈ 4–4,5 giờ.
+
+**Khi thiếu giờ.** Một lần chỉ bắt đầu nếu dự kiến kết thúc trước 08:00 (20 phút mỗi lần). Khi giờ không đủ, cắt **từ cuối danh sách trên**: R1 bị cắt trước, theo từng cặp B/A. Không chạy B mà thiếu A theo sau.
+
+### (e) Lỗi, trần
+- Như V2-08 (f).
+- **Trần USD:** hosted của V2-09 ≤ **0,20 USD**. Script dừng trước một lần nếu đã tiêu + 0,03 > 0,20. Trần chung giữ: dừng cứng ở 4,50 (đã tiêu 2,075 trước V2-09).
+
+### (f) Phân tích đóng băng
+`study/analysis_v3b/`:
+- viết và test trên dữ liệu giả;
+- commit, ghi hash vào `study/analysis_v3b/FROZEN.md` **trước** lần đọc dữ liệu thật đầu tiên;
+- xuất `numbers_v3b.json` tất định; chạy lại trong venv mới và so byte.
+
+Không đổi luật sau khi thấy số. Phân tích thêm thì mang nhãn post hoc.
+
+### Thực thi
+Commit amendment này + mã + test giả + phân tích đóng băng trước mọi lời gọi; hash ghi ở dòng dưới (commit kế tiếp).

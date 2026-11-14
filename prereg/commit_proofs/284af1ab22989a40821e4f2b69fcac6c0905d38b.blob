@@ -1,0 +1,161 @@
+# PREREG_V2 — Pipeline 2 + họ model thứ 3 (Microduck đợt 32, TSE v2.0)
+
+**Viết:** 01-11-2026, TRƯỚC mọi bản ghi đo của plan `study/pipeline2/runner/plan_p2.json` (chưa runner nào chạy plan
+này; các file `results/P2_*`, `P2O_*`, `P3_*`, `MD3_*` chưa tồn tại).
+Commit đăng ký: `203c724788d312e0a64f5159e14b9c6cd2b15a47` (01-11-2026; commit chứa bản này + mã + plan, trước mọi bản ghi đo).
+Dòng này được thêm ở commit kế tiếp — nội dung đăng ký là bản tại commit trên (`git show 203c724:study/pipeline2/prereg/PREREG_V2.md`).
+
+Khung luật kế thừa nguyên văn từ `docs/benchmark/PREREG_M1-M4_20260916.md` (A04.4 luật chấm, A04.5 kiểm lực, A06.1–A06.4
+ô suy máy móc và kiểm depth). Chỗ nào văn bản này không nói, luật v1.1 áp dụng. Đổi bất kỳ điều gì dưới đây sau khi
+đo bắt đầu = amendment có ngày giờ, commit trước dữ liệu nó chi phối.
+
+## 0. Dự đoán sinh từ đâu — và KHÔNG từ đâu
+
+- Mọi dự đoán ô ở §6 sinh **máy móc từ luật của matrix Pin–Observe** (§1), không từ dữ liệu.
+- **Không dùng:** smoke N1 (`results/smoke_20261101.jsonl`, 20 câu — bị loại khỏi mẫu, §2); số pilot và số M1–M7 v1.1.
+- **Khai báo những gì đã thấy trước khi đăng ký** (để người đọc tự cân): (i) smoke 20 câu N1 (một lượt mỗi stage,
+  không lặp lại — không cho biết gì về ổn định); (ii) 01-11 ~09:15, kiểm đường chạy executor trên **2 câu smoke**:
+  oracle chạy 2 lần liền, artefact route đổi ở cả nhánh hosted lẫn qwen2.5:3b local (2/14 test artefact đỏ,
+  0/14 decision). Cả hai câu không thuộc mẫu. (iii) v1.1 đã thấy ô 12 (text trả lời qwen ghim đủ) **sai** — matrix
+  vẫn dự đoán "ổn định" cho artefact pinnable; dự đoán ở đây giữ đúng luật matrix, không chỉnh theo kết quả cũ.
+
+## 1. Luật matrix dùng để sinh dự đoán
+
+- Trục **Pin**: stage *caller-pinnable* khi caller ghim được mọi đầu vào quyết định output (model ghim hash, seed,
+  temperature, num_thread, prompt hash, index hash); *delegated* khi một bên khác vận hành thành phần (hosted Gemini,
+  Google Search).
+- Trục **Observe**: *decision* (nhãn rời rạc) / *artefact* (chuỗi mang decision).
+- Dự đoán: **decision → ổn định** (mọi pinnability); **artefact → không ổn định nếu delegated, ổn định nếu pinnable**.
+- Depth không thêm thông tin khi đã biết pinnability (H1). Độ sâu: classify 1, route 2, retrieve/live 3, generate 4.
+
+## 2. Mẫu
+
+- Corpus: SQuAD 2.0 dev (`$THS_DATASETS/pipeline2_corpus/dev-v2.0.json`, SHA-256 `80a5225e…82d8`), 11 873 câu.
+- **Loại 20 id smoke** = `random.Random(20261101).sample(câu, 200)[:20]` (danh sách trong plan `mau.smoke_qids_loai`).
+- **Mẫu N2**: `random.Random(20261102).sample(câu trừ smoke, 200)` → 200 câu (94 không trả lời được).
+  **Live**: 50 câu đầu của mẫu N2. **Oracle**: `random.Random(20261103).sample(mẫu N2, 40)`.
+- Danh sách id cố định trong `plan_p2.json` (`mau.n2_qids`, `live_qids`, `oracle_qids`); `p2.corpus.mau_n2` tái lập được.
+- Microduck N3: khối A `docs/benchmark/lookup_set_v1.jsonl` (100 câu, như M2 v1.1); 50 prompt M4 (`kehoach._m4_items`).
+
+## 3. Decision / artefact và luật trích xuất (hàm thuần trong `p2/stages.py`, test ở `tests/test_p2_offline.py`)
+
+| Stage | Đầu vào cố định | Decision | Artefact |
+|---|---|---|---|
+| classify | câu hỏi + **đoạn vàng** | `answerable`/`unanswerable` (trường JSON `answerable`; nhãn vàng = `is_impossible`) | JSON thô. Ngôn ngữ: **chỉ log** |
+| route | câu hỏi | `RETRIEVE`/`ANSWER`/`REFUSE` — khớp sau khi **bỏ dấu** (NFKD) | văn bản thô |
+| retrieve BM25 | câu hỏi | top-5 doc id có thứ tự | 5 đoạn trích (suy từ decision) |
+| live | câu hỏi | `SOURCES`/`NO_SOURCES` | (A) tập tên miền; (B) văn bản trả lời |
+| generate | câu hỏi + top-5 BM25 | `gold`/`other`/`nocite`/`abstain` | văn bản trả lời. Ngôn ngữ: **chỉ log** |
+
+**PARSE_FAIL** (định dạng không đọc được) là một **giá trị decision** — thất bại ở tầng decision — **không loại khỏi mẫu**:
+hai lượt cùng PARSE_FAIL là "không đổi"; PARSE_FAIL ↔ nhãn khác là "đổi".
+"Đổi" của artefact (M-protocol, §6): khác byte sau khi bỏ khoảng trắng đầu/cuối (luật v1.1); tập tên miền so như tập.
+
+## 4. Protocol đo (runner `scripts/run_p2.py`, lõi `desktop/mrunner/core.py`)
+
+- **P2** (N2): mỗi câu × {classify, route, generate} × {hosted `gemini-2.5-flash`, local `qwen2.5:3b`} + BM25: **10 lần**,
+  lần k chạy ≥ 6 h sau lúc bắt đầu lần k−1 của cùng (câu × stage × nhánh). Live: 50 câu × 10 lần, cùng luật.
+  temperature 0; hosted `thinking_budget=0`; local `seed=0`, `num_thread = cpu_count − 2`; `max_output 400`.
+- **Boundary probe (C2)**, 20 câu đầu, ngay sau lần 1: hosted `temperature 0.8` (classify, route, generate, live);
+  local `temperature 0.8` và `seed 1`. Kỳ vọng: probe đổi artefact so lần 1 **nhiều hơn** cặp lần 1→2 cùng câu; nếu
+  không ⇒ tham số ấy có thể không tới model (báo như sự cố biên, không chấm).
+- **P3** (N3, pipeline 2): `llama3.1:8b` (ghim digest `46e0c10c…` + SHA-256 trọng số `667b0c19…`), route + generate,
+  cùng protocol P2 (10 lần, ≥ 6 h, probe t0.8/seed1 trên 20 câu).
+- **MD3** (N3, Microduck): `llama3.1:8b` thay qwen ở routing (kind `m2_local`, system prompt persona v1.1) và reply
+  (`m4_local`), protocol v1.1: t0, t0p (ngay), t24h; probe seed1/t0.8 như v1.1. Ghim kiểm trước mỗi lời gọi.
+- Ghim local kiểm **mỗi lời gọi** (digest + băm lại file trọng số); lệch ⇒ task lỗi, không bản ghi "ok".
+- Trần USD: cả đợt 5,00, **dừng 4,50**; plan đặt `budget_usd = 4,4704` (= 4,50 − 0,0296 đã tiêu trước plan). Grounding
+  đếm theo ngày Pacific, hạn **500 RPD**.
+
+## 5. Oracle (RQ3)
+
+- 40 câu oracle × {classify, route, generate} × {hosted, local qwen} + BM25 (7 ô) = 280 test mỗi bộ. Không live.
+- Hai bộ pytest: `tests_p2_decision/` (decision == golden), `tests_p2_artefact/` (`mrunner.oracle.chuan_hoa` == golden).
+- **Lịch**: 24 mốc 09:00 và 21:00 (+07), 02-11 → 13-11-2026; luật missed như M6 sau A08 (trễ > 2 h ⇒ missed, không bù).
+  Golden = lần hợp lệ đầu tiên. **Đọc 20 lần hợp lệ đầu tiên** (lần 2..20 so golden); < 20 ⇒ báo số thực.
+- Ước lượng: re-execution failure rate của bộ B ở ô c = số test đỏ ≥ 1 lần trong lần 2..20 / số test, Wilson 95 %;
+  **margin** = rate(artefact) − rate(decision), Newcombe hybrid 95 %. Bảng 2×2 ghép cặp (decision đỏ mà artefact không
+  ⇒ kiểm nhất quán, A06.1).
+
+## 6. Ô dự đoán và luật chấm
+
+**Cặp chấm:** P2/P3 lần 1 → lần 5 (≥ 24 h, tương đương t0→t24h v1.1); MD3 t0 → t24h. Mọi cặp khác (1→k, "đổi ở bất kỳ
+lần nào") in ra, nhãn exploratory. **Luật (A04.4, nguyên văn):** dự đoán ổn định *đúng* ⇔ k/n ≤ 5 % **và** cận trên
+Wilson ≤ 10 %; *sai* ⇔ k/n ≥ 20 %. Dự đoán không ổn định *đúng* ⇔ k/n ≥ 20 %; *sai* ⇔ k/n ≤ 5 %. Vùng giữa: không phân
+định, nhưng tính *sai* nếu ước lượng điểm ở nửa ngược chiều (ranh 12,5 %). **Kiểm lực:** 0/n đạt cận trên ≤ 10 % khi
+n ≥ 35 (n = 200 → k ≤ 10 cho phép đúng; n = 100 → k ≤ 4; n = 50 → chỉ k = 0, cận trên 7,1 %). Cặp nào thiếu (lỗi, missed)
+⇒ n giảm; đơn vị n < 35 mang nhãn **thiếu lực** cho dự đoán ổn định (vẫn có thể sai).
+
+| # | Nguồn | Stage (độ sâu) | Observable | Pinnability | Dự đoán | n | Tính điểm? |
+|---|---|---|---|---|---|---|---|
+| 1 | P2 | classify (1) | answerable (dec) | delegated (gemini) | ổn định | 200 | có |
+| 2 | P2 | classify (1) | JSON thô (art) | delegated | **không** | 200 | có |
+| 3 | P2 | classify (1) | answerable (dec) | pinnable (qwen 3b) | ổn định | 200 | không — suy từ ô 4 (A06.1) |
+| 4 | P2 | classify (1) | JSON thô (art) | pinnable | ổn định | 200 | có |
+| 5 | P2 | route (2) | route (dec) | delegated | ổn định | 200 | có |
+| 6 | P2 | route (2) | text thô (art) | delegated | **không** | 200 | có |
+| 7 | P2 | route (2) | route (dec) | pinnable | ổn định | 200 | không — suy từ ô 8 |
+| 8 | P2 | route (2) | text thô (art) | pinnable | ổn định | 200 | có |
+| 9 | P2 | retrieve BM25 (3) | top-5 id (dec) | pinnable | ổn định | 200 | có |
+| 10 | P2 | retrieve BM25 (3) | đoạn trích (art) | pinnable | ổn định | 200 | không — suy từ ô 9 |
+| 11 | P2 | live (3) | SOURCES (dec) | delegated | ổn định | 50 | có (n = 50: đúng chỉ khi 0/50) |
+| 12 | P2 | live (3) | tập tên miền (art A) | delegated | **không** | 50 | có |
+| 13 | P2 | live (3) | văn bản (art B) | delegated | **không** | 50 | có |
+| 14 | P2 | generate (4) | kết cục (dec) | delegated | ổn định | 200 | có |
+| 15 | P2 | generate (4) | văn bản (art) | delegated | **không** | 200 | có |
+| 16 | P2 | generate (4) | kết cục (dec) | pinnable | ổn định | 200 | không — suy từ ô 17 |
+| 17 | P2 | generate (4) | văn bản (art) | pinnable | ổn định | 200 | có |
+| 18 | P3 | route (2) | route (dec) | pinnable (llama 8b) | ổn định | 200 | không — suy từ ô 19 |
+| 19 | P3 | route (2) | text thô (art) | pinnable (llama 8b) | ổn định | 200 | có |
+| 20 | P3 | generate (4) | kết cục (dec) | pinnable (llama 8b) | ổn định | 200 | không — suy từ ô 21 |
+| 21 | P3 | generate (4) | văn bản (art) | pinnable (llama 8b) | ổn định | 200 | có |
+| 22 | MD3 | routing (2) | `lookup` (dec) | pinnable (llama 8b) | ổn định | 100 | không — suy từ ô 23 |
+| 23 | MD3 | routing (2) | text thô (art) | pinnable (llama 8b) | ổn định | 100 | có |
+| 24 | MD3 | reply (4) | nhãn ngôn ngữ (dec) | pinnable (llama 8b) | ổn định | 50 | không — suy từ ô 25 |
+| 25 | MD3 | reply (4) | `reply_text` (art) | pinnable (llama 8b) | ổn định | 50 | có (n = 50) |
+
+Lưới pipeline 2 có **17 ô** (cùng lưới 17 ô của Microduck v1.1; kế hoạch ghi "15" là số đơn vị v1.1). **Đơn vị tính điểm:
+pipeline 2 = 13** (ô 1, 2, 4, 5, 6, 8, 9, 11, 12, 13, 14, 15, 17); N3 = 4 (19, 21, 23, 25). Tổng 17.
+**H3 (phần dự đoán):** ≥ 2/3 đơn vị pipeline 2 đã phân định là *đúng*, tức ≥ ⌈2/3 × số đã phân định⌉; báo cả đúng/13.
+
+## 7. Kiểm depth (H1)
+
+(a) Nhóm A06.4 trên đơn vị §6: delegated × decision {1(1), 5(2), 11(3), 14(4)}; delegated × artefact {2(1), 6(2), 12(3),
+13(3), 15(4)}; pinnable × artefact {4(1), 8(2), 17(4), 19(2), 21(4)}; pinnable × decision chỉ ô 9 — không so. Luật hỗ trợ /
+bác / không phân định như A06.4.
+(b) **Hồi quy logistic** (N4): đơn vị = cặp (lần 1, lần 5) của mỗi (câu × ô tính điểm, P2 + P3); biến phụ thuộc = không
+đổi (1/0); biến độc lập = depth (1–4, số) và pinnable (0/1), + observable (dec/art); báo hệ số + 95 % CI (cluster theo câu
+hỏi); H1 được ủng hộ khi CI hệ số pinnable > 0 và CI hệ số depth chứa 0. Bootstrap/MC ≥ 5 seed.
+
+## 8. H2 — margin qua pipeline và họ
+
+Margin M-protocol từng stage × nhánh = R^dec − R^art trên cặp (1→5), Newcombe 95 %. **H2 ủng hộ** khi: (i) ở mọi stage
+delegated của P2 (classify, route, generate; live A/B so với SOURCES) cận dưới Newcombe > 0; (ii) ở stage pinnable (qwen P2,
+llama P3, llama MD3) |margin| ≤ 0,05 hoặc khoảng chứa 0; (iii) dấu và bậc độ lớn (cùng thập phân bậc, tỉ ≤ 10) của margin
+delegated trùng giữa Microduck v1.1 (M6 routing 0,750) và P2 route. Bất kỳ phần nào ngược ⇒ in như kết quả.
+
+## 9. H3 — oracle
+
+Biết trước: ở mọi ô decision tính từ artefact, rate(decision) ≤ rate(artefact) **theo cấu trúc** (A06.1) — không phải bằng
+chứng. Nội dung thực nghiệm là **độ lớn**: H3 ủng hộ khi ở ô oracle delegated (classify, route, generate hosted) cận dưới
+Newcombe của margin > 0, và ở ô pinnable (qwen, BM25) khoảng chứa 0. Cùng với phần dự đoán ô (§6).
+
+## 10. Vận hành, lệch, dừng
+
+- Một runner (LOCK chung `docs/benchmark/runner`); watchdog Task Scheduler 15 phút gọi `run_p2.py --ensure`.
+- Việc nặng hoãn khi CPU bận do tiến trình khác hoặc RAM trống < 6 GB. Pytest/commit chỉ qua `runner_safe` / `commit_safe`.
+- Dừng hosted ở trần; task local chạy tiếp. Lỗi API ⇒ file `.errors.jsonl`, thử lại theo backoff của core.
+- Báo mọi lệch lịch (`late_by_s`), missed, lỗi ghim; không sửa bản ghi.
+
+---
+
+## AMENDMENT V2-01 — 01-11-2026 ~09:35 (+07:00) — đổi tên script runner (vận hành; không đổi thiết kế, mẫu, ô, luật chấm)
+
+- Runner khởi động 09:20:53 bằng `scripts/run_p2.py`. `mrunner.core.pid_song` và `mrunner.gate` chỉ nhận runner khi
+  cmdline chứa `run_m_all` ⇒ runner p2 bị coi là chết: một lần chạy tiền cảnh (`run --max-steps 1`, 09:21:02) chiếm
+  LOCK như khoá cũ, chạy một bước (task BM25 — bản ghi trùng bị core từ chối, không ghi) rồi thoát và xoá LOCK.
+  Trong ~2 phút, gate có thể báo `free`. Không pytest/commit nào chạy trong khoảng ấy.
+- 09:23 PAUSE → PAUSED_ACK → dừng runner. Trên đĩa: `results/P2_20261102_v1.jsonl` 221 bản ghi ok, 0 trùng (200 BM25 r01,
+  9 classify local r01, 6 route local r01, 6 generate local r01), mọi bản ghi sau commit đăng ký `203c724`. **Giữ nguyên.**
+- Sửa: đổi tên `scripts/run_p2.py` → `scripts/run_m_all_p2.py` (khớp định danh cổng; không sửa `desktop/`), thêm test
+  `test_ten_runner_duoc_gate_nhan`. Mọi nhắc `run_p2.py` ở trên đọc là `run_m_all_p2.py`.

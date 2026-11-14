@@ -1,0 +1,13 @@
+tree 5d65783ee728289cf7cb259475d6aca3c2baa2ad
+parent 3229cd32e5aea2270aba26f6a3760023aa944f44
+author unknown <lamquocdat@gmail.com> 1794023820 +0700
+committer unknown <lamquocdat@gmail.com> 1794023820 +0700
+
+dot32-P0: Amendment V2-04 - noi moc cuoi oracle P2O toi 13-11 12:00 + ghim runtime Ollama 0.30.10
+
+v=3, m=13, toi da 15 < 20 trong cua so V2-02; them lan29..lan41, giu lan01..28, nhip 6 h,
+cua so tre 2 h, 20 lan hop le dau. 19 450 task khac trung khit (sha256 trong plan).
+Tray app tu cap nhat luc runner dung (0.30.10 -> 0.40.15): ha lai 0.30.10, tat tray/Ollama.lnk,
+kiem() tu choi khi runtime lech. Khai trong PREREG. Khong doc outcome khi viet.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

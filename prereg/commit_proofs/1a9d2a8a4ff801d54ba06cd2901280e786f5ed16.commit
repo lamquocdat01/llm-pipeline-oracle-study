@@ -1,0 +1,13 @@
+tree b646f3949e3e4b39d824eba411ebcb9f2e9dafe6
+parent 2a875a94000714eeb81c5751ee3a379dff8f0d82
+author unknown <lamquocdat@gmail.com> 1794040076 +0700
+committer unknown <lamquocdat@gmail.com> 1794040076 +0700
+
+P2A2: Amendment V2-06 + khoi P3H cho key - doi chung cung ho Llama 3.1 8B delegated
+
+Together da go Llama 3.1 8B khoi serverless tu 06-03-2026; anh Dat chon OpenRouter, ghim deepinfra/fp8, tat fallback.
+P3H: 200 cau x route, generate x 5 lan = 2 000 task, them 3 smoke khong cham; o moi 26-29 sinh tu luat ma tran; 17 + 4 don vi.
+Thieu OPENROUTER_API_KEY: runner bo qua, status in waiting_key, khong loi, khong missed. Tran chung tinh ca hai nha.
+19 791 task cu trung khit (sha256 trong plan). Ghi hash V2-07. Chua co loi goi API nao; test dung mock. Khong xem outcome.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

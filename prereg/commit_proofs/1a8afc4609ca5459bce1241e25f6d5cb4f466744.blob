@@ -1,0 +1,77 @@
+"""Lịch chọn task theo giờ cho runner p2 (vận hành, 03-11-2026; không đổi task/mốc/PREREG).
+
+Máy: 23:00–08:00 bật, không ai dùng; 08:00–23:00 người dùng làm việc trên máy.
+- Đêm: oracle + P3 + MD3 chọn trước, P2 còn lại sau; ngưỡng hoãn RAM 3 GB.
+- Ngày: chỉ oracle (đúng mốc), P2 hosted + retrieve; P3 khi RAM trống ≥ 8 GB; ngưỡng hoãn RAM 6 GB.
+"""
+from __future__ import annotations
+
+from datetime import datetime
+
+from p2 import REPO  # noqa: F401  (đặt desktop vào sys.path)
+from mrunner.core import Runner  # noqa: E402
+
+# Máy: 23:00–08:00 bật, không ai dùng; 08:00–23:00 người dùng làm việc trên máy. Chỉ đổi THỨ TỰ/LÚC chọn
+# task — không đổi task, mốc, params, luật missed (đã có ở plan). Không sửa `desktop/mrunner/core.py`.
+DEM_TU, DEM_DEN = 23, 8          # [23:00, 08:00)
+RAM_DEM_GB = 3.0                 # ban đêm không có tiến trình khác
+RAM_P3_NGAY_GB = 8.0             # ban ngày P3 (llama 8B) chỉ khi RAM trống ≥ 8 GB
+
+
+def la_dem(gio: int) -> bool:
+    return gio >= DEM_TU or gio < DEM_DEN
+
+
+def ram_trong_gb() -> float:
+    import psutil
+    return psutil.virtual_memory().available / 2 ** 30
+
+
+def cho_phep_ngay(t: dict, ram_gb: float) -> bool:
+    """08:00–23:00: oracle (đúng mốc), P2 hosted + retrieve (BM25); P3 chỉ khi RAM ≥ 8 GB; P2 local qwen, MD3: không."""
+    if t["m"] == "P2O":
+        return True
+    if t["m"] == "P2":
+        return bool(t.get("hosted")) or t["kind"] == "p2_retrieve"
+    if t["m"] == "P3":
+        return ram_gb >= RAM_P3_NGAY_GB
+    return False
+
+
+def uu_tien_md3r(t: dict) -> bool:
+    """V2-07(d): t0 của MD3R không có `after` nên core xếp nó sau mọi task có `after`; không có lớp này nó phải chờ
+    P3 chạy hết. Chỉ đổi thứ tự, MD3R chỉ ~35 phút CPU cho cả t0 + t24h."""
+    return t["m"] in ("P2O", "MD3R")
+
+
+def uu_tien_dem(t: dict) -> bool:
+    """23:00–08:00: oracle + P3 + MD3 chọn trước; còn lại (P2) chỉ khi nhóm này không có task sẵn sàng."""
+    return t["m"] in ("P2O", "P3", "MD3", "MD3R")
+
+
+class RunnerTheoGio(Runner):
+    """Lọc danh sách task trước khi `Runner.pick` của core chọn. Oracle luôn có trong mọi lượt lọc nên luật
+    missed (trễ > 2 h) vẫn được core xét đủ."""
+
+    def __init__(self, *a, gio=None, ram=ram_trong_gb, **kw) -> None:
+        super().__init__(*a, **kw)
+        self._tat_ca = self.tasks
+        self._gio = gio or (lambda now: datetime.fromtimestamp(now).hour)
+        self._ram = ram
+
+    def _pick_voi(self, tasks, s, now):
+        self.tasks = tasks
+        try:
+            return super().pick(s, now)
+        finally:
+            self.tasks = self._tat_ca
+
+    def pick(self, s, now):
+        if la_dem(self._gio(now)):
+            for lop in (uu_tien_md3r, uu_tien_dem):
+                t, wake, missed = self._pick_voi([x for x in self._tat_ca if lop(x)], s, now)
+                if t is not None or missed:
+                    return t, wake, missed
+            return super().pick(s, now)
+        ram = self._ram()
+        return self._pick_voi([x for x in self._tat_ca if cho_phep_ngay(x, ram)], s, now)

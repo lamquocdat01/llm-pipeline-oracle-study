@@ -1,0 +1,324 @@
+r"""Nghiên cứu 3 — độ nhạy của oracle (AMENDMENT V2-08, PREREG_V2). Dùng lại `p2.stages` (luật decision/artefact),
+`p2.bm25`, `p2.corpus`; KHÔNG đổi mã nghiên cứu 2.
+
+Một "lần" = 40 câu oracle × stage (classify, route, generate) trên một nhánh (hosted | local), với một biến thể:
+golden, C1–C3 (không đổi), P1, P2 (prompt), M1 (model), T1 (temperature 0,8), K1 (top-3, chỉ generate),
+R1-B / R1-A2 (runtime). Q1 bị bỏ trước khi chạy (V2-08 (c)).
+
+Mọi lời gọi thật đi qua `Goi` (tiêm được) để test chạy với hàm giả.
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+import random
+import subprocess
+import time
+import urllib.error
+import urllib.request
+from dataclasses import dataclass, field
+from datetime import datetime
+from pathlib import Path
+
+from . import P2_DIR, backends, bm25, prompts, stages
+
+RESULT = P2_DIR / "results" / "S3_20261112_v1.jsonl"
+MANIFEST = P2_DIR / "results" / "S3_20261112_v1.manifest.jsonl"
+STAGES = ("classify", "route", "generate")
+SEED_HOSTED, SEED_LOCAL = 20261112, 20261113
+# Thứ tự viết ở V2-08 (c); xáo bằng seed. R1 ngoài phép xáo, sau cùng.
+RUNS_HOSTED = ["C1", "C2", "C3", "P1", "P2", "M1", "T1", "K1"]
+RUNS_LOCAL = ["C1", "C2", "C3", "P1", "P2", "M1", "T1", "K1"]
+UU_TIEN_LOCAL = ["golden", "C1", "P2", "M1", "P1", "C2", "K1", "T1", "C3"]   # V2-08 (d): bỏ từ cuối khi thiếu giờ
+OLLAMA_A = "0.30.10"
+OLLAMA_B = "0.40.16"
+M1_HOSTED = "gemini-2.5-flash-lite"
+M1_LOCAL = "qwen2.5:7b"
+GIA = {"gemini-2.5-flash": (0.30, 2.50), "gemini-2.5-flash-lite": (0.10, 0.40)}   # USD / 1M token vào, ra
+TRAN_S3_USD = 1.00
+
+# Ghim cho model local của nghiên cứu 3 (qwen2.5:3b như PIN của nghiên cứu 2; 7b từ /api/tags 12-11-2026 16:20).
+PIN_S3 = {
+    "qwen2.5:3b": {"manifest_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+                   "weights_sha256": "5ee4f07cdb9beadbbb293e85803c569b01bd37ed059d2715faa7bb405f31caa6"},
+    "qwen2.5:7b": {"manifest_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+                   "weights_sha256": "2bada8a7450677000f678be90653b85d364de7db25eb5ea54136ada5f3933730"},
+}
+
+# ------------------------------------------------------------------ prompt thay thế (nguyên văn V2-08 (c))
+PROMPT_P1 = {
+    "classify": ("Here is a question and a passage. Your task: say whether the answer to the question can be found in "
+                 "the passage. Output only JSON, nothing else: "
+                 '{{"language": "<ISO 639-1 code of the question>", "answerable": <true or false>}}\n\n'
+                 "Question: {q}\n\nPassage: {p}"),
+    "route": ("You route questions for a question-answering service that has a document index. Choose exactly one "
+              "route. RETRIEVE means the answer needs the index; ANSWER means general knowledge is enough; REFUSE "
+              "means the question is unanswerable or unsafe.\nQuestion: {q}\n"
+              "Reply exactly in the form: ROUTE: <RETRIEVE|ANSWER|REFUSE>. REASON: <one sentence>."),
+    "generate": ("Use only the documents below to answer the question, in at most three sentences and in the language "
+                 "of the question. Every claim needs its document id in square brackets, e.g. [d0123]. If the answer "
+                 "is not in the documents, reply exactly \"NOT IN DOCUMENTS\".\n\n{docs}\n\nQuestion: {q}"),
+}
+PROMPT_P2 = {
+    "classify": ("Read the passage and the question. Decide whether the question can be answered at all, using the "
+                 "passage or your own general knowledge. Reply with JSON only, no other text: "
+                 '{{"language": "<ISO 639-1 code of the question>", "answerable": <true or false>}}\n\n'
+                 "Passage: {p}\n\nQuestion: {q}"),
+    "route": ("You are the router of a question-answering service that has a document index. Decide one route: "
+              "RETRIEVE (the answer needs the index) or ANSWER (general knowledge suffices). "
+              "Reply exactly in the form: ROUTE: <RETRIEVE|ANSWER>. REASON: <one sentence>.\nQuestion: {q}"),
+    "generate": ("Answer the question using only the documents below. If the documents do not contain the answer, "
+                 "reply exactly \"NOT IN DOCUMENTS\". Answer in the language of the question, in at most three "
+                 "sentences.\n\n{docs}\n\nQuestion: {q}"),
+}
+GOC = {"classify": prompts.CLASSIFY, "route": prompts.ROUTE, "generate": prompts.GENERATE}
+
+
+def sha(s: str) -> str:
+    return hashlib.sha256(s.encode("utf-8")).hexdigest()
+
+
+@dataclass(frozen=True)
+class BienThe:
+    """Cấu hình một lần chạy (biến thể). `prompt[stage]`, model, temperature, k, các stage chạy."""
+    ten: str
+    prompt: dict
+    model_hosted: str = backends.HOSTED_MODEL
+    model_local: str = backends.LOCAL_MODEL
+    temperature: float = 0.0
+    k: int = stages.K
+    stages_chay: tuple = STAGES
+    runtime: str = OLLAMA_A
+
+
+def bien_the(ten: str) -> BienThe:
+    if ten in ("golden", "C1", "C2", "C3", "R1-A2"):
+        return BienThe(ten, GOC)
+    if ten == "P1":
+        return BienThe(ten, PROMPT_P1)
+    if ten == "P2":
+        return BienThe(ten, PROMPT_P2)
+    if ten == "M1":
+        return BienThe(ten, GOC, model_hosted=M1_HOSTED, model_local=M1_LOCAL)
+    if ten == "T1":
+        return BienThe(ten, GOC, temperature=0.8)
+    if ten == "K1":
+        return BienThe(ten, GOC, k=3, stages_chay=("generate",))
+    if ten == "R1-B":
+        return BienThe(ten, GOC, runtime=OLLAMA_B)
+    raise ValueError(ten)
+
+
+def thu_tu(arm: str) -> list[str]:
+    """golden trước; các lần còn lại xáo bằng seed của nhánh (V2-08 (b))."""
+    ds = list(RUNS_HOSTED if arm == "hosted" else RUNS_LOCAL)
+    random.Random(SEED_HOSTED if arm == "hosted" else SEED_LOCAL).shuffle(ds)
+    return ["golden"] + ds
+
+
+# ------------------------------------------------------------------ gọi model (tiêm được)
+class Loi429(Exception):
+    pass
+
+
+def hosted_goi(prompt: str, model: str, temperature: float) -> dict:
+    from google.genai import types
+    cfg = types.GenerateContentConfig(temperature=temperature, max_output_tokens=backends.MAX_OUT,
+                                      thinking_config=types.ThinkingConfig(thinking_budget=0))
+    try:
+        r = backends._client().models.generate_content(model=model, contents=prompt, config=cfg)
+    except Exception as e:                       # google.genai.errors.APIError: mã 429/503 ⇒ thử lại
+        code = getattr(e, "code", None)
+        if code in (429, 500, 503, 504):
+            raise Loi429(f"{code}: {str(e)[:200]}") from None
+        raise
+    um = r.usage_metadata
+    text = r.text or ""
+    if not text.strip():
+        raise RuntimeError("hosted trả rỗng")
+    return {"text": text, "model_version": r.model_version,
+            "usage": {"in": um.prompt_token_count or 0, "out": (um.candidates_token_count or 0) + (um.thoughts_token_count or 0)}}
+
+
+def local_goi(prompt: str, model: str, temperature: float) -> dict:
+    from mrunner.thuc import ha_uu_tien_ollama, ollama_chat, so_luong
+    ha_uu_tien_ollama()
+    opt = {"temperature": temperature, "seed": 0, "num_predict": backends.MAX_OUT}
+    try:
+        r = ollama_chat(model, [{"role": "user", "content": prompt}], opt, timeout=900)
+    except (urllib.error.URLError, TimeoutError) as e:
+        raise Loi429(str(e)[:200]) from None
+    return {"text": (r.get("message") or {}).get("content", ""), "eval_count": r.get("eval_count"),
+            "tham_so": {**opt, "num_thread": so_luong()}}
+
+
+@dataclass
+class Goi:
+    hosted: object = hosted_goi
+    local: object = local_goi
+    ngu: object = time.sleep
+
+
+LUI = (2, 4, 8, 16, 32, 60)
+
+
+def goi_co_thu_lai(fn, *a, ngu=time.sleep) -> dict:
+    """V2-08 (f): 429/503/timeout thử lại tối đa 6 lần (2…60 s). Lỗi khác ném ngay."""
+    for i in range(len(LUI) + 1):
+        try:
+            return fn(*a)
+        except Loi429:
+            if i == len(LUI):
+                raise
+            ngu(LUI[i])
+    raise AssertionError
+
+
+# ------------------------------------------------------------------ một lần chạy
+def du_lieu():
+    from .executors import du_lieu as dl
+    return dl()
+
+
+def mot_lan(arm: str, bt: BienThe, qids: list[str], goi: Goi, data=None) -> tuple[list[dict], dict]:
+    """Trả (items, usage). Item lỗi sau thử lại ⇒ ok=False, err (không ném)."""
+    c = data or du_lieu()
+    usage = {"in": 0, "out": 0}
+    items = []
+    for qid in qids:
+        q = c["q"][qid]
+        for st in bt.stages_chay:
+            tpl = bt.prompt[st]
+            if st == "classify":
+                pr = tpl.format(p=c["by_id"][q.gold_doc]["text"], q=q.question)
+            elif st == "route":
+                pr = tpl.format(q=q.question)
+            else:
+                top = [c["by_id"][d] for d, _ in bm25.search(c["idx"], q.question, bt.k)]
+                pr = tpl.format(docs=prompts.khoi_doc(top), q=q.question)
+            it = {"stage": st, "qid": qid}
+            try:
+                if arm == "hosted":
+                    r = goi_co_thu_lai(goi.hosted, pr, bt.model_hosted, bt.temperature, ngu=goi.ngu)
+                    usage["in"] += r["usage"]["in"]
+                    usage["out"] += r["usage"]["out"]
+                    it["model_version"] = r.get("model_version")
+                else:
+                    r = goi_co_thu_lai(goi.local, pr, bt.model_local, bt.temperature, ngu=goi.ngu)
+                    it["eval_count"] = r.get("eval_count")
+                text = r["text"]
+                if st == "classify":
+                    dec = stages.dec_classify(text)
+                elif st == "route":
+                    dec = stages.dec_route(text)
+                else:
+                    dec = stages.dec_generate(text, q.gold_doc)
+                it.update(ok=True, decision=dec, artefact=text)
+            except Exception as e:                                   # noqa: BLE001 — ghi lỗi, không bỏ lần chạy
+                it.update(ok=False, err=f"{type(e).__name__}: {str(e)[:300]}")
+            items.append(it)
+    return items, usage
+
+
+def usd(model: str, u: dict) -> float:
+    gi, go = GIA[model]
+    return (u["in"] * gi + u["out"] * go) / 1e6
+
+
+def hong(items: list[dict]) -> bool:
+    """V2-08 (f): > 10 % item lỗi ⇒ lần hỏng."""
+    return sum(1 for i in items if not i["ok"]) > 0.10 * len(items)
+
+
+# ------------------------------------------------------------------ runtime local: đo, ghim, đổi A ↔ B
+INSTALLED = Path(os.environ.get("LOCALAPPDATA", "")) / "Programs" / "Ollama" / "ollama.exe"
+
+
+def api_version() -> str | None:
+    from mrunner.thuc import OLLAMA
+    try:
+        with urllib.request.urlopen(OLLAMA + "/api/version", timeout=5) as r:
+            return json.load(r).get("version")
+    except Exception:
+        return None
+
+
+def cli_version(exe: Path) -> str:
+    kw = {"creationflags": subprocess.CREATE_NO_WINDOW} if os.name == "nt" else {}
+    r = subprocess.run([str(exe), "--version"], capture_output=True, text=True, timeout=60, **kw)
+    return (r.stdout + r.stderr).strip()
+
+
+def kiem_ghim(model: str) -> list[str]:
+    from mrunner.thuc import ollama_digest
+    from .pin import bam, manifest, thu_muc
+    p = PIN_S3[model]
+    loi = []
+    d = ollama_digest(model)
+    if d != p["manifest_digest"]:
+        loi.append(f"{model}: digest {d} ≠ ghim")
+    lop = [l for l in manifest(model)["layers"] if l["mediaType"] == "application/vnd.ollama.image.model"]
+    if len(lop) != 1 or lop[0]["digest"] != "sha256:" + p["weights_sha256"]:
+        loi.append(f"{model}: layer model không trỏ blob ghim")
+        return loi
+    blob = thu_muc() / "blobs" / ("sha256-" + p["weights_sha256"])
+    if bam(blob) != p["weights_sha256"]:
+        loi.append(f"{model}: SHA-256 trọng số lệch")
+    return loi
+
+
+def dung_ollama() -> list[str]:
+    """Dừng MỌI tiến trình ollama (server, runner con). Trả danh sách exe đã dừng."""
+    import psutil
+    da = []
+    for p in psutil.process_iter(["name", "exe"]):
+        if (p.info["name"] or "").lower().startswith("ollama"):
+            try:
+                da.append(p.info["exe"] or p.info["name"])
+                p.kill()
+            except Exception:
+                pass
+    han = time.time() + 30
+    while time.time() < han and api_version() is not None:
+        time.sleep(1)
+    return da
+
+
+def bat_ollama(exe: Path, cho_s: float = 90.0) -> str | None:
+    env = {**os.environ, "OLLAMA_NOPRUNE": "1"}
+    kw = {}
+    if os.name == "nt":
+        kw["creationflags"] = subprocess.CREATE_NO_WINDOW | subprocess.CREATE_NEW_PROCESS_GROUP
+    subprocess.Popen([str(exe), "serve"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                     stdin=subprocess.DEVNULL, env=env, cwd=str(exe.parent), **kw)
+    han = time.time() + cho_s
+    while time.time() < han:
+        v = api_version()
+        if v:
+            return v
+        time.sleep(2)
+    return None
+
+
+# ------------------------------------------------------------------ ghi
+def ghi(path: Path, rec: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8", newline="\n") as f:
+        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+
+def da_co() -> set[tuple[str, str]]:
+    """(arm, run) đã ghi đủ (không hỏng) — để chạy tiếp sau khi dừng, không ghi trùng."""
+    if not MANIFEST.exists():
+        return set()
+    out = set()
+    for l in MANIFEST.read_text(encoding="utf-8").splitlines():
+        m = json.loads(l)
+        if m.get("trang_thai") == "ok":
+            out.add((m["arm"], m["run"]))
+    return out
+
+
+def bay_gio() -> str:
+    return datetime.now().astimezone().isoformat(timespec="seconds")

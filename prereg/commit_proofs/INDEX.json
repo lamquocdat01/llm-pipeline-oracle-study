@@ -1,0 +1,909 @@
+[
+ {
+  "commit": "203c724788d312e0a64f5159e14b9c6cd2b15a47",
+  "role": "Study 2 plan",
+  "what": "Study-2 plan, measurement code and run plan",
+  "tree": "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+  "files": [
+   {
+    "path": "study/pipeline2/p2/backends.py",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "373400d1c14925d3a9ec2130cfc6171a315a35d8"
+    ],
+    "blob": "3339a39f5d72300abf78bf8dcaa68e7694927906"
+   },
+   {
+    "path": "study/pipeline2/p2/corpus.py",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "373400d1c14925d3a9ec2130cfc6171a315a35d8"
+    ],
+    "blob": "8ac5e1187bac3117129f3c040aebf30b718cdab5"
+   },
+   {
+    "path": "study/pipeline2/p2/executors.py",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "373400d1c14925d3a9ec2130cfc6171a315a35d8"
+    ],
+    "blob": "bc8aad34b36614174282f4520e497f745e482ec5"
+   },
+   {
+    "path": "study/pipeline2/p2/oracle.py",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "373400d1c14925d3a9ec2130cfc6171a315a35d8"
+    ],
+    "blob": "c65b98c2fcedb668b12ddc70f2f2642213467e5b"
+   },
+   {
+    "path": "study/pipeline2/p2/pin.py",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "373400d1c14925d3a9ec2130cfc6171a315a35d8"
+    ],
+    "blob": "5e1c920751f993d7a4752971b4457e48eac29a50"
+   },
+   {
+    "path": "study/pipeline2/p2/prompts.py",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "373400d1c14925d3a9ec2130cfc6171a315a35d8"
+    ],
+    "blob": "3c67d60efaae77516622b025d2c7dfb07eba2eee"
+   },
+   {
+    "path": "study/pipeline2/p2/stages.py",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "373400d1c14925d3a9ec2130cfc6171a315a35d8"
+    ],
+    "blob": "9aad3d23aecbdd492ec2f9918d6866cf91e8b4ed"
+   },
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "1979e68301fb0a240717803fef50ea7c0d01fc7b"
+    ],
+    "blob": "07fc1ee176e11a2ff6a9481c54175387b34a9d1f"
+   },
+   {
+    "path": "study/pipeline2/runner/plan_p2.json",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "08344757bf4f96b527c684a30888c22fb64f5885"
+    ],
+    "blob": "dbe2509bf75b9ec5d1fd88e154e7b0db12aca279"
+   },
+   {
+    "path": "study/pipeline2/scripts/run_p2.py",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "42c72b5f7919082a7d31c9e0f9c94d8d4a743b82"
+    ],
+    "blob": "e4180627ec091d52d73e3bfac17c532fe7c36f0a"
+   },
+   {
+    "path": "study/pipeline2/tests/test_p2_offline.py",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "cbeeb6870d0d64e6bf2e5b6a2b751ff9aff4a397"
+    ],
+    "blob": "b20874cda228ef5928d138529671206af722e5ac"
+   }
+  ],
+  "commit_time": "2026-11-01T09:20:20+07:00",
+  "first_governed_call": "2026-11-01T09:21:23.889+07:00",
+  "seconds_commit_to_first_call": 63.889
+ },
+ {
+  "commit": "39b530cb9d4732aabf987afe018c6ca14a880218",
+  "role": "Study 2 plan",
+  "what": "Records hash 203c724 inside the plan",
+  "tree": "d74e553c6a2955ccc8ea94d12cf1c6672609d209",
+  "files": [
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "d74e553c6a2955ccc8ea94d12cf1c6672609d209",
+     "ae1a4d6ddcc878085dcd4f1dfaba141a4fd7f0df",
+     "dfe45d6205c40148a10795a87de7bd41a3328aaf",
+     "2f737c3597741b1defdcc1bedae2fb8bc4fe91db"
+    ],
+    "blob": "d4244fa0522efe165d0e118340dcae0e07e257b9"
+   }
+  ],
+  "commit_time": "2026-11-01T09:20:28+07:00",
+  "first_governed_call": null,
+  "seconds_commit_to_first_call": null
+ },
+ {
+  "commit": "a6abb01c23f2245660f8d6d8bcfcc3365c0f85ca",
+  "role": "V2-01",
+  "what": "Runner renamed (operational)",
+  "tree": "0713901bc36842f32d8f635d13ef70291075e42e",
+  "files": [
+   {
+    "path": "study/pipeline2/p2/executors.py",
+    "trees": [
+     "0713901bc36842f32d8f635d13ef70291075e42e",
+     "b5db71ab222ce2b1650331f733217a640f640250",
+     "99d23a5310b6ef372ea6fe2a833906460c5978e9",
+     "4d153394ca8e3f7404189781cf20c20bcb0c3851"
+    ],
+    "blob": "a184573e510370b9f5dc800a1e23636df66629af"
+   },
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "0713901bc36842f32d8f635d13ef70291075e42e",
+     "b5db71ab222ce2b1650331f733217a640f640250",
+     "99d23a5310b6ef372ea6fe2a833906460c5978e9",
+     "94e8711686066fcabc195024c41eedaf89bc8b44"
+    ],
+    "blob": "284af1ab22989a40821e4f2b69fcac6c0905d38b"
+   },
+   {
+    "path": "study/pipeline2/scripts/run_m_all_p2.py",
+    "trees": [
+     "0713901bc36842f32d8f635d13ef70291075e42e",
+     "b5db71ab222ce2b1650331f733217a640f640250",
+     "99d23a5310b6ef372ea6fe2a833906460c5978e9",
+     "f291ed015a64ff2f10a1efb1aa04dbea9596b5bc"
+    ],
+    "blob": "aa91de0b40d696b52f117ac90443f11b8ab502da"
+   },
+   {
+    "path": "study/pipeline2/tests/test_p2_offline.py",
+    "trees": [
+     "0713901bc36842f32d8f635d13ef70291075e42e",
+     "b5db71ab222ce2b1650331f733217a640f640250",
+     "99d23a5310b6ef372ea6fe2a833906460c5978e9",
+     "312d8c3d72a32c964d3bd759f9ae343fc2a8bc12"
+    ],
+    "blob": "abc99ff1e1d107f2fd492ffb06c98afa9d131377"
+   }
+  ],
+  "commit_time": "2026-11-01T09:26:06+07:00",
+  "first_governed_call": null,
+  "seconds_commit_to_first_call": null
+ },
+ {
+  "commit": "b8355eb7eb442e7a22ba80edd47a17e63a3e8e67",
+  "role": "V2-02",
+  "what": "Oracle milestones 4 per day",
+  "tree": "16553572cd3d6060fdf5fa96f752c97b7ad17057",
+  "files": [
+   {
+    "path": "study/pipeline2/p2/oracle.py",
+    "trees": [
+     "16553572cd3d6060fdf5fa96f752c97b7ad17057",
+     "5e252fe2ef2843c52a86ebdf033dc9ed96840159",
+     "d1105fab81db7221685182abd2be8dbaef7ef4f2",
+     "cd83aaa0a5ccc18ccca118845e8be11c7e3b82a6"
+    ],
+    "blob": "6a6566b04a239832f0953605a0d25feb1762e7b3"
+   },
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "16553572cd3d6060fdf5fa96f752c97b7ad17057",
+     "5e252fe2ef2843c52a86ebdf033dc9ed96840159",
+     "d1105fab81db7221685182abd2be8dbaef7ef4f2",
+     "4c5ebd42bbf1ec3bffd17564e83673ce33654b9f"
+    ],
+    "blob": "61c2e3515d4313446f5522f8c6a04e2d1619af18"
+   },
+   {
+    "path": "study/pipeline2/runner/plan_p2.json",
+    "trees": [
+     "16553572cd3d6060fdf5fa96f752c97b7ad17057",
+     "5e252fe2ef2843c52a86ebdf033dc9ed96840159",
+     "d1105fab81db7221685182abd2be8dbaef7ef4f2",
+     "c6e2452fc48b96b5d784139ea281dbce5c7b13b1"
+    ],
+    "blob": "cb15bd545569a7f493cc6e4e31ef9fce6a886d97"
+   },
+   {
+    "path": "study/pipeline2/scripts/run_m_all_p2.py",
+    "trees": [
+     "16553572cd3d6060fdf5fa96f752c97b7ad17057",
+     "5e252fe2ef2843c52a86ebdf033dc9ed96840159",
+     "d1105fab81db7221685182abd2be8dbaef7ef4f2",
+     "36452c6c634b811ca330c2862f9b89fbb81114f8"
+    ],
+    "blob": "7d73f463fe5fbee48d2c70370e71b461bce634a3"
+   },
+   {
+    "path": "study/pipeline2/tests/test_p2_offline.py",
+    "trees": [
+     "16553572cd3d6060fdf5fa96f752c97b7ad17057",
+     "5e252fe2ef2843c52a86ebdf033dc9ed96840159",
+     "d1105fab81db7221685182abd2be8dbaef7ef4f2",
+     "88d067beacd2218e8aadf329678edde4bb460dc7"
+    ],
+    "blob": "f828c271f319c848cc919e78c9be8b0be8f13c94"
+   }
+  ],
+  "commit_time": "2026-11-03T10:17:04+07:00",
+  "first_governed_call": "2026-11-03T12:01:14.882+07:00",
+  "seconds_commit_to_first_call": 6250.882
+ },
+ {
+  "commit": "bbf4e22546a0424f718ccb5e59a02d598c02633e",
+  "role": "V2-03",
+  "what": "Night-time memory threshold (operational)",
+  "tree": "b83b603d8b7a0a572ec3b3828bb6dde405316ab8",
+  "files": [
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "b83b603d8b7a0a572ec3b3828bb6dde405316ab8",
+     "8dcbdbeea65921cfe61b6082846e8ff7d9611c87",
+     "6c5c7e7f0a346c31288ab85f65ef7a8f11359ef1",
+     "5d008b765dec165fab8797965a2a147c2bcfe054"
+    ],
+    "blob": "391610d8964166f889aaa946a28a5da34d40562a"
+   }
+  ],
+  "commit_time": "2026-11-03T11:15:07+07:00",
+  "first_governed_call": null,
+  "seconds_commit_to_first_call": null
+ },
+ {
+  "commit": "04408b56a07529843d82b18e600252e5a67afef1",
+  "role": "V2-04",
+  "what": "Oracle end milestone; server version pinned and checked per call",
+  "tree": "5d65783ee728289cf7cb259475d6aca3c2baa2ad",
+  "files": [
+   {
+    "path": "study/pipeline2/p2/pin.py",
+    "trees": [
+     "5d65783ee728289cf7cb259475d6aca3c2baa2ad",
+     "201f90015ad0ca489c017e92316dd47c79e7c2c2",
+     "1a1c80bb254c8f88f2247a48c0d5d344d64d8815",
+     "f1246363ecfcb9186a378777adc3c9d926db76f3"
+    ],
+    "blob": "a6c9f52b17fda36d703384a48435b74ffd8b8539"
+   },
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "5d65783ee728289cf7cb259475d6aca3c2baa2ad",
+     "201f90015ad0ca489c017e92316dd47c79e7c2c2",
+     "1a1c80bb254c8f88f2247a48c0d5d344d64d8815",
+     "7eac58f7996b184e5be5058b250605ef8d58c764"
+    ],
+    "blob": "10f98fd6fb1a6b43257d0d7169559468774a1202"
+   },
+   {
+    "path": "study/pipeline2/runner/plan_p2.json",
+    "trees": [
+     "5d65783ee728289cf7cb259475d6aca3c2baa2ad",
+     "201f90015ad0ca489c017e92316dd47c79e7c2c2",
+     "1a1c80bb254c8f88f2247a48c0d5d344d64d8815",
+     "8c2f319a9085a531811ba38c77dabcf22faf9afb"
+    ],
+    "blob": "614595b0c4415edebbc85a607cb8137737f66ea8"
+   },
+   {
+    "path": "study/pipeline2/scripts/run_m_all_p2.py",
+    "trees": [
+     "5d65783ee728289cf7cb259475d6aca3c2baa2ad",
+     "201f90015ad0ca489c017e92316dd47c79e7c2c2",
+     "1a1c80bb254c8f88f2247a48c0d5d344d64d8815",
+     "26d3cb2210d8c6158cc6ce380366acbab8f5076e"
+    ],
+    "blob": "c70a51f71295eaf3d975ab5f2b14adc26d8b5f63"
+   },
+   {
+    "path": "study/pipeline2/tests/test_p2_offline.py",
+    "trees": [
+     "5d65783ee728289cf7cb259475d6aca3c2baa2ad",
+     "201f90015ad0ca489c017e92316dd47c79e7c2c2",
+     "1a1c80bb254c8f88f2247a48c0d5d344d64d8815",
+     "1b5cdc852226141cefe72c985c928986ddfa1a69"
+    ],
+    "blob": "4e9373af8263d637b13c11362d9a9ed407d860e8"
+   }
+  ],
+  "commit_time": "2026-11-07T10:57:00+07:00",
+  "first_governed_call": null,
+  "seconds_commit_to_first_call": null
+ },
+ {
+  "commit": "d76d70eb503d73363b41db771188701787943612",
+  "role": "V2-05",
+  "what": "Study-2 analysis plan",
+  "tree": "5a5f81a9cb2f86cd084fec28f01f2b4219b584e9",
+  "files": [
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "5a5f81a9cb2f86cd084fec28f01f2b4219b584e9",
+     "4e8fd3768d9c87effc8001b6beba53d29ad21477",
+     "2c8931a7749fd246ebcb7d1f827d6a092cf3d2af",
+     "6d2290c2e0933c45980e0ccd867807e7b15d6075"
+    ],
+    "blob": "2964eb6b527e3912a1f33c23e23c69a098d88e7d"
+   }
+  ],
+  "commit_time": "2026-11-07T14:01:26+07:00",
+  "first_governed_call": null,
+  "seconds_commit_to_first_call": null
+ },
+ {
+  "commit": "2a875a94000714eeb81c5751ee3a379dff8f0d82",
+  "role": "V2-07",
+  "what": "Runtime correction; same-runtime pair; MD3R",
+  "tree": "aca4c865a4701fe1e09b85600426175821e62938",
+  "files": [
+   {
+    "path": "study/pipeline2/p2/lich_gio.py",
+    "trees": [
+     "aca4c865a4701fe1e09b85600426175821e62938",
+     "163213bec5004bfdbe12bba484ea8dae1eb4c1cf",
+     "f85714f8444b47d93889e05d03b927b517fc90ca",
+     "e7393019f9a9726fbd0db3099fbea5a656231782"
+    ],
+    "blob": "1a8afc4609ca5459bce1241e25f6d5cb4f466744"
+   },
+   {
+    "path": "study/pipeline2/p2/runtime_doan.py",
+    "trees": [
+     "aca4c865a4701fe1e09b85600426175821e62938",
+     "163213bec5004bfdbe12bba484ea8dae1eb4c1cf",
+     "f85714f8444b47d93889e05d03b927b517fc90ca",
+     "e7393019f9a9726fbd0db3099fbea5a656231782"
+    ],
+    "blob": "95fa036546eaf6a895f52adfd1f27ba14404f4e9"
+   },
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "aca4c865a4701fe1e09b85600426175821e62938",
+     "163213bec5004bfdbe12bba484ea8dae1eb4c1cf",
+     "f85714f8444b47d93889e05d03b927b517fc90ca",
+     "c4fb3b62b53a038484e70911f11edc9019188621"
+    ],
+    "blob": "d0c408b47c70164b8fcdb54d725f42d5b14aa4f0"
+   },
+   {
+    "path": "study/pipeline2/runner/plan_p2.json",
+    "trees": [
+     "aca4c865a4701fe1e09b85600426175821e62938",
+     "163213bec5004bfdbe12bba484ea8dae1eb4c1cf",
+     "f85714f8444b47d93889e05d03b927b517fc90ca",
+     "10dc562eab4439804738834fa509eaf71e403b4d"
+    ],
+    "blob": "968d302dfecb51bc98c33ffff177630b5f9181f9"
+   },
+   {
+    "path": "study/pipeline2/scripts/run_m_all_p2.py",
+    "trees": [
+     "aca4c865a4701fe1e09b85600426175821e62938",
+     "163213bec5004bfdbe12bba484ea8dae1eb4c1cf",
+     "f85714f8444b47d93889e05d03b927b517fc90ca",
+     "de92106f4f0d0ab63512c503137c09b91036f949"
+    ],
+    "blob": "a7e76c996cd52dee965b65889a9582f494d7796d"
+   },
+   {
+    "path": "study/pipeline2/tests/test_lich_gio.py",
+    "trees": [
+     "aca4c865a4701fe1e09b85600426175821e62938",
+     "163213bec5004bfdbe12bba484ea8dae1eb4c1cf",
+     "f85714f8444b47d93889e05d03b927b517fc90ca",
+     "c50e493c0ab5c78279fc9527c61022dbc802c0b3"
+    ],
+    "blob": "aa62ca5bd69405c88da1068e788b75f1b1bfbe4a"
+   },
+   {
+    "path": "study/pipeline2/tests/test_p2_offline.py",
+    "trees": [
+     "aca4c865a4701fe1e09b85600426175821e62938",
+     "163213bec5004bfdbe12bba484ea8dae1eb4c1cf",
+     "f85714f8444b47d93889e05d03b927b517fc90ca",
+     "c50e493c0ab5c78279fc9527c61022dbc802c0b3"
+    ],
+    "blob": "95ab56d832d14e32a61c73905561446379ee37d9"
+   }
+  ],
+  "commit_time": "2026-11-07T15:03:29+07:00",
+  "first_governed_call": "2026-11-07T23:17:29.913+07:00",
+  "seconds_commit_to_first_call": 29640.913
+ },
+ {
+  "commit": "1a9d2a8a4ff801d54ba06cd2901280e786f5ed16",
+  "role": "V2-06",
+  "what": "Control arm (Llama 3.1 8B, provider)",
+  "tree": "b646f3949e3e4b39d824eba411ebcb9f2e9dafe6",
+  "files": [
+   {
+    "path": "study/pipeline2/p2/backends.py",
+    "trees": [
+     "b646f3949e3e4b39d824eba411ebcb9f2e9dafe6",
+     "82cbdbb113244044377c19b922c680a8b070b21f",
+     "3a80cfb821fe27cc2bce233cea68f8ab6b19caaf",
+     "58513d5bf276a34c9ac30dbca3cdf9fcdd9708aa"
+    ],
+    "blob": "e56ce42c57ec13b7bd308eea1745136c623302d9"
+   },
+   {
+    "path": "study/pipeline2/p2/executors.py",
+    "trees": [
+     "b646f3949e3e4b39d824eba411ebcb9f2e9dafe6",
+     "82cbdbb113244044377c19b922c680a8b070b21f",
+     "3a80cfb821fe27cc2bce233cea68f8ab6b19caaf",
+     "58513d5bf276a34c9ac30dbca3cdf9fcdd9708aa"
+    ],
+    "blob": "ceefd4e3c98fbd247bda196f903b59454fe78787"
+   },
+   {
+    "path": "study/pipeline2/p2/lich_gio.py",
+    "trees": [
+     "b646f3949e3e4b39d824eba411ebcb9f2e9dafe6",
+     "82cbdbb113244044377c19b922c680a8b070b21f",
+     "3a80cfb821fe27cc2bce233cea68f8ab6b19caaf",
+     "58513d5bf276a34c9ac30dbca3cdf9fcdd9708aa"
+    ],
+    "blob": "92f01f752159096affcf1aafaa3d163f2e6b7df5"
+   },
+   {
+    "path": "study/pipeline2/p2/stages.py",
+    "trees": [
+     "b646f3949e3e4b39d824eba411ebcb9f2e9dafe6",
+     "82cbdbb113244044377c19b922c680a8b070b21f",
+     "3a80cfb821fe27cc2bce233cea68f8ab6b19caaf",
+     "58513d5bf276a34c9ac30dbca3cdf9fcdd9708aa"
+    ],
+    "blob": "4dc00fa751eddd960d1b2fc9a665276581253df0"
+   },
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "b646f3949e3e4b39d824eba411ebcb9f2e9dafe6",
+     "82cbdbb113244044377c19b922c680a8b070b21f",
+     "3a80cfb821fe27cc2bce233cea68f8ab6b19caaf",
+     "780139dc58cf798309310cf559a6407bafd2a1ed"
+    ],
+    "blob": "b033961372b84928d0e11ee8aefc06c92d1e1336"
+   },
+   {
+    "path": "study/pipeline2/runner/plan_p2.json",
+    "trees": [
+     "b646f3949e3e4b39d824eba411ebcb9f2e9dafe6",
+     "82cbdbb113244044377c19b922c680a8b070b21f",
+     "3a80cfb821fe27cc2bce233cea68f8ab6b19caaf",
+     "d956328eea387ec682b47997dbdee6ff5b4871fb"
+    ],
+    "blob": "8a0f702070ba6f179c4a0867a2c9f66ab66044ca"
+   },
+   {
+    "path": "study/pipeline2/scripts/run_m_all_p2.py",
+    "trees": [
+     "b646f3949e3e4b39d824eba411ebcb9f2e9dafe6",
+     "82cbdbb113244044377c19b922c680a8b070b21f",
+     "3a80cfb821fe27cc2bce233cea68f8ab6b19caaf",
+     "478f612e6855252e2a7a4b1b3525acded5c134a1"
+    ],
+    "blob": "84dc974a85b0cdc9d5589d0014c63a978a9a12f3"
+   },
+   {
+    "path": "study/pipeline2/tests/test_p3h.py",
+    "trees": [
+     "b646f3949e3e4b39d824eba411ebcb9f2e9dafe6",
+     "82cbdbb113244044377c19b922c680a8b070b21f",
+     "3a80cfb821fe27cc2bce233cea68f8ab6b19caaf",
+     "da57abda840e7ae53eb7c47de7f1d6f732bafade"
+    ],
+    "blob": "b7b562209d8d4b5a5b32764f1c156cf1697a1506"
+   }
+  ],
+  "commit_time": "2026-11-07T15:27:56+07:00",
+  "first_governed_call": "2026-11-09T09:29:50.899+07:00",
+  "seconds_commit_to_first_call": 151314.899
+ },
+ {
+  "commit": "4dbaaeb3a90492256c2f300c2f04a6aad54c66d0",
+  "role": "V2-05",
+  "what": "Study-2 analysis scripts frozen before the first read",
+  "tree": "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+  "files": [
+   {
+    "path": "study/analysis_v2/README.md",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb"
+    ],
+    "blob": "b87fc5909700d7e337544ff34678ac1a4d10fc73"
+   },
+   {
+    "path": "study/analysis_v2/av2/__init__.py",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb",
+     "67adbf65760983a516cb7dd94e08e6ef40d5fa44"
+    ],
+    "blob": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+   },
+   {
+    "path": "study/analysis_v2/av2/analysis.py",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb",
+     "67adbf65760983a516cb7dd94e08e6ef40d5fa44"
+    ],
+    "blob": "5f0897aaa43462eed3e969ec838a2c1a25be3faa"
+   },
+   {
+    "path": "study/analysis_v2/av2/cells.py",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb",
+     "67adbf65760983a516cb7dd94e08e6ef40d5fa44"
+    ],
+    "blob": "811b5e551cb20301150e965db0b881dcbbf6ffb7"
+   },
+   {
+    "path": "study/analysis_v2/av2/load.py",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb",
+     "67adbf65760983a516cb7dd94e08e6ef40d5fa44"
+    ],
+    "blob": "67c3ceda0a8cd166e5dd67b614ef191aa2e52441"
+   },
+   {
+    "path": "study/analysis_v2/av2/logit.py",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb",
+     "67adbf65760983a516cb7dd94e08e6ef40d5fa44"
+    ],
+    "blob": "d74d2126beda8d35e3f08f5df2568c301832136d"
+   },
+   {
+    "path": "study/analysis_v2/av2/oracle_an.py",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb",
+     "67adbf65760983a516cb7dd94e08e6ef40d5fa44"
+    ],
+    "blob": "4f095837f073830b885f089c617f45d55461ea10"
+   },
+   {
+    "path": "study/analysis_v2/av2/stats.py",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb",
+     "67adbf65760983a516cb7dd94e08e6ef40d5fa44"
+    ],
+    "blob": "b34bfed19af6b9c368a1b6a20badfc180a376773"
+   },
+   {
+    "path": "study/analysis_v2/av2/v11.py",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb",
+     "67adbf65760983a516cb7dd94e08e6ef40d5fa44"
+    ],
+    "blob": "d0d6aab2877c128f4a4d81ddcefbd522cc2232cb"
+   },
+   {
+    "path": "study/analysis_v2/requirements.txt",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb"
+    ],
+    "blob": "892d4df775abb355ad5952bd4bb278b7b0329bb4"
+   },
+   {
+    "path": "study/analysis_v2/run_analysis.py",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb"
+    ],
+    "blob": "cc912702f6e774d60d49d80d090e8fe3fd7ffcd0"
+   },
+   {
+    "path": "study/analysis_v2/tests/fake.py",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb",
+     "c6262bd8d92ab1bd165050c5852d25cbac0e57a3"
+    ],
+    "blob": "02eb39f556fbd41ca4745f6e307a59609c7e25b6"
+   },
+   {
+    "path": "study/analysis_v2/tests/test_invariants.py",
+    "trees": [
+     "1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1",
+     "e7cc6717cf05b2bc11e056768c241654d985349a",
+     "23fe30df52e2f7146789ec6cb93e021e147a51bb",
+     "c6262bd8d92ab1bd165050c5852d25cbac0e57a3"
+    ],
+    "blob": "c741c5bbd6cd342265e089f17db89c0f3d1dd0e9"
+   }
+  ],
+  "commit_time": "2026-11-12T13:02:40+07:00",
+  "first_governed_call": null,
+  "seconds_commit_to_first_call": null
+ },
+ {
+  "commit": "b099b11a0f2429c58806d3a7c52a8413cee422db",
+  "role": "V2-08",
+  "what": "Study 3 plan and code",
+  "tree": "54fdccd4a69b5b1d7c292cdd384d9e6e3012315c",
+  "files": [
+   {
+    "path": "study/pipeline2/p2/s3.py",
+    "trees": [
+     "54fdccd4a69b5b1d7c292cdd384d9e6e3012315c",
+     "5b6c0358fc58f85e2916e8d68ea5be48df569c82",
+     "89bd36384bf1cb235d0bca026ff61790061341af",
+     "09dd8b6fa15b726a1702f6df85109340e789e402"
+    ],
+    "blob": "40a96070bed95d2421493e88be3434cf4ebd050d"
+   },
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "54fdccd4a69b5b1d7c292cdd384d9e6e3012315c",
+     "5b6c0358fc58f85e2916e8d68ea5be48df569c82",
+     "89bd36384bf1cb235d0bca026ff61790061341af",
+     "6971abaec8b81868d548f1ebe6467f1532e5b7ac"
+    ],
+    "blob": "aa5dd02b2f65e390d9d0c3c6ae276138ceff854b"
+   },
+   {
+    "path": "study/pipeline2/scripts/run_s3.py",
+    "trees": [
+     "54fdccd4a69b5b1d7c292cdd384d9e6e3012315c",
+     "5b6c0358fc58f85e2916e8d68ea5be48df569c82",
+     "89bd36384bf1cb235d0bca026ff61790061341af",
+     "f2b6c5222b6ab0b340b0d100cee73b0e5e7cda37"
+    ],
+    "blob": "1aa16b22822242d8a3201f2559b438ba687bc900"
+   },
+   {
+    "path": "study/pipeline2/tests/test_s3.py",
+    "trees": [
+     "54fdccd4a69b5b1d7c292cdd384d9e6e3012315c",
+     "5b6c0358fc58f85e2916e8d68ea5be48df569c82",
+     "89bd36384bf1cb235d0bca026ff61790061341af",
+     "008b84f99c51785ca1ed15bd4d97d77b6d4848b9"
+    ],
+    "blob": "cc9f015f23e693966f5e1a30c51b650fd170be06"
+   }
+  ],
+  "commit_time": "2026-11-12T16:20:43+07:00",
+  "first_governed_call": "2026-11-12T16:21:54+07:00",
+  "seconds_commit_to_first_call": 71.0
+ },
+ {
+  "commit": "b2a3dd61d22fb77dfaf7dd1d0dfd41285f812997",
+  "role": "V2-08",
+  "what": "Addendum: delegated Larger model dropped; hash b099b11 recorded",
+  "tree": "e6f0ff7ba863ce65c7c6f83225878d3a2e92f2f8",
+  "files": [
+   {
+    "path": "study/pipeline2/p2/s3.py",
+    "trees": [
+     "e6f0ff7ba863ce65c7c6f83225878d3a2e92f2f8",
+     "c2bbcfd18d4c036ff206f408fe69ab52c0f9b0a2",
+     "b2b43c867bc105e6749b6623b5a9a3c48fb61be4",
+     "4d37ad56012201cfbf3e5382c0a20532c195b50c"
+    ],
+    "blob": "7cb25b407f1433c664550b7352b33f102dc5051e"
+   },
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "e6f0ff7ba863ce65c7c6f83225878d3a2e92f2f8",
+     "c2bbcfd18d4c036ff206f408fe69ab52c0f9b0a2",
+     "b2b43c867bc105e6749b6623b5a9a3c48fb61be4",
+     "4036bcf782c733ebbd0af23b5c10a985200c884e"
+    ],
+    "blob": "dc40b4240d5b517ef8d8df644a56f28e2d2b39d6"
+   }
+  ],
+  "commit_time": "2026-11-12T16:21:30+07:00",
+  "first_governed_call": "2026-11-12T16:21:54+07:00",
+  "seconds_commit_to_first_call": 24.0
+ },
+ {
+  "commit": "9da82096b658062108b10196a186818d6d2bb824",
+  "role": "V2-08",
+  "what": "Study-3 analysis frozen (after the first call, before the first read)",
+  "tree": "ab8a66c080d73149401c7c3678633023483e5d39",
+  "files": [
+   {
+    "path": "study/analysis_v3/av3.py",
+    "trees": [
+     "ab8a66c080d73149401c7c3678633023483e5d39",
+     "80a13e0c96560fd3c2ac5e41c0adbf50251bfa00",
+     "55be31b267f1a8540a00b186626623be55267af7"
+    ],
+    "blob": "9f238baba3d20b2746264478ac3a5ddf78e6dd1d"
+   },
+   {
+    "path": "study/analysis_v3/run_v3.py",
+    "trees": [
+     "ab8a66c080d73149401c7c3678633023483e5d39",
+     "80a13e0c96560fd3c2ac5e41c0adbf50251bfa00",
+     "55be31b267f1a8540a00b186626623be55267af7"
+    ],
+    "blob": "fcbc0980777edb7e0ed5aaaa0f71a7ed753a43f4"
+   },
+   {
+    "path": "study/analysis_v3/tests/test_v3.py",
+    "trees": [
+     "ab8a66c080d73149401c7c3678633023483e5d39",
+     "80a13e0c96560fd3c2ac5e41c0adbf50251bfa00",
+     "55be31b267f1a8540a00b186626623be55267af7",
+     "00bdcd3b41b9dadf09b7f1c1b0dee4e975200087"
+    ],
+    "blob": "7227aad34b3356acfce7a03406bab9d4efc77b24"
+   },
+   {
+    "path": "study/pipeline2/scripts/run_s3.py",
+    "trees": [
+     "ab8a66c080d73149401c7c3678633023483e5d39",
+     "80a13e0c96560fd3c2ac5e41c0adbf50251bfa00",
+     "271004ea7c3b47194d3dea4444386b58e0f0ce22",
+     "eabe0533d994bc05a4253a1092b41486f6229af6"
+    ],
+    "blob": "8abc85901ed35cf2d56a4200da1aa678baae082c"
+   }
+  ],
+  "commit_time": "2026-11-12T16:23:12+07:00",
+  "first_governed_call": "2026-11-12T16:21:54+07:00",
+  "seconds_commit_to_first_call": -78.0
+ },
+ {
+  "commit": "aea58adfbd9d69bcf95e4b401783f62bd6ac916e",
+  "role": "V2-09",
+  "what": "Follow-up plan and code",
+  "tree": "90a98734db62e5b6223579eca989a271dd7259b4",
+  "files": [
+   {
+    "path": "study/analysis_v3b/av3b.py",
+    "trees": [
+     "90a98734db62e5b6223579eca989a271dd7259b4",
+     "db9b1257a2dedb2c86a7c75d772a21d437c981b5",
+     "c6ca428c592a53e3f58257892bec996eb981ff26"
+    ],
+    "blob": "6c3e1c6f225037268a8a152cd16a799e8cb60890"
+   },
+   {
+    "path": "study/analysis_v3b/run_v3b.py",
+    "trees": [
+     "90a98734db62e5b6223579eca989a271dd7259b4",
+     "db9b1257a2dedb2c86a7c75d772a21d437c981b5",
+     "c6ca428c592a53e3f58257892bec996eb981ff26"
+    ],
+    "blob": "9240ec9a1e685c21dda9d2817aa799e416765cc7"
+   },
+   {
+    "path": "study/analysis_v3b/tests/test_v3b.py",
+    "trees": [
+     "90a98734db62e5b6223579eca989a271dd7259b4",
+     "db9b1257a2dedb2c86a7c75d772a21d437c981b5",
+     "c6ca428c592a53e3f58257892bec996eb981ff26",
+     "72500e309cd513384f4e2505181fa7f1e5e6b35a"
+    ],
+    "blob": "429a2450d5ad86dc3340abc8b7a3ca104ae6d964"
+   },
+   {
+    "path": "study/pipeline2/p2/s3b.py",
+    "trees": [
+     "90a98734db62e5b6223579eca989a271dd7259b4",
+     "db9b1257a2dedb2c86a7c75d772a21d437c981b5",
+     "461a9cd69f7286fb13ff979c7462312e08a51db1",
+     "90fb52fea1e07ef92d43471d5654e1a9767e0f13"
+    ],
+    "blob": "ee2ff13dbac097f857710a44661e3e0e27b34579"
+   },
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "90a98734db62e5b6223579eca989a271dd7259b4",
+     "db9b1257a2dedb2c86a7c75d772a21d437c981b5",
+     "461a9cd69f7286fb13ff979c7462312e08a51db1",
+     "f3124c26b7aaab84c66fdcedcf03939eafaf2108"
+    ],
+    "blob": "fa68e44774b12af997ba68ca98fcebde5a18fa3f"
+   },
+   {
+    "path": "study/pipeline2/scripts/run_s3b.py",
+    "trees": [
+     "90a98734db62e5b6223579eca989a271dd7259b4",
+     "db9b1257a2dedb2c86a7c75d772a21d437c981b5",
+     "461a9cd69f7286fb13ff979c7462312e08a51db1",
+     "42ae98b0ef94e4c70ba87ba438798932e12685d0"
+    ],
+    "blob": "f46ac2620a10e2797e3948563306aeabd16dfc42"
+   },
+   {
+    "path": "study/pipeline2/tests/test_s3b.py",
+    "trees": [
+     "90a98734db62e5b6223579eca989a271dd7259b4",
+     "db9b1257a2dedb2c86a7c75d772a21d437c981b5",
+     "461a9cd69f7286fb13ff979c7462312e08a51db1",
+     "0982aadd6cc760975da8db91eafade3ca3add455"
+    ],
+    "blob": "e6bbbb72f3a2509c1e3d477a11bfad8a9b6270fd"
+   }
+  ],
+  "commit_time": "2026-11-13T10:10:56+07:00",
+  "first_governed_call": "2026-11-13T10:11:17+07:00",
+  "seconds_commit_to_first_call": 21.0
+ },
+ {
+  "commit": "21db032a3aaad180290ff5f0164fb6c1f7a2233f",
+  "role": "V2-09",
+  "what": "Hash aea58ad recorded; V2-09 analysis frozen",
+  "tree": "2c501d0fceffd4e4698d31b7b86dfa725c2b3d5e",
+  "files": [
+   {
+    "path": "study/analysis_v3b/FROZEN.md",
+    "trees": [
+     "2c501d0fceffd4e4698d31b7b86dfa725c2b3d5e",
+     "827f25cd13749b8b8074d9487930e9749e8a1476",
+     "48b21e6595a68ae6f96a802067baaf967a1f6c25"
+    ],
+    "blob": "834958eccf92caaffbdf5f56b55ebc8ef4e4266e"
+   },
+   {
+    "path": "study/pipeline2/prereg/PREREG_V2.md",
+    "trees": [
+     "2c501d0fceffd4e4698d31b7b86dfa725c2b3d5e",
+     "827f25cd13749b8b8074d9487930e9749e8a1476",
+     "8fe25223b88d71ce8f6ab42ea7e46e09cd113b67",
+     "1a9d28745887978181a979d8f294fe3b46f9bbd0"
+    ],
+    "blob": "8a2f21748aa01d0fc45cc77030d8fc60f4ccc020"
+   }
+  ],
+  "commit_time": "2026-11-13T10:11:12+07:00",
+  "first_governed_call": "2026-11-13T10:11:17+07:00",
+  "seconds_commit_to_first_call": 5.0
+ }
+]

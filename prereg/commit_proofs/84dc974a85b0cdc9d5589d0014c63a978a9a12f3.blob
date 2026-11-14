@@ -1,0 +1,553 @@
+r"""Runner nền cho pipeline 2 + N3 (đợt 32). Lõi = `desktop/mrunner/core.py` (import, không chép).
+
+    python study\pipeline2\scripts\run_m_all_p2.py plan              # sinh study\pipeline2\runner\plan_p2.json (1 lần)
+    python study\pipeline2\scripts\run_m_all_p2.py --ensure          # watchdog Task Scheduler (15 phút/lần)
+    python study\pipeline2\scripts\run_m_all_p2.py run               # tiền cảnh (--ensure tự gọi)
+    python study\pipeline2\scripts\run_m_all_p2.py status
+
+TÊN FILE PHẢI CHỨA `run_m_all`: `mrunner.core.pid_song` và `mrunner.gate._alive_runner` chỉ nhận một pid là runner khi
+cmdline chứa chuỗi ấy. Bản đầu tên `run_p2.py` (01-11 09:20) bị coi là "chết": runner thứ hai vào được và xoá LOCK,
+gate báo `free` (pytest/commit sẽ chạy đè mẻ đo). Đổi tên, không sửa `desktop/` (test: tests/test_p2_offline.py).
+
+Dùng CHUNG `runner_dir` với runner M1–M4 (`docs/benchmark/runner`): LOCK / PAUSE / PAUSED_ACK ở đó là thứ
+`mrunner.gate` đọc, nên `runner_safe.py`, `commit_safe.ps1` và `desktop/tests/conftest.py` thấy runner p2 mà không
+sửa dòng nào ở `desktop/`. Một LOCK ⇒ không bao giờ có hai runner (M và p2) cùng sống.
+
+Cổng khởi động (từ chối chạy, ghi log):
+  - cây làm việc bẩn trong phạm vi runner Microduck (`cay_git.PHAM_VI`) HOẶC trong mã p2
+    (`study/pipeline2/{p2,scripts,tests_p2_*,prereg}`, plan) — mã chạy phải là một commit;
+  - PREREG_V2 chưa có dòng `Commit đăng ký:` trỏ một commit tổ tiên của HEAD (đăng ký TRƯỚC khi đo);
+  - ghim model local (qwen2.5:3b, llama3.1:8b) lệch hash.
+Việc nặng (local) hoãn khi CPU bận do tiến trình khác (cảm biến của run_m_all) HOẶC RAM trống < 6 GB (CLAUDE.md gốc).
+"""
+from __future__ import annotations
+
+import argparse
+import importlib.util
+import json
+import logging
+import os
+import re
+import subprocess
+import sys
+from datetime import datetime, timedelta
+from pathlib import Path
+
+P2 = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(P2))
+from p2 import REPO, DESKTOP, backends, corpus  # noqa: E402  (đặt desktop vào sys.path)
+
+_spec = importlib.util.spec_from_file_location("run_m_all", DESKTOP / "scripts" / "run_m_all.py")
+rma = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(rma)                       # đặt HF offline (A05) + cung cấp cpu_ban/cai_log/ha_uu_tien
+from mrunner import cay_git  # noqa: E402
+from mrunner.core import Lock, Runner, from_iso, to_iso  # noqa: E402
+
+PLAN = P2 / "runner" / "plan_p2.json"
+PREREG = P2 / "prereg" / "PREREG_V2.md"
+RUNNER_DIR = "docs/benchmark/runner"
+NGAY = "20261102"
+PHAM_VI_P2 = ("study/pipeline2/p2", "study/pipeline2/scripts", "study/pipeline2/tests_p2_decision",
+              "study/pipeline2/tests_p2_artefact", "study/pipeline2/prereg", "study/pipeline2/runner/plan_p2.json")
+CACH_S = 21600                # ≥ 6 h giữa hai lần chạy cùng (câu × stage × nhánh)
+N_LAN = 10
+RAM_TOI_THIEU_GB = 6.0
+
+
+# ---------------------------------------------------------------- plan
+def build_plan(oracle_first: datetime) -> dict:
+    from mrunner import kehoach
+    docs, cau = corpus.nap()
+    m2 = corpus.mau_n2(cau)
+    live = m2[:corpus.N_LIVE]
+    oq = [c.qid for c in corpus.mau_oracle(cau)]
+    tasks: list[dict] = []
+
+    def chuoi(m: str, base: str, kind: str, hosted: bool, order: int, params: dict) -> None:
+        """r01 không phụ thuộc; r_k chạy ≥ 6 h sau lúc BẮT ĐẦU r_{k-1} (luật 4 của core)."""
+        for k in range(1, N_LAN + 1):
+            t = {"id": f"{base}|r{k:02d}", "m": m, "kind": kind, "hosted": hosted, "heavy": not hosted,
+                 "order": order, "params": params}
+            if k > 1:
+                t["after"] = {"task": f"{base}|r{k - 1:02d}", "delta_s": CACH_S}
+            tasks.append(t)
+
+    def probe(m: str, base: str, kind: str, hosted: bool, order: int, params: dict) -> None:
+        tasks.append({"id": f"{base}|probe", "m": m, "kind": kind, "hosted": hosted, "heavy": not hosted,
+                      "order": order, "params": params, "after": {"task": f"{base.split('@')[0]}|r01", "delta_s": 0}})
+
+    # ---- N2: pipeline 2, hosted (gemini) + local (qwen2.5:3b) + BM25 + live ----
+    for q in m2:
+        for stage in ("classify", "route", "generate"):
+            chuoi("P2", f"P2|{stage}|hosted|{q.qid}", f"p2_{stage}", True, 3,
+                  {"qid": q.qid, "backend": "hosted", "temperature": 0.0})
+            chuoi("P2", f"P2|{stage}|local|{q.qid}", f"p2_{stage}", False, 2,
+                  {"qid": q.qid, "backend": "local", "temperature": 0.0, "model": backends.LOCAL_MODEL, "seed": 0})
+        chuoi("P2", f"P2|retrieve|bm25|{q.qid}", "p2_retrieve", False, 1, {"qid": q.qid, "backend": "bm25"})
+    for q in live:
+        chuoi("P2", f"P2|live|hosted|{q.qid}", "p2_live", True, 3, {"qid": q.qid, "backend": "hosted", "temperature": 0.0})
+    # boundary probe (C2): 20 câu đầu; mỗi tham số ghim có MỘT quan sát phải khác nếu nó bị bỏ ở biên
+    for q in m2[:20]:
+        for stage in ("classify", "route", "generate"):
+            probe("P2", f"P2|{stage}|hosted|{q.qid}@t08", f"p2_{stage}", True, 3,
+                  {"qid": q.qid, "backend": "hosted", "temperature": 0.8})
+            for tag, extra in (("t08", {"temperature": 0.8, "seed": 0}), ("seed1", {"temperature": 0.0, "seed": 1})):
+                probe("P2", f"P2|{stage}|local|{q.qid}@{tag}", f"p2_{stage}", False, 2,
+                      {"qid": q.qid, "backend": "local", "model": backends.LOCAL_MODEL, **extra})
+        probe("P2", f"P2|live|hosted|{q.qid}@t08", "p2_live", True, 3, {"qid": q.qid, "backend": "hosted", "temperature": 0.8})
+
+    # ---- N2: oracle, 24 mốc 09:00/21:00 (bản đăng ký gốc; AMENDMENT V2-02 thay bằng 28 mốc cách 6 h, xem amend_v2_02) ----
+    lan = 0
+    for d in range(12):
+        for gio in (9, 21):
+            lan += 1
+            at = (oracle_first + timedelta(days=d)).replace(hour=gio, minute=0)
+            tasks.append({"id": f"P2O|lan{lan:02d}", "m": "P2O", "kind": "p2_oracle", "hosted": True, "heavy": True,
+                          "order": 0, "at": at.isoformat(timespec="minutes"), "cho_pause": True,
+                          "params": {"lan": lan, "qids": oq}})
+
+    # ---- N3: họ thứ 3 (llama3.1:8b) — pipeline 2: route + generate, cùng protocol ----
+    for q in m2:
+        for stage in ("route", "generate"):
+            chuoi("P3", f"P3|{stage}|local|{q.qid}", f"p2_{stage}", False, 5,
+                  {"qid": q.qid, "backend": "local", "temperature": 0.0, "model": backends.THIRD_MODEL, "seed": 0})
+    for q in m2[:20]:
+        for stage in ("route", "generate"):
+            for tag, extra in (("t08", {"temperature": 0.8, "seed": 0}), ("seed1", {"temperature": 0.0, "seed": 1})):
+                probe("P3", f"P3|{stage}|local|{q.qid}@{tag}", f"p2_{stage}", False, 5,
+                      {"qid": q.qid, "backend": "local", "model": backends.THIRD_MODEL, **extra})
+
+    # ---- N3: Microduck — routing (M2 local) + reply (M4 local) với llama3.1:8b, protocol v1.1 (t0, t0p, t24h) ----
+    bo = [json.loads(l) for l in (REPO / "docs/benchmark/lookup_set_v1.jsonl").read_text(encoding="utf-8").splitlines()
+          if l.strip()]
+    khoi_a = sorted((r for r in bo if r["block"] == "A"), key=lambda r: r["id"])
+    assert len(khoi_a) == 100
+    L = backends.THIRD_MODEL
+    for r in khoi_a:
+        q = {"question": r["question"], "lang": r["lang"], "needs_lookup": r["needs_lookup"], "fact_type": r["fact_type"]}
+        p = {**q, "model": L, "options": {"temperature": 0, "seed": 20260912, "num_predict": 160}}
+        base = f"MD3|M2|{r['id']}|{L}"
+        c = dict(m="MD3", kind="m2_local", hosted=False, heavy=True, order=6, params=p)
+        tasks += [{"id": f"{base}|t0", **c}, {"id": f"{base}|t0p", "after": {"task": f"{base}|t0", "delta_s": 0}, **c},
+                  {"id": f"{base}|t24h", "after": {"task": f"{base}|t0", "delta_s": 86400}, **c}]
+        for tag, opt in (("seed1", {"temperature": 0, "seed": 1, "num_predict": 160}),
+                         ("t08", {"temperature": 0.8, "seed": 20260912, "num_predict": 160})):
+            tasks.append({"id": f"{base}@{tag}|probe", **{**c, "params": {**q, "model": L, "options": opt}},
+                          "after": {"task": f"{base}|t0", "delta_s": 0}})
+    m4 = kehoach._m4_items()
+    for i, it in enumerate(m4):
+        p = {"model": L, "messages": it["messages"], "options": {"temperature": 0.0, "seed": 0, "num_predict": 100}}
+        base = f"MD3|M4|{it['prompt_id']}|{L}"
+        c = dict(m="MD3", kind="m4_local", hosted=False, heavy=True, order=6, params=p)
+        tasks += [{"id": f"{base}|t0", **c}, {"id": f"{base}|t0p", "after": {"task": f"{base}|t0", "delta_s": 0}, **c},
+                  {"id": f"{base}|t24h", "after": {"task": f"{base}|t0", "delta_s": 86400}, **c}]
+        if i < 10:
+            for tag, opt in (("seed1", {"temperature": 0.0, "seed": 1, "num_predict": 100}),
+                             ("t08", {"temperature": 0.8, "seed": 0, "num_predict": 100})):
+                tasks.append({"id": f"{base}@{tag}|probe", **{**c, "params": {**p, "options": opt}},
+                              "after": {"task": f"{base}|t0", "delta_s": 0}})
+
+    ids = [t["id"] for t in tasks]
+    assert len(ids) == len(set(ids)), "task_id trùng"
+    da_tieu = 0.0296                         # USD_LEDGER: thử 20 câu + smoke N1 + kiểm executor, trước plan này
+    return {
+        "version": 1, "dot": "32", "runner_dir": RUNNER_DIR,
+        "results": {"P2": f"study/pipeline2/results/P2_{NGAY}_v1.jsonl",
+                    "P2O": f"study/pipeline2/results/P2O_{NGAY}_v1.jsonl",
+                    "P3": f"study/pipeline2/results/P3_{NGAY}_v1.jsonl",
+                    "MD3": f"study/pipeline2/results/MD3_{NGAY}_v1.jsonl"},
+        "late_missed_s": 7200,
+        "budget_usd": round(4.5 - da_tieu, 4), "da_tieu_truoc_plan_usd": da_tieu,
+        "price": {"model": "gemini-2.5-flash", "nguon": "ai.google.dev/gemini-api/docs/pricing (Last updated 2026-10-30)",
+                  "in_text": 0.30, "in_audio": 1.00, "out": 2.50,
+                  "grounding_per_1000": 35.0, "grounding_free_per_day": 500},
+        "mau": {"n2_qids": [c.qid for c in m2], "live_qids": [c.qid for c in live], "oracle_qids": oq,
+                "smoke_qids_loai": sorted(corpus.smoke_ids(cau))},
+        "tasks": tasks,
+    }
+
+
+V202_FIRST = "2026-11-03T12:00+07:00"   # mốc đầu sau khi commit amendment (03-11 ~10:30)
+V202_N_MOC = 28                         # 4 mốc/ngày × 7 ngày; đọc 20 lần hợp lệ đầu (không đổi)
+V202_BUOC_H = 6                         # 06:00 / 12:00 / 18:00 / 24:00 (= 00:00 hôm sau)
+
+
+def amend_v2_02(plan: dict, first: str = V202_FIRST) -> dict:
+    """AMENDMENT V2-02 (03-11-2026): lịch oracle P2O 24 mốc 09:00/21:00 (02-11 → 13-11) → 28 mốc cách 6 h
+    (06/12/18/24 giờ), 7 ngày từ `first`. Viết TRƯỚC mọi lần đo oracle (P2O chưa có bản ghi nào; 02-11 09:00 và
+    21:00 lỡ do tắt máy, chưa ghi missed vì runner không sống). Giữ: id dạng `P2O|lanNN`, params.qids, kind, cờ,
+    `late_missed_s`, luật golden/20 hợp lệ đầu. Mọi task khác giữ nguyên từng phần tử, đúng thứ tự."""
+    if plan.get("amendment_v2_02"):
+        raise ValueError("plan đã ở AMENDMENT V2-02")
+    cu = [t for t in plan["tasks"] if t["m"] == "P2O"]
+    if len(cu) != 24 or any(t["at"][11:16] not in ("09:00", "21:00") for t in cu):
+        raise ValueError("lịch P2O không phải bản gốc 24 mốc 09:00/21:00")
+    qids = cu[0]["params"]["qids"]
+    if any(t["params"]["qids"] != qids for t in cu):
+        raise ValueError("qids oracle không đồng nhất")
+    t0 = datetime.fromisoformat(first)
+    if t0.hour % V202_BUOC_H or t0.minute:
+        raise ValueError("mốc đầu phải là 00/06/12/18 giờ")
+    moi = [{**cu[0], "id": f"P2O|lan{k:02d}", "at": (t0 + timedelta(hours=V202_BUOC_H * (k - 1))).isoformat(timespec="minutes"),
+            "params": {**cu[0]["params"], "lan": k, "qids": qids}} for k in range(1, V202_N_MOC + 1)]
+    tasks, chen = [], False
+    for t in plan["tasks"]:
+        if t["m"] == "P2O":
+            if not chen:
+                tasks += moi
+                chen = True
+            continue
+        tasks.append(t)
+    return {**plan, "tasks": tasks,
+            "amendment_v2_02": {"p2o_cu": "24 mốc 09:00/21:00 2026-11-02 → 2026-11-13", "p2o_first": moi[0]["at"],
+                                "p2o_last": moi[-1]["at"], "p2o_n": V202_N_MOC, "doc_hop_le_dau": 20,
+                                "late_missed_s": plan.get("late_missed_s"),
+                                "prereg": "study/pipeline2/prereg/PREREG_V2.md §AMENDMENT V2-02"}}
+
+
+def lenh_amend_v2_02(args) -> int:
+    plan = nap_plan()
+    if any(json.loads(x).get("m") == "P2O" for p in (REPO / plan["results"]["P2O"],) if p.exists()
+           for x in p.read_text(encoding="utf-8").splitlines() if x.strip()):
+        print("P2O đã có bản ghi — amendment V2-02 chỉ hợp lệ trước mọi lần đo oracle")
+        return 1
+    moi = amend_v2_02(plan)
+    PLAN.write_text(json.dumps(moi, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
+    print(json.dumps(moi["amendment_v2_02"], ensure_ascii=False))
+    return 0
+
+
+V204_DOC = 20                           # đọc 20 lần hợp lệ đầu (không đổi)
+V204_DU_PHONG = 8                       # số mốc được lỡ thêm tính từ mốc kế tiếp
+
+
+def amend_v2_04(plan: dict, ok_ids: set[str], now: datetime) -> dict:
+    """AMENDMENT V2-04 (07-11-2026): chỉ NỚI mốc cuối P2O, giữ nguyên lan01..lan28 đã đăng ký và nhịp 6 h.
+    Số mốc từ mốc kế tiếp (mốc đầu có `at` > now) tới T phải ≥ (20 − v) + 8, v = số lần P2O hợp lệ. Thêm vừa đủ mốc,
+    không hơn. Mọi task không phải P2O giữ nguyên từng phần tử, đúng thứ tự (sha256 ghi trong plan)."""
+    if plan.get("amendment_v2_04"):
+        raise ValueError("plan đã ở AMENDMENT V2-04")
+    if not plan.get("amendment_v2_02"):
+        raise ValueError("thiếu AMENDMENT V2-02")
+    cu = [t for t in plan["tasks"] if t["m"] == "P2O"]
+    if len(cu) != V202_N_MOC:
+        raise ValueError("lịch P2O không phải 28 mốc của V2-02")
+    at = [datetime.fromisoformat(t["at"]) for t in cu]
+    v = sum(t["id"] in ok_ids for t in cu)
+    can = (V204_DOC - v) + V204_DU_PHONG
+    i_ke = next((i for i, x in enumerate(at) if x > now), None)
+    if i_ke is None:
+        raise ValueError("đã qua mốc cuối của V2-02")
+    n_moi = max(V202_N_MOC, i_ke + can)
+    buoc = timedelta(hours=V202_BUOC_H)
+    them = [{**cu[-1], "id": f"P2O|lan{k:02d}", "at": (at[0] + buoc * (k - 1)).isoformat(timespec="minutes"),
+             "params": {**cu[-1]["params"], "lan": k}} for k in range(V202_N_MOC + 1, n_moi + 1)]
+    tasks = []
+    for t in plan["tasks"]:
+        tasks.append(t)
+        if t["id"] == cu[-1]["id"]:
+            tasks += them
+    khac = [t for t in plan["tasks"] if t["m"] != "P2O"]
+    return {**plan, "tasks": tasks,
+            "amendment_v2_04": {"p2o_n_cu": V202_N_MOC, "p2o_n": n_moi, "p2o_last": (at[0] + buoc * (n_moi - 1)).isoformat(timespec="minutes"),
+                                "v_hop_le": v, "m_lo": i_ke - v, "moc_ke_tiep": cu[i_ke]["id"], "moc_ke_tiep_at": cu[i_ke]["at"],
+                                "so_moc_can": can, "so_moc_con": n_moi - i_ke, "doc_hop_le_dau": V204_DOC,
+                                "late_missed_s": plan.get("late_missed_s"), "n_task_khac": len(khac),
+                                "sha256_task_khac": _bam_tasks(khac),
+                                "prereg": "study/pipeline2/prereg/PREREG_V2.md §AMENDMENT V2-04"}}
+
+
+def _bam_tasks(tasks: list[dict]) -> str:
+    import hashlib
+    return hashlib.sha256(json.dumps(tasks, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+
+
+def lenh_amend_v2_04(args) -> int:
+    if Lock(REPO / RUNNER_DIR / "LOCK").holder() is not None:
+        print("runner đang sống — dừng trước khi đổi plan")
+        return 1
+    plan = nap_plan()
+    s = Runner(plan, REPO, {}).snapshot()
+    ok = {k for k, x in s.done.items() if x.get("status") == "ok"}
+    moi = amend_v2_04(plan, ok, datetime.now().astimezone())
+    PLAN.write_text(json.dumps(moi, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
+    print(json.dumps(moi["amendment_v2_04"], ensure_ascii=False))
+    return 0
+
+
+V207_N_T0 = 150                         # 100 M2 + 50 M4 của MD3
+
+
+def amend_v2_07(plan: dict) -> dict:
+    """AMENDMENT V2-07(d) (07-11-2026): thêm khối MD3R, đo lại t0 + t24h của MD3 trên 0.30.10, cùng kind và params.
+    Chỉ THÊM ở cuối plan; mọi task cũ giữ nguyên từng phần tử, đúng thứ tự (sha256 ghi trong plan)."""
+    if plan.get("amendment_v2_07"):
+        raise ValueError("plan đã ở AMENDMENT V2-07")
+    if not plan.get("amendment_v2_04"):
+        raise ValueError("thiếu AMENDMENT V2-04")
+    goc = [t for t in plan["tasks"] if t["m"] == "MD3" and t["id"].endswith("|t0")]
+    if len(goc) != V207_N_T0:
+        raise ValueError(f"MD3 có {len(goc)} t0, cần {V207_N_T0}")
+    moi: list[dict] = []
+    for t in goc:
+        base = t["id"].removesuffix("|t0").replace("MD3|", "MD3R|", 1)
+        c = {k: v for k, v in t.items() if k not in ("id", "m", "after")}
+        moi.append({"id": f"{base}|t0", "m": "MD3R", **c})
+        moi.append({"id": f"{base}|t24h", "m": "MD3R", "after": {"task": f"{base}|t0", "delta_s": 86400}, **c})
+    return {**plan, "tasks": plan["tasks"] + moi,
+            "results": {**plan["results"], "MD3R": f"study/pipeline2/results/MD3R_{NGAY}_v1.jsonl"},
+            "amendment_v2_07": {"md3r_n": len(moi), "n_task_cu": len(plan["tasks"]),
+                                "sha256_task_cu": _bam_tasks(plan["tasks"]),
+                                "prereg": "study/pipeline2/prereg/PREREG_V2.md §AMENDMENT V2-07"}}
+
+
+def lenh_amend_v2_07(args) -> int:
+    if Lock(REPO / RUNNER_DIR / "LOCK").holder() is not None:
+        print("runner đang sống — dừng trước khi đổi plan")
+        return 1
+    moi = amend_v2_07(nap_plan())
+    PLAN.write_text(json.dumps(moi, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
+    print(json.dumps(moi["amendment_v2_07"], ensure_ascii=False))
+    return 0
+
+
+V206_N_LAN = 5                          # cặp chấm P3H = 1→5, ≥ 24 h như P3
+V206_GIA = {"in_text": 0.02, "in_audio": 0.0, "out": 0.04,
+            "nguon": "openrouter.ai/api/v1/models/meta-llama/llama-3.1-8b-instruct/endpoints, tag deepinfra/fp8, đọc 2026-11-07"}
+
+
+def amend_v2_06(plan: dict) -> dict:
+    """AMENDMENT V2-06 (07-11-2026): nhánh đối chứng P3H (cùng model Llama 3.1 8B, delegated). Chỉ THÊM ở cuối plan.
+    3 task smoke (không chấm) đi trước; r01 của mẫu chạy sau smoke cuối; r_k ≥ 6 h sau lúc bắt đầu r_{k-1}."""
+    if plan.get("amendment_v2_06"):
+        raise ValueError("plan đã ở AMENDMENT V2-06")
+    if not plan.get("amendment_v2_07"):
+        raise ValueError("V2-06 viết sau V2-07")
+    sm = plan["mau"]["smoke_qids_loai"][:3]
+    tasks: list[dict] = []
+    truoc = None
+    for i, (stage, qid) in enumerate(zip(("route", "generate", "route"), sm), 1):
+        t = {"id": f"P3HS|{stage}|openrouter|{qid}|s{i:02d}", "m": "P3HS", "kind": f"p3h_{stage}", "hosted": True, "heavy": False,
+             "order": 5, "params": {"qid": qid, "backend": "openrouter", "temperature": 0.0, "seed": 0, "model": backends.HOSTED_LLAMA_MODEL}}
+        if truoc:
+            t["after"] = {"task": truoc, "delta_s": 0}
+        tasks.append(t)
+        truoc = t["id"]
+    for qid in plan["mau"]["n2_qids"]:
+        for stage in ("route", "generate"):
+            base = f"P3H|{stage}|openrouter|{qid}"
+            for k in range(1, V206_N_LAN + 1):
+                t = {"id": f"{base}|r{k:02d}", "m": "P3H", "kind": f"p3h_{stage}", "hosted": True, "heavy": False, "order": 5,
+                     "params": {"qid": qid, "backend": "openrouter", "temperature": 0.0, "seed": 0, "model": backends.HOSTED_LLAMA_MODEL},
+                     "after": {"task": truoc if k == 1 else f"{base}|r{k - 1:02d}", "delta_s": 0 if k == 1 else CACH_S}}
+                tasks.append(t)
+    return {**plan, "tasks": plan["tasks"] + tasks,
+            "results": {**plan["results"], "P3HS": "study/pipeline2/results/smoke_openrouter_20261107.jsonl",
+                        "P3H": f"study/pipeline2/results/P3H_{NGAY}_v1.jsonl"},
+            "price": {**plan["price"], "openrouter": V206_GIA},
+            "amendment_v2_06": {"p3h_n": len(tasks) - 3, "smoke_n": 3, "n_lan": V206_N_LAN, "n_task_cu": len(plan["tasks"]),
+                                "sha256_task_cu": _bam_tasks(plan["tasks"]), "model": backends.HOSTED_LLAMA_MODEL,
+                                "slug": backends.HOSTED_LLAMA_SLUG, "han_key": "2026-11-13T12:00+07:00",
+                                "prereg": "study/pipeline2/prereg/PREREG_V2.md §AMENDMENT V2-06"}}
+
+
+def lenh_amend_v2_06(args) -> int:
+    if Lock(REPO / RUNNER_DIR / "LOCK").holder() is not None:
+        print("runner đang sống — dừng trước khi đổi plan")
+        return 1
+    moi = amend_v2_06(nap_plan())
+    PLAN.write_text(json.dumps(moi, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
+    print(json.dumps(moi["amendment_v2_06"], ensure_ascii=False))
+    return 0
+
+
+def lenh_plan(args) -> int:
+    if PLAN.exists() and not args.force:
+        print(f"{PLAN} đã có — không ghi đè (plan là đăng ký; đổi = amendment)")
+        return 1
+    plan = build_plan(datetime.fromisoformat(args.oracle_first))
+    PLAN.parent.mkdir(parents=True, exist_ok=True)
+    PLAN.write_text(json.dumps(plan, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
+    from collections import Counter
+    print(json.dumps(Counter((t["m"], t["kind"]) for t in plan["tasks"]).most_common(), ensure_ascii=False))
+    print(f"{len(plan['tasks'])} task -> {PLAN}")
+    return 0
+
+
+# ---------------------------------------------------------------- cổng
+def git(*a: str) -> subprocess.CompletedProcess:
+    kw = {"creationflags": subprocess.CREATE_NO_WINDOW} if os.name == "nt" else {}
+    return subprocess.run(["git", "-C", str(REPO), *a], capture_output=True, text=True, encoding="utf-8",
+                          stdin=subprocess.DEVNULL, timeout=60, **kw)
+
+
+def loi_khoi_dong() -> list[str]:
+    loi = [f"cây bẩn (runner Microduck): {x}" for x in cay_git.ban(REPO)[:5]]
+    r = git("status", "--porcelain", "--untracked-files=all", "--", *PHAM_VI_P2)
+    loi += [f"cây bẩn (p2): {x}" for x in r.stdout.splitlines() if x.strip()][:5]
+    m = re.search(r"Commit đăng ký:\s*`?([0-9a-f]{7,40})", PREREG.read_text(encoding="utf-8")) if PREREG.exists() else None
+    if not m:
+        loi.append("PREREG_V2 chưa có dòng 'Commit đăng ký: <hash>' — đăng ký trước khi đo")
+    elif git("merge-base", "--is-ancestor", m.group(1), "HEAD").returncode != 0:
+        loi.append(f"commit đăng ký {m.group(1)} không phải tổ tiên của HEAD")
+    from mrunner.thuc import dam_bao_ollama, ollama_digest
+    from p2.pin import PIN, kiem
+    dam_bao_ollama()
+    for model in PIN:
+        loi += kiem(model, ollama_digest(model))
+    return loi
+
+
+from p2.lich_gio import RAM_DEM_GB, RunnerTheoGio, la_dem, ram_trong_gb  # noqa: E402  (lịch theo giờ, 03-11)
+
+
+def ban() -> bool:
+    trong = ram_trong_gb()
+    nguong = RAM_DEM_GB if la_dem(datetime.now().hour) else RAM_TOI_THIEU_GB
+    if trong < nguong:
+        logging.info("RAM trống %.1f GB < %.0f GB → hoãn việc nặng", trong, nguong)
+        return True
+    return rma.cpu_ban()
+
+
+def executors() -> dict:
+    from mrunner.thuc import M2Local, M4Local
+    from p2.executors import executors as p2ex, executors_p3h
+    from p2.oracle import P2OracleRun
+    from p2.pin import PIN, kiem
+    from mrunner.thuc import ollama_digest
+
+    class Ghim:
+        """Bọc executor Microduck: kiểm ghim hash kiểu A05 trước mỗi lần chạy, thêm ghim vào manifest."""
+        def __init__(self, ex) -> None:
+            self.ex = ex
+
+        def manifest(self, t: dict) -> dict:
+            return {**self.ex.manifest(t), "pin_a05": PIN[t["params"]["model"]]}
+
+        def run(self, t: dict) -> dict:
+            loi = kiem(t["params"]["model"], ollama_digest(t["params"]["model"]))
+            if loi:
+                raise RuntimeError("; ".join(loi))
+            return self.ex.run(t)
+
+    return {**p2ex(), **executors_p3h(), "p2_oracle": P2OracleRun(), "m2_local": Ghim(M2Local()), "m4_local": Ghim(M4Local())}
+
+
+# ---------------------------------------------------------------- lệnh
+def nap_plan() -> dict:
+    return json.loads(PLAN.read_text(encoding="utf-8"))
+
+
+def lenh_run(args) -> int:
+    plan = nap_plan()
+    rma.cai_log(plan, REPO)
+    lock = Lock(REPO / RUNNER_DIR / "LOCK")
+    loi = loi_khoi_dong()
+    if loi:
+        for x in loi:
+            logging.error("p2 TỪ CHỐI CHẠY: %s", x)
+        print("\n".join(loi))
+        return 1
+    if not lock.acquire({"commit": cay_git.head(REPO), "plan": str(PLAN.relative_to(REPO))}):
+        logging.info("p2: đã có runner sống (%s), thoát", lock.holder())
+        return 0
+    import atexit
+    atexit.register(lock.release)
+    rma.ha_uu_tien()
+    logging.info("runner p2 bắt đầu pid=%d", os.getpid())
+    RunnerTheoGio(plan, REPO, executors(), cpu_busy=ban).loop(max_steps=args.max_steps, stop_when_idle=args.stop_when_idle)
+    return 0
+
+
+def lenh_ensure(args) -> int:
+    lock = Lock(REPO / RUNNER_DIR / "LOCK")
+    h = lock.holder()
+    if h is not None:
+        print(f"runner đang sống: pid {h['pid']} (plan {h.get('plan', 'M')}) — không mở thêm.")
+        return 0
+    if not PLAN.exists():
+        print("chưa có plan_p2.json")
+        return 1
+    py = Path(sys.executable)
+    pyw = py.with_name("pythonw.exe")
+    from mrunner.thuc import an_cua_so
+    kw = an_cua_so()
+    if os.name == "nt":
+        kw["creationflags"] |= subprocess.CREATE_NEW_PROCESS_GROUP | subprocess.BELOW_NORMAL_PRIORITY_CLASS
+    p = subprocess.Popen([str(pyw if pyw.exists() else py), str(Path(__file__).resolve()), "run"], cwd=str(REPO),
+                         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, stdin=subprocess.DEVNULL, **kw)
+    print(f"khởi động runner p2 pid {p.pid}")
+    return 0
+
+
+def lenh_status(args) -> int:
+    from mrunner.core import Store
+    plan = nap_plan()
+    r = RunnerTheoGio(plan, REPO, {})                  # lớp này tách và cộng giá OpenRouter vào trần chung
+    s = r.snapshot()
+    from collections import Counter
+    tong = Counter(t["m"] for t in plan["tasks"])
+    xong = Counter(r.by_id[k]["m"] for k, v in s.done.items() if k in r.by_id and v.get("status") == "ok")
+    miss = Counter(r.by_id[k]["m"] for k, v in s.done.items() if k in r.by_id and v.get("status") == "missed")
+    loi = Counter(r.by_id[k]["m"] for k in s.errors if k in r.by_id and k not in s.done)
+    h = Lock(REPO / RUNNER_DIR / "LOCK").holder()
+    print(f"bây giờ {to_iso(r.clock())}  runner: {'pid ' + str(h['pid']) if h else 'KHÔNG sống'}  "
+          f"USD plan {s.spent_usd:.4f} / trần {plan['budget_usd']} (+{plan['da_tieu_truoc_plan_usd']} trước plan) · "
+          f"Gemini {s.spent_usd - getattr(s, 'openrouter_usd', 0.0):.4f} · OpenRouter {getattr(s, 'openrouter_usd', 0.0):.4f}")
+    print(f"{'M':5s} {'ok/tổng':>12s} {'missed':>7s} {'đang lỗi':>8s}")
+    for m in plan["results"]:
+        print(f"{m:5s} {xong[m]:>6d}/{tong[m]:<5d} {miss[m]:>7d} {loi[m]:>8d}")
+    o = [t for t in plan["tasks"] if t["m"] == "P2O"]
+    tre = float(plan.get("late_missed_s", 7200))
+    ke = next((t for t in o if t["id"] not in s.done and from_iso(t["at"]) + tre > r.clock()), None)
+    print(f"mốc oracle kế tiếp: {ke['id'] + ' ' + ke['at'] if ke else 'hết'} (trễ tối đa {tre / 3600:.0f} h) · mốc cuối {o[-1]['at']}")
+    from p2.runtime_doan import N_ORACLE, lan_oracle_local
+    ok = [(t["id"], s.done[t["id"]]["ts"]) for t in o if s.done.get(t["id"], {}).get("status") == "ok"]
+    con = sum(t["id"] not in s.done and from_iso(t["at"]) + tre > r.clock() for t in o)
+    v_l = len(lan_oracle_local(ok))
+    print(f"oracle (V2-07): hosted {len(ok)}/{N_ORACLE} · local trên 0.30.10 {v_l}/{N_ORACLE} · còn {con} mốc · "
+          f"dư lần lỡ: hosted {con - max(0, N_ORACLE - len(ok))}, local {con - max(0, N_ORACLE - v_l)}")
+    a6 = plan.get("amendment_v2_06")
+    if a6:
+        if xong["P3HS"] or xong["P3H"]:
+            print(f"P3H: {'xong' if xong['P3H'] == tong['P3H'] else 'đang chạy'} (smoke {xong['P3HS']}/{tong['P3HS']}, mẫu {xong['P3H']}/{tong['P3H']})")
+        elif backends.key_openrouter() is None:
+            if r.clock() >= from_iso(a6["han_key"]):
+                print(f"P3H: hết hạn key ({a6['han_key']}), không có OPENROUTER_API_KEY; P2B viết dòng amendment bỏ nhánh")
+            else:
+                print(f"P3H: waiting_key (OPENROUTER_API_KEY, hạn {a6['han_key']})")
+        else:
+            print("P3H: có key, chờ runner chạy smoke")
+    return 0
+
+
+def main() -> int:
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--ensure", action="store_true")
+    sub = ap.add_subparsers(dest="lenh")
+    pp = sub.add_parser("plan")
+    pp.add_argument("--oracle-first", default="2026-11-02T09:00+07:00")
+    pp.add_argument("--force", action="store_true")
+    pr = sub.add_parser("run")
+    pr.add_argument("--max-steps", type=int, default=None)
+    pr.add_argument("--stop-when-idle", action="store_true")
+    sub.add_parser("status")
+    sub.add_parser("amend-v2-02")
+    sub.add_parser("amend-v2-04")
+    sub.add_parser("amend-v2-07")
+    sub.add_parser("amend-v2-06")
+    a = ap.parse_args()
+    if a.ensure:
+        return lenh_ensure(a)
+    return {"plan": lenh_plan, "run": lenh_run, "status": lenh_status, "amend-v2-02": lenh_amend_v2_02,
+            "amend-v2-04": lenh_amend_v2_04, "amend-v2-07": lenh_amend_v2_07,
+            "amend-v2-06": lenh_amend_v2_06}.get(a.lenh, lambda _: ap.print_help() or 2)(a)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

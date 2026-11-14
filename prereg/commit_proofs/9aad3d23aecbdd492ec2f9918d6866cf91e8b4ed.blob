@@ -1,0 +1,143 @@
+r"""4 stage: chạy một lần trên đầu vào cố định, trả (decision, artefact) + siêu dữ liệu.
+
+Luật tách decision/artefact là hàm THUẦN (không gọi model) để test offline và để phép chấm ở N4 đọc
+lại được từ artefact đã ghi. Decision là nhãn rời rạc; artefact là chuỗi model trả về, nguyên văn.
+Parse hỏng KHÔNG ném: decision = "PARSE_FAIL" — là một thất bại ở tầng decision (PREREG_V2 §3), vẫn trong mẫu.
+
+Đợt 32 N2 (quyết định 01-11): classify → `answerable`/`unanswerable` (đoạn văn vàng làm đầu vào), ngôn ngữ chỉ
+log; generate → chỉ kết cục trích dẫn, ngôn ngữ chỉ log; live → `SOURCES`/`NO_SOURCES`, tập tên miền và văn bản
+là HAI artefact (như ô 15–17 Microduck: quyết định tra / domain-set / text).
+"""
+from __future__ import annotations
+
+import json
+import re
+import unicodedata
+from urllib.parse import urlparse
+
+from . import backends, prompts
+
+ROUTES = ("RETRIEVE", "ANSWER", "REFUSE")
+NOT_IN = "NOT IN DOCUMENTS"
+K = 5
+
+
+# ---------------------------------------------------------------- decision từ artefact (thuần)
+def doc_json(text: str) -> dict | None:
+    m = re.search(r"\{.*\}", text or "", re.S)
+    try:
+        d = json.loads(m.group(0)) if m else None
+    except json.JSONDecodeError:
+        return None
+    return d if isinstance(d, dict) else None
+
+
+def dec_classify(text: str) -> str:
+    """`answerable` / `unanswerable` từ trường JSON boolean `answerable`; chuỗi "true"/"false" cũng nhận."""
+    d = doc_json(text)
+    if d is None:
+        return "PARSE_FAIL"
+    v = d.get("answerable")
+    if isinstance(v, str) and v.strip().lower() in ("true", "false"):
+        v = v.strip().lower() == "true"
+    if not isinstance(v, bool):
+        return "PARSE_FAIL"
+    return "answerable" if v else "unanswerable"
+
+
+def lang_classify(text: str) -> str | None:
+    """Chỉ ghi log (không vào decision)."""
+    d = doc_json(text)
+    v = str((d or {}).get("language", "")).strip().lower()
+    return v or None
+
+
+def bo_dau(s: str) -> str:
+    return "".join(c for c in unicodedata.normalize("NFKD", s or "") if not unicodedata.combining(c))
+
+
+def dec_route(text: str) -> str:
+    """Bỏ dấu trước khi khớp: smoke 01-11 thấy qwen2.5:3b viết `ROUTE: RETRIEVÉ` — nhãn rõ ràng, dấu là nhiễu chữ."""
+    m = re.search(r"ROUTE\s*:\s*\**\s*(RETRIEVE|ANSWER|REFUSE)\b", bo_dau(text), re.I)
+    return m.group(1).upper() if m else "PARSE_FAIL"
+
+
+def trich_dan(text: str) -> list[str]:
+    return sorted(set(re.findall(r"\[(d\d{4})\]", text or "")))
+
+
+def dec_generate(text: str, gold_doc: str) -> str:
+    """Kết cục: abstain (NOT IN DOCUMENTS, không trích) / gold (trích doc vàng) / other (trích doc khác) /
+    nocite (trả lời không trích). Đúng/sai so với vàng (`impossible`) là việc của N4, không vào nhãn."""
+    t = (text or "").strip()
+    c = trich_dan(t)
+    if NOT_IN in t.upper() and not c:
+        return "abstain"
+    return "gold" if gold_doc in c else ("other" if c else "nocite")
+
+
+def domain(src: dict) -> str:
+    """Grounding trả URI chuyển hướng (vertexaisearch…); tên miền thật nằm ở `title`."""
+    t = (src.get("title") or "").strip().lower()
+    if t and "." in t and " " not in t:
+        return t.removeprefix("www.")
+    return (urlparse(src.get("uri") or "").hostname or "?").removeprefix("www.")
+
+
+# ---------------------------------------------------------------- chạy stage
+_LID = None
+
+
+def nhan_ngon_ngu(text: str) -> str | None:
+    """Cùng bộ nhận diện fastText mà M4 của Microduck dùng (langconf.langid.DualLangID). Chỉ log."""
+    global _LID
+    t = re.sub(r"\[d\d{4}\]", " ", text or "").strip()
+    if not t or NOT_IN in t.upper():
+        return None
+    if _LID is None:
+        from langconf.langid import DualLangID
+        from . import REPO
+        _LID = DualLangID(REPO / "study/langconf/data/lid/lid.176.bin")
+    return _LID.detect(t).fasttext
+
+
+def goi(backend: str, prompt: str, temperature: float, grounded: bool = False, model: str | None = None,
+        seed: int = 0) -> dict:
+    if backend == "hosted":
+        return backends.hosted(prompt, temperature, grounded)
+    if grounded:
+        raise ValueError("live grounding chỉ có nhánh hosted")
+    return backends.local(prompt, temperature, seed=seed, model=model or backends.LOCAL_MODEL)
+
+
+def classify(q, passage: str, backend: str, temperature: float = 0.0, model: str | None = None, seed: int = 0) -> dict:
+    r = goi(backend, prompts.CLASSIFY.format(p=passage, q=q.question), temperature, model=model, seed=seed)
+    return {**r, "decision": dec_classify(r["text"]), "artefact": r["text"], "lang": lang_classify(r["text"])}
+
+
+def route(q, backend: str, temperature: float = 0.0, model: str | None = None, seed: int = 0) -> dict:
+    r = goi(backend, prompts.ROUTE.format(q=q.question), temperature, model=model, seed=seed)
+    return {**r, "decision": dec_route(r["text"]), "artefact": r["text"]}
+
+
+def retrieve_bm25(q, idx: dict, docs_by_id: dict) -> dict:
+    from . import bm25
+    top = bm25.search(idx, q.question, K)
+    ids = [d for d, _ in top]
+    return {"decision": ",".join(ids), "artefact": prompts.khoi_doc([docs_by_id[i] for i in ids]),
+            "scores": [round(s, 6) for _, s in top], "gold_in_topk": q.gold_doc in ids, "usage": None}
+
+
+def retrieve_live(q, temperature: float = 0.0) -> dict:
+    r = goi("hosted", prompts.LIVE.format(q=q.question), temperature, grounded=True)
+    doms = sorted({domain(s) for s in r.get("sources", [])})
+    return {**r, "decision": "SOURCES" if doms else "NO_SOURCES", "artefact": r["text"],
+            "artefact_domains": ",".join(doms)}
+
+
+def generate(q, docs: list[dict], backend: str, temperature: float = 0.0, model: str | None = None,
+             seed: int = 0) -> dict:
+    r = goi(backend, prompts.GENERATE.format(docs=prompts.khoi_doc(docs), q=q.question), temperature,
+            model=model, seed=seed)
+    return {**r, "decision": dec_generate(r["text"], q.gold_doc), "artefact": r["text"],
+            "lang": nhan_ngon_ngu(r["text"]), "cited": trich_dan(r["text"])}

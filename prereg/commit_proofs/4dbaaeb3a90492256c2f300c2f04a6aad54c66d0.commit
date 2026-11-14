@@ -1,0 +1,18 @@
+tree 1444102f60bc1288bb5e35dc4e0ed69e1d6ad7c1
+parent 7256ef9b9328c9be9d26e0ee096ad756df8e8199
+author unknown <lamquocdat@gmail.com> 1794463360 +0700
+committer unknown <lamquocdat@gmail.com> 1794463360 +0700
+
+P2B-MD Viec 1: script phan tich v2 (study/analysis_v2) - dong bang TRUOC lan doc that dau tien (V2-05 D2)
+
+- av2/: stats (Wilson, Newcombe, luat §6 sao y cham_m6_m7.py), cells (29 o, cap 1->5 /
+  chon_k cung runtime V2-07(b) / MD3R t0->t24h), oracle_an (20 lan hop le; local doan A/D;
+  tinh lai tu obs + doi chieu junit), logit (ML + SE cluster CR1; tach hoan toan -> Firth +
+  bootstrap cluster B=2000 x 5 seed), analysis (H1/H2/H3, D4, D7, D9, D10, V2-06, o sai).
+- run_analysis.py -> out/numbers_v2.json (tat dinh) + CSV + hinh.
+- tests/: du lieu gia sinh tu schema (seed co dinh), bat bien: tong don vi 17+4, margin trong
+  [-1,1], so cap khop dem task_id doc lap, oracle lech junit = 0, trung byte hai lan chay,
+  dang gop binomial == tung hang. 14 passed (venv moi tu requirements.txt).
+- Chua doc cot ket qua that nao. pytest desktop: lan 1 do 1 test dong ho tuong (test_m11_mail ...duoi_50ms; CPU 100% do job de tai khac), chay lai 631 passed rc 0, qua runner_safe; khong va test.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

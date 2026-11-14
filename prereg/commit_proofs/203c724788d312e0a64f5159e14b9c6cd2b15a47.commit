@@ -1,0 +1,18 @@
+tree fd7193b2626f2f248adcfcc6f4d86366050c1ff7
+parent 62fc81abb08dc04947ad35148ad7ca8f7a77b4d0
+author unknown <lamquocdat@gmail.com> 1793499620 +0700
+committer unknown <lamquocdat@gmail.com> 1793499620 +0700
+
+dot32-N2: PREREG_V2 + ma do + plan p2 (dang ky TRUOC moi lan do)
+
+- PREREG_V2: luoi 17 o pipeline 2 + 8 o N3 sinh tu luat matrix (khong tu smoke), luat cham A04.4,
+  kiem luc Wilson tung o, o suy may moc A06.1, depth A06.4 + hoi quy logistic, H2/H3
+- mau N2: 200 cau seed 20261102 LOAI 20 id smoke; live 50; oracle 40 (seed 20261103)
+- classify -> answerable/unanswerable (doan vang), ngon ngu chi log; route khop bo dau;
+  PARSE_FAIL la gia tri decision; live -> SOURCES/NO_SOURCES + 2 artefact
+- llama3.1:8b ghim kieu A05 (ho thu 3, N3); oracle 2 bo pytest (tests_p2_decision/artefact)
+- run_p2.py: Runner cua mrunner.core, chung runner_dir (gate/runner_safe/commit_safe thay),
+  tu choi chay khi cay ban / chua co commit dang ky / ghim lech; hoan viec nang khi RAM < 6 GB
+- plan_p2.json: 19 474 task (P2 14 700, P2O 24 moc, P3 4 080, MD3 670); tran 4,4704 USD
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

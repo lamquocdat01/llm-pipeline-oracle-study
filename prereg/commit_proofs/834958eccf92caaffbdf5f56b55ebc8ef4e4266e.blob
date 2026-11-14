@@ -1,0 +1,11 @@
+# FROZEN — phân tích đợt đo bù V2-09 (V2-09 (f))
+
+Commit đóng băng: `aea58adfbd9d69bcf95e4b401783f62bd6ac916e` (2026-11-13 10:10:56 +0700). Gồm `av3b.py`, `run_v3b.py`, `tests/test_v3b.py` (dữ liệu giả, 2/2 qua `runner_safe`). Dùng `../analysis_v3/av3.py` (đóng băng 9da8209, chỉ import).
+
+SHA-256 của blob git tại commit này:
+- `av3b.py`: `8d9e041dbeebe9a1d76ab16eb96d3dc0d8cad9805a97de632ff34e6705755a6f`
+- `run_v3b.py`: `68b5bd5b355a3e623627ea5d96622d3710aeb35af3fe5bf99d399741385b1cf3`
+- `tests/test_v3b.py`: `773896faf15005bc3f27bbc359f2dffb8cc44f3f7b4dae43b2a784c774312fcd`
+- `../analysis_v3/av3.py`: `c33dedc5e4717fe93496e3d6d10f71f70c90522ab21334751c0975bb4fe60615` (= FROZEN của nghiên cứu 3)
+
+Lần đọc dữ liệu thật đầu tiên: sau commit này (ghi giờ ở dòng dưới khi chạy).

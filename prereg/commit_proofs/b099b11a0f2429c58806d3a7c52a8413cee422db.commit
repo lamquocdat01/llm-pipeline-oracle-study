@@ -1,0 +1,12 @@
+tree 54fdccd4a69b5b1d7c292cdd384d9e6e3012315c
+parent a44739bc11067691dfefeac960b2b2eae0730b77
+author unknown <lamquocdat@gmail.com> 1794475243 +0700
+committer unknown <lamquocdat@gmail.com> 1794475243 +0700
+
+P3C-MD: Amendment V2-08 (nghien cuu 3, do nhay oracle) + ma S3 - commit TRUOC moi loi goi
+
+- PREREG_V2: V2-08 (prompt P1/P2 nguyen van, M1 flash-lite / qwen2.5:7b, T1, K1, R1 0.40.16 zip; Q1 bo vi o D thieu dung luong)
+- p2/s3.py, scripts/run_s3.py, tests/test_s3.py (goi gia)
+- CP3, R2 review vao P3/
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

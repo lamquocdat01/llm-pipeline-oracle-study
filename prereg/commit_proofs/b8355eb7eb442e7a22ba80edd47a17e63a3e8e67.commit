@@ -1,0 +1,12 @@
+tree 16553572cd3d6060fdf5fa96f752c97b7ad17057
+parent d9f08885cea27d5894b49724ca7674fc1938bb87
+author unknown <lamquocdat@gmail.com> 1793675824 +0700
+committer unknown <lamquocdat@gmail.com> 1793675824 +0700
+
+dot32-N2: Amendment V2-02 - lich oracle P2O 4 moc/ngay (28 moc cach 6 h, 03-11 12:00 -> 10-11 06:00)
+
+Viet truoc moi lan do oracle (P2O chua co ban ghi). Giu cua so tre 2 h, golden = lan
+hop le dau, doc 20 lan hop le dau; khong doi mau, o, luat cham, du doan. Moi task
+khong phai P2O giu nguyen (19 450 task doi chieu trung khit).
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

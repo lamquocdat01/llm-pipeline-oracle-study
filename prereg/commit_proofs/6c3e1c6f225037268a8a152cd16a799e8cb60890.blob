@@ -1,0 +1,150 @@
+r"""Phân tích đợt đo bù V2-09 (AMENDMENT V2-09 (a)(b)(c)). Hàm thuần; dùng lại hàm của `analysis_v3/av3.py`
+(đóng băng ở 9da8209, chỉ import, không đổi).
+
+Đóng băng TRƯỚC lần đọc dữ liệu thật đầu tiên (FROZEN.md). Không đổi luật sau khi thấy số.
+"""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "analysis_v3"))
+import av3  # noqa: E402
+
+STAGES = av3.STAGES
+C_RUNS = ("C1", "C2", "C3")
+D_RUNS = ("D1", "D2", "D3")
+B_RUNS = ("B1", "B2", "B3")
+A_RUNS = ("A1", "A2", "A3")
+K_MC = 2                                  # V2-09 (b): thao tác đạt ⇔ mỗi stage ≤ 2 câu đổi
+PF = "PARSE_FAIL"
+
+
+def do_ty_le(golden: dict, runs: list[dict], stage: str) -> dict[str, tuple[float, float]]:
+    """qid -> (tỉ lệ đỏ decision, tỉ lệ đỏ artefact) qua các lần, trên test có dữ liệu ở golden và mọi lần."""
+    ds = [av3.do(golden, r, stage) for r in runs]
+    qs = sorted(set.intersection(*(set(d) for d in ds))) if ds else []
+    return {q: (sum(d[q][0] for d in ds) / len(ds), sum(d[q][1] for d in ds) / len(ds)) for q in qs}
+
+
+def delta_nhom(golden: dict, nhom1: list[dict], nhom0: list[dict], stage: str) -> dict:
+    """Δ = mean_i(m_i^nhom1 − m_i^nhom0) cho decision và artefact, bootstrap ghép cặp như V2-08 (g)."""
+    a, b = do_ty_le(golden, nhom1, stage), do_ty_le(golden, nhom0, stage)
+    qs = sorted(set(a) & set(b))
+    out = {}
+    for j, ten in ((0, "dec"), (1, "art")):
+        out[ten] = av3.boot_delta([a[q][j] for q in qs], [b[q][j] for q in qs]) if qs else None
+    return out
+
+
+def dem_do(golden: dict, run: dict, stage: str) -> dict:
+    d = av3.do(golden, run, stage)
+    n = len(d)
+    kd, ka = sum(v[0] for v in d.values()), sum(v[1] for v in d.values())
+    pf = sum(1 for q, v in d.items() if v[0] and (run[(stage, q)]["decision"] == PF or golden[(stage, q)]["decision"] == PF))
+    return {"n": n, "dec_do": kd, "art_do": ka, "dec_wilson": list(av3.wilson(kd, n)), "art_wilson": list(av3.wilson(ka, n)),
+            "dec_do_parse_fail": pf}
+
+
+def s3_mo_rong(golden: dict, run: dict, stage: str, cau: dict) -> dict:
+    """S3 như V2-08 (g) + tách trả lời được / không, chiều đúng→sai / sai→đúng, Wilson mọi tỉ lệ."""
+    d = av3.do(golden, run, stage)
+    o = {k: 0 for k in ("doi_that", "dec_bat", "art_bat", "bo_sot", "dung_sang_sai", "sai_sang_dung",
+                        "that_tra_loi_duoc", "bo_sot_tra_loi_duoc", "that_khong_tra_loi_duoc", "bo_sot_khong_tra_loi_duoc",
+                        "dec_do", "dec_do_that", "art_do", "art_do_that")}
+    for q, (rd, ra) in d.items():
+        c = cau[q]
+        a0, a1 = av3.dung(stage, golden[(stage, q)], c), av3.dung(stage, run[(stage, q)], c)
+        that = a0 is not None and a1 is not None and a0 != a1
+        o["dec_do"] += rd
+        o["art_do"] += ra
+        if not that:
+            continue
+        o["doi_that"] += 1
+        o["dec_bat"] += rd
+        o["art_bat"] += ra
+        sot = int(ra and not rd)
+        o["bo_sot"] += sot
+        o["dec_do_that"] += rd
+        o["art_do_that"] += ra
+        o["dung_sang_sai" if a0 else "sai_sang_dung"] += 1
+        if c.impossible:
+            o["that_khong_tra_loi_duoc"] += 1
+            o["bo_sot_khong_tra_loi_duoc"] += sot
+        else:
+            o["that_tra_loi_duoc"] += 1
+            o["bo_sot_tra_loi_duoc"] += sot
+    o["wilson"] = {"dec_bat": list(av3.wilson(o["dec_bat"], o["doi_that"])),
+                   "bo_sot": list(av3.wilson(o["bo_sot"], o["doi_that"])),
+                   "bo_sot_tra_loi_duoc": list(av3.wilson(o["bo_sot_tra_loi_duoc"], o["that_tra_loi_duoc"])),
+                   "dec_chinh_xac": list(av3.wilson(o["dec_do_that"], o["dec_do"])),
+                   "art_chinh_xac": list(av3.wilson(o["art_do_that"], o["art_do"]))}
+    return o
+
+
+def kiem_thao_tac(goc: dict, p1p: dict, cau: dict) -> dict:
+    """V2-09 (b): số câu đổi tính đúng (classify, generate) / đổi decision (route) giữa MC-goc và MC-P1p."""
+    out = {}
+    for st in STAGES:
+        n, k = 0, 0
+        for (s, q), g in goc.items():
+            if s != st or not g.get("ok"):
+                continue
+            r = p1p.get((s, q))
+            if not r or not r.get("ok"):
+                continue
+            n += 1
+            if st == "route":
+                k += int(r["decision"] != g["decision"])
+            else:
+                k += int(av3.dung(st, g, cau[q]) != av3.dung(st, r, cau[q]))
+        out[st] = {"n": n, "doi": k, "dat": k <= K_MC}
+    out["dat"] = all(out[st]["dat"] for st in STAGES)
+    return out
+
+
+def phan_tich(runs: dict, cau: dict, v208_ctl: dict | None = None) -> dict:
+    out: dict = {"arms": {}}
+    for arm in sorted({a for a, _ in runs}):
+        R = lambda t: runs.get((arm, t))  # noqa: E731
+        A: dict = {}
+        g = R("golden")
+        if R("MC-goc") and R("MC-P1p"):
+            A["kiem_thao_tac"] = kiem_thao_tac(R("MC-goc"), R("MC-P1p"), cau)
+        if g:
+            co = [t for t in ("C1", "C2", "C3", "P1p", "D1", "D2", "D3", "B1", "A1", "B2", "A2", "B3", "A3") if R(t)]
+            A["lan"] = {t: {st: dem_do(g, R(t), st) for st in STAGES} for t in co}
+            A["s3"] = {t: {st: s3_mo_rong(g, R(t), st, cau) for st in ("classify", "generate")} for t in co}
+            C = [R(t) for t in C_RUNS if R(t)]
+            # (b) S2′
+            if R("P1p") and len(C) == 3:
+                S = {}
+                for st in STAGES:
+                    d = av3.do(g, R("P1p"), st)
+                    m = do_ty_le(g, C, st)
+                    qs = sorted(set(d) & set(m))
+                    dd = av3.boot_delta([d[q][0] for q in qs], [m[q][0] for q in qs])
+                    da = av3.boot_delta([d[q][1] for q in qs], [m[q][1] for q in qs])
+                    yen = dd["lo"] <= 0 <= dd["hi"]
+                    S[st] = {"delta_dec": dd, "delta_art": da, "decision_yen": yen, "artefact_do": da["lo"] > 0,
+                             "dat": yen and da["lo"] > 0}
+                A["S2p"] = S
+            # (a) A2: D so với C′
+            D = [R(t) for t in D_RUNS if R(t)]
+            if len(C) == 3 and len(D) == 3:
+                A["A2"] = {st: {k: (dict(v, khac=(v["lo"] > 0 or v["hi"] < 0)) if v else None) for k, v in delta_nhom(g, D, C, st).items()}
+                           for st in STAGES}
+            # (a) A3: so với đối chứng V2-08 (số đọc từ numbers_v3.json, chỉ đọc)
+            if v208_ctl and arm in v208_ctl and len(C) == 3:
+                tong_c = sum(A["lan"][t]["generate"]["dec_do"] for t in C_RUNS)
+                tong_v8 = sum(v208_ctl[arm])
+                A["A3"] = {"c_moi_generate_dec": [A["lan"][t]["generate"]["dec_do"] for t in C_RUNS],
+                           "v208_generate_dec": list(v208_ctl[arm]), "c_moi_la_muc_nen_chinh": tong_c < tong_v8}
+            # (c) R1 lặp
+            Bs, As = [R(t) for t in B_RUNS if R(t)], [R(t) for t in A_RUNS if R(t)]
+            if Bs and As:
+                A["R1"] = {"n_B": len(Bs), "n_A": len(As),
+                           "stages": {st: {k: (dict(v, lap_lai=v["lo"] > 0) if v else None) for k, v in delta_nhom(g, Bs, As, st).items()}
+                                      for st in STAGES}}
+        out["arms"][arm] = A
+    return out

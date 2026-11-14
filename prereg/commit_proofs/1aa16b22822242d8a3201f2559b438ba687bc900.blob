@@ -1,0 +1,202 @@
+r"""Chạy nghiên cứu 3 (AMENDMENT V2-08).
+
+    python scripts\run_s3.py hosted              # nhánh hosted, chạy ngay
+    python scripts\run_s3.py local [--zip-dir D] # nhánh local: chờ tới 23:00, chạy, rồi R1 (A→B→A) nếu trước 06:00
+    python scripts\run_s3.py status
+
+Không đụng file kết quả của nghiên cứu 2. Ghi `results/S3_20261112_v1.jsonl` (+ manifest), chỉ append.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import sys
+import time
+from datetime import datetime, timedelta
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(HERE))
+from p2 import s3  # noqa: E402
+from p2.lich_gio import la_dem  # noqa: E402
+
+PLAN = HERE / "runner" / "plan_p2.json"
+ZIP_DIR_MAC_DINH = Path(r"C:\Users\Admin\AppData\Local\Temp\claude\832de303e2f15407\a0dae9c7-1dd4-4d86-98dc-61ee9890fc8a\scratchpad\ollama_0.40.16")
+
+
+def qids() -> list[str]:
+    return json.loads(PLAN.read_text(encoding="utf-8"))["oracle_qids"]
+
+
+def in_(msg: str) -> None:
+    print(f"[{s3.bay_gio()}] {msg}", flush=True)
+
+
+def tien_s3() -> float:
+    if not s3.MANIFEST.exists():
+        return 0.0
+    return sum(json.loads(l).get("usd", 0.0) for l in s3.MANIFEST.read_text(encoding="utf-8").splitlines())
+
+
+def chay_mot(arm: str, ten: str, q: list[str], meta: dict, goi: s3.Goi | None = None) -> bool:
+    """Một lần (và một lần chạy lại nếu hỏng). Trả True nếu có một bản không hỏng."""
+    goi = goi or s3.Goi()
+    for ten_ghi in (ten, ten + "_r"):
+        bt = s3.bien_the(ten)
+        t0 = s3.bay_gio()
+        items, usage = s3.mot_lan(arm, bt, q, goi)
+        model = bt.model_hosted if arm == "hosted" else bt.model_local
+        usd = s3.usd(model, usage) if arm == "hosted" else 0.0
+        for it in items:
+            s3.ghi(s3.RESULT, {"arm": arm, "run": ten_ghi, "bien_the": ten, **it})
+        hong = s3.hong(items)
+        s3.ghi(s3.MANIFEST, {"arm": arm, "run": ten_ghi, "bien_the": ten, "ts": t0, "ts_end": s3.bay_gio(),
+                             "trang_thai": "hong" if hong else "ok", "n_item": len(items),
+                             "n_loi": sum(1 for i in items if not i["ok"]), "model": model,
+                             "temperature": bt.temperature, "k": bt.k, "stages": list(bt.stages_chay),
+                             "prompt_sha256": {st: s3.sha(bt.prompt[st]) for st in bt.stages_chay},
+                             "usage": usage, "usd": round(usd, 6), **meta})
+        in_(f"{arm} {ten_ghi}: {len(items)} item, lỗi {sum(1 for i in items if not i['ok'])}, "
+            f"{'HỎNG' if hong else 'ok'}, USD {usd:.4f}")
+        if not hong:
+            return True
+    return False
+
+
+def hosted(a) -> int:
+    q = qids()
+    xong = s3.da_co()
+    for ten in s3.thu_tu("hosted"):
+        if ("hosted", ten) in xong or ("hosted", ten + "_r") in xong:
+            continue
+        if tien_s3() >= s3.TRAN_S3_USD:
+            in_(f"DỪNG: trần USD nghiên cứu 3 ({tien_s3():.4f} ≥ {s3.TRAN_S3_USD})")
+            return 2
+        if not chay_mot("hosted", ten, q, {"nhanh": "hosted"}):
+            in_(f"{ten} hỏng hai lần — loại, báo (V2-08 (f))")
+    in_(f"hosted xong; USD nghiên cứu 3 = {tien_s3():.4f}")
+    return 0
+
+
+def meta_local(model: str, ky_vong: str) -> dict:
+    v_api = s3.api_version()
+    v_cli = s3.cli_version(s3.INSTALLED) if ky_vong == s3.OLLAMA_A else None
+    loi = s3.kiem_ghim(model)
+    if v_api != ky_vong:
+        loi.append(f"/api/version {v_api} ≠ {ky_vong}")
+    return {"nhanh": "local", "api_version": v_api, "cli_version": v_cli, "ghim_loi": loi,
+            "digest": s3.PIN_S3[model]["manifest_digest"], "weights_sha256": s3.PIN_S3[model]["weights_sha256"]}
+
+
+def cho_dem() -> None:
+    while not la_dem(datetime.now().hour):
+        time.sleep(60)
+
+
+def han_08() -> datetime:
+    n = datetime.now()
+    h = n.replace(hour=8, minute=0, second=0, microsecond=0)
+    return h if n.hour < 8 else h + timedelta(days=1)
+
+
+def local(a) -> int:
+    from mrunner.thuc import dam_bao_ollama
+    cho_dem()
+    in_("bắt đầu nhánh local (khung đêm)")
+    dam_bao_ollama()
+    q = qids()
+    xong = s3.da_co()
+    han = han_08()
+    ds = [t for t in s3.thu_tu("local")]
+    for ten in ds:
+        if ("local", ten) in xong or ("local", ten + "_r") in xong:
+            continue
+        can = timedelta(minutes=45 if ten == "M1" else 20)
+        if datetime.now() + can > han:
+            in_(f"bỏ {ten}: không đủ giờ trước 08:00 (V2-08 (d))")
+            continue
+        bt = s3.bien_the(ten)
+        meta = meta_local(bt.model_local, s3.OLLAMA_A)
+        if meta["ghim_loi"]:
+            in_(f"DỪNG: ghim lệch trước {ten}: {meta['ghim_loi']}")
+            return 3
+        if not chay_mot("local", ten, q, meta):
+            in_(f"{ten} hỏng hai lần — loại")
+    # R1 sau cùng, chỉ nếu bắt đầu trước 06:00 (V2-08 (d))
+    if ("local", "R1-A2") in xong:
+        return 0
+    n = datetime.now()
+    if not (n.hour < 6 or n.hour >= 23):
+        in_("R1 không bắt đầu trước 06:00 ⇒ dời sang đêm sau thành khối tự đủ (V2-08 (d))")
+        return 0
+    return r1(a, q)
+
+
+def sha_file(p: Path) -> str:
+    h = hashlib.sha256()
+    with p.open("rb") as f:
+        for k in iter(lambda: f.read(1 << 22), b""):
+            h.update(k)
+    return h.hexdigest()
+
+
+def r1(a, q) -> int:
+    zip_dir = Path(a.zip_dir)
+    exe_b = zip_dir / "ollama.exe"
+    if not exe_b.exists():
+        in_(f"DỪNG R1: không có {exe_b}")
+        return 4
+    truoc = {"api": s3.api_version(), "cli": s3.cli_version(s3.INSTALLED)}
+    in_(f"R1: trước khi đổi {truoc}")
+    da_dung = s3.dung_ollama()
+    vb = s3.bat_ollama(exe_b)
+    meta_b = meta_local("qwen2.5:3b", s3.OLLAMA_B)
+    meta_b.update(cli_version=s3.cli_version(exe_b), exe=str(exe_b), truoc=truoc, da_dung=da_dung,
+                  zip_sha256=(zip_dir / "ZIP_SHA256.txt").read_text(encoding="utf-8").strip()
+                  if (zip_dir / "ZIP_SHA256.txt").exists() else None)
+    in_(f"R1: server B {vb}; ghim {meta_b['ghim_loi'] or 'khớp'}")
+    ok_b = False
+    if vb == s3.OLLAMA_B and not meta_b["ghim_loi"]:
+        ok_b = chay_mot("local", "R1-B", q, meta_b)
+    else:
+        in_("R1-B không chạy: phiên bản hoặc ghim lệch")
+    s3.dung_ollama()
+    va = s3.bat_ollama(s3.INSTALLED)
+    meta_a = meta_local("qwen2.5:3b", s3.OLLAMA_A)
+    in_(f"R1: về A {va}; ghim {meta_a['ghim_loi'] or 'khớp'}")
+    if va != s3.OLLAMA_A or meta_a["ghim_loi"]:
+        in_("SỰ CỐ: không về được 0.30.10 hoặc ghim lệch — DỪNG, không chạy gì thêm trên local")
+        s3.ghi(s3.MANIFEST, {"arm": "local", "run": "R1-SU-CO", "trang_thai": "su_co", "ts": s3.bay_gio(), **meta_a})
+        return 5
+    chay_mot("local", "R1-A2", q, meta_a)
+    in_(f"R1 xong (B {'ok' if ok_b else 'không'})")
+    return 0
+
+
+def status(a) -> int:
+    if not s3.MANIFEST.exists():
+        print("chưa có lần nào")
+        return 0
+    for l in s3.MANIFEST.read_text(encoding="utf-8").splitlines():
+        m = json.loads(l)
+        print(m["arm"], m["run"], m.get("trang_thai"), m.get("ts"), m.get("ts_end"), m.get("n_loi"), m.get("usd"),
+              m.get("api_version"))
+    print(f"USD nghiên cứu 3: {tien_s3():.4f}")
+    return 0
+
+
+def main() -> int:
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+    ap = argparse.ArgumentParser()
+    ap.add_argument("lenh", choices=["hosted", "local", "status"])
+    ap.add_argument("--zip-dir", default=str(ZIP_DIR_MAC_DINH))
+    a = ap.parse_args()
+    return {"hosted": hosted, "local": local, "status": status}[a.lenh](a)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

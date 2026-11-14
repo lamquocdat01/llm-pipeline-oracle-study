@@ -1,0 +1,15 @@
+tree aca4c865a4701fe1e09b85600426175821e62938
+parent 99bbd5703dd20e000224c8fe286b6743a0ba42ea
+author unknown <lamquocdat@gmail.com> 1794038609 +0700
+committer unknown <lamquocdat@gmail.com> 1794038609 +0700
+
+P2A2: Amendment V2-07 - dinh chinh V2-04, cap cung runtime, oracle local, khoi MD3R (duyet CP2A 07-11-2026)
+
+(a) Dinh chinh V2-04: tray khoi dong 03-11 10:17, bo cai chay 20:07-20:10; doan B suy luan 0.40.14.
+(b) O local P2, P3: cap chinh = lan 1 -> k nho nhat >= 5, ca hai o A/D, cach >= 24 h; cap 1->5 in canh.
+(c) Oracle o local doc 20 lan hop le dau thuoc A/D; hosted giu nguyen; lan03, lan04 in rieng.
+(d) MD3R: 300 task t0 + t24h tren 0.30.10, cung params; 19 491 task cu trung khit (sha256 trong plan).
+(e) Cap bac cau = do kham pha "silent runtime update", khong ket luan H.
+Khong doi o du doan, nguong, mau, luat cham. Soan khong xem outcome.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

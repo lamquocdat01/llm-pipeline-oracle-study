@@ -1,0 +1,115 @@
+"""Test offline pipeline 2 (không gọi model): luật decision (PREREG_V2 §3), BM25 tất định, ghim, mẫu N2.
+
+    cd study\pipeline2 && ..\..\desktop\.venv\Scripts\python.exe -m pytest -q tests
+"""
+import json
+import sys
+from pathlib import Path
+
+import pytest
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from p2 import P2_DIR, bm25, corpus, executors, stages  # noqa: E402
+
+
+@pytest.mark.parametrize("text,ra", [
+    ('```json\n{"language": "en", "answerable": true}\n```', "answerable"),
+    ('{"language": "en", "answerable": false}', "unanswerable"),
+    ('{"language": "en", "answerable": "False"}', "unanswerable"),
+    ('{"language": "en", "answerable": "maybe"}', "PARSE_FAIL"),
+    ('{"language": "en"}', "PARSE_FAIL"),
+    ("not json", "PARSE_FAIL"),
+])
+def test_dec_classify(text, ra):
+    assert stages.dec_classify(text) == ra
+
+
+def test_lang_classify_chi_log():
+    assert stages.lang_classify('{"language": "EN", "answerable": true}') == "en"
+
+
+@pytest.mark.parametrize("text,ra", [
+    ("ROUTE: RETRIEVE. REASON: x", "RETRIEVE"),
+    ("ROUTE: RETRIEVÉ\nREASON: x", "RETRIEVE"),
+    ("route: answer. reason: y", "ANSWER"),
+    ("**ROUTE:** REFUSE", "REFUSE"),
+    ("ROUTE: RETRIEVW: x", "PARSE_FAIL"),
+    ("ROUTE: RETRIEVEMETHOD: x", "PARSE_FAIL"),
+    ("I would retrieve", "PARSE_FAIL"),
+])
+def test_dec_route(text, ra):
+    assert stages.dec_route(text) == ra
+
+
+def test_dec_generate():
+    assert stages.dec_generate("NOT IN DOCUMENTS", "d0001") == "abstain"
+    assert stages.dec_generate("X is Y [d0001][d0002].", "d0001") == "gold"
+    assert stages.dec_generate("X is Y [d0002].", "d0001") == "other"
+    assert stages.dec_generate("X is Y.", "d0001") == "nocite"
+    assert stages.dec_generate("NOT IN DOCUMENTS [d0001]", "d0001") == "gold"
+
+
+def test_domain():
+    assert stages.domain({"title": "www.britannica.com", "uri": "https://vertexaisearch/x"}) == "britannica.com"
+    assert stages.domain({"title": "Some Page Title", "uri": "https://en.wikipedia.org/wiki/A"}) == "en.wikipedia.org"
+
+
+def test_bm25_tat_dinh_va_pha_hoa():
+    docs = [{"id": "d0001", "text": "alpha beta"}, {"id": "d0000", "text": "alpha beta"}, {"id": "d0002", "text": "gamma"}]
+    idx = bm25.build(docs)
+    r = bm25.search(idx, "alpha", 3)
+    assert [d for d, _ in r] == ["d0000", "d0001"]
+    assert bm25.search(idx, "alpha", 3) == r
+
+
+co_corpus = pytest.mark.skipif(not corpus.duong_dan().exists(), reason="chưa có corpus ở THS_DATASETS")
+
+
+@co_corpus
+def test_index_ghim():
+    pin = json.loads((P2_DIR / "data/index_pin.json").read_text(encoding="utf-8"))
+    idx = bm25.nap(P2_DIR / "data/bm25_index.json", pin["sha256"])
+    docs, _ = corpus.nap()
+    assert len(docs) == pin["n_docs"] == len(idx["ids"])
+
+
+@co_corpus
+def test_mau_n2_loai_smoke_va_on_dinh():
+    _, cau = corpus.nap()
+    a, b = corpus.mau_n2(cau), corpus.mau_n2(cau)
+    assert [c.qid for c in a] == [c.qid for c in b] and len(a) == 200
+    assert not {c.qid for c in a} & corpus.smoke_ids(cau)
+    assert {c.qid for c in corpus.mau_oracle(cau)} <= {c.qid for c in a}
+
+
+@co_corpus
+def test_plan_khop_mau():
+    p = P2_DIR / "runner/plan_p2.json"
+    if not p.exists():
+        pytest.skip("chưa sinh plan")
+    plan = json.loads(p.read_text(encoding="utf-8"))
+    _, cau = corpus.nap()
+    assert plan["mau"]["n2_qids"] == [c.qid for c in corpus.mau_n2(cau)]
+    assert not set(plan["mau"]["n2_qids"]) & set(plan["mau"]["smoke_qids_loai"])
+    ids = [t["id"] for t in plan["tasks"]]
+    assert len(ids) == len(set(ids))
+
+
+def test_executor_kinds():
+    assert set(executors.executors()) == {"p2_classify", "p2_route", "p2_retrieve", "p2_generate", "p2_live"}
+
+
+def test_ten_runner_duoc_gate_nhan():
+    """core.pid_song / gate._alive_runner nhận runner theo chuỗi `run_m_all` trong cmdline (sự cố 01-11 09:21)."""
+    import subprocess
+    import psutil
+    from mrunner import gate
+    from mrunner.core import pid_song
+    s = P2_DIR / "scripts" / "run_m_all_p2.py"
+    assert s.exists() and "run_m_all" in s.name
+    p = subprocess.Popen([sys.executable, "-c", "import time; time.sleep(20)", str(s)])
+    try:
+        assert gate._alive_runner(p.pid) is True
+        assert "python" in psutil.Process(p.pid).name().lower() and pid_song(p.pid)
+    finally:
+        p.kill()

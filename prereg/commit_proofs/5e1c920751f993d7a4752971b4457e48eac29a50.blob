@@ -1,0 +1,90 @@
+r"""Ghim model local (Ollama) theo HASH, kiểu AMENDMENT 05: digest manifest + SHA-256 file trọng số.
+
+Tên model Ollama (`qwen2.5:3b`) là alias động như `main` của Hugging Face: `ollama pull` đổi nó sang
+bản khác mà tên giữ nguyên. Ghim = (1) digest manifest mà `/api/tags` trả phải khớp, (2) layer
+`application/vnd.ollama.image.model` trong manifest trỏ đúng blob ghim, (3) SHA-256 của chính file blob
+khớp (tên blob là hash khai báo; ta BĂM LẠI file, không tin tên). Lệch ⇒ từ chối chạy.
+Băm 2 GB tốn ~10 s nên chỉ băm khi (kích thước, mtime) đổi so với lần băm trước trong tiến trình.
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+from pathlib import Path
+
+# Ghim 01-11-2026 (đợt 32, N1): digest từ /api/tags, blob từ manifest; SHA-256 file đã băm lại và khớp
+# (`python -m p2.pin` in "KHỚP GHIM").
+PIN: dict[str, dict] = {
+    "qwen2.5:3b": {
+        "manifest_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+        "weights_sha256": "5ee4f07cdb9beadbbb293e85803c569b01bd37ed059d2715faa7bb405f31caa6",
+        "weights_size": 1929903008,
+        "dung_cho": "pipeline 2: classify / route / generate, nhánh local (họ Qwen2.5 — cặp với Microduck)",
+    },
+    # N3 (01-11-2026): họ thứ 3. Digest từ /api/tags, blob từ manifest; băm lại bằng `python -m p2.pin`.
+    "llama3.1:8b": {
+        "manifest_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+        "weights_sha256": "667b0c1932bc6ffc593ed1d03f895bf2dc8dc6df21db3042284a6f4416b06a29",
+        "weights_size": 4920738944,
+        "dung_cho": "N3: route + generate ở pipeline 2; M2 routing + M4 reply ở Microduck",
+    },
+}
+
+_DA_BAM: dict[str, tuple[int, float, str]] = {}
+
+
+def thu_muc() -> Path:
+    return Path(os.environ.get("OLLAMA_MODELS") or (Path.home() / ".ollama" / "models"))
+
+
+def manifest(model: str) -> dict:
+    ten, tag = model.split(":")
+    return json.loads((thu_muc() / "manifests/registry.ollama.ai/library" / ten / tag).read_text(encoding="utf-8"))
+
+
+def bam(p: Path) -> str:
+    st = p.stat()
+    c = _DA_BAM.get(str(p))
+    if c and c[:2] == (st.st_size, st.st_mtime):
+        return c[2]
+    h = hashlib.sha256()
+    with p.open("rb") as f:
+        for k in iter(lambda: f.read(1 << 22), b""):
+            h.update(k)
+    _DA_BAM[str(p)] = (st.st_size, st.st_mtime, h.hexdigest())
+    return h.hexdigest()
+
+
+def kiem(model: str, digest_api: str | None) -> list[str]:
+    """Danh sách lỗi (rỗng = khớp ghim)."""
+    p = PIN.get(model)
+    if p is None:
+        return [f"{model}: không có trong PIN"]
+    loi = []
+    if digest_api != p["manifest_digest"]:
+        loi.append(f"{model}: digest manifest {digest_api} ≠ ghim {p['manifest_digest']}")
+    try:
+        lop = [l for l in manifest(model)["layers"] if l["mediaType"] == "application/vnd.ollama.image.model"]
+    except OSError as e:
+        return loi + [f"{model}: không đọc được manifest ({e})"]
+    if len(lop) != 1 or lop[0]["digest"] != "sha256:" + p["weights_sha256"]:
+        loi.append(f"{model}: layer model trong manifest không trỏ blob ghim")
+        return loi
+    blob = thu_muc() / "blobs" / ("sha256-" + p["weights_sha256"])
+    if not blob.exists():
+        return loi + [f"{model}: thiếu blob {blob.name}"]
+    h = bam(blob)
+    if h != p["weights_sha256"]:
+        loi.append(f"{model}: SHA-256 file trọng số {h} ≠ ghim")
+    return loi
+
+
+if __name__ == "__main__":
+    import sys
+    from mrunner.thuc import dam_bao_ollama, ollama_digest
+    dam_bao_ollama()
+    for m in PIN:
+        loi = kiem(m, ollama_digest(m))
+        print(m, "KHỚP GHIM" if not loi else loi)
+    sys.exit(0)

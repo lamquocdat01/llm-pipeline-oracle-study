@@ -1,0 +1,12 @@
+tree 0713901bc36842f32d8f635d13ef70291075e42e
+parent 39b530cb9d4732aabf987afe018c6ca14a880218
+author unknown <lamquocdat@gmail.com> 1793499966 +0700
+committer unknown <lamquocdat@gmail.com> 1793499966 +0700
+
+dot32-N2: Amendment V2-01 - doi ten runner run_p2.py -> run_m_all_p2.py
+
+core.pid_song va gate chi nhan runner khi cmdline chua run_m_all; ban dau runner p2 bi coi la chet
+(runner thu hai vao duoc va xoa LOCK, gate co the bao free). Khong sua desktop/. 221 ban ghi giu nguyen.
+Them test_ten_runner_duoc_gate_nhan.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
