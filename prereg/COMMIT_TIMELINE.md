@@ -27,6 +27,8 @@ before the calls*, not a preregistration.
 | `9da8209` | V2-08 | Study-3 analysis frozen (after the first call, before the first read) | 2026-11-12 16:23:12 | 2026-11-12 16:21:54 | -78 s (after) | 4 |
 | `aea58ad` | V2-09 | Follow-up plan and code | 2026-11-13 10:10:56 | 2026-11-13 10:11:17 | 21 s | 7 |
 | `21db032` | V2-09 | Hash aea58ad recorded; V2-09 analysis frozen | 2026-11-13 10:11:12 | 2026-11-13 10:11:17 | 5 s | 2 |
+| `6091f5a` | Post hoc 3 | Plan of post hoc analysis 3 (token-F1 thresholds), before its script ran | 2026-11-14 14:25:19 | — | — | 1 |
+| `e287aaf` | Post hoc 4 | Plan of post hoc analysis 4 (naive rule on both pair sets, detection side), before its script ran | 2026-11-14 17:45:30 | — | — | 1 |
 
 Study 1 (plan committed 2026-09-16 16:32:29, first call 2026-09-16 23:10:58) is released under tag `tse-v1.0`,
 whose public history starts on 2026-09-23, after its measurements.

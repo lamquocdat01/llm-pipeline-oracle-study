@@ -905,5 +905,45 @@
   "commit_time": "2026-11-13T10:11:12+07:00",
   "first_governed_call": "2026-11-13T10:11:17+07:00",
   "seconds_commit_to_first_call": 5.0
+ },
+ {
+  "commit": "6091f5a49bdec2f601f7f8220e205790349335d2",
+  "role": "Post hoc 3",
+  "what": "Plan of post hoc analysis 3 (token-F1 thresholds), before its script ran",
+  "tree": "aab9690702d2e62353dcb30e4cdc99018acf42da",
+  "files": [
+   {
+    "path": "study/analysis_v3_posthoc/PLAN_POSTHOC3.md",
+    "trees": [
+     "aab9690702d2e62353dcb30e4cdc99018acf42da",
+     "ba37d1e9bfaf1cc015a24806198a2d71987699bf",
+     "8a24cdb3e3c6d44c45882a139c1821d1bec5ce46"
+    ],
+    "blob": "1c0d57eb9bc17fd2c2cd9106fc40e477ab374622"
+   }
+  ],
+  "commit_time": "2026-11-14T14:25:19+07:00",
+  "first_governed_call": null,
+  "seconds_commit_to_first_call": null
+ },
+ {
+  "commit": "e287aafe73e56dae7d8f22cbed1637cade5a7b55",
+  "role": "Post hoc 4",
+  "what": "Plan of post hoc analysis 4 (naive rule on both pair sets, detection side), before its script ran",
+  "tree": "6fddf25896210a1d70c2dc88964e4dde5627f4f9",
+  "files": [
+   {
+    "path": "study/analysis_v3_posthoc/PLAN_POSTHOC4.md",
+    "trees": [
+     "6fddf25896210a1d70c2dc88964e4dde5627f4f9",
+     "a272629456ab7608828bff6be0eff903e3110fb3",
+     "1cdcb5942a9c16d0387424666ee52ea20623d504"
+    ],
+    "blob": "a7c00ccf0c5065d7be760d076058abd291a69d0d"
+   }
+  ],
+  "commit_time": "2026-11-14T17:45:30+07:00",
+  "first_governed_call": null,
+  "seconds_commit_to_first_call": null
  }
 ]

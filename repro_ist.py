@@ -25,6 +25,7 @@ INPLACE = [  # script ghi thẳng vào out/ của nó: chạy trên bản sao r�
     ("study/analysis_v3_posthoc/run_v3_posthoc.py", "numbers_v3_posthoc.json", "study/analysis_v3_posthoc/out"),
     ("study/analysis_v3_posthoc/run_v3_posthoc2.py", "numbers_v3_posthoc2.json", "study/analysis_v3_posthoc/out"),
     ("study/analysis_v3_posthoc/run_v3_posthoc3.py", "numbers_v3_posthoc3.json", "study/analysis_v3_posthoc/out"),
+    ("study/analysis_v3_posthoc/run_v3_posthoc4.py", "numbers_v3_posthoc4.json", "study/analysis_v3_posthoc/out"),
 ]
 
 

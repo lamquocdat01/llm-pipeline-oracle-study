@@ -1,0 +1,283 @@
+{
+ "F": {
+  "ca_sot": {
+   "F1<0.5": 8,
+   "F1<0.5|dung_sang_sai": 1,
+   "F1<0.5|sai_sang_dung": 7,
+   "F1<0.8": 10,
+   "F1<0.8|dung_sang_sai": 1,
+   "F1<0.8|sai_sang_dung": 9,
+   "art": 10,
+   "art|dung_sang_sai": 1,
+   "art|sai_sang_dung": 9,
+   "dec": 0,
+   "dec|dung_sang_sai": 0,
+   "dec|sai_sang_dung": 0,
+   "n": 10,
+   "n|dung_sang_sai": 1,
+   "n|sai_sang_dung": 9
+  },
+  "route_field": "không có chuẩn ngoài ở route, nên không có phía phát hiện",
+  "theo_cau": {
+   "571098f8a58dae1900cd6ab2": {
+    "dung_sang_sai": 3,
+    "sai_sang_dung": 4,
+    "sot": 0,
+    "tra_loi_duoc": true
+   },
+   "571166352419e314009555f3": {
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 2,
+    "sot": 2,
+    "tra_loi_duoc": true
+   },
+   "572758e0f1498d1400e8f6ae": {
+    "dung_sang_sai": 1,
+    "sai_sang_dung": 2,
+    "sot": 2,
+    "tra_loi_duoc": true
+   },
+   "5728e5224b864d1900165033": {
+    "dung_sang_sai": 3,
+    "sai_sang_dung": 2,
+    "sot": 2,
+    "tra_loi_duoc": true
+   },
+   "57293f8a6aef051400154bde": {
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 3,
+    "sot": 3,
+    "tra_loi_duoc": true
+   },
+   "57294e6b1d04691400779276": {
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 1,
+    "sot": 0,
+    "tra_loi_duoc": true
+   },
+   "573361404776f41900660940": {
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 2,
+    "sot": 0,
+    "tra_loi_duoc": true
+   },
+   "573403394776f419006616e0": {
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 1,
+    "sot": 0,
+    "tra_loi_duoc": true
+   },
+   "573784fa1c45671900574487": {
+    "dung_sang_sai": 1,
+    "sai_sang_dung": 3,
+    "sot": 1,
+    "tra_loi_duoc": true
+   },
+   "5a25ade0ef59cd001a623c46": {
+    "dung_sang_sai": 2,
+    "sai_sang_dung": 0,
+    "sot": 0,
+    "tra_loi_duoc": false
+   },
+   "5a25d23bef59cd001a623ce5": {
+    "dung_sang_sai": 3,
+    "sai_sang_dung": 0,
+    "sot": 0,
+    "tra_loi_duoc": false
+   },
+   "5a2ed525a83784001a7d2503": {
+    "dung_sang_sai": 5,
+    "sai_sang_dung": 0,
+    "sot": 0,
+    "tra_loi_duoc": false
+   },
+   "5a5812f9770dc0001aeeffd2": {
+    "dung_sang_sai": 1,
+    "sai_sang_dung": 0,
+    "sot": 0,
+    "tra_loi_duoc": false
+   },
+   "5acf7fdf77cf76001a684fd6": {
+    "dung_sang_sai": 1,
+    "sai_sang_dung": 0,
+    "sot": 0,
+    "tra_loi_duoc": false
+   },
+   "5acfed0b77cf76001a686526": {
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 1,
+    "sot": 0,
+    "tra_loi_duoc": false
+   },
+   "5acff63377cf76001a68665d": {
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 4,
+    "sot": 0,
+    "tra_loi_duoc": false
+   },
+   "5ad04de377cf76001a686fa8": {
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 1,
+    "sot": 0,
+    "tra_loi_duoc": false
+   },
+   "5ad25963d7d075001a428e0c": {
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 2,
+    "sot": 0,
+    "tra_loi_duoc": false
+   },
+   "5ad261cfd7d075001a429063": {
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 2,
+    "sot": 0,
+    "tra_loi_duoc": false
+   },
+   "5ad2990cd7d075001a429b62": {
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 2,
+    "sot": 0,
+    "tra_loi_duoc": false
+   },
+   "5ad3a733604f3c001a3feacc": {
+    "dung_sang_sai": 2,
+    "sai_sang_dung": 0,
+    "sot": 0,
+    "tra_loi_duoc": false
+   },
+   "5ad3b1be604f3c001a3feceb": {
+    "dung_sang_sai": 4,
+    "sai_sang_dung": 0,
+    "sot": 0,
+    "tra_loi_duoc": false
+   }
+  },
+  "truly_changed": {
+   "F1<0.5": 54,
+   "F1<0.5|dung_sang_sai": 26,
+   "F1<0.5|sai_sang_dung": 28,
+   "F1<0.8": 58,
+   "F1<0.8|dung_sang_sai": 26,
+   "F1<0.8|sai_sang_dung": 32,
+   "art": 58,
+   "art|dung_sang_sai": 26,
+   "art|sai_sang_dung": 32,
+   "dec": 48,
+   "dec|dung_sang_sai": 25,
+   "dec|sai_sang_dung": 23,
+   "n": 58,
+   "n|dung_sang_sai": 26,
+   "n|sai_sang_dung": 32
+  }
+ },
+ "N": {
+  "cung_runtime": {
+   "matrix": {
+    "dat_2_3": true,
+    "dung": 11,
+    "khong_phan_dinh": 0,
+    "o_dung": [
+     1,
+     4,
+     5,
+     6,
+     8,
+     9,
+     11,
+     12,
+     13,
+     14,
+     17
+    ],
+    "o_khong_phan_dinh": [],
+    "o_sai": [
+     2,
+     15
+    ],
+    "phan_dinh": 13,
+    "sai": 2
+   },
+   "naive": {
+    "dat_2_3": true,
+    "dung": 8,
+    "khong_phan_dinh": 2,
+    "o_dung": [
+     1,
+     4,
+     5,
+     8,
+     9,
+     11,
+     14,
+     17
+    ],
+    "o_khong_phan_dinh": [
+     2,
+     15
+    ],
+    "o_sai": [
+     6,
+     12,
+     13
+    ],
+    "phan_dinh": 11,
+    "sai": 3
+   }
+  },
+  "dang_ky": {
+   "matrix": {
+    "dat_2_3": true,
+    "dung": 8,
+    "khong_phan_dinh": 1,
+    "o_dung": [
+     1,
+     5,
+     6,
+     9,
+     11,
+     12,
+     13,
+     14
+    ],
+    "o_khong_phan_dinh": [
+     4
+    ],
+    "o_sai": [
+     2,
+     8,
+     15,
+     17
+    ],
+    "phan_dinh": 12,
+    "sai": 4
+   },
+   "naive": {
+    "dat_2_3": false,
+    "dung": 5,
+    "khong_phan_dinh": 3,
+    "o_dung": [
+     1,
+     5,
+     9,
+     11,
+     14
+    ],
+    "o_khong_phan_dinh": [
+     2,
+     4,
+     15
+    ],
+    "o_sai": [
+     6,
+     8,
+     12,
+     13,
+     17
+    ],
+    "phan_dinh": 10,
+    "sai": 5
+   }
+  }
+ },
+ "_nhan": "post hoc lần 4 — 14-11-2026, sau kiểm đóng lỗi vòng 4; kế hoạch PLAN_POSTHOC4.md (commit e287aaf)"
+}

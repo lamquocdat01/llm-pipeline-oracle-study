@@ -175,6 +175,16 @@
   "sha256": "17ee70e8ad7a44e19a7320a17018fb94b4e73dea366d043626406fa8d96518e4"
  },
  {
+  "path": "prereg/commit_proofs/1c0d57eb9bc17fd2c2cd9106fc40e477ab374622.blob",
+  "bytes": 4158,
+  "sha256": "356070b597ac4c9190b28da7f7115a4065d523819f7bf5bf1c6852a3fabb2293"
+ },
+ {
+  "path": "prereg/commit_proofs/1cdcb5942a9c16d0387424666ee52ea20623d504.tree",
+  "bytes": 255,
+  "sha256": "373328e1ce1c6bd1921921bdc2f9df9e9874c70f77c41f9f2bebacc97cb0f746"
+ },
+ {
   "path": "prereg/commit_proofs/201f90015ad0ca489c017e92316dd47c79e7c2c2.tree",
   "bytes": 116,
   "sha256": "dbdc0274507fbaf02ab87e1aa05a939bca1f43db0bb0dd0d4c7dd1b516a2410d"
@@ -405,6 +415,11 @@
   "sha256": "05374401929b96d8d039981c03541934c360f28677ef92704c78da39bcf3eb60"
  },
  {
+  "path": "prereg/commit_proofs/6091f5a49bdec2f601f7f8220e205790349335d2.commit",
+  "bytes": 388,
+  "sha256": "42b610776eee982249d60c91a022104e07d2a0ce942b5e7a61f5d8fd63f69f2e"
+ },
+ {
   "path": "prereg/commit_proofs/614595b0c4415edebbc85a607cb8137737f66ea8.blob",
   "bytes": 7861261,
   "sha256": "99318c15d98eb2d390292ca0e03d8498740f237d606b19d91cbef799b2423e99"
@@ -448,6 +463,11 @@
   "path": "prereg/commit_proofs/6d2290c2e0933c45980e0ccd867807e7b15d6075.tree",
   "bytes": 40,
   "sha256": "162b5f34c9994906f5800f460591b1d1a4811e864f03ffb926ea47f4e6650a48"
+ },
+ {
+  "path": "prereg/commit_proofs/6fddf25896210a1d70c2dc88964e4dde5627f4f9.tree",
+  "bytes": 837,
+  "sha256": "d1806070e5bebc3e1396a102cefc5db6a775203aaaf53222834ec020bb5a6467"
  },
  {
   "path": "prereg/commit_proofs/7227aad34b3356acfce7a03406bab9d4efc77b24.blob",
@@ -533,6 +553,11 @@
   "path": "prereg/commit_proofs/8a0f702070ba6f179c4a0867a2c9f66ab66044ca.blob",
   "bytes": 9103972,
   "sha256": "50a9df6d161a3ba219823cab04c04557567e19ecaab904e0e196cbaaeed772cd"
+ },
+ {
+  "path": "prereg/commit_proofs/8a24cdb3e3c6d44c45882a139c1821d1bec5ce46.tree",
+  "bytes": 165,
+  "sha256": "e17a4c9dfa230f46cbdcbf852108c6fdb27ad0b036273d4e88aa34a4d218e490"
  },
  {
   "path": "prereg/commit_proofs/8a2f21748aa01d0fc45cc77030d8fc60f4ccc020.blob",
@@ -635,6 +660,11 @@
   "sha256": "8ef40ddf36ba9eb653ecea42a31fd8893df4594e7553e6836e2a853ad98ddce9"
  },
  {
+  "path": "prereg/commit_proofs/a272629456ab7608828bff6be0eff903e3110fb3.tree",
+  "bytes": 361,
+  "sha256": "2f4ce71dfe739e57d00cd32f24496b45d32742cec80b228921cb2a562bbaee91"
+ },
+ {
   "path": "prereg/commit_proofs/a6abb01c23f2245660f8d6d8bcfcc3365c0f85ca.commit",
   "bytes": 579,
   "sha256": "741636ec50d9266e5393a015f78c9dd5ed7ac6cbedd0dc7005c45fcd85466e42"
@@ -643,6 +673,11 @@
   "path": "prereg/commit_proofs/a6c9f52b17fda36d703384a48435b74ffd8b8539.blob",
   "bytes": 4522,
   "sha256": "ab65ac3157444222beb92e4cb71006f2e4bfc7a842e58c7713d266e4fd39d0cf"
+ },
+ {
+  "path": "prereg/commit_proofs/a7c00ccf0c5065d7be760d076058abd291a69d0d.blob",
+  "bytes": 2009,
+  "sha256": "1c62612ac4f082bbdb664d0775c5984af762d9c480b33b097cca5e1a6258871b"
  },
  {
   "path": "prereg/commit_proofs/a7e76c996cd52dee965b65889a9582f494d7796d.blob",
@@ -663,6 +698,11 @@
   "path": "prereg/commit_proofs/aa91de0b40d696b52f117ac90443f11b8ab502da.blob",
   "bytes": 17265,
   "sha256": "8d531bb8bba208f20212cf573868e66a6a16b37759e07c252da7340b7ae42a91"
+ },
+ {
+  "path": "prereg/commit_proofs/aab9690702d2e62353dcb30e4cdc99018acf42da.tree",
+  "bytes": 837,
+  "sha256": "1545e8ecfdafdb900929b17f696769f0e6eb1d1786866d60025976238d364789"
  },
  {
   "path": "prereg/commit_proofs/ab8a66c080d73149401c7c3678633023483e5d39.tree",
@@ -748,6 +788,11 @@
   "path": "prereg/commit_proofs/b87fc5909700d7e337544ff34678ac1a4d10fc73.blob",
   "bytes": 1313,
   "sha256": "fe6f750450e9662a20ccc8450d6c6458e40eb19a2f4e071f2af19dbf170c774d"
+ },
+ {
+  "path": "prereg/commit_proofs/ba37d1e9bfaf1cc015a24806198a2d71987699bf.tree",
+  "bytes": 361,
+  "sha256": "343ad0bc18ffcb8907e9cbfcfb8b60089ac1d245f1976d79b78f3effd987eb07"
  },
  {
   "path": "prereg/commit_proofs/bbf4e22546a0424f718ccb5e59a02d598c02633e.commit",
@@ -905,6 +950,11 @@
   "sha256": "1783604c6f059ae7c42ce59c7d75f5e820a6f241ba5a3761b7fa4b0739bf5805"
  },
  {
+  "path": "prereg/commit_proofs/e287aafe73e56dae7d8f22cbed1637cade5a7b55.commit",
+  "bytes": 410,
+  "sha256": "61c5dcf3d9a9e885729c27294f722b1e05f7fd46b2204cccb1c95937ba9a2bf5"
+ },
+ {
   "path": "prereg/commit_proofs/e4180627ec091d52d73e3bfac17c532fe7c36f0a.blob",
   "bytes": 16835,
   "sha256": "e8a40c8df637804fdb3762377336c972653005e9e4c17356fdf01b0691158273"
@@ -1001,13 +1051,13 @@
  },
  {
   "path": "prereg/commit_proofs/INDEX.json",
-  "bytes": 30507,
-  "sha256": "b75a958f027b426057429bea242024e991e8739e9e486d50515e7ce1028e2c51"
+  "bytes": 31876,
+  "sha256": "c681fe37abeef238c8a2f86a2af0d95fbda5eeed1daaa79461c33ab6839bd34f"
  },
  {
   "path": "prereg/COMMIT_TIMELINE.md",
-  "bytes": 2938,
-  "sha256": "18ff94d410da351ebbd5e05a90800a3c5dac90e3a76f8250e949c10d08c4809a"
+  "bytes": 3245,
+  "sha256": "0739f06b478455698e9d050c04e7ea0de83bed04365c3050800cc70f7ca30297"
  },
  {
   "path": "prereg/verify_commit_proofs.py",
@@ -1021,8 +1071,8 @@
  },
  {
   "path": "repro_ist.py",
-  "bytes": 3461,
-  "sha256": "7556dd85cc9d6eb1e6179611b81ec315272cb69eb3d33050698f7650ff916e54"
+  "bytes": 3650,
+  "sha256": "9ebd1bb5c5f82f29aa42b6c45c4cbafef445ea3f2766fdcf22db2f1c9ee72dc0"
  },
  {
   "path": "requirements.txt",
@@ -1210,9 +1260,19 @@
   "sha256": "ebb522d4ffecfba018829468e304759aeb74bae11c5fd59853a453bec8638cd3"
  },
  {
+  "path": "study/analysis_v3_posthoc/out/numbers_v3_posthoc4.json",
+  "bytes": 5054,
+  "sha256": "6163b5992d9f59d112b4c661b25ba3ec2c2db59a5888b070affde762e8d9f596"
+ },
+ {
   "path": "study/analysis_v3_posthoc/PLAN_POSTHOC3.md",
   "bytes": 4158,
   "sha256": "356070b597ac4c9190b28da7f7115a4065d523819f7bf5bf1c6852a3fabb2293"
+ },
+ {
+  "path": "study/analysis_v3_posthoc/PLAN_POSTHOC4.md",
+  "bytes": 2009,
+  "sha256": "1c62612ac4f082bbdb664d0775c5984af762d9c480b33b097cca5e1a6258871b"
  },
  {
   "path": "study/analysis_v3_posthoc/run_v3_posthoc.py",
@@ -1228,6 +1288,11 @@
   "path": "study/analysis_v3_posthoc/run_v3_posthoc3.py",
   "bytes": 14627,
   "sha256": "ed670848fb8e256d8741ecf3ec09e6ba1b749fe53daee6185f8659ea85f43161"
+ },
+ {
+  "path": "study/analysis_v3_posthoc/run_v3_posthoc4.py",
+  "bytes": 4604,
+  "sha256": "7330a94e4dcce7166a55371079395c60de9584d452feb3e3e3be0e3e837dd13f"
  },
  {
   "path": "study/analysis_v3b/av3b.py",
