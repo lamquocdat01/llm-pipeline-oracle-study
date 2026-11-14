@@ -1,0 +1,3244 @@
+{
+ "_schema": "numbers_v3b/1",
+ "arms": {
+  "hosted": {
+   "A3": {
+    "c_moi_generate_dec": [
+     1,
+     0,
+     0
+    ],
+    "c_moi_la_muc_nen_chinh": true,
+    "v208_generate_dec": [
+     0,
+     1,
+     1
+    ]
+   },
+   "S2p": {
+    "classify": {
+     "artefact_do": true,
+     "dat": true,
+     "decision_yen": true,
+     "delta_art": {
+      "delta": 0.133333,
+      "hi": 0.258333,
+      "lo": 0.025,
+      "n": 40,
+      "per_seed": [
+       [
+        0.025,
+        0.258333
+       ],
+       [
+        0.033333,
+        0.258333
+       ],
+       [
+        0.025,
+        0.25
+       ],
+       [
+        0.025,
+        0.258333
+       ],
+       [
+        0.025,
+        0.25
+       ]
+      ]
+     },
+     "delta_dec": {
+      "delta": 0.075,
+      "hi": 0.175,
+      "lo": 0.0,
+      "n": 40,
+      "per_seed": [
+       [
+        0.0,
+        0.175
+       ],
+       [
+        0.0,
+        0.15
+       ],
+       [
+        0.0,
+        0.175
+       ],
+       [
+        0.0,
+        0.175
+       ],
+       [
+        0.0,
+        0.15
+       ]
+      ]
+     }
+    },
+    "generate": {
+     "artefact_do": true,
+     "dat": true,
+     "decision_yen": true,
+     "delta_art": {
+      "delta": 0.25,
+      "hi": 0.375,
+      "lo": 0.133333,
+      "n": 40,
+      "per_seed": [
+       [
+        0.133333,
+        0.375
+       ],
+       [
+        0.133333,
+        0.375
+       ],
+       [
+        0.133333,
+        0.375
+       ],
+       [
+        0.133333,
+        0.375
+       ],
+       [
+        0.133333,
+        0.375
+       ]
+      ]
+     },
+     "delta_dec": {
+      "delta": 0.016667,
+      "hi": 0.075,
+      "lo": -0.025,
+      "n": 40,
+      "per_seed": [
+       [
+        -0.025,
+        0.075
+       ],
+       [
+        -0.025,
+        0.075
+       ],
+       [
+        -0.025,
+        0.075
+       ],
+       [
+        -0.025,
+        0.075
+       ],
+       [
+        -0.025,
+        0.075
+       ]
+      ]
+     }
+    },
+    "route": {
+     "artefact_do": true,
+     "dat": true,
+     "decision_yen": true,
+     "delta_art": {
+      "delta": 0.541667,
+      "hi": 0.683333,
+      "lo": 0.4,
+      "n": 40,
+      "per_seed": [
+       [
+        0.4,
+        0.683333
+       ],
+       [
+        0.4,
+        0.675
+       ],
+       [
+        0.4,
+        0.683333
+       ],
+       [
+        0.4,
+        0.675
+       ],
+       [
+        0.4,
+        0.675
+       ]
+      ]
+     },
+     "delta_dec": {
+      "delta": 0.041667,
+      "hi": 0.141667,
+      "lo": -0.05,
+      "n": 40,
+      "per_seed": [
+       [
+        -0.05,
+        0.133333
+       ],
+       [
+        -0.05,
+        0.133333
+       ],
+       [
+        -0.05,
+        0.141667
+       ],
+       [
+        -0.05,
+        0.133333
+       ],
+       [
+        -0.05,
+        0.133333
+       ]
+      ]
+     }
+    }
+   },
+   "kiem_thao_tac": {
+    "classify": {
+     "dat": false,
+     "doi": 3,
+     "n": 40
+    },
+    "dat": false,
+    "generate": {
+     "dat": true,
+     "doi": 0,
+     "n": 40
+    },
+    "route": {
+     "dat": false,
+     "doi": 3,
+     "n": 40
+    }
+   },
+   "lan": {
+    "C1": {
+     "classify": {
+      "art_do": 1,
+      "art_wilson": [
+       0.004427,
+       0.128814
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 6,
+      "art_wilson": [
+       0.070612,
+       0.290723
+      ],
+      "dec_do": 1,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.004427,
+       0.128814
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 13,
+      "art_wilson": [
+       0.200845,
+       0.479823
+      ],
+      "dec_do": 2,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.013821,
+       0.165039
+      ],
+      "n": 40
+     }
+    },
+    "C2": {
+     "classify": {
+      "art_do": 1,
+      "art_wilson": [
+       0.004427,
+       0.128814
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 4,
+      "art_wilson": [
+       0.03958,
+       0.230518
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 9,
+      "art_wilson": [
+       0.123161,
+       0.375031
+      ],
+      "dec_do": 1,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.004427,
+       0.128814
+      ],
+      "n": 40
+     }
+    },
+    "C3": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 2,
+      "art_wilson": [
+       0.013821,
+       0.165039
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 12,
+      "art_wilson": [
+       0.180748,
+       0.4543
+      ],
+      "dec_do": 1,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.004427,
+       0.128814
+      ],
+      "n": 40
+     }
+    },
+    "P1p": {
+     "classify": {
+      "art_do": 6,
+      "art_wilson": [
+       0.070612,
+       0.290723
+      ],
+      "dec_do": 3,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.025836,
+       0.198642
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 14,
+      "art_wilson": [
+       0.221345,
+       0.504941
+      ],
+      "dec_do": 1,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.004427,
+       0.128814
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 33,
+      "art_wilson": [
+       0.6805,
+       0.912546
+      ],
+      "dec_do": 3,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.025836,
+       0.198642
+      ],
+      "n": 40
+     }
+    }
+   },
+   "s3": {
+    "C1": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 1,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        0.0,
+        0.793451
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 1,
+      "art_do": 6,
+      "art_do_that": 1,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 1,
+      "dec_do": 1,
+      "dec_do_that": 1,
+      "doi_that": 1,
+      "dung_sang_sai": 1,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 1,
+      "wilson": {
+       "art_chinh_xac": [
+        0.030053,
+        0.563503
+       ],
+       "bo_sot": [
+        0.0,
+        0.793451
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.0,
+        0.793451
+       ],
+       "dec_bat": [
+        0.206549,
+        1.0
+       ],
+       "dec_chinh_xac": [
+        0.206549,
+        1.0
+       ]
+      }
+     }
+    },
+    "C2": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 1,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        0.0,
+        0.793451
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 0,
+      "art_do": 4,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        0.0,
+        0.489891
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     }
+    },
+    "C3": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 0,
+      "art_do": 2,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        0.0,
+        0.65762
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     }
+    },
+    "P1p": {
+     "classify": {
+      "art_bat": 3,
+      "art_do": 6,
+      "art_do_that": 3,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 3,
+      "dec_do": 3,
+      "dec_do_that": 3,
+      "doi_that": 3,
+      "dung_sang_sai": 2,
+      "sai_sang_dung": 1,
+      "that_khong_tra_loi_duoc": 2,
+      "that_tra_loi_duoc": 1,
+      "wilson": {
+       "art_chinh_xac": [
+        0.187616,
+        0.812384
+       ],
+       "bo_sot": [
+        0.0,
+        0.561497
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.0,
+        0.793451
+       ],
+       "dec_bat": [
+        0.438503,
+        1.0
+       ],
+       "dec_chinh_xac": [
+        0.438503,
+        1.0
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 1,
+      "art_do": 14,
+      "art_do_that": 1,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 1,
+      "dec_do": 1,
+      "dec_do_that": 1,
+      "doi_that": 1,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 1,
+      "that_khong_tra_loi_duoc": 1,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        0.012722,
+        0.314687
+       ],
+       "bo_sot": [
+        0.0,
+        0.793451
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        0.206549,
+        1.0
+       ],
+       "dec_chinh_xac": [
+        0.206549,
+        1.0
+       ]
+      }
+     }
+    }
+   }
+  },
+  "local": {
+   "A2": {
+    "classify": {
+     "art": {
+      "delta": 0.0,
+      "hi": 0.0,
+      "khac": false,
+      "lo": 0.0,
+      "n": 40,
+      "per_seed": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ]
+      ]
+     },
+     "dec": {
+      "delta": 0.0,
+      "hi": 0.0,
+      "khac": false,
+      "lo": 0.0,
+      "n": 40,
+      "per_seed": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ]
+      ]
+     }
+    },
+    "generate": {
+     "art": {
+      "delta": -0.008333,
+      "hi": 0.0,
+      "khac": false,
+      "lo": -0.025,
+      "n": 40,
+      "per_seed": [
+       [
+        -0.025,
+        0.0
+       ],
+       [
+        -0.025,
+        0.0
+       ],
+       [
+        -0.025,
+        0.0
+       ],
+       [
+        -0.025,
+        0.0
+       ],
+       [
+        -0.025,
+        0.0
+       ]
+      ]
+     },
+     "dec": {
+      "delta": 0.0,
+      "hi": 0.0,
+      "khac": false,
+      "lo": 0.0,
+      "n": 40,
+      "per_seed": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ]
+      ]
+     }
+    },
+    "route": {
+     "art": {
+      "delta": 0.0,
+      "hi": 0.0,
+      "khac": false,
+      "lo": 0.0,
+      "n": 40,
+      "per_seed": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ]
+      ]
+     },
+     "dec": {
+      "delta": 0.0,
+      "hi": 0.0,
+      "khac": false,
+      "lo": 0.0,
+      "n": 40,
+      "per_seed": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ]
+      ]
+     }
+    }
+   },
+   "A3": {
+    "c_moi_generate_dec": [
+     5,
+     5,
+     5
+    ],
+    "c_moi_la_muc_nen_chinh": true,
+    "v208_generate_dec": [
+     8,
+     4,
+     8
+    ]
+   },
+   "R1": {
+    "n_A": 3,
+    "n_B": 3,
+    "stages": {
+     "classify": {
+      "art": {
+       "delta": 0.0,
+       "hi": 0.0,
+       "lap_lai": false,
+       "lo": 0.0,
+       "n": 40,
+       "per_seed": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0
+        ]
+       ]
+      },
+      "dec": {
+       "delta": 0.0,
+       "hi": 0.0,
+       "lap_lai": false,
+       "lo": 0.0,
+       "n": 40,
+       "per_seed": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.0,
+         0.0
+        ]
+       ]
+      }
+     },
+     "generate": {
+      "art": {
+       "delta": 0.625,
+       "hi": 0.775,
+       "lap_lai": true,
+       "lo": 0.475,
+       "n": 40,
+       "per_seed": [
+        [
+         0.475,
+         0.775
+        ],
+        [
+         0.475,
+         0.775
+        ],
+        [
+         0.475,
+         0.775
+        ],
+        [
+         0.475,
+         0.775
+        ],
+        [
+         0.475,
+         0.775
+        ]
+       ]
+      },
+      "dec": {
+       "delta": 0.175,
+       "hi": 0.3,
+       "lap_lai": true,
+       "lo": 0.075,
+       "n": 40,
+       "per_seed": [
+        [
+         0.075,
+         0.3
+        ],
+        [
+         0.075,
+         0.3
+        ],
+        [
+         0.075,
+         0.3
+        ],
+        [
+         0.075,
+         0.3
+        ],
+        [
+         0.075,
+         0.3
+        ]
+       ]
+      }
+     },
+     "route": {
+      "art": {
+       "delta": 0.875,
+       "hi": 0.975,
+       "lap_lai": true,
+       "lo": 0.75,
+       "n": 40,
+       "per_seed": [
+        [
+         0.775,
+         0.975
+        ],
+        [
+         0.775,
+         0.975
+        ],
+        [
+         0.75,
+         0.975
+        ],
+        [
+         0.775,
+         0.975
+        ],
+        [
+         0.775,
+         0.975
+        ]
+       ]
+      },
+      "dec": {
+       "delta": 0.225,
+       "hi": 0.35,
+       "lap_lai": true,
+       "lo": 0.1,
+       "n": 40,
+       "per_seed": [
+        [
+         0.1,
+         0.35
+        ],
+        [
+         0.1,
+         0.35
+        ],
+        [
+         0.1,
+         0.35
+        ],
+        [
+         0.1,
+         0.35
+        ],
+        [
+         0.1,
+         0.35
+        ]
+       ]
+      }
+     }
+    }
+   },
+   "S2p": {
+    "classify": {
+     "artefact_do": false,
+     "dat": false,
+     "decision_yen": true,
+     "delta_art": {
+      "delta": 0.05,
+      "hi": 0.125,
+      "lo": 0.0,
+      "n": 40,
+      "per_seed": [
+       [
+        0.0,
+        0.125
+       ],
+       [
+        0.0,
+        0.125
+       ],
+       [
+        0.0,
+        0.125
+       ],
+       [
+        0.0,
+        0.125
+       ],
+       [
+        0.0,
+        0.125
+       ]
+      ]
+     },
+     "delta_dec": {
+      "delta": 0.05,
+      "hi": 0.125,
+      "lo": 0.0,
+      "n": 40,
+      "per_seed": [
+       [
+        0.0,
+        0.125
+       ],
+       [
+        0.0,
+        0.125
+       ],
+       [
+        0.0,
+        0.125
+       ],
+       [
+        0.0,
+        0.125
+       ],
+       [
+        0.0,
+        0.125
+       ]
+      ]
+     }
+    },
+    "generate": {
+     "artefact_do": false,
+     "dat": false,
+     "decision_yen": false,
+     "delta_art": {
+      "delta": 0.066667,
+      "hi": 0.183333,
+      "lo": -0.041667,
+      "n": 40,
+      "per_seed": [
+       [
+        -0.033333,
+        0.175
+       ],
+       [
+        -0.033333,
+        0.175
+       ],
+       [
+        -0.033333,
+        0.175
+       ],
+       [
+        -0.041667,
+        0.183333
+       ],
+       [
+        -0.041667,
+        0.175
+       ]
+      ]
+     },
+     "delta_dec": {
+      "delta": 0.15,
+      "hi": 0.3,
+      "lo": 0.025,
+      "n": 40,
+      "per_seed": [
+       [
+        0.025,
+        0.275
+       ],
+       [
+        0.025,
+        0.3
+       ],
+       [
+        0.025,
+        0.275
+       ],
+       [
+        0.025,
+        0.275
+       ],
+       [
+        0.025,
+        0.275
+       ]
+      ]
+     }
+    },
+    "route": {
+     "artefact_do": true,
+     "dat": false,
+     "decision_yen": false,
+     "delta_art": {
+      "delta": 0.925,
+      "hi": 1.0,
+      "lo": 0.825,
+      "n": 40,
+      "per_seed": [
+       [
+        0.85,
+        1.0
+       ],
+       [
+        0.85,
+        1.0
+       ],
+       [
+        0.825,
+        1.0
+       ],
+       [
+        0.825,
+        1.0
+       ],
+       [
+        0.825,
+        1.0
+       ]
+      ]
+     },
+     "delta_dec": {
+      "delta": 0.425,
+      "hi": 0.575,
+      "lo": 0.275,
+      "n": 40,
+      "per_seed": [
+       [
+        0.275,
+        0.575
+       ],
+       [
+        0.275,
+        0.575
+       ],
+       [
+        0.275,
+        0.575
+       ],
+       [
+        0.275,
+        0.575
+       ],
+       [
+        0.275,
+        0.575
+       ]
+      ]
+     }
+    }
+   },
+   "kiem_thao_tac": {
+    "classify": {
+     "dat": true,
+     "doi": 0,
+     "n": 40
+    },
+    "dat": false,
+    "generate": {
+     "dat": true,
+     "doi": 0,
+     "n": 40
+    },
+    "route": {
+     "dat": false,
+     "doi": 10,
+     "n": 40
+    }
+   },
+   "lan": {
+    "A1": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     }
+    },
+    "A2": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     }
+    },
+    "A3": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     }
+    },
+    "B1": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 25,
+      "art_wilson": [
+       0.470324,
+       0.75777
+      ],
+      "dec_do": 7,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.087454,
+       0.3195
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 35,
+      "art_wilson": [
+       0.738879,
+       0.945405
+      ],
+      "dec_do": 9,
+      "dec_do_parse_fail": 4,
+      "dec_wilson": [
+       0.123161,
+       0.375031
+      ],
+      "n": 40
+     }
+    },
+    "B2": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 25,
+      "art_wilson": [
+       0.470324,
+       0.75777
+      ],
+      "dec_do": 7,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.087454,
+       0.3195
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 35,
+      "art_wilson": [
+       0.738879,
+       0.945405
+      ],
+      "dec_do": 9,
+      "dec_do_parse_fail": 4,
+      "dec_wilson": [
+       0.123161,
+       0.375031
+      ],
+      "n": 40
+     }
+    },
+    "B3": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 25,
+      "art_wilson": [
+       0.470324,
+       0.75777
+      ],
+      "dec_do": 7,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.087454,
+       0.3195
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 35,
+      "art_wilson": [
+       0.738879,
+       0.945405
+      ],
+      "dec_do": 9,
+      "dec_do_parse_fail": 4,
+      "dec_wilson": [
+       0.123161,
+       0.375031
+      ],
+      "n": 40
+     }
+    },
+    "C1": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 24,
+      "art_wilson": [
+       0.445959,
+       0.736517
+      ],
+      "dec_do": 5,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.054595,
+       0.261121
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     }
+    },
+    "C2": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 23,
+      "art_wilson": [
+       0.421951,
+       0.714906
+      ],
+      "dec_do": 5,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.054595,
+       0.261121
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     }
+    },
+    "C3": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 23,
+      "art_wilson": [
+       0.421951,
+       0.714906
+      ],
+      "dec_do": 5,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.054595,
+       0.261121
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     }
+    },
+    "D1": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 23,
+      "art_wilson": [
+       0.421951,
+       0.714906
+      ],
+      "dec_do": 5,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.054595,
+       0.261121
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     }
+    },
+    "D2": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 23,
+      "art_wilson": [
+       0.421951,
+       0.714906
+      ],
+      "dec_do": 5,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.054595,
+       0.261121
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     }
+    },
+    "D3": {
+     "classify": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 23,
+      "art_wilson": [
+       0.421951,
+       0.714906
+      ],
+      "dec_do": 5,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.054595,
+       0.261121
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 0,
+      "art_wilson": [
+       0.0,
+       0.087622
+      ],
+      "dec_do": 0,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.0,
+       0.087622
+      ],
+      "n": 40
+     }
+    },
+    "P1p": {
+     "classify": {
+      "art_do": 2,
+      "art_wilson": [
+       0.013821,
+       0.165039
+      ],
+      "dec_do": 2,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.013821,
+       0.165039
+      ],
+      "n": 40
+     },
+     "generate": {
+      "art_do": 26,
+      "art_wilson": [
+       0.495059,
+       0.778655
+      ],
+      "dec_do": 11,
+      "dec_do_parse_fail": 0,
+      "dec_wilson": [
+       0.16108,
+       0.42835
+      ],
+      "n": 40
+     },
+     "route": {
+      "art_do": 37,
+      "art_wilson": [
+       0.801358,
+       0.974164
+      ],
+      "dec_do": 17,
+      "dec_do_parse_fail": 5,
+      "dec_wilson": [
+       0.285094,
+       0.578049
+      ],
+      "n": 40
+     }
+    }
+   },
+   "s3": {
+    "A1": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     }
+    },
+    "A2": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     }
+    },
+    "A3": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     }
+    },
+    "B1": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 5,
+      "art_do": 25,
+      "art_do_that": 5,
+      "bo_sot": 1,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 1,
+      "dec_bat": 4,
+      "dec_do": 7,
+      "dec_do_that": 4,
+      "doi_that": 5,
+      "dung_sang_sai": 2,
+      "sai_sang_dung": 3,
+      "that_khong_tra_loi_duoc": 3,
+      "that_tra_loi_duoc": 2,
+      "wilson": {
+       "art_chinh_xac": [
+        0.088606,
+        0.39131
+       ],
+       "bo_sot": [
+        0.036224,
+        0.624465
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.094531,
+        0.905469
+       ],
+       "dec_bat": [
+        0.375535,
+        0.963776
+       ],
+       "dec_chinh_xac": [
+        0.250458,
+        0.84178
+       ]
+      }
+     }
+    },
+    "B2": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 5,
+      "art_do": 25,
+      "art_do_that": 5,
+      "bo_sot": 1,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 1,
+      "dec_bat": 4,
+      "dec_do": 7,
+      "dec_do_that": 4,
+      "doi_that": 5,
+      "dung_sang_sai": 2,
+      "sai_sang_dung": 3,
+      "that_khong_tra_loi_duoc": 3,
+      "that_tra_loi_duoc": 2,
+      "wilson": {
+       "art_chinh_xac": [
+        0.088606,
+        0.39131
+       ],
+       "bo_sot": [
+        0.036224,
+        0.624465
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.094531,
+        0.905469
+       ],
+       "dec_bat": [
+        0.375535,
+        0.963776
+       ],
+       "dec_chinh_xac": [
+        0.250458,
+        0.84178
+       ]
+      }
+     }
+    },
+    "B3": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 5,
+      "art_do": 25,
+      "art_do_that": 5,
+      "bo_sot": 1,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 1,
+      "dec_bat": 4,
+      "dec_do": 7,
+      "dec_do_that": 4,
+      "doi_that": 5,
+      "dung_sang_sai": 2,
+      "sai_sang_dung": 3,
+      "that_khong_tra_loi_duoc": 3,
+      "that_tra_loi_duoc": 2,
+      "wilson": {
+       "art_chinh_xac": [
+        0.088606,
+        0.39131
+       ],
+       "bo_sot": [
+        0.036224,
+        0.624465
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.094531,
+        0.905469
+       ],
+       "dec_bat": [
+        0.375535,
+        0.963776
+       ],
+       "dec_chinh_xac": [
+        0.250458,
+        0.84178
+       ]
+      }
+     }
+    },
+    "C1": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 3,
+      "art_do": 24,
+      "art_do_that": 3,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 3,
+      "dec_do": 5,
+      "dec_do_that": 3,
+      "doi_that": 3,
+      "dung_sang_sai": 2,
+      "sai_sang_dung": 1,
+      "that_khong_tra_loi_duoc": 2,
+      "that_tra_loi_duoc": 1,
+      "wilson": {
+       "art_chinh_xac": [
+        0.043443,
+        0.310039
+       ],
+       "bo_sot": [
+        0.0,
+        0.561497
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.0,
+        0.793451
+       ],
+       "dec_bat": [
+        0.438503,
+        1.0
+       ],
+       "dec_chinh_xac": [
+        0.230724,
+        0.882379
+       ]
+      }
+     }
+    },
+    "C2": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 3,
+      "art_do": 23,
+      "art_do_that": 3,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 3,
+      "dec_do": 5,
+      "dec_do_that": 3,
+      "doi_that": 3,
+      "dung_sang_sai": 2,
+      "sai_sang_dung": 1,
+      "that_khong_tra_loi_duoc": 2,
+      "that_tra_loi_duoc": 1,
+      "wilson": {
+       "art_chinh_xac": [
+        0.045377,
+        0.321275
+       ],
+       "bo_sot": [
+        0.0,
+        0.561497
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.0,
+        0.793451
+       ],
+       "dec_bat": [
+        0.438503,
+        1.0
+       ],
+       "dec_chinh_xac": [
+        0.230724,
+        0.882379
+       ]
+      }
+     }
+    },
+    "C3": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 3,
+      "art_do": 23,
+      "art_do_that": 3,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 3,
+      "dec_do": 5,
+      "dec_do_that": 3,
+      "doi_that": 3,
+      "dung_sang_sai": 2,
+      "sai_sang_dung": 1,
+      "that_khong_tra_loi_duoc": 2,
+      "that_tra_loi_duoc": 1,
+      "wilson": {
+       "art_chinh_xac": [
+        0.045377,
+        0.321275
+       ],
+       "bo_sot": [
+        0.0,
+        0.561497
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.0,
+        0.793451
+       ],
+       "dec_bat": [
+        0.438503,
+        1.0
+       ],
+       "dec_chinh_xac": [
+        0.230724,
+        0.882379
+       ]
+      }
+     }
+    },
+    "D1": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 3,
+      "art_do": 23,
+      "art_do_that": 3,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 3,
+      "dec_do": 5,
+      "dec_do_that": 3,
+      "doi_that": 3,
+      "dung_sang_sai": 2,
+      "sai_sang_dung": 1,
+      "that_khong_tra_loi_duoc": 2,
+      "that_tra_loi_duoc": 1,
+      "wilson": {
+       "art_chinh_xac": [
+        0.045377,
+        0.321275
+       ],
+       "bo_sot": [
+        0.0,
+        0.561497
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.0,
+        0.793451
+       ],
+       "dec_bat": [
+        0.438503,
+        1.0
+       ],
+       "dec_chinh_xac": [
+        0.230724,
+        0.882379
+       ]
+      }
+     }
+    },
+    "D2": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 3,
+      "art_do": 23,
+      "art_do_that": 3,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 3,
+      "dec_do": 5,
+      "dec_do_that": 3,
+      "doi_that": 3,
+      "dung_sang_sai": 2,
+      "sai_sang_dung": 1,
+      "that_khong_tra_loi_duoc": 2,
+      "that_tra_loi_duoc": 1,
+      "wilson": {
+       "art_chinh_xac": [
+        0.045377,
+        0.321275
+       ],
+       "bo_sot": [
+        0.0,
+        0.561497
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.0,
+        0.793451
+       ],
+       "dec_bat": [
+        0.438503,
+        1.0
+       ],
+       "dec_chinh_xac": [
+        0.230724,
+        0.882379
+       ]
+      }
+     }
+    },
+    "D3": {
+     "classify": {
+      "art_bat": 0,
+      "art_do": 0,
+      "art_do_that": 0,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 0,
+      "dec_do": 0,
+      "dec_do_that": 0,
+      "doi_that": 0,
+      "dung_sang_sai": 0,
+      "sai_sang_dung": 0,
+      "that_khong_tra_loi_duoc": 0,
+      "that_tra_loi_duoc": 0,
+      "wilson": {
+       "art_chinh_xac": [
+        null,
+        null
+       ],
+       "bo_sot": [
+        null,
+        null
+       ],
+       "bo_sot_tra_loi_duoc": [
+        null,
+        null
+       ],
+       "dec_bat": [
+        null,
+        null
+       ],
+       "dec_chinh_xac": [
+        null,
+        null
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 3,
+      "art_do": 23,
+      "art_do_that": 3,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 3,
+      "dec_do": 5,
+      "dec_do_that": 3,
+      "doi_that": 3,
+      "dung_sang_sai": 2,
+      "sai_sang_dung": 1,
+      "that_khong_tra_loi_duoc": 2,
+      "that_tra_loi_duoc": 1,
+      "wilson": {
+       "art_chinh_xac": [
+        0.045377,
+        0.321275
+       ],
+       "bo_sot": [
+        0.0,
+        0.561497
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.0,
+        0.793451
+       ],
+       "dec_bat": [
+        0.438503,
+        1.0
+       ],
+       "dec_chinh_xac": [
+        0.230724,
+        0.882379
+       ]
+      }
+     }
+    },
+    "P1p": {
+     "classify": {
+      "art_bat": 2,
+      "art_do": 2,
+      "art_do_that": 2,
+      "bo_sot": 0,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 0,
+      "dec_bat": 2,
+      "dec_do": 2,
+      "dec_do_that": 2,
+      "doi_that": 2,
+      "dung_sang_sai": 1,
+      "sai_sang_dung": 1,
+      "that_khong_tra_loi_duoc": 1,
+      "that_tra_loi_duoc": 1,
+      "wilson": {
+       "art_chinh_xac": [
+        0.34238,
+        1.0
+       ],
+       "bo_sot": [
+        0.0,
+        0.65762
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.0,
+        0.793451
+       ],
+       "dec_bat": [
+        0.34238,
+        1.0
+       ],
+       "dec_chinh_xac": [
+        0.34238,
+        1.0
+       ]
+      }
+     },
+     "generate": {
+      "art_bat": 5,
+      "art_do": 26,
+      "art_do_that": 5,
+      "bo_sot": 1,
+      "bo_sot_khong_tra_loi_duoc": 0,
+      "bo_sot_tra_loi_duoc": 1,
+      "dec_bat": 4,
+      "dec_do": 11,
+      "dec_do_that": 4,
+      "doi_that": 5,
+      "dung_sang_sai": 3,
+      "sai_sang_dung": 2,
+      "that_khong_tra_loi_duoc": 4,
+      "that_tra_loi_duoc": 1,
+      "wilson": {
+       "art_chinh_xac": [
+        0.085071,
+        0.378763
+       ],
+       "bo_sot": [
+        0.036224,
+        0.624465
+       ],
+       "bo_sot_tra_loi_duoc": [
+        0.206549,
+        1.0
+       ],
+       "dec_bat": [
+        0.375535,
+        0.963776
+       ],
+       "dec_chinh_xac": [
+        0.151665,
+        0.646199
+       ]
+      }
+     }
+    }
+   }
+  }
+ },
+ "inputs": {
+  "S3B_20261113_v1.jsonl": "ebb90cf879c5a6c4bc1b582ab75a3aa8f652e4b48a04b2297c14f1df2221aec3",
+  "S3B_20261113_v1.manifest.jsonl": "4635e4b83bff035c28ae1f752514d10895673721ebb0638cf68a2726ccde1eae"
+ },
+ "manifest": [
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "MC-goc",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "qids": "mc",
+   "run": "MC-goc",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T10:11:17+07:00",
+   "ts_end": "2026-11-13T10:13:00+07:00",
+   "usd": 0.022586
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "MC-P1p",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "qids": "mc",
+   "run": "MC-P1p",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T10:13:01+07:00",
+   "ts_end": "2026-11-13T10:14:41+07:00",
+   "usd": 0.022226
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "golden",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "golden",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T10:14:41+07:00",
+   "ts_end": "2026-11-13T10:16:24+07:00",
+   "usd": 0.023354
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "C1",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "C1",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T10:16:24+07:00",
+   "ts_end": "2026-11-13T10:18:04+07:00",
+   "usd": 0.023164
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "C2",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "C2",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T10:18:04+07:00",
+   "ts_end": "2026-11-13T10:19:44+07:00",
+   "usd": 0.023426
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "C3",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "C3",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T10:19:44+07:00",
+   "ts_end": "2026-11-13T10:21:22+07:00",
+   "usd": 0.023384
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "P1p",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "P1p",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T10:21:22+07:00",
+   "ts_end": "2026-11-13T10:23:01+07:00",
+   "usd": 0.023004
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "MC-goc",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "mc",
+   "run": "MC-goc",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T23:00:18+07:00",
+   "ts_end": "2026-11-13T23:17:58+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "MC-P1p",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "mc",
+   "run": "MC-P1p",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T23:17:59+07:00",
+   "ts_end": "2026-11-13T23:36:10+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "golden",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "golden",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T23:36:25+07:00",
+   "ts_end": "2026-11-13T23:55:29+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "C1",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "C1",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T23:55:30+07:00",
+   "ts_end": "2026-11-14T00:03:02+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "C2",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "C2",
+   "trang_thai": "ok",
+   "ts": "2026-11-14T00:03:03+07:00",
+   "ts_end": "2026-11-14T00:10:03+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "C3",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "C3",
+   "trang_thai": "ok",
+   "ts": "2026-11-14T00:10:03+07:00",
+   "ts_end": "2026-11-14T00:16:57+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "P1p",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "P1p",
+   "trang_thai": "ok",
+   "ts": "2026-11-14T00:16:57+07:00",
+   "ts_end": "2026-11-14T00:36:17+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": null,
+   "arm": "local",
+   "bien_the": null,
+   "cli_version": null,
+   "model": "qwen2.5:7b",
+   "n_loi": null,
+   "qids": null,
+   "run": "NAP-7B",
+   "trang_thai": "su_kien",
+   "ts": "2026-11-14T00:36:38+07:00",
+   "ts_end": null,
+   "usd": null
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "D1",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "D1",
+   "trang_thai": "ok",
+   "ts": "2026-11-14T00:36:38+07:00",
+   "ts_end": "2026-11-14T00:43:21+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "D2",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "D2",
+   "trang_thai": "ok",
+   "ts": "2026-11-14T00:43:21+07:00",
+   "ts_end": "2026-11-14T00:50:19+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "D3",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "D3",
+   "trang_thai": "ok",
+   "ts": "2026-11-14T00:50:19+07:00",
+   "ts_end": "2026-11-14T00:57:03+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.40.16",
+   "arm": "local",
+   "bien_the": "B1",
+   "cli_version": "ollama version is 0.40.16",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "B1",
+   "trang_thai": "ok",
+   "ts": "2026-11-14T00:57:11+07:00",
+   "ts_end": "2026-11-14T01:12:20+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "A1",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "A1",
+   "trang_thai": "ok",
+   "ts": "2026-11-14T01:12:25+07:00",
+   "ts_end": "2026-11-14T01:31:15+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.40.16",
+   "arm": "local",
+   "bien_the": "B2",
+   "cli_version": "ollama version is 0.40.16",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "B2",
+   "trang_thai": "ok",
+   "ts": "2026-11-14T01:31:19+07:00",
+   "ts_end": "2026-11-14T01:46:57+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "A2",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "A2",
+   "trang_thai": "ok",
+   "ts": "2026-11-14T01:47:00+07:00",
+   "ts_end": "2026-11-14T02:05:55+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.40.16",
+   "arm": "local",
+   "bien_the": "B3",
+   "cli_version": "ollama version is 0.40.16",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "B3",
+   "trang_thai": "ok",
+   "ts": "2026-11-14T02:05:59+07:00",
+   "ts_end": "2026-11-14T02:20:46+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "A3",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "qids": "oracle",
+   "run": "A3",
+   "trang_thai": "ok",
+   "ts": "2026-11-14T02:20:53+07:00",
+   "ts_end": "2026-11-14T02:39:42+07:00",
+   "usd": 0.0
+  }
+ ],
+ "tham_so": {
+  "B": 2000,
+  "k_mc": 2,
+  "seeds": [
+   20261112,
+   20261113,
+   20261114,
+   20261115,
+   20261116
+  ]
+ }
+}

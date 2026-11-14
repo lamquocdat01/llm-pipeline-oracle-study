@@ -1,0 +1,16 @@
+cap,k_art,n_art,k_dec,n_dec,r_art,r_dec,margin,lo,hi,o_dec,o_art,pin,ho,nguon,stage,margin_theo_chu_s8_dec_tru_art,ghep_dec_doi_art_khong,ghep_ca_hai_doi,ghep_art_doi_dec_khong,ghep_n,dk_1to5_margin,dk_1to5_lo,dk_1to5_hi
+P2 classify hosted,12,200,0,200,0.06,0.0,0.06,0.028414,0.101932,1,2,delegated,gemini,P2,classify,-0.06,0,0,12,200,,,
+P2 route hosted,55,200,4,200,0.275,0.02,0.255,0.190274,0.321806,5,6,delegated,gemini,P2,route,-0.255,0,4,51,200,,,
+P2 generate hosted,13,200,1,200,0.065,0.005,0.06,0.024965,0.103216,14,15,delegated,gemini,P2,generate,-0.06,0,1,12,200,,,
+P2 live A (tên miền),42,50,0,50,0.84,0.0,0.84,0.695948,0.916626,11,12,delegated,gemini,P2,live,-0.84,0,0,42,50,,,
+P2 live B (văn bản),50,50,0,50,1.0,0.0,1.0,0.899099,1.0,11,13,delegated,gemini,P2,live,-1.0,0,0,50,50,,,
+P2 classify qwen,0,200,0,200,0.0,0.0,0.0,-0.018845,0.018845,3,4,pinnable,qwen,P2,classify,0.0,0,0,0,200,0.05,0.008856,0.095712
+P2 route qwen,10,200,2,200,0.05,0.01,0.04,0.005749,0.080237,7,8,pinnable,qwen,P2,route,-0.04,0,2,8,200,0.395,0.307136,0.474124
+P2 generate qwen,4,200,1,200,0.02,0.005,0.015,-0.010834,0.045566,16,17,pinnable,qwen,P2,generate,-0.015,0,1,3,200,0.245,0.164683,0.321938
+P2 retrieve BM25,0,200,0,200,0.0,0.0,0.0,-0.018845,0.018845,9,10,pinnable,bm25,P2,retrieve,0.0,0,0,0,200,,,
+P3 route llama,21,200,0,200,0.105,0.0,0.105,0.064991,0.15518,18,19,pinnable,llama,P3,route,-0.105,0,0,21,200,0.7,0.626858,0.758957
+P3 generate llama,7,200,0,200,0.035,0.0,0.035,0.008978,0.070471,20,21,pinnable,llama,P3,generate,-0.035,0,0,7,200,0.425,0.350349,0.4957
+MD3R routing llama,0,100,0,100,0.0,0.0,0.0,-0.036993,0.036993,22,23,pinnable,llama,MD3R,M2,0.0,0,0,0,100,,,
+MD3R reply llama,0,50,0,50,0.0,0.0,0.0,-0.071348,0.071348,24,25,pinnable,llama,MD3R,M4,0.0,0,0,0,50,,,
+P3H route llama,19,200,0,200,0.095,0.0,0.095,0.056705,0.143602,26,27,delegated,llama,P3H,route,-0.095,0,0,19,200,,,
+P3H generate llama,51,200,10,200,0.255,0.05,0.205,0.136919,0.273473,28,29,delegated,llama,P3H,generate,-0.205,0,10,41,200,,,

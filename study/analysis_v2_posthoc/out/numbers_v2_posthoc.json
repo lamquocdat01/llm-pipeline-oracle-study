@@ -1,0 +1,1909 @@
+{
+ "_schema": "numbers_v2_posthoc/1",
+ "da_co_trong_numbers_v2": {
+  "d4_nhom_depth": "d4_depth",
+  "d5_phep_so_phu": "h2.iii.phu_mprotocol",
+  "d9_ho": "d9_ho",
+  "khoang_cach_cap": "don_vi[*].gap"
+ },
+ "doi_chung_ghep_cap": {
+  "generate": {
+   "a": 1,
+   "b": 50,
+   "c": 6,
+   "d": 143,
+   "delta": 0.22,
+   "hi": 0.287916,
+   "lo": 0.152774,
+   "n": 200
+  },
+  "nhan": "post hoc — viết 12-11-2026 sau khi biết kết quả N4 và đọc R2; không thay kết luận H đã đăng ký",
+  "route": {
+   "a": 2,
+   "b": 17,
+   "c": 19,
+   "d": 162,
+   "delta": -0.01,
+   "hi": 0.050056,
+   "lo": -0.070237,
+   "n": 200
+  }
+ },
+ "don_vi": {
+  "cap_dang_ky_1to5": {
+   "17": {
+    "không phân định": 1,
+    "sai": 6,
+    "đúng": 10
+   },
+   "h3_du_doan": {
+    "can": 8,
+    "dung": 8,
+    "phan_dinh": 12
+   },
+   "o": {
+    "1": {
+     "k": 0,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "11": {
+     "k": 0,
+     "n": 50,
+     "phan_quyet": "đúng"
+    },
+    "12": {
+     "k": 42,
+     "n": 50,
+     "phan_quyet": "đúng"
+    },
+    "13": {
+     "k": 50,
+     "n": 50,
+     "phan_quyet": "đúng"
+    },
+    "14": {
+     "k": 1,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "15": {
+     "k": 13,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "17": {
+     "k": 70,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "19": {
+     "k": 145,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "2": {
+     "k": 12,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "21": {
+     "k": 90,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "23": {
+     "k": 0,
+     "n": 100,
+     "phan_quyet": "đúng"
+    },
+    "25": {
+     "k": 0,
+     "n": 50,
+     "phan_quyet": "đúng"
+    },
+    "26": {
+     "k": 0,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "27": {
+     "k": 19,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "28": {
+     "k": 10,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "29": {
+     "k": 51,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "4": {
+     "k": 14,
+     "n": 200,
+     "phan_quyet": "không phân định"
+    },
+    "5": {
+     "k": 4,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "6": {
+     "k": 55,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "8": {
+     "k": 106,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "9": {
+     "k": 0,
+     "n": 200,
+     "phan_quyet": "đúng"
+    }
+   },
+   "p3h_4": {
+    "không phân định": 0,
+    "sai": 1,
+    "đúng": 3
+   }
+  },
+  "cap_dang_ky_1to5_MD3_goc": {
+   "17": {
+    "không phân định": 1,
+    "sai": 8,
+    "đúng": 8
+   },
+   "h3_du_doan": {
+    "can": 8,
+    "dung": 8,
+    "phan_dinh": 12
+   },
+   "o": {
+    "1": {
+     "k": 0,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "11": {
+     "k": 0,
+     "n": 50,
+     "phan_quyet": "đúng"
+    },
+    "12": {
+     "k": 42,
+     "n": 50,
+     "phan_quyet": "đúng"
+    },
+    "13": {
+     "k": 50,
+     "n": 50,
+     "phan_quyet": "đúng"
+    },
+    "14": {
+     "k": 1,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "15": {
+     "k": 13,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "17": {
+     "k": 70,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "19": {
+     "k": 145,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "2": {
+     "k": 12,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "21": {
+     "k": 90,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "23": {
+     "k": 93,
+     "n": 100,
+     "phan_quyet": "sai"
+    },
+    "25": {
+     "k": 50,
+     "n": 50,
+     "phan_quyet": "sai"
+    },
+    "26": {
+     "k": 0,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "27": {
+     "k": 19,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "28": {
+     "k": 10,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "29": {
+     "k": 51,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "4": {
+     "k": 14,
+     "n": 200,
+     "phan_quyet": "không phân định"
+    },
+    "5": {
+     "k": 4,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "6": {
+     "k": 55,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "8": {
+     "k": 106,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "9": {
+     "k": 0,
+     "n": 200,
+     "phan_quyet": "đúng"
+    }
+   },
+   "p3h_4": {
+    "không phân định": 0,
+    "sai": 1,
+    "đúng": 3
+   }
+  },
+  "chinh_V2-07_cung_runtime": {
+   "17": {
+    "không phân định": 1,
+    "sai": 2,
+    "đúng": 14
+   },
+   "h3_du_doan": {
+    "can": 9,
+    "dung": 11,
+    "phan_dinh": 13
+   },
+   "o": {
+    "1": {
+     "k": 0,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "11": {
+     "k": 0,
+     "n": 50,
+     "phan_quyet": "đúng"
+    },
+    "12": {
+     "k": 42,
+     "n": 50,
+     "phan_quyet": "đúng"
+    },
+    "13": {
+     "k": 50,
+     "n": 50,
+     "phan_quyet": "đúng"
+    },
+    "14": {
+     "k": 1,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "15": {
+     "k": 13,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "17": {
+     "k": 4,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "19": {
+     "k": 21,
+     "n": 200,
+     "phan_quyet": "không phân định"
+    },
+    "2": {
+     "k": 12,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "21": {
+     "k": 7,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "23": {
+     "k": 0,
+     "n": 100,
+     "phan_quyet": "đúng"
+    },
+    "25": {
+     "k": 0,
+     "n": 50,
+     "phan_quyet": "đúng"
+    },
+    "26": {
+     "k": 0,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "27": {
+     "k": 19,
+     "n": 200,
+     "phan_quyet": "sai"
+    },
+    "28": {
+     "k": 10,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "29": {
+     "k": 51,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "4": {
+     "k": 0,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "5": {
+     "k": 4,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "6": {
+     "k": 55,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "8": {
+     "k": 10,
+     "n": 200,
+     "phan_quyet": "đúng"
+    },
+    "9": {
+     "k": 0,
+     "n": 200,
+     "phan_quyet": "đúng"
+    }
+   },
+   "p3h_4": {
+    "không phân định": 0,
+    "sai": 1,
+    "đúng": 3
+   }
+  },
+  "ngay_tho_moi_thu_on_dinh": {
+   "17": {
+    "không phân định": 3,
+    "sai": 3,
+    "đúng": 11
+   },
+   "o": {
+    "1": "đúng",
+    "11": "đúng",
+    "12": "sai",
+    "13": "sai",
+    "14": "đúng",
+    "15": "không phân định",
+    "17": "đúng",
+    "19": "không phân định",
+    "2": "không phân định",
+    "21": "đúng",
+    "23": "đúng",
+    "25": "đúng",
+    "26": "đúng",
+    "27": "không phân định",
+    "28": "đúng",
+    "29": "sai",
+    "4": "đúng",
+    "5": "đúng",
+    "6": "sai",
+    "8": "đúng",
+    "9": "đúng"
+   },
+   "p3h_4": {
+    "không phân định": 1,
+    "sai": 1,
+    "đúng": 2
+   }
+  },
+  "nhan": "post hoc — viết 12-11-2026 sau khi biết kết quả N4 và đọc R2; không thay kết luận H đã đăng ký",
+  "sat_nguong_10_200": [
+   8,
+   28
+  ]
+ },
+ "h1": {
+  "bo_live_web": {
+   "G": 200,
+   "N": 2400,
+   "beta": [
+    4.657038,
+    0.092276,
+    1.247788,
+    -3.00167
+   ],
+   "boot_rong_nhat_hi": [
+    6.265696,
+    0.204146,
+    1.713164,
+    -2.329653
+   ],
+   "boot_rong_nhat_lo": [
+    3.946024,
+    -0.01948,
+    0.848465,
+    -4.623753
+   ],
+   "bootstrap": [
+    {
+     "B": 2000,
+     "firth_fallback": 14,
+     "hi": [
+      6.265696,
+      0.19952,
+      1.691515,
+      -2.353859
+     ],
+     "lo": [
+      3.979151,
+      -0.01948,
+      0.875662,
+      -4.580324
+     ],
+     "seed": 20261112
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 11,
+     "hi": [
+      6.224263,
+      0.204146,
+      1.713164,
+      -2.332348
+     ],
+     "lo": [
+      3.946024,
+      -0.011903,
+      0.855433,
+      -4.561311
+     ],
+     "seed": 20261113
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 12,
+     "hi": [
+      6.188102,
+      0.202335,
+      1.675899,
+      -2.341098
+     ],
+     "lo": [
+      3.965342,
+      -0.019267,
+      0.863478,
+      -4.57336
+     ],
+     "seed": 20261114
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 23,
+     "hi": [
+      6.256709,
+      0.203088,
+      1.69708,
+      -2.329653
+     ],
+     "lo": [
+      3.978312,
+      -0.016175,
+      0.848465,
+      -4.623753
+     ],
+     "seed": 20261115
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 18,
+     "hi": [
+      6.208365,
+      0.197796,
+      1.684124,
+      -2.355802
+     ],
+     "lo": [
+      4.012057,
+      -0.01114,
+      0.860286,
+      -4.58887
+     ],
+     "seed": 20261116
+    }
+   ],
+   "ci_hi": [
+    5.534784,
+    0.199272,
+    1.65694,
+    -2.143203
+   ],
+   "ci_lo": [
+    3.779291,
+    -0.014719,
+    0.838637,
+    -3.860137
+   ],
+   "ci_nguon": "Wald, sai số cluster theo câu (CR1)",
+   "hoi_tu": true,
+   "ml_beta": [
+    4.657038,
+    0.092276,
+    1.247788,
+    -3.00167
+   ],
+   "ml_hoi_tu": true,
+   "se_cluster": [
+    0.447838,
+    0.05459,
+    0.208755,
+    0.438001
+   ],
+   "so_to_hop": 10,
+   "tach_hoan_toan": false,
+   "ten": [
+    "const",
+    "depth",
+    "pinnable",
+    "artefact"
+   ],
+   "uoc_luong": "ML",
+   "wald_hi": [
+    5.534784,
+    0.199272,
+    1.65694,
+    -2.143203
+   ],
+   "wald_lo": [
+    3.779291,
+    -0.014719,
+    0.838637,
+    -3.860137
+   ]
+  },
+  "cap_dang_ky_1to5": {
+   "G": 200,
+   "N": 2550,
+   "beta": [
+    5.786793,
+    -0.153545,
+    -0.774061,
+    -4.300126
+   ],
+   "boot_rong_nhat_hi": [
+    7.451572,
+    -0.093106,
+    -0.565631,
+    -3.618167
+   ],
+   "boot_rong_nhat_lo": [
+    5.050564,
+    -0.214599,
+    -0.993612,
+    -5.913091
+   ],
+   "bootstrap": [
+    {
+     "B": 2000,
+     "firth_fallback": 14,
+     "hi": [
+      7.451572,
+      -0.096279,
+      -0.570615,
+      -3.637709
+     ],
+     "lo": [
+      5.080685,
+      -0.213206,
+      -0.9861,
+      -5.909985
+     ],
+     "seed": 20261112
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 11,
+     "hi": [
+      7.404785,
+      -0.093106,
+      -0.56904,
+      -3.618167
+     ],
+     "lo": [
+      5.054774,
+      -0.21383,
+      -0.981611,
+      -5.871273
+     ],
+     "seed": 20261113
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 12,
+     "hi": [
+      7.374471,
+      -0.093501,
+      -0.565631,
+      -3.622904
+     ],
+     "lo": [
+      5.062568,
+      -0.21431,
+      -0.978039,
+      -5.87001
+     ],
+     "seed": 20261114
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 23,
+     "hi": [
+      7.449034,
+      -0.093977,
+      -0.57149,
+      -3.618184
+     ],
+     "lo": [
+      5.050564,
+      -0.214599,
+      -0.993612,
+      -5.913091
+     ],
+     "seed": 20261115
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 18,
+     "hi": [
+      7.436642,
+      -0.095711,
+      -0.582379,
+      -3.650347
+     ],
+     "lo": [
+      5.117784,
+      -0.212005,
+      -0.977751,
+      -5.893073
+     ],
+     "seed": 20261116
+    }
+   ],
+   "ci_hi": [
+    6.697141,
+    -0.094287,
+    -0.57093,
+    -3.434561
+   ],
+   "ci_lo": [
+    4.876445,
+    -0.212802,
+    -0.977191,
+    -5.165691
+   ],
+   "ci_nguon": "Wald, sai số cluster theo câu (CR1)",
+   "hoi_tu": true,
+   "ml_beta": [
+    5.786793,
+    -0.153545,
+    -0.774061,
+    -4.300126
+   ],
+   "ml_hoi_tu": true,
+   "se_cluster": [
+    0.464472,
+    0.030234,
+    0.10364,
+    0.441623
+   ],
+   "so_to_hop": 12,
+   "tach_hoan_toan": false,
+   "ten": [
+    "const",
+    "depth",
+    "pinnable",
+    "artefact"
+   ],
+   "uoc_luong": "ML",
+   "wald_hi": [
+    6.697141,
+    -0.094287,
+    -0.57093,
+    -3.434561
+   ],
+   "wald_lo": [
+    4.876445,
+    -0.212802,
+    -0.977191,
+    -5.165691
+   ]
+  },
+  "cluster_theo_o_15": {
+   "G": 15,
+   "N": 2550,
+   "beta": [
+    5.194716,
+    -0.118365,
+    2.036929,
+    -3.782318
+   ],
+   "boot_rong_nhat_hi": [
+    14.338385,
+    2.344435,
+    7.889967,
+    -2.292945
+   ],
+   "boot_rong_nhat_lo": [
+    0.896651,
+    -2.699174,
+    0.5151,
+    -10.226978
+   ],
+   "bootstrap": [
+    {
+     "B": 2000,
+     "firth_fallback": 287,
+     "hi": [
+      13.488254,
+      2.112902,
+      7.886069,
+      -2.292945
+     ],
+     "lo": [
+      1.155971,
+      -2.409673,
+      0.515236,
+      -9.904878
+     ],
+     "seed": 20261112
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 279,
+     "hi": [
+      13.555174,
+      2.344435,
+      7.873116,
+      -2.365989
+     ],
+     "lo": [
+      0.896651,
+      -2.539263,
+      0.629737,
+      -10.067594
+     ],
+     "seed": 20261113
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 292,
+     "hi": [
+      14.338385,
+      2.04317,
+      7.889967,
+      -2.335
+     ],
+     "lo": [
+      1.422526,
+      -2.699174,
+      0.520177,
+      -10.226978
+     ],
+     "seed": 20261114
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 307,
+     "hi": [
+      13.817504,
+      2.010174,
+      7.706533,
+      -2.326243
+     ],
+     "lo": [
+      1.339725,
+      -2.53553,
+      0.564405,
+      -9.751722
+     ],
+     "seed": 20261115
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 326,
+     "hi": [
+      13.681355,
+      1.811956,
+      7.772989,
+      -2.393487
+     ],
+     "lo": [
+      1.592237,
+      -2.504109,
+      0.5151,
+      -10.013975
+     ],
+     "seed": 20261116
+    }
+   ],
+   "ci_hi": [
+    7.38191,
+    0.583597,
+    3.500557,
+    -2.135975
+   ],
+   "ci_lo": [
+    3.007523,
+    -0.820328,
+    0.5733,
+    -5.42866
+   ],
+   "ci_nguon": "Wald, sai số cluster theo câu (CR1)",
+   "hoi_tu": true,
+   "ml_beta": [
+    5.194716,
+    -0.118365,
+    2.036929,
+    -3.782318
+   ],
+   "ml_hoi_tu": true,
+   "se_cluster": [
+    1.115936,
+    0.358151,
+    0.746763,
+    0.839986
+   ],
+   "so_to_hop": 12,
+   "tach_hoan_toan": false,
+   "ten": [
+    "const",
+    "depth",
+    "pinnable",
+    "artefact"
+   ],
+   "uoc_luong": "ML",
+   "wald_hi": [
+    7.38191,
+    0.583597,
+    3.500557,
+    -2.135975
+   ],
+   "wald_lo": [
+    3.007523,
+    -0.820328,
+    0.5733,
+    -5.42866
+   ]
+  },
+  "depth_phan_loai_ML_cluster_cau": {
+   "G": 200,
+   "N": 2550,
+   "beta": [
+    7.949664,
+    1.616005,
+    -4.993002,
+    -2.081611,
+    -4.926936,
+    -0.60747
+   ],
+   "boot_rong_nhat_hi": [
+    10.273673,
+    2.103559,
+    -3.958593,
+    -1.494817,
+    -4.172765,
+    0.091106
+   ],
+   "boot_rong_nhat_lo": [
+    6.784943,
+    1.182909,
+    -7.155422,
+    -2.863958,
+    -6.03844,
+    -1.416958
+   ],
+   "bootstrap": [
+    {
+     "B": 2000,
+     "firth_fallback": 14,
+     "hi": [
+      10.256459,
+      2.088348,
+      -3.970407,
+      -1.494817,
+      -4.192692,
+      0.042673
+     ],
+     "lo": [
+      6.800788,
+      1.202715,
+      -6.979723,
+      -2.863958,
+      -6.02372,
+      -1.371458
+     ],
+     "seed": 20261112
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 11,
+     "hi": [
+      10.170188,
+      2.103559,
+      -3.960841,
+      -1.512453,
+      -4.207716,
+      0.056751
+     ],
+     "lo": [
+      6.805256,
+      1.200673,
+      -7.108595,
+      -2.84841,
+      -6.019349,
+      -1.375106
+     ],
+     "seed": 20261113
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 12,
+     "hi": [
+      10.051678,
+      2.061773,
+      -3.962126,
+      -1.510835,
+      -4.192318,
+      0.091106
+     ],
+     "lo": [
+      6.784943,
+      1.202809,
+      -6.93219,
+      -2.813345,
+      -5.962038,
+      -1.393136
+     ],
+     "seed": 20261114
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 23,
+     "hi": [
+      10.273673,
+      2.078635,
+      -3.958593,
+      -1.519987,
+      -4.172765,
+      0.075496
+     ],
+     "lo": [
+      6.810208,
+      1.182909,
+      -7.155422,
+      -2.839556,
+      -6.03844,
+      -1.416958
+     ],
+     "seed": 20261115
+    },
+    {
+     "B": 2000,
+     "firth_fallback": 18,
+     "hi": [
+      10.158498,
+      2.067142,
+      -3.994574,
+      -1.513256,
+      -4.213405,
+      0.016374
+     ],
+     "lo": [
+      6.852631,
+      1.207232,
+      -7.091285,
+      -2.825147,
+      -5.990293,
+      -1.409132
+     ],
+     "seed": 20261116
+    }
+   ],
+   "ci_hi": [
+    9.397688,
+    2.051342,
+    -3.682956,
+    -1.435889,
+    -4.071208,
+    0.066612
+   ],
+   "ci_lo": [
+    6.501639,
+    1.180667,
+    -6.303048,
+    -2.727333,
+    -5.782663,
+    -1.281553
+   ],
+   "ci_nguon": "Wald, sai số cluster theo câu (CR1)",
+   "hoi_tu": true,
+   "ml_beta": [
+    7.949664,
+    1.616005,
+    -4.993002,
+    -2.081611,
+    -4.926936,
+    -0.60747
+   ],
+   "ml_hoi_tu": true,
+   "se_cluster": [
+    0.738802,
+    0.222115,
+    0.668403,
+    0.329456,
+    0.436604,
+    0.343926
+   ],
+   "so_to_hop": 12,
+   "tach_hoan_toan": false,
+   "ten": [
+    "const",
+    "pinnable",
+    "artefact",
+    "depth2",
+    "depth3",
+    "depth4"
+   ],
+   "uoc_luong": "ML",
+   "wald_hi": [
+    9.397688,
+    2.051342,
+    -3.682956,
+    -1.435889,
+    -4.071208,
+    0.066612
+   ],
+   "wald_lo": [
+    6.501639,
+    1.180667,
+    -6.303048,
+    -2.727333,
+    -5.782663,
+    -1.281553
+   ]
+  },
+  "nhan": "post hoc — viết 12-11-2026 sau khi biết kết quả N4 và đọc R2; không thay kết luận H đã đăng ký",
+  "ty_le_tho_theo_o": {
+   "1": {
+    "depth": 1,
+    "k": 0,
+    "n": 200,
+    "obs": "dec",
+    "pin": "delegated",
+    "stage": "classify"
+   },
+   "11": {
+    "depth": 3,
+    "k": 0,
+    "n": 50,
+    "obs": "dec",
+    "pin": "delegated",
+    "stage": "live"
+   },
+   "12": {
+    "depth": 3,
+    "k": 42,
+    "n": 50,
+    "obs": "art",
+    "pin": "delegated",
+    "stage": "live"
+   },
+   "13": {
+    "depth": 3,
+    "k": 50,
+    "n": 50,
+    "obs": "art",
+    "pin": "delegated",
+    "stage": "live"
+   },
+   "14": {
+    "depth": 4,
+    "k": 1,
+    "n": 200,
+    "obs": "dec",
+    "pin": "delegated",
+    "stage": "generate"
+   },
+   "15": {
+    "depth": 4,
+    "k": 13,
+    "n": 200,
+    "obs": "art",
+    "pin": "delegated",
+    "stage": "generate"
+   },
+   "17": {
+    "depth": 4,
+    "k": 4,
+    "n": 200,
+    "obs": "art",
+    "pin": "pinnable",
+    "stage": "generate"
+   },
+   "19": {
+    "depth": 2,
+    "k": 21,
+    "n": 200,
+    "obs": "art",
+    "pin": "pinnable",
+    "stage": "route"
+   },
+   "2": {
+    "depth": 1,
+    "k": 12,
+    "n": 200,
+    "obs": "art",
+    "pin": "delegated",
+    "stage": "classify"
+   },
+   "21": {
+    "depth": 4,
+    "k": 7,
+    "n": 200,
+    "obs": "art",
+    "pin": "pinnable",
+    "stage": "generate"
+   },
+   "4": {
+    "depth": 1,
+    "k": 0,
+    "n": 200,
+    "obs": "art",
+    "pin": "pinnable",
+    "stage": "classify"
+   },
+   "5": {
+    "depth": 2,
+    "k": 4,
+    "n": 200,
+    "obs": "dec",
+    "pin": "delegated",
+    "stage": "route"
+   },
+   "6": {
+    "depth": 2,
+    "k": 55,
+    "n": 200,
+    "obs": "art",
+    "pin": "delegated",
+    "stage": "route"
+   },
+   "8": {
+    "depth": 2,
+    "k": 10,
+    "n": 200,
+    "obs": "art",
+    "pin": "pinnable",
+    "stage": "route"
+   },
+   "9": {
+    "depth": 3,
+    "k": 0,
+    "n": 200,
+    "obs": "dec",
+    "pin": "pinnable",
+    "stage": "retrieve"
+   }
+  }
+ },
+ "margin_ghep_cap": {
+  "MD3R reply llama": {
+   "a": 0,
+   "b": 0,
+   "c": 0,
+   "d": 50,
+   "delta": 0.0,
+   "hi": 0.071348,
+   "lo": -0.071348,
+   "n": 50
+  },
+  "MD3R routing llama": {
+   "a": 0,
+   "b": 0,
+   "c": 0,
+   "d": 100,
+   "delta": 0.0,
+   "hi": 0.036993,
+   "lo": -0.036993,
+   "n": 100
+  },
+  "P2 classify hosted": {
+   "a": 0,
+   "b": 12,
+   "c": 0,
+   "d": 188,
+   "delta": 0.06,
+   "hi": 0.101932,
+   "lo": 0.028414,
+   "n": 200
+  },
+  "P2 classify qwen": {
+   "a": 0,
+   "b": 0,
+   "c": 0,
+   "d": 200,
+   "delta": 0.0,
+   "hi": 0.018845,
+   "lo": -0.018845,
+   "n": 200
+  },
+  "P2 generate hosted": {
+   "a": 1,
+   "b": 12,
+   "c": 0,
+   "d": 187,
+   "delta": 0.06,
+   "hi": 0.102099,
+   "lo": 0.029976,
+   "n": 200
+  },
+  "P2 generate qwen": {
+   "a": 1,
+   "b": 3,
+   "c": 0,
+   "d": 196,
+   "delta": 0.015,
+   "hi": 0.04347,
+   "lo": -0.004792,
+   "n": 200
+  },
+  "P2 live A (tên miền)": {
+   "a": 0,
+   "b": 42,
+   "c": 0,
+   "d": 8,
+   "delta": 0.84,
+   "hi": 0.916626,
+   "lo": 0.695948,
+   "n": 50
+  },
+  "P2 live B (văn bản)": {
+   "a": 0,
+   "b": 50,
+   "c": 0,
+   "d": 0,
+   "delta": 1.0,
+   "hi": 1.0,
+   "lo": 0.899099,
+   "n": 50
+  },
+  "P2 retrieve BM25": {
+   "a": 0,
+   "b": 0,
+   "c": 0,
+   "d": 200,
+   "delta": 0.0,
+   "hi": 0.018845,
+   "lo": -0.018845,
+   "n": 200
+  },
+  "P2 route hosted": {
+   "a": 4,
+   "b": 51,
+   "c": 0,
+   "d": 145,
+   "delta": 0.255,
+   "hi": 0.318964,
+   "lo": 0.196813,
+   "n": 200
+  },
+  "P2 route qwen": {
+   "a": 2,
+   "b": 8,
+   "c": 0,
+   "d": 190,
+   "delta": 0.04,
+   "hi": 0.07698,
+   "lo": 0.014243,
+   "n": 200
+  },
+  "P3 generate llama": {
+   "a": 0,
+   "b": 7,
+   "c": 0,
+   "d": 193,
+   "delta": 0.035,
+   "hi": 0.070471,
+   "lo": 0.008978,
+   "n": 200
+  },
+  "P3 route llama": {
+   "a": 0,
+   "b": 21,
+   "c": 0,
+   "d": 179,
+   "delta": 0.105,
+   "hi": 0.15518,
+   "lo": 0.064991,
+   "n": 200
+  },
+  "P3H generate llama": {
+   "a": 10,
+   "b": 41,
+   "c": 0,
+   "d": 149,
+   "delta": 0.205,
+   "hi": 0.264516,
+   "lo": 0.151004,
+   "n": 200
+  },
+  "P3H route llama": {
+   "a": 0,
+   "b": 19,
+   "c": 0,
+   "d": 181,
+   "delta": 0.095,
+   "hi": 0.143602,
+   "lo": 0.056705,
+   "n": 200
+  },
+  "nhan": "post hoc — viết 12-11-2026 sau khi biết kết quả N4 và đọc R2; không thay kết luận H đã đăng ký"
+ },
+ "nguon": {
+  "inputs": {
+   "MD3R_20261102_v1.jsonl": {
+    "dong": 300,
+    "ok": 300,
+    "sha256": "a2b4dea8cfb906da876cb6baff686bdc8b6724d14882110534fa76d052c91449",
+    "status": {
+     "ok": 300
+    }
+   },
+   "MD3_20261102_v1.jsonl": {
+    "dong": 670,
+    "ok": 670,
+    "sha256": "d749b4a12b8e7bfca8bd203daace6b193be4a4ec5b4d71d23f0891949fdf7cb4",
+    "status": {
+     "ok": 670
+    }
+   },
+   "P2O_20261102_v1.jsonl": {
+    "dong": 37,
+    "ok": 22,
+    "sha256": "36d0ec8d8d126bfc8dc62b3bf311d27b76a6f3f823537617b8e0345ed8690e62",
+    "status": {
+     "missed": 15,
+     "ok": 22
+    }
+   },
+   "P2_20261102_v1.jsonl": {
+    "dong": 14700,
+    "ok": 14700,
+    "sha256": "c81e5ecd9cd1be38e6dfca7b245f38fc82f1e070ef8679c78db955fb50ec8a4b",
+    "status": {
+     "ok": 14700
+    }
+   },
+   "P3H_20261102_v1.jsonl": {
+    "dong": 2000,
+    "ok": 2000,
+    "sha256": "8c96765a4e6a1ecb05084bb2a628990af4953c9a0a41b53b857ecf560597099f",
+    "status": {
+     "ok": 2000
+    }
+   },
+   "P3_20261102_v1.jsonl": {
+    "dong": 4080,
+    "ok": 4080,
+    "sha256": "9e756657202e3bfe08edfe5e8414459486f3a6191851f9b044f4bc6782d22920",
+    "status": {
+     "ok": 4080
+    }
+   }
+  },
+  "numbers_v2.json": "64ec02b72ec7d50e0aefd09d836402338be4ed78fe2607505b9fe0c8a6362fcb"
+ },
+ "nhan": "post hoc — viết 12-11-2026 sau khi biết kết quả N4 và đọc R2; không thay kết luận H đã đăng ký",
+ "oracle_ghep_cap": {
+  "classify|hosted": {
+   "a": 0,
+   "b": 2,
+   "c": 0,
+   "d": 38,
+   "delta": 0.05,
+   "hi": 0.165039,
+   "lo": -0.044797,
+   "n": 40,
+   "newcombe_doc_lap_da_dang_ky": [
+    0.05,
+    -0.044797,
+    0.165039
+   ],
+   "p_dec_do_khi_art_do": 0.0,
+   "wilson_ty_le_chi_artefact_do": [
+    0.013821,
+    0.165039
+   ]
+  },
+  "classify|local": {
+   "a": 0,
+   "b": 0,
+   "c": 0,
+   "d": 40,
+   "delta": 0.0,
+   "hi": 0.087622,
+   "lo": -0.087622,
+   "n": 40,
+   "newcombe_doc_lap_da_dang_ky": [
+    0.0,
+    -0.087622,
+    0.087622
+   ],
+   "p_dec_do_khi_art_do": null,
+   "wilson_ty_le_chi_artefact_do": [
+    0.0,
+    0.087622
+   ]
+  },
+  "generate|hosted": {
+   "a": 1,
+   "b": 6,
+   "c": 0,
+   "d": 33,
+   "delta": 0.15,
+   "hi": 0.288695,
+   "lo": 0.039901,
+   "n": 40,
+   "newcombe_doc_lap_da_dang_ky": [
+    0.15,
+    0.0142,
+    0.295957
+   ],
+   "p_dec_do_khi_art_do": 0.142857,
+   "wilson_ty_le_chi_artefact_do": [
+    0.070612,
+    0.290723
+   ]
+  },
+  "generate|local": {
+   "a": 3,
+   "b": 11,
+   "c": 0,
+   "d": 26,
+   "delta": 0.275,
+   "hi": 0.41822,
+   "lo": 0.135379,
+   "n": 40,
+   "newcombe_doc_lap_da_dang_ky": [
+    0.275,
+    0.096564,
+    0.437554
+   ],
+   "p_dec_do_khi_art_do": 0.214286,
+   "wilson_ty_le_chi_artefact_do": [
+    0.16108,
+    0.42835
+   ]
+  },
+  "nhan": "post hoc — viết 12-11-2026 sau khi biết kết quả N4 và đọc R2; không thay kết luận H đã đăng ký",
+  "retrieve|bm25": {
+   "a": 0,
+   "b": 0,
+   "c": 0,
+   "d": 40,
+   "delta": 0.0,
+   "hi": 0.087622,
+   "lo": -0.087622,
+   "n": 40,
+   "newcombe_doc_lap_da_dang_ky": [
+    0.0,
+    -0.087622,
+    0.087622
+   ],
+   "p_dec_do_khi_art_do": null,
+   "wilson_ty_le_chi_artefact_do": [
+    0.0,
+    0.087622
+   ]
+  },
+  "route|hosted": {
+   "a": 2,
+   "b": 21,
+   "c": 0,
+   "d": 17,
+   "delta": 0.525,
+   "hi": 0.662426,
+   "lo": 0.352626,
+   "n": 40,
+   "newcombe_doc_lap_da_dang_ky": [
+    0.525,
+    0.333537,
+    0.669508
+   ],
+   "p_dec_do_khi_art_do": 0.086957,
+   "wilson_ty_le_chi_artefact_do": [
+    0.374974,
+    0.670645
+   ]
+  },
+  "route|local": {
+   "a": 0,
+   "b": 0,
+   "c": 0,
+   "d": 40,
+   "delta": 0.0,
+   "hi": 0.087622,
+   "lo": -0.087622,
+   "n": 40,
+   "newcombe_doc_lap_da_dang_ky": [
+    0.0,
+    -0.087622,
+    0.087622
+   ],
+   "p_dec_do_khi_art_do": null,
+   "wilson_ty_le_chi_artefact_do": [
+    0.0,
+    0.087622
+   ]
+  }
+ },
+ "oracle_muc_suite": {
+  "gio_tu_golden_hosted": [
+   12.214947,
+   17.980932,
+   95.989865,
+   102.406691,
+   108.153494,
+   120.021026,
+   126.054479,
+   131.986235,
+   137.981916,
+   143.97927,
+   150.891041,
+   155.986292,
+   161.984775,
+   167.987639,
+   173.98763,
+   179.983851,
+   185.979276,
+   191.987636,
+   198.428259
+  ],
+  "gio_tu_golden_local": [
+   95.989865,
+   102.406691,
+   108.153494,
+   120.021026,
+   126.054479,
+   131.986235,
+   137.981916,
+   143.97927,
+   150.891041,
+   155.986292,
+   161.984775,
+   167.987639,
+   173.98763,
+   179.983851,
+   185.979276,
+   191.987636,
+   198.428259,
+   203.987629,
+   215.987669
+  ],
+  "hang": [
+   {
+    "art_do": 12,
+    "dec_do": 0,
+    "dec_do_hosted": 0,
+    "dec_do_local": null,
+    "doan": "B",
+    "doc_hosted": true,
+    "doc_local": false,
+    "gio_tu_golden": 12.214947,
+    "lan": 3
+   },
+   {
+    "art_do": 17,
+    "dec_do": 1,
+    "dec_do_hosted": 1,
+    "dec_do_local": null,
+    "doan": "B",
+    "doc_hosted": true,
+    "doc_local": false,
+    "gio_tu_golden": 17.980932,
+    "lan": 4
+   },
+   {
+    "art_do": 17,
+    "dec_do": 3,
+    "dec_do_hosted": 3,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 95.989865,
+    "lan": 17
+   },
+   {
+    "art_do": 16,
+    "dec_do": 0,
+    "dec_do_hosted": 0,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 102.406691,
+    "lan": 18
+   },
+   {
+    "art_do": 21,
+    "dec_do": 3,
+    "dec_do_hosted": 2,
+    "dec_do_local": 1,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 108.153494,
+    "lan": 19
+   },
+   {
+    "art_do": 20,
+    "dec_do": 3,
+    "dec_do_hosted": 3,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 120.021026,
+    "lan": 21
+   },
+   {
+    "art_do": 18,
+    "dec_do": 2,
+    "dec_do_hosted": 2,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 126.054479,
+    "lan": 22
+   },
+   {
+    "art_do": 19,
+    "dec_do": 3,
+    "dec_do_hosted": 3,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 131.986235,
+    "lan": 23
+   },
+   {
+    "art_do": 16,
+    "dec_do": 3,
+    "dec_do_hosted": 3,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 137.981916,
+    "lan": 24
+   },
+   {
+    "art_do": 13,
+    "dec_do": 2,
+    "dec_do_hosted": 2,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 143.97927,
+    "lan": 25
+   },
+   {
+    "art_do": 17,
+    "dec_do": 3,
+    "dec_do_hosted": 3,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 150.891041,
+    "lan": 26
+   },
+   {
+    "art_do": 13,
+    "dec_do": 3,
+    "dec_do_hosted": 2,
+    "dec_do_local": 1,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 155.986292,
+    "lan": 27
+   },
+   {
+    "art_do": 16,
+    "dec_do": 2,
+    "dec_do_hosted": 1,
+    "dec_do_local": 1,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 161.984775,
+    "lan": 28
+   },
+   {
+    "art_do": 17,
+    "dec_do": 2,
+    "dec_do_hosted": 2,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 167.987639,
+    "lan": 29
+   },
+   {
+    "art_do": 10,
+    "dec_do": 1,
+    "dec_do_hosted": 1,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 173.98763,
+    "lan": 30
+   },
+   {
+    "art_do": 29,
+    "dec_do": 5,
+    "dec_do_hosted": 2,
+    "dec_do_local": 3,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 179.983851,
+    "lan": 31
+   },
+   {
+    "art_do": 28,
+    "dec_do": 6,
+    "dec_do_hosted": 3,
+    "dec_do_local": 3,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 185.979276,
+    "lan": 32
+   },
+   {
+    "art_do": 16,
+    "dec_do": 2,
+    "dec_do_hosted": 2,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 191.987636,
+    "lan": 33
+   },
+   {
+    "art_do": 21,
+    "dec_do": 2,
+    "dec_do_hosted": 2,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": true,
+    "doc_local": true,
+    "gio_tu_golden": 198.428259,
+    "lan": 34
+   },
+   {
+    "art_do": 0,
+    "dec_do": 0,
+    "dec_do_hosted": null,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": false,
+    "doc_local": true,
+    "gio_tu_golden": 203.987629,
+    "lan": 35
+   },
+   {
+    "art_do": 0,
+    "dec_do": 0,
+    "dec_do_hosted": null,
+    "dec_do_local": 0,
+    "doan": "D",
+    "doc_hosted": false,
+    "doc_local": true,
+    "gio_tu_golden": 215.987669,
+    "lan": 37
+   }
+  ],
+  "hosted": {
+   "co_dec_do": 17,
+   "lan_lai": 19
+  },
+  "local": {
+   "co_dec_do": 5,
+   "lan_lai": 19
+  },
+  "moc": {
+   "hop_le": 22,
+   "missed": 15,
+   "tong": 37
+  },
+  "nhan": "post hoc — viết 12-11-2026 sau khi biết kết quả N4 và đọc R2; không thay kết luận H đã đăng ký"
+ },
+ "parse_fail_trong_flip": {
+  "mprotocol_qwen_route_A_B": {
+   "flip": 27,
+   "flip_co_parse_fail": 11,
+   "n": 108
+  },
+  "nhan": "post hoc — viết 12-11-2026 sau khi biết kết quả N4 và đọc R2; không thay kết luận H đã đăng ký",
+  "oracle_lan03_route_local": {
+   "flip": 9,
+   "flip_co_parse_fail": 4,
+   "n": 40
+  },
+  "oracle_lan04_route_local": {
+   "flip": 9,
+   "flip_co_parse_fail": 4,
+   "n": 40
+  }
+ },
+ "tham_so": {
+  "B": 2000,
+  "seeds": [
+   20261112,
+   20261113,
+   20261114,
+   20261115,
+   20261116
+  ]
+ }
+}

@@ -1,0 +1,9 @@
+{
+  "sha256": "0ba8898d1585bc00b4384f505a0fc4915aca093ade6e142a41048effeb866bca",
+  "corpus_sha256": "80a5225e94905956a6446d296ca1093975c4d3b3260f1d6c8f68bc2ab77182d8",
+  "n_docs": 1204,
+  "n_questions": 11873,
+  "k1": 1.2,
+  "b": 0.75,
+  "tokenizer": "lower, [a-z0-9]+, stoplist p2.bm25.STOP"
+}

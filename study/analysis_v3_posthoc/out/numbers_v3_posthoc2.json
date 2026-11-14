@@ -1,0 +1,687 @@
+{
+ "P1": {
+  "ca_sot": [
+   {
+    "arm": "hosted",
+    "chieu": "dung_sang_sai",
+    "co_trich_dan_golden": true,
+    "co_trich_dan_run": true,
+    "decision": "gold",
+    "qid": "5728e5224b864d1900165033",
+    "run": "P1"
+   },
+   {
+    "arm": "local",
+    "chieu": "sai_sang_dung",
+    "co_trich_dan_golden": true,
+    "co_trich_dan_run": true,
+    "decision": "gold",
+    "qid": "57293f8a6aef051400154bde",
+    "run": "K1"
+   },
+   {
+    "arm": "local",
+    "chieu": "sai_sang_dung",
+    "co_trich_dan_golden": true,
+    "co_trich_dan_run": true,
+    "decision": "other",
+    "qid": "573784fa1c45671900574487",
+    "run": "K1"
+   },
+   {
+    "arm": "local",
+    "chieu": "sai_sang_dung",
+    "co_trich_dan_golden": true,
+    "co_trich_dan_run": true,
+    "decision": "gold",
+    "qid": "571166352419e314009555f3",
+    "run": "M1"
+   },
+   {
+    "arm": "local",
+    "chieu": "sai_sang_dung",
+    "co_trich_dan_golden": true,
+    "co_trich_dan_run": true,
+    "decision": "gold",
+    "qid": "571166352419e314009555f3",
+    "run": "P1"
+   },
+   {
+    "arm": "local",
+    "chieu": "sai_sang_dung",
+    "co_trich_dan_golden": true,
+    "co_trich_dan_run": true,
+    "decision": "gold",
+    "qid": "572758e0f1498d1400e8f6ae",
+    "run": "P1"
+   },
+   {
+    "arm": "local",
+    "chieu": "sai_sang_dung",
+    "co_trich_dan_golden": true,
+    "co_trich_dan_run": true,
+    "decision": "other",
+    "qid": "5728e5224b864d1900165033",
+    "run": "P1"
+   },
+   {
+    "arm": "local",
+    "chieu": "sai_sang_dung",
+    "co_trich_dan_golden": true,
+    "co_trich_dan_run": true,
+    "decision": "gold",
+    "qid": "57293f8a6aef051400154bde",
+    "run": "P1"
+   },
+   {
+    "arm": "local",
+    "chieu": "sai_sang_dung",
+    "co_trich_dan_golden": true,
+    "co_trich_dan_run": true,
+    "decision": "gold",
+    "qid": "57293f8a6aef051400154bde",
+    "run": "R1-B"
+   },
+   {
+    "arm": "local",
+    "chieu": "sai_sang_dung",
+    "co_trich_dan_golden": true,
+    "co_trich_dan_run": true,
+    "decision": "gold",
+    "qid": "572758e0f1498d1400e8f6ae",
+    "run": "T1"
+   }
+  ],
+  "theo_nhom": {
+   "khong_tra_loi_duoc": {
+    "dung_sang_sai": 18,
+    "sai_sang_dung": 12,
+    "sot_dung_sang_sai": 0,
+    "sot_sai_sang_dung": 0,
+    "wilson_sot_dung_sang_sai": [
+     0.0,
+     0.175879
+    ],
+    "wilson_sot_sai_sang_dung": [
+     0.0,
+     0.242494
+    ]
+   },
+   "tra_loi_duoc": {
+    "dung_sang_sai": 8,
+    "sai_sang_dung": 20,
+    "sot_dung_sang_sai": 1,
+    "sot_sai_sang_dung": 9,
+    "wilson_sot_dung_sang_sai": [
+     0.022417,
+     0.470888
+    ],
+    "wilson_sot_sai_sang_dung": [
+     0.258198,
+     0.657915
+    ]
+   }
+  }
+ },
+ "P2": {
+  "dau_sau_khoi_dong_ghi_nhan_trung_golden": 5,
+  "khoi_dong_khong_ghi_nhan_trung_golden": [
+   "V2-08 golden"
+  ],
+  "lan_nc3_v209": [
+   {
+    "khoi_dong_ghi_nhan": null,
+    "lan": "V2-08 golden",
+    "trung_golden": true
+   },
+   {
+    "khoi_dong_ghi_nhan": false,
+    "lan": "V2-08 C1",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": false,
+    "lan": "V2-08 C2",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": false,
+    "lan": "V2-08 C3",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": true,
+    "lan": "V2-08 R1-B",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": true,
+    "lan": "V2-08 R1-A2",
+    "trung_golden": true
+   },
+   {
+    "khoi_dong_ghi_nhan": true,
+    "lan": "V2-09 golden",
+    "trung_golden": true
+   },
+   {
+    "khoi_dong_ghi_nhan": false,
+    "lan": "V2-09 C1",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": false,
+    "lan": "V2-09 C2",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": false,
+    "lan": "V2-09 C3",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": false,
+    "lan": "V2-09 D1",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": false,
+    "lan": "V2-09 D2",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": false,
+    "lan": "V2-09 D3",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": true,
+    "lan": "V2-09 B1",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": true,
+    "lan": "V2-09 A1",
+    "trung_golden": true
+   },
+   {
+    "khoi_dong_ghi_nhan": true,
+    "lan": "V2-09 B2",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": true,
+    "lan": "V2-09 A2",
+    "trung_golden": true
+   },
+   {
+    "khoi_dong_ghi_nhan": true,
+    "lan": "V2-09 B3",
+    "trung_golden": false
+   },
+   {
+    "khoi_dong_ghi_nhan": true,
+    "lan": "V2-09 A3",
+    "trung_golden": true
+   }
+  ],
+  "nc2": [
+   {
+    "lan": "lan01",
+    "trung_golden": true,
+    "ts": "2026-11-03T12:01:14.882+07:00"
+   },
+   {
+    "lan": "lan17",
+    "trung_golden": true,
+    "ts": "2026-11-07T12:00:38.397+07:00"
+   },
+   {
+    "lan": "lan18",
+    "trung_golden": true,
+    "ts": "2026-11-07T18:25:38.969+07:00"
+   },
+   {
+    "lan": "lan19",
+    "trung_golden": false,
+    "ts": "2026-11-08T00:10:27.459+07:00"
+   },
+   {
+    "lan": "lan21",
+    "trung_golden": true,
+    "ts": "2026-11-08T12:02:30.575+07:00"
+   },
+   {
+    "lan": "lan22",
+    "trung_golden": true,
+    "ts": "2026-11-08T18:04:31.008+07:00"
+   },
+   {
+    "lan": "lan23",
+    "trung_golden": true,
+    "ts": "2026-11-09T00:00:25.328+07:00"
+   },
+   {
+    "lan": "lan24",
+    "trung_golden": true,
+    "ts": "2026-11-09T06:00:09.780+07:00"
+   },
+   {
+    "lan": "lan25",
+    "trung_golden": true,
+    "ts": "2026-11-09T12:00:00.255+07:00"
+   },
+   {
+    "lan": "lan26",
+    "trung_golden": true,
+    "ts": "2026-11-09T18:54:42.628+07:00"
+   },
+   {
+    "lan": "lan27",
+    "trung_golden": false,
+    "ts": "2026-11-10T00:00:25.533+07:00"
+   },
+   {
+    "lan": "lan28",
+    "trung_golden": false,
+    "ts": "2026-11-10T06:00:20.072+07:00"
+   },
+   {
+    "lan": "lan29",
+    "trung_golden": true,
+    "ts": "2026-11-10T12:00:30.381+07:00"
+   },
+   {
+    "lan": "lan30",
+    "trung_golden": true,
+    "ts": "2026-11-10T18:00:30.349+07:00"
+   },
+   {
+    "lan": "lan31",
+    "trung_golden": false,
+    "ts": "2026-11-11T00:00:16.747+07:00"
+   },
+   {
+    "lan": "lan32",
+    "trung_golden": false,
+    "ts": "2026-11-11T06:00:00.277+07:00"
+   },
+   {
+    "lan": "lan33",
+    "trung_golden": true,
+    "ts": "2026-11-11T12:00:30.371+07:00"
+   },
+   {
+    "lan": "lan34",
+    "trung_golden": true,
+    "ts": "2026-11-11T18:26:56.614+07:00"
+   },
+   {
+    "lan": "lan35",
+    "trung_golden": true,
+    "ts": "2026-11-12T00:00:30.345+07:00"
+   },
+   {
+    "lan": "lan37",
+    "trung_golden": true,
+    "ts": "2026-11-12T12:00:30.489+07:00"
+   }
+  ],
+  "nc2_khoang_cach_h_max": 96.0,
+  "nc2_khoang_cach_h_min": 5.1,
+  "nc2_n": 20,
+  "nc2_trung_golden": 15,
+  "trung_golden_tong_nc3_v209": 6
+ },
+ "P3": {
+  "K1": {
+   "art": {
+    "delta": 0.041667,
+    "hi": 0.141667,
+    "lo": -0.05,
+    "n": 40,
+    "per_seed": [
+     [
+      -0.05,
+      0.141667
+     ],
+     [
+      -0.05,
+      0.133333
+     ],
+     [
+      -0.05,
+      0.141667
+     ],
+     [
+      -0.05,
+      0.141667
+     ],
+     [
+      -0.05,
+      0.133333
+     ]
+    ]
+   },
+   "dec": {
+    "delta": 0.1,
+    "hi": 0.25,
+    "lo": -0.05,
+    "n": 40,
+    "per_seed": [
+     [
+      -0.05,
+      0.25
+     ],
+     [
+      -0.05,
+      0.25
+     ],
+     [
+      -0.05,
+      0.25
+     ],
+     [
+      -0.05,
+      0.25
+     ],
+     [
+      -0.05,
+      0.25
+     ]
+    ]
+   }
+  },
+  "M1": {
+   "art": {
+    "delta": 0.191667,
+    "hi": 0.341667,
+    "lo": 0.05,
+    "n": 40,
+    "per_seed": [
+     [
+      0.05,
+      0.341667
+     ],
+     [
+      0.058333,
+      0.341667
+     ],
+     [
+      0.05,
+      0.325
+     ],
+     [
+      0.058333,
+      0.333333
+     ],
+     [
+      0.058333,
+      0.341667
+     ]
+    ]
+   },
+   "dec": {
+    "delta": 0.175,
+    "hi": 0.35,
+    "lo": 0.0,
+    "n": 40,
+    "per_seed": [
+     [
+      0.0,
+      0.35
+     ],
+     [
+      0.0,
+      0.35
+     ],
+     [
+      0.0,
+      0.35
+     ],
+     [
+      0.0,
+      0.35
+     ],
+     [
+      0.0,
+      0.35
+     ]
+    ]
+   }
+  },
+  "P1": {
+   "art": {
+    "delta": 0.166667,
+    "hi": 0.3,
+    "lo": 0.05,
+    "n": 40,
+    "per_seed": [
+     [
+      0.058333,
+      0.291667
+     ],
+     [
+      0.05,
+      0.291667
+     ],
+     [
+      0.066667,
+      0.275
+     ],
+     [
+      0.066667,
+      0.291667
+     ],
+     [
+      0.066667,
+      0.3
+     ]
+    ]
+   },
+   "dec": {
+    "delta": 0.2,
+    "hi": 0.35,
+    "lo": 0.05,
+    "n": 40,
+    "per_seed": [
+     [
+      0.05,
+      0.35
+     ],
+     [
+      0.05,
+      0.35
+     ],
+     [
+      0.075,
+      0.35
+     ],
+     [
+      0.05,
+      0.325
+     ],
+     [
+      0.075,
+      0.35
+     ]
+    ]
+   }
+  },
+  "P2": {
+   "art": {
+    "delta": 0.241667,
+    "hi": 0.383333,
+    "lo": 0.116667,
+    "n": 40,
+    "per_seed": [
+     [
+      0.125,
+      0.383333
+     ],
+     [
+      0.116667,
+      0.383333
+     ],
+     [
+      0.125,
+      0.366667
+     ],
+     [
+      0.125,
+      0.375
+     ],
+     [
+      0.125,
+      0.375
+     ]
+    ]
+   },
+   "dec": {
+    "delta": 0.55,
+    "hi": 0.725,
+    "lo": 0.375,
+    "n": 40,
+    "per_seed": [
+     [
+      0.375,
+      0.725
+     ],
+     [
+      0.375,
+      0.7
+     ],
+     [
+      0.375,
+      0.725
+     ],
+     [
+      0.375,
+      0.725
+     ],
+     [
+      0.375,
+      0.725
+     ]
+    ]
+   }
+  },
+  "R1-B": {
+   "art": {
+    "delta": 0.041667,
+    "hi": 0.158333,
+    "lo": -0.075,
+    "n": 40,
+    "per_seed": [
+     [
+      -0.075,
+      0.15
+     ],
+     [
+      -0.075,
+      0.158333
+     ],
+     [
+      -0.075,
+      0.15
+     ],
+     [
+      -0.075,
+      0.158333
+     ],
+     [
+      -0.058333,
+      0.158333
+     ]
+    ]
+   },
+   "dec": {
+    "delta": 0.05,
+    "hi": 0.2,
+    "lo": -0.1,
+    "n": 40,
+    "per_seed": [
+     [
+      -0.075,
+      0.175
+     ],
+     [
+      -0.1,
+      0.175
+     ],
+     [
+      -0.075,
+      0.2
+     ],
+     [
+      -0.1,
+      0.175
+     ],
+     [
+      -0.075,
+      0.175
+     ]
+    ]
+   }
+  },
+  "T1": {
+   "art": {
+    "delta": 0.116667,
+    "hi": 0.225,
+    "lo": 0.025,
+    "n": 40,
+    "per_seed": [
+     [
+      0.025,
+      0.216667
+     ],
+     [
+      0.025,
+      0.225
+     ],
+     [
+      0.025,
+      0.216667
+     ],
+     [
+      0.025,
+      0.216667
+     ],
+     [
+      0.025,
+      0.216667
+     ]
+    ]
+   },
+   "dec": {
+    "delta": 0.15,
+    "hi": 0.275,
+    "lo": 0.05,
+    "n": 40,
+    "per_seed": [
+     [
+      0.05,
+      0.275
+     ],
+     [
+      0.05,
+      0.275
+     ],
+     [
+      0.05,
+      0.275
+     ],
+     [
+      0.05,
+      0.25
+     ],
+     [
+      0.05,
+      0.275
+     ]
+    ]
+   }
+  }
+ },
+ "_nhan": "post hoc lần 2 — 14-11-2026, sau phản biện vòng 3; không đổi verdict đăng ký"
+}

@@ -1,0 +1,2916 @@
+{
+ "_schema": "numbers_v3/1",
+ "arms": {
+  "hosted": {
+   "controls_co": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "runs": {
+    "C1": {
+     "ky_vong": "doi_chung",
+     "stages": {
+      "classify": {
+       "S3": {
+        "art_bat": 0,
+        "art_bat_wilson": [
+         null,
+         null
+        ],
+        "art_do": 1,
+        "art_do_doi_that": 0,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 0,
+        "dec_bat_wilson": [
+         null,
+         null
+        ],
+        "dec_do": 0,
+        "dec_do_doi_that": 0,
+        "doi_that": 0
+       },
+       "art_do": 1,
+       "dec_do": 0,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S3": {
+        "art_bat": 0,
+        "art_bat_wilson": [
+         null,
+         null
+        ],
+        "art_do": 2,
+        "art_do_doi_that": 0,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 0,
+        "dec_bat_wilson": [
+         null,
+         null
+        ],
+        "dec_do": 0,
+        "dec_do_doi_that": 0,
+        "doi_that": 0
+       },
+       "art_do": 2,
+       "dec_do": 0,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "art_do": 12,
+       "dec_do": 1,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "C2": {
+     "ky_vong": "doi_chung",
+     "stages": {
+      "classify": {
+       "S3": {
+        "art_bat": 0,
+        "art_bat_wilson": [
+         null,
+         null
+        ],
+        "art_do": 1,
+        "art_do_doi_that": 0,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 0,
+        "dec_bat_wilson": [
+         null,
+         null
+        ],
+        "dec_do": 0,
+        "dec_do_doi_that": 0,
+        "doi_that": 0
+       },
+       "art_do": 1,
+       "dec_do": 0,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S3": {
+        "art_bat": 1,
+        "art_bat_wilson": [
+         0.206549,
+         1.0
+        ],
+        "art_do": 5,
+        "art_do_doi_that": 1,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 1,
+        "dec_bat_wilson": [
+         0.206549,
+         1.0
+        ],
+        "dec_do": 1,
+        "dec_do_doi_that": 1,
+        "doi_that": 1
+       },
+       "art_do": 5,
+       "dec_do": 1,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "art_do": 8,
+       "dec_do": 1,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "C3": {
+     "ky_vong": "doi_chung",
+     "stages": {
+      "classify": {
+       "S3": {
+        "art_bat": 0,
+        "art_bat_wilson": [
+         null,
+         null
+        ],
+        "art_do": 0,
+        "art_do_doi_that": 0,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 0,
+        "dec_bat_wilson": [
+         null,
+         null
+        ],
+        "dec_do": 0,
+        "dec_do_doi_that": 0,
+        "doi_that": 0
+       },
+       "art_do": 0,
+       "dec_do": 0,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S3": {
+        "art_bat": 1,
+        "art_bat_wilson": [
+         0.206549,
+         1.0
+        ],
+        "art_do": 3,
+        "art_do_doi_that": 1,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 1,
+        "dec_bat_wilson": [
+         0.206549,
+         1.0
+        ],
+        "dec_do": 1,
+        "dec_do_doi_that": 1,
+        "doi_that": 1
+       },
+       "art_do": 3,
+       "dec_do": 1,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "art_do": 9,
+       "dec_do": 0,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "K1": {
+     "ky_vong": "doi",
+     "stages": {
+      "generate": {
+       "S1": {
+        "dat": false
+       },
+       "S3": {
+        "art_bat": 3,
+        "art_bat_wilson": [
+         0.438503,
+         1.0
+        ],
+        "art_do": 16,
+        "art_do_doi_that": 3,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 3,
+        "dec_bat_wilson": [
+         0.438503,
+         1.0
+        ],
+        "dec_do": 3,
+        "dec_do_doi_that": 3,
+        "doi_that": 3
+       },
+       "art_do": 16,
+       "dec_do": 3,
+       "delta_art": {
+        "delta": 0.316667,
+        "hi": 0.458333,
+        "lo": 0.183333,
+        "n": 40,
+        "per_seed": [
+         [
+          0.183333,
+          0.45
+         ],
+         [
+          0.183333,
+          0.458333
+         ],
+         [
+          0.183333,
+          0.458333
+         ],
+         [
+          0.183333,
+          0.45
+         ],
+         [
+          0.191667,
+          0.45
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.058333,
+        "hi": 0.15,
+        "lo": -0.025,
+        "n": 40,
+        "per_seed": [
+         [
+          -0.025,
+          0.15
+         ],
+         [
+          -0.025,
+          0.15
+         ],
+         [
+          -0.025,
+          0.15
+         ],
+         [
+          -0.016667,
+          0.15
+         ],
+         [
+          -0.025,
+          0.15
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "P1": {
+     "ky_vong": "khong_doi",
+     "stages": {
+      "classify": {
+       "S2": {
+        "artefact_do": true,
+        "dat": false,
+        "decision_yen": false
+       },
+       "S3": {
+        "art_bat": 8,
+        "art_bat_wilson": [
+         0.675592,
+         1.0
+        ],
+        "art_do": 11,
+        "art_do_doi_that": 8,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 8,
+        "dec_bat_wilson": [
+         0.675592,
+         1.0
+        ],
+        "dec_do": 8,
+        "dec_do_doi_that": 8,
+        "doi_that": 8
+       },
+       "art_do": 11,
+       "dec_do": 8,
+       "delta_art": {
+        "delta": 0.258333,
+        "hi": 0.408333,
+        "lo": 0.125,
+        "n": 40,
+        "per_seed": [
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.383333
+         ],
+         [
+          0.133333,
+          0.4
+         ],
+         [
+          0.125,
+          0.391667
+         ],
+         [
+          0.133333,
+          0.408333
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.2,
+        "hi": 0.325,
+        "lo": 0.075,
+        "n": 40,
+        "per_seed": [
+         [
+          0.075,
+          0.325
+         ],
+         [
+          0.075,
+          0.325
+         ],
+         [
+          0.075,
+          0.325
+         ],
+         [
+          0.075,
+          0.325
+         ],
+         [
+          0.075,
+          0.325
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S2": {
+        "artefact_do": true,
+        "dat": true,
+        "decision_yen": true
+       },
+       "S3": {
+        "art_bat": 5,
+        "art_bat_wilson": [
+         0.565518,
+         1.0
+        ],
+        "art_do": 19,
+        "art_do_doi_that": 5,
+        "bo_sot_dec_ma_art_bat": 1,
+        "dec_bat": 4,
+        "dec_bat_wilson": [
+         0.375535,
+         0.963776
+        ],
+        "dec_do": 4,
+        "dec_do_doi_that": 4,
+        "doi_that": 5
+       },
+       "art_do": 19,
+       "dec_do": 4,
+       "delta_art": {
+        "delta": 0.391667,
+        "hi": 0.541667,
+        "lo": 0.25,
+        "n": 40,
+        "per_seed": [
+         [
+          0.25,
+          0.533333
+         ],
+         [
+          0.258333,
+          0.541667
+         ],
+         [
+          0.25,
+          0.541667
+         ],
+         [
+          0.25,
+          0.533333
+         ],
+         [
+          0.258333,
+          0.541667
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.083333,
+        "hi": 0.2,
+        "lo": -0.008333,
+        "n": 40,
+        "per_seed": [
+         [
+          -0.008333,
+          0.183333
+         ],
+         [
+          -0.008333,
+          0.183333
+         ],
+         [
+          -0.008333,
+          0.2
+         ],
+         [
+          -0.008333,
+          0.183333
+         ],
+         [
+          -0.008333,
+          0.183333
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "S2": {
+        "artefact_do": true,
+        "dat": false,
+        "decision_yen": false
+       },
+       "art_do": 40,
+       "dec_do": 10,
+       "delta_art": {
+        "delta": 0.758333,
+        "hi": 0.858333,
+        "lo": 0.65,
+        "n": 40,
+        "per_seed": [
+         [
+          0.65,
+          0.85
+         ],
+         [
+          0.658333,
+          0.85
+         ],
+         [
+          0.658333,
+          0.85
+         ],
+         [
+          0.658333,
+          0.858333
+         ],
+         [
+          0.658333,
+          0.85
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.233333,
+        "hi": 0.375,
+        "lo": 0.1,
+        "n": 40,
+        "per_seed": [
+         [
+          0.108333,
+          0.366667
+         ],
+         [
+          0.108333,
+          0.375
+         ],
+         [
+          0.108333,
+          0.375
+         ],
+         [
+          0.108333,
+          0.366667
+         ],
+         [
+          0.1,
+          0.375
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "P2": {
+     "ky_vong": "doi",
+     "stages": {
+      "classify": {
+       "S1": {
+        "dat": true
+       },
+       "S3": {
+        "art_bat": 7,
+        "art_bat_wilson": [
+         0.64567,
+         1.0
+        ],
+        "art_do": 21,
+        "art_do_doi_that": 7,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 7,
+        "dec_bat_wilson": [
+         0.64567,
+         1.0
+        ],
+        "dec_do": 7,
+        "dec_do_doi_that": 7,
+        "doi_that": 7
+       },
+       "art_do": 21,
+       "dec_do": 7,
+       "delta_art": {
+        "delta": 0.508333,
+        "hi": 0.675,
+        "lo": 0.333333,
+        "n": 40,
+        "per_seed": [
+         [
+          0.341667,
+          0.666667
+         ],
+         [
+          0.35,
+          0.675
+         ],
+         [
+          0.35,
+          0.658333
+         ],
+         [
+          0.341667,
+          0.675
+         ],
+         [
+          0.333333,
+          0.675
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.175,
+        "hi": 0.3,
+        "lo": 0.075,
+        "n": 40,
+        "per_seed": [
+         [
+          0.075,
+          0.3
+         ],
+         [
+          0.075,
+          0.3
+         ],
+         [
+          0.075,
+          0.3
+         ],
+         [
+          0.075,
+          0.3
+         ],
+         [
+          0.075,
+          0.3
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S1": {
+        "dat": true
+       },
+       "S3": {
+        "art_bat": 3,
+        "art_bat_wilson": [
+         0.438503,
+         1.0
+        ],
+        "art_do": 19,
+        "art_do_doi_that": 3,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 3,
+        "dec_bat_wilson": [
+         0.438503,
+         1.0
+        ],
+        "dec_do": 19,
+        "dec_do_doi_that": 3,
+        "doi_that": 3
+       },
+       "art_do": 19,
+       "dec_do": 19,
+       "delta_art": {
+        "delta": 0.391667,
+        "hi": 0.533333,
+        "lo": 0.25,
+        "n": 40,
+        "per_seed": [
+         [
+          0.25,
+          0.533333
+         ],
+         [
+          0.25,
+          0.533333
+         ],
+         [
+          0.258333,
+          0.533333
+         ],
+         [
+          0.258333,
+          0.533333
+         ],
+         [
+          0.258333,
+          0.533333
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.458333,
+        "hi": 0.608333,
+        "lo": 0.308333,
+        "n": 40,
+        "per_seed": [
+         [
+          0.308333,
+          0.6
+         ],
+         [
+          0.308333,
+          0.608333
+         ],
+         [
+          0.308333,
+          0.6
+         ],
+         [
+          0.308333,
+          0.608333
+         ],
+         [
+          0.308333,
+          0.608333
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "S1": {
+        "dat": true
+       },
+       "art_do": 40,
+       "dec_do": 6,
+       "delta_art": {
+        "delta": 0.758333,
+        "hi": 0.858333,
+        "lo": 0.65,
+        "n": 40,
+        "per_seed": [
+         [
+          0.65,
+          0.85
+         ],
+         [
+          0.658333,
+          0.85
+         ],
+         [
+          0.658333,
+          0.85
+         ],
+         [
+          0.658333,
+          0.858333
+         ],
+         [
+          0.658333,
+          0.85
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.133333,
+        "hi": 0.25,
+        "lo": 0.033333,
+        "n": 40,
+        "per_seed": [
+         [
+          0.033333,
+          0.241667
+         ],
+         [
+          0.033333,
+          0.25
+         ],
+         [
+          0.033333,
+          0.241667
+         ],
+         [
+          0.033333,
+          0.25
+         ],
+         [
+          0.033333,
+          0.241667
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "T1": {
+     "ky_vong": "artefact_doi_decision_khong_ro",
+     "stages": {
+      "classify": {
+       "S3": {
+        "art_bat": 4,
+        "art_bat_wilson": [
+         0.510109,
+         1.0
+        ],
+        "art_do": 6,
+        "art_do_doi_that": 4,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 4,
+        "dec_bat_wilson": [
+         0.510109,
+         1.0
+        ],
+        "dec_do": 4,
+        "dec_do_doi_that": 4,
+        "doi_that": 4
+       },
+       "art_do": 6,
+       "dec_do": 4,
+       "delta_art": {
+        "delta": 0.133333,
+        "hi": 0.25,
+        "lo": 0.033333,
+        "n": 40,
+        "per_seed": [
+         [
+          0.033333,
+          0.25
+         ],
+         [
+          0.033333,
+          0.241667
+         ],
+         [
+          0.041667,
+          0.241667
+         ],
+         [
+          0.05,
+          0.233333
+         ],
+         [
+          0.033333,
+          0.241667
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.1,
+        "hi": 0.2,
+        "lo": 0.025,
+        "n": 40,
+        "per_seed": [
+         [
+          0.025,
+          0.2
+         ],
+         [
+          0.025,
+          0.2
+         ],
+         [
+          0.025,
+          0.2
+         ],
+         [
+          0.025,
+          0.2
+         ],
+         [
+          0.025,
+          0.2
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S3": {
+        "art_bat": 4,
+        "art_bat_wilson": [
+         0.510109,
+         1.0
+        ],
+        "art_do": 17,
+        "art_do_doi_that": 4,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 4,
+        "dec_bat_wilson": [
+         0.510109,
+         1.0
+        ],
+        "dec_do": 4,
+        "dec_do_doi_that": 4,
+        "doi_that": 4
+       },
+       "art_do": 17,
+       "dec_do": 4,
+       "delta_art": {
+        "delta": 0.341667,
+        "hi": 0.491667,
+        "lo": 0.2,
+        "n": 40,
+        "per_seed": [
+         [
+          0.2,
+          0.483333
+         ],
+         [
+          0.208333,
+          0.483333
+         ],
+         [
+          0.208333,
+          0.475
+         ],
+         [
+          0.208333,
+          0.483333
+         ],
+         [
+          0.208333,
+          0.491667
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.083333,
+        "hi": 0.191667,
+        "lo": -0.016667,
+        "n": 40,
+        "per_seed": [
+         [
+          -0.008333,
+          0.183333
+         ],
+         [
+          -0.008333,
+          0.183333
+         ],
+         [
+          -0.008333,
+          0.183333
+         ],
+         [
+          -0.008333,
+          0.183333
+         ],
+         [
+          -0.016667,
+          0.191667
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "art_do": 39,
+       "dec_do": 7,
+       "delta_art": {
+        "delta": 0.733333,
+        "hi": 0.833333,
+        "lo": 0.625,
+        "n": 40,
+        "per_seed": [
+         [
+          0.625,
+          0.833333
+         ],
+         [
+          0.625,
+          0.833333
+         ],
+         [
+          0.625,
+          0.833333
+         ],
+         [
+          0.625,
+          0.833333
+         ],
+         [
+          0.633333,
+          0.833333
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.158333,
+        "hi": 0.283333,
+        "lo": 0.05,
+        "n": 40,
+        "per_seed": [
+         [
+          0.05,
+          0.283333
+         ],
+         [
+          0.05,
+          0.283333
+         ],
+         [
+          0.05,
+          0.283333
+         ],
+         [
+          0.05,
+          0.283333
+         ],
+         [
+          0.05,
+          0.283333
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    }
+   }
+  },
+  "local": {
+   "controls_co": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "runs": {
+    "C1": {
+     "ky_vong": "doi_chung",
+     "stages": {
+      "classify": {
+       "S3": {
+        "art_bat": 0,
+        "art_bat_wilson": [
+         null,
+         null
+        ],
+        "art_do": 0,
+        "art_do_doi_that": 0,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 0,
+        "dec_bat_wilson": [
+         null,
+         null
+        ],
+        "dec_do": 0,
+        "dec_do_doi_that": 0,
+        "doi_that": 0
+       },
+       "art_do": 0,
+       "dec_do": 0,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S3": {
+        "art_bat": 3,
+        "art_bat_wilson": [
+         0.438503,
+         1.0
+        ],
+        "art_do": 22,
+        "art_do_doi_that": 3,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 3,
+        "dec_bat_wilson": [
+         0.438503,
+         1.0
+        ],
+        "dec_do": 8,
+        "dec_do_doi_that": 3,
+        "doi_that": 3
+       },
+       "art_do": 22,
+       "dec_do": 8,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "art_do": 0,
+       "dec_do": 0,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "C2": {
+     "ky_vong": "doi_chung",
+     "stages": {
+      "classify": {
+       "S3": {
+        "art_bat": 0,
+        "art_bat_wilson": [
+         null,
+         null
+        ],
+        "art_do": 0,
+        "art_do_doi_that": 0,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 0,
+        "dec_bat_wilson": [
+         null,
+         null
+        ],
+        "dec_do": 0,
+        "dec_do_doi_that": 0,
+        "doi_that": 0
+       },
+       "art_do": 0,
+       "dec_do": 0,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S3": {
+        "art_bat": 2,
+        "art_bat_wilson": [
+         0.34238,
+         1.0
+        ],
+        "art_do": 18,
+        "art_do_doi_that": 2,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 2,
+        "dec_bat_wilson": [
+         0.34238,
+         1.0
+        ],
+        "dec_do": 4,
+        "dec_do_doi_that": 2,
+        "doi_that": 2
+       },
+       "art_do": 18,
+       "dec_do": 4,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "art_do": 0,
+       "dec_do": 0,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "C3": {
+     "ky_vong": "doi_chung",
+     "stages": {
+      "classify": {
+       "S3": {
+        "art_bat": 0,
+        "art_bat_wilson": [
+         null,
+         null
+        ],
+        "art_do": 0,
+        "art_do_doi_that": 0,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 0,
+        "dec_bat_wilson": [
+         null,
+         null
+        ],
+        "dec_do": 0,
+        "dec_do_doi_that": 0,
+        "doi_that": 0
+       },
+       "art_do": 0,
+       "dec_do": 0,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S3": {
+        "art_bat": 3,
+        "art_bat_wilson": [
+         0.438503,
+         1.0
+        ],
+        "art_do": 22,
+        "art_do_doi_that": 3,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 3,
+        "dec_bat_wilson": [
+         0.438503,
+         1.0
+        ],
+        "dec_do": 8,
+        "dec_do_doi_that": 3,
+        "doi_that": 3
+       },
+       "art_do": 22,
+       "dec_do": 8,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "art_do": 0,
+       "dec_do": 0,
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "K1": {
+     "ky_vong": "doi",
+     "stages": {
+      "generate": {
+       "S1": {
+        "dat": false
+       },
+       "S3": {
+        "art_bat": 6,
+        "art_bat_wilson": [
+         0.609666,
+         1.0
+        ],
+        "art_do": 25,
+        "art_do_doi_that": 6,
+        "bo_sot_dec_ma_art_bat": 2,
+        "dec_bat": 4,
+        "dec_bat_wilson": [
+         0.299993,
+         0.903229
+        ],
+        "dec_do": 9,
+        "dec_do_doi_that": 4,
+        "doi_that": 6
+       },
+       "art_do": 25,
+       "dec_do": 9,
+       "delta_art": {
+        "delta": 0.108333,
+        "hi": 0.208333,
+        "lo": 0.016667,
+        "n": 40,
+        "per_seed": [
+         [
+          0.016667,
+          0.208333
+         ],
+         [
+          0.025,
+          0.2
+         ],
+         [
+          0.016667,
+          0.2
+         ],
+         [
+          0.025,
+          0.208333
+         ],
+         [
+          0.025,
+          0.2
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.058333,
+        "hi": 0.183333,
+        "lo": -0.058333,
+        "n": 40,
+        "per_seed": [
+         [
+          -0.058333,
+          0.183333
+         ],
+         [
+          -0.058333,
+          0.183333
+         ],
+         [
+          -0.058333,
+          0.183333
+         ],
+         [
+          -0.058333,
+          0.183333
+         ],
+         [
+          -0.058333,
+          0.183333
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "M1": {
+     "ky_vong": "doi",
+     "stages": {
+      "classify": {
+       "S1": {
+        "dat": true
+       },
+       "S3": {
+        "art_bat": 10,
+        "art_bat_wilson": [
+         0.722467,
+         1.0
+        ],
+        "art_do": 10,
+        "art_do_doi_that": 10,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 10,
+        "dec_bat_wilson": [
+         0.722467,
+         1.0
+        ],
+        "dec_do": 10,
+        "dec_do_doi_that": 10,
+        "doi_that": 10
+       },
+       "art_do": 10,
+       "dec_do": 10,
+       "delta_art": {
+        "delta": 0.25,
+        "hi": 0.4,
+        "lo": 0.125,
+        "n": 40,
+        "per_seed": [
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.4
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.25,
+        "hi": 0.4,
+        "lo": 0.125,
+        "n": 40,
+        "per_seed": [
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.4
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S1": {
+        "dat": false
+       },
+       "S3": {
+        "art_bat": 10,
+        "art_bat_wilson": [
+         0.722467,
+         1.0
+        ],
+        "art_do": 31,
+        "art_do_doi_that": 10,
+        "bo_sot_dec_ma_art_bat": 1,
+        "dec_bat": 9,
+        "dec_bat_wilson": [
+         0.59585,
+         0.982124
+        ],
+        "dec_do": 12,
+        "dec_do_doi_that": 9,
+        "doi_that": 10
+       },
+       "art_do": 31,
+       "dec_do": 12,
+       "delta_art": {
+        "delta": 0.258333,
+        "hi": 0.408333,
+        "lo": 0.125,
+        "n": 40,
+        "per_seed": [
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.383333
+         ],
+         [
+          0.125,
+          0.408333
+         ],
+         [
+          0.133333,
+          0.4
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.133333,
+        "hi": 0.308333,
+        "lo": -0.041667,
+        "n": 40,
+        "per_seed": [
+         [
+          -0.033333,
+          0.308333
+         ],
+         [
+          -0.033333,
+          0.3
+         ],
+         [
+          -0.041667,
+          0.3
+         ],
+         [
+          -0.033333,
+          0.3
+         ],
+         [
+          -0.025,
+          0.308333
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "S1": {
+        "dat": true
+       },
+       "art_do": 40,
+       "dec_do": 26,
+       "delta_art": {
+        "delta": 1.0,
+        "hi": 1.0,
+        "lo": 1.0,
+        "n": 40,
+        "per_seed": [
+         [
+          1.0,
+          1.0
+         ],
+         [
+          1.0,
+          1.0
+         ],
+         [
+          1.0,
+          1.0
+         ],
+         [
+          1.0,
+          1.0
+         ],
+         [
+          1.0,
+          1.0
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.65,
+        "hi": 0.8,
+        "lo": 0.5,
+        "n": 40,
+        "per_seed": [
+         [
+          0.5,
+          0.8
+         ],
+         [
+          0.5,
+          0.8
+         ],
+         [
+          0.5,
+          0.8
+         ],
+         [
+          0.5,
+          0.8
+         ],
+         [
+          0.5,
+          0.8
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "P1": {
+     "ky_vong": "khong_doi",
+     "stages": {
+      "classify": {
+       "S2": {
+        "artefact_do": true,
+        "dat": false,
+        "decision_yen": false
+       },
+       "S3": {
+        "art_bat": 11,
+        "art_bat_wilson": [
+         0.741167,
+         1.0
+        ],
+        "art_do": 11,
+        "art_do_doi_that": 11,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 11,
+        "dec_bat_wilson": [
+         0.741167,
+         1.0
+        ],
+        "dec_do": 11,
+        "dec_do_doi_that": 11,
+        "doi_that": 11
+       },
+       "art_do": 11,
+       "dec_do": 11,
+       "delta_art": {
+        "delta": 0.275,
+        "hi": 0.425,
+        "lo": 0.15,
+        "n": 40,
+        "per_seed": [
+         [
+          0.15,
+          0.425
+         ],
+         [
+          0.15,
+          0.425
+         ],
+         [
+          0.15,
+          0.425
+         ],
+         [
+          0.15,
+          0.425
+         ],
+         [
+          0.15,
+          0.425
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.275,
+        "hi": 0.425,
+        "lo": 0.15,
+        "n": 40,
+        "per_seed": [
+         [
+          0.15,
+          0.425
+         ],
+         [
+          0.15,
+          0.425
+         ],
+         [
+          0.15,
+          0.425
+         ],
+         [
+          0.15,
+          0.425
+         ],
+         [
+          0.15,
+          0.425
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S2": {
+        "artefact_do": true,
+        "dat": false,
+        "decision_yen": false
+       },
+       "S3": {
+        "art_bat": 10,
+        "art_bat_wilson": [
+         0.722467,
+         1.0
+        ],
+        "art_do": 30,
+        "art_do_doi_that": 10,
+        "bo_sot_dec_ma_art_bat": 4,
+        "dec_bat": 6,
+        "dec_bat_wilson": [
+         0.312674,
+         0.83182
+        ],
+        "dec_do": 13,
+        "dec_do_doi_that": 6,
+        "doi_that": 10
+       },
+       "art_do": 30,
+       "dec_do": 13,
+       "delta_art": {
+        "delta": 0.233333,
+        "hi": 0.358333,
+        "lo": 0.125,
+        "n": 40,
+        "per_seed": [
+         [
+          0.125,
+          0.358333
+         ],
+         [
+          0.125,
+          0.358333
+         ],
+         [
+          0.125,
+          0.341667
+         ],
+         [
+          0.133333,
+          0.358333
+         ],
+         [
+          0.133333,
+          0.358333
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.158333,
+        "hi": 0.316667,
+        "lo": 0.0,
+        "n": 40,
+        "per_seed": [
+         [
+          0.008333,
+          0.316667
+         ],
+         [
+          0.0,
+          0.316667
+         ],
+         [
+          0.016667,
+          0.316667
+         ],
+         [
+          0.008333,
+          0.308333
+         ],
+         [
+          0.016667,
+          0.308333
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "S2": {
+        "artefact_do": true,
+        "dat": false,
+        "decision_yen": false
+       },
+       "art_do": 40,
+       "dec_do": 24,
+       "delta_art": {
+        "delta": 1.0,
+        "hi": 1.0,
+        "lo": 1.0,
+        "n": 40,
+        "per_seed": [
+         [
+          1.0,
+          1.0
+         ],
+         [
+          1.0,
+          1.0
+         ],
+         [
+          1.0,
+          1.0
+         ],
+         [
+          1.0,
+          1.0
+         ],
+         [
+          1.0,
+          1.0
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.6,
+        "hi": 0.75,
+        "lo": 0.45,
+        "n": 40,
+        "per_seed": [
+         [
+          0.45,
+          0.75
+         ],
+         [
+          0.45,
+          0.75
+         ],
+         [
+          0.45,
+          0.75
+         ],
+         [
+          0.45,
+          0.75
+         ],
+         [
+          0.45,
+          0.75
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "P2": {
+     "ky_vong": "doi",
+     "stages": {
+      "classify": {
+       "S1": {
+        "dat": true
+       },
+       "S3": {
+        "art_bat": 7,
+        "art_bat_wilson": [
+         0.64567,
+         1.0
+        ],
+        "art_do": 7,
+        "art_do_doi_that": 7,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 7,
+        "dec_bat_wilson": [
+         0.64567,
+         1.0
+        ],
+        "dec_do": 7,
+        "dec_do_doi_that": 7,
+        "doi_that": 7
+       },
+       "art_do": 7,
+       "dec_do": 7,
+       "delta_art": {
+        "delta": 0.175,
+        "hi": 0.3,
+        "lo": 0.05,
+        "n": 40,
+        "per_seed": [
+         [
+          0.075,
+          0.3
+         ],
+         [
+          0.075,
+          0.3
+         ],
+         [
+          0.05,
+          0.3
+         ],
+         [
+          0.075,
+          0.3
+         ],
+         [
+          0.075,
+          0.3
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.175,
+        "hi": 0.3,
+        "lo": 0.05,
+        "n": 40,
+        "per_seed": [
+         [
+          0.075,
+          0.3
+         ],
+         [
+          0.075,
+          0.3
+         ],
+         [
+          0.05,
+          0.3
+         ],
+         [
+          0.075,
+          0.3
+         ],
+         [
+          0.075,
+          0.3
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S1": {
+        "dat": true
+       },
+       "S3": {
+        "art_bat": 6,
+        "art_bat_wilson": [
+         0.609666,
+         1.0
+        ],
+        "art_do": 33,
+        "art_do_doi_that": 6,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 6,
+        "dec_bat_wilson": [
+         0.609666,
+         1.0
+        ],
+        "dec_do": 27,
+        "dec_do_doi_that": 6,
+        "doi_that": 6
+       },
+       "art_do": 33,
+       "dec_do": 27,
+       "delta_art": {
+        "delta": 0.308333,
+        "hi": 0.45,
+        "lo": 0.183333,
+        "n": 40,
+        "per_seed": [
+         [
+          0.183333,
+          0.441667
+         ],
+         [
+          0.183333,
+          0.45
+         ],
+         [
+          0.183333,
+          0.433333
+         ],
+         [
+          0.183333,
+          0.441667
+         ],
+         [
+          0.191667,
+          0.441667
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.508333,
+        "hi": 0.691667,
+        "lo": 0.325,
+        "n": 40,
+        "per_seed": [
+         [
+          0.325,
+          0.683333
+         ],
+         [
+          0.325,
+          0.675
+         ],
+         [
+          0.333333,
+          0.683333
+         ],
+         [
+          0.333333,
+          0.683333
+         ],
+         [
+          0.333333,
+          0.691667
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "S1": {
+        "dat": true
+       },
+       "art_do": 38,
+       "dec_do": 10,
+       "delta_art": {
+        "delta": 0.95,
+        "hi": 1.0,
+        "lo": 0.875,
+        "n": 40,
+        "per_seed": [
+         [
+          0.875,
+          1.0
+         ],
+         [
+          0.875,
+          1.0
+         ],
+         [
+          0.875,
+          1.0
+         ],
+         [
+          0.875,
+          1.0
+         ],
+         [
+          0.875,
+          1.0
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.25,
+        "hi": 0.4,
+        "lo": 0.125,
+        "n": 40,
+        "per_seed": [
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.4
+         ],
+         [
+          0.125,
+          0.375
+         ],
+         [
+          0.125,
+          0.4
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "R1-A2": {
+     "ky_vong": "khong_ro",
+     "stages": {
+      "classify": {
+       "S3": {
+        "art_bat": 0,
+        "art_bat_wilson": [
+         null,
+         null
+        ],
+        "art_do": 0,
+        "art_do_doi_that": 0,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 0,
+        "dec_bat_wilson": [
+         null,
+         null
+        ],
+        "dec_do": 0,
+        "dec_do_doi_that": 0,
+        "doi_that": 0
+       },
+       "art_do": 0,
+       "dec_do": 0,
+       "delta_art": {
+        "delta": 0.0,
+        "hi": 0.0,
+        "lo": 0.0,
+        "n": 40,
+        "per_seed": [
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.0,
+        "hi": 0.0,
+        "lo": 0.0,
+        "n": 40,
+        "per_seed": [
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S3": {
+        "art_bat": 0,
+        "art_bat_wilson": [
+         null,
+         null
+        ],
+        "art_do": 0,
+        "art_do_doi_that": 0,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 0,
+        "dec_bat_wilson": [
+         null,
+         null
+        ],
+        "dec_do": 0,
+        "dec_do_doi_that": 0,
+        "doi_that": 0
+       },
+       "art_do": 0,
+       "dec_do": 0,
+       "delta_art": {
+        "delta": -0.516667,
+        "hi": -0.375,
+        "lo": -0.666667,
+        "n": 40,
+        "per_seed": [
+         [
+          -0.658333,
+          -0.375
+         ],
+         [
+          -0.666667,
+          -0.375
+         ],
+         [
+          -0.65,
+          -0.375
+         ],
+         [
+          -0.658333,
+          -0.375
+         ],
+         [
+          -0.658333,
+          -0.383333
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": -0.166667,
+        "hi": -0.066667,
+        "lo": -0.283333,
+        "n": 40,
+        "per_seed": [
+         [
+          -0.275,
+          -0.066667
+         ],
+         [
+          -0.283333,
+          -0.066667
+         ],
+         [
+          -0.283333,
+          -0.066667
+         ],
+         [
+          -0.275,
+          -0.066667
+         ],
+         [
+          -0.283333,
+          -0.066667
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "art_do": 0,
+       "dec_do": 0,
+       "delta_art": {
+        "delta": 0.0,
+        "hi": 0.0,
+        "lo": 0.0,
+        "n": 40,
+        "per_seed": [
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.0,
+        "hi": 0.0,
+        "lo": 0.0,
+        "n": 40,
+        "per_seed": [
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "R1-B": {
+     "ky_vong": "khong_ro",
+     "stages": {
+      "classify": {
+       "S3": {
+        "art_bat": 0,
+        "art_bat_wilson": [
+         null,
+         null
+        ],
+        "art_do": 0,
+        "art_do_doi_that": 0,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 0,
+        "dec_bat_wilson": [
+         null,
+         null
+        ],
+        "dec_do": 0,
+        "dec_do_doi_that": 0,
+        "doi_that": 0
+       },
+       "art_do": 0,
+       "dec_do": 0,
+       "delta_art": {
+        "delta": 0.0,
+        "hi": 0.0,
+        "lo": 0.0,
+        "n": 40,
+        "per_seed": [
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.0,
+        "hi": 0.0,
+        "lo": 0.0,
+        "n": 40,
+        "per_seed": [
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.0,
+          0.0
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S3": {
+        "art_bat": 5,
+        "art_bat_wilson": [
+         0.565518,
+         1.0
+        ],
+        "art_do": 25,
+        "art_do_doi_that": 5,
+        "bo_sot_dec_ma_art_bat": 1,
+        "dec_bat": 4,
+        "dec_bat_wilson": [
+         0.375535,
+         0.963776
+        ],
+        "dec_do": 7,
+        "dec_do_doi_that": 4,
+        "doi_that": 5
+       },
+       "art_do": 25,
+       "dec_do": 7,
+       "delta_art": {
+        "delta": 0.108333,
+        "hi": 0.225,
+        "lo": -0.016667,
+        "n": 40,
+        "per_seed": [
+         [
+          -0.016667,
+          0.216667
+         ],
+         [
+          -0.008333,
+          0.225
+         ],
+         [
+          -0.008333,
+          0.225
+         ],
+         [
+          0.0,
+          0.225
+         ],
+         [
+          0.0,
+          0.225
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.008333,
+        "hi": 0.15,
+        "lo": -0.125,
+        "n": 40,
+        "per_seed": [
+         [
+          -0.125,
+          0.141667
+         ],
+         [
+          -0.125,
+          0.141667
+         ],
+         [
+          -0.125,
+          0.15
+         ],
+         [
+          -0.125,
+          0.141667
+         ],
+         [
+          -0.116667,
+          0.141667
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "art_do": 35,
+       "dec_do": 9,
+       "delta_art": {
+        "delta": 0.875,
+        "hi": 0.975,
+        "lo": 0.75,
+        "n": 40,
+        "per_seed": [
+         [
+          0.775,
+          0.975
+         ],
+         [
+          0.775,
+          0.95
+         ],
+         [
+          0.775,
+          0.975
+         ],
+         [
+          0.775,
+          0.95
+         ],
+         [
+          0.75,
+          0.95
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.225,
+        "hi": 0.375,
+        "lo": 0.1,
+        "n": 40,
+        "per_seed": [
+         [
+          0.1,
+          0.35
+         ],
+         [
+          0.1,
+          0.35
+         ],
+         [
+          0.1,
+          0.375
+         ],
+         [
+          0.1,
+          0.35
+         ],
+         [
+          0.1,
+          0.35
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    },
+    "T1": {
+     "ky_vong": "artefact_doi_decision_khong_ro",
+     "stages": {
+      "classify": {
+       "S3": {
+        "art_bat": 1,
+        "art_bat_wilson": [
+         0.206549,
+         1.0
+        ],
+        "art_do": 1,
+        "art_do_doi_that": 1,
+        "bo_sot_dec_ma_art_bat": 0,
+        "dec_bat": 1,
+        "dec_bat_wilson": [
+         0.206549,
+         1.0
+        ],
+        "dec_do": 1,
+        "dec_do_doi_that": 1,
+        "doi_that": 1
+       },
+       "art_do": 1,
+       "dec_do": 1,
+       "delta_art": {
+        "delta": 0.025,
+        "hi": 0.075,
+        "lo": 0.0,
+        "n": 40,
+        "per_seed": [
+         [
+          0.0,
+          0.075
+         ],
+         [
+          0.0,
+          0.075
+         ],
+         [
+          0.0,
+          0.075
+         ],
+         [
+          0.0,
+          0.075
+         ],
+         [
+          0.0,
+          0.075
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.025,
+        "hi": 0.075,
+        "lo": 0.0,
+        "n": 40,
+        "per_seed": [
+         [
+          0.0,
+          0.075
+         ],
+         [
+          0.0,
+          0.075
+         ],
+         [
+          0.0,
+          0.075
+         ],
+         [
+          0.0,
+          0.075
+         ],
+         [
+          0.0,
+          0.075
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "generate": {
+       "S3": {
+        "art_bat": 6,
+        "art_bat_wilson": [
+         0.609666,
+         1.0
+        ],
+        "art_do": 28,
+        "art_do_doi_that": 6,
+        "bo_sot_dec_ma_art_bat": 1,
+        "dec_bat": 5,
+        "dec_bat_wilson": [
+         0.436497,
+         0.969947
+        ],
+        "dec_do": 11,
+        "dec_do_doi_that": 5,
+        "doi_that": 6
+       },
+       "art_do": 28,
+       "dec_do": 11,
+       "delta_art": {
+        "delta": 0.183333,
+        "hi": 0.291667,
+        "lo": 0.083333,
+        "n": 40,
+        "per_seed": [
+         [
+          0.091667,
+          0.283333
+         ],
+         [
+          0.091667,
+          0.291667
+         ],
+         [
+          0.083333,
+          0.283333
+         ],
+         [
+          0.091667,
+          0.283333
+         ],
+         [
+          0.091667,
+          0.291667
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.108333,
+        "hi": 0.2,
+        "lo": 0.033333,
+        "n": 40,
+        "per_seed": [
+         [
+          0.033333,
+          0.2
+         ],
+         [
+          0.033333,
+          0.2
+         ],
+         [
+          0.033333,
+          0.2
+         ],
+         [
+          0.033333,
+          0.2
+         ],
+         [
+          0.033333,
+          0.2
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      },
+      "route": {
+       "art_do": 37,
+       "dec_do": 5,
+       "delta_art": {
+        "delta": 0.925,
+        "hi": 1.0,
+        "lo": 0.825,
+        "n": 40,
+        "per_seed": [
+         [
+          0.85,
+          1.0
+         ],
+         [
+          0.825,
+          1.0
+         ],
+         [
+          0.825,
+          1.0
+         ],
+         [
+          0.825,
+          1.0
+         ],
+         [
+          0.85,
+          1.0
+         ]
+        ]
+       },
+       "delta_dec": {
+        "delta": 0.125,
+        "hi": 0.25,
+        "lo": 0.025,
+        "n": 40,
+        "per_seed": [
+         [
+          0.025,
+          0.225
+         ],
+         [
+          0.025,
+          0.25
+         ],
+         [
+          0.025,
+          0.225
+         ],
+         [
+          0.025,
+          0.25
+         ],
+         [
+          0.025,
+          0.225
+         ]
+        ]
+       },
+       "n": 40,
+       "n_ghep_doi_chung": 40
+      }
+     }
+    }
+   }
+  }
+ },
+ "inputs": {
+  "S3_20261112_v1.jsonl": "71171e50c8ef9108198e8304577d645c46d296447e57a04245f976d5d134d113",
+  "S3_20261112_v1.manifest.jsonl": "232649860b0e3252754d78ba356029eedbd64594f4c1546e0529901c86804eb1"
+ },
+ "manifest": [
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "golden",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "run": "golden",
+   "trang_thai": "ok",
+   "ts": "2026-11-12T16:21:54+07:00",
+   "ts_end": "2026-11-12T16:23:38+07:00",
+   "usd": 0.023459
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "T1",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "run": "T1",
+   "trang_thai": "ok",
+   "ts": "2026-11-12T16:23:38+07:00",
+   "ts_end": "2026-11-12T16:25:20+07:00",
+   "usd": 0.023046
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "C1",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "run": "C1",
+   "trang_thai": "ok",
+   "ts": "2026-11-12T16:25:20+07:00",
+   "ts_end": "2026-11-12T16:27:01+07:00",
+   "usd": 0.023451
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "C3",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "run": "C3",
+   "trang_thai": "ok",
+   "ts": "2026-11-12T16:27:01+07:00",
+   "ts_end": "2026-11-12T16:28:41+07:00",
+   "usd": 0.023271
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "P1",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "run": "P1",
+   "trang_thai": "ok",
+   "ts": "2026-11-12T16:28:41+07:00",
+   "ts_end": "2026-11-12T16:30:24+07:00",
+   "usd": 0.02379
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "K1",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "run": "K1",
+   "trang_thai": "ok",
+   "ts": "2026-11-12T16:30:24+07:00",
+   "ts_end": "2026-11-12T16:30:58+07:00",
+   "usd": 0.009606
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "P2",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "run": "P2",
+   "trang_thai": "ok",
+   "ts": "2026-11-12T16:30:58+07:00",
+   "ts_end": "2026-11-12T16:32:37+07:00",
+   "usd": 0.021599
+  },
+  {
+   "api_version": null,
+   "arm": "hosted",
+   "bien_the": "C2",
+   "cli_version": null,
+   "model": "gemini-2.5-flash",
+   "n_loi": 0,
+   "run": "C2",
+   "trang_thai": "ok",
+   "ts": "2026-11-12T16:32:37+07:00",
+   "ts_end": "2026-11-12T16:34:17+07:00",
+   "usd": 0.023241
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "golden",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "run": "golden",
+   "trang_thai": "ok",
+   "ts": "2026-11-12T23:00:09+07:00",
+   "ts_end": "2026-11-12T23:18:31+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "P2",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "run": "P2",
+   "trang_thai": "ok",
+   "ts": "2026-11-12T23:18:31+07:00",
+   "ts_end": "2026-11-12T23:38:36+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "P1",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "run": "P1",
+   "trang_thai": "ok",
+   "ts": "2026-11-12T23:38:36+07:00",
+   "ts_end": "2026-11-12T23:59:11+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "M1",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:7b",
+   "n_loi": 0,
+   "run": "M1",
+   "trang_thai": "ok",
+   "ts": "2026-11-12T23:59:37+07:00",
+   "ts_end": "2026-11-13T00:38:02+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "T1",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "run": "T1",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T00:38:03+07:00",
+   "ts_end": "2026-11-13T00:57:21+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "K1",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "run": "K1",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T00:57:21+07:00",
+   "ts_end": "2026-11-13T00:59:36+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "C2",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "run": "C2",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T00:59:36+07:00",
+   "ts_end": "2026-11-13T01:11:00+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "C1",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "run": "C1",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T01:11:00+07:00",
+   "ts_end": "2026-11-13T01:17:35+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "C3",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "run": "C3",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T01:17:35+07:00",
+   "ts_end": "2026-11-13T01:24:08+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.40.16",
+   "arm": "local",
+   "bien_the": "R1-B",
+   "cli_version": "ollama version is 0.40.16",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "run": "R1-B",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T01:24:19+07:00",
+   "ts_end": "2026-11-13T01:39:54+07:00",
+   "usd": 0.0
+  },
+  {
+   "api_version": "0.30.10",
+   "arm": "local",
+   "bien_the": "R1-A2",
+   "cli_version": "ollama version is 0.30.10",
+   "model": "qwen2.5:3b",
+   "n_loi": 0,
+   "run": "R1-A2",
+   "trang_thai": "ok",
+   "ts": "2026-11-13T01:40:04+07:00",
+   "ts_end": "2026-11-13T01:58:56+07:00",
+   "usd": 0.0
+  }
+ ],
+ "tham_so": {
+  "B": 2000,
+  "seeds": [
+   20261112,
+   20261113,
+   20261114,
+   20261115,
+   20261116
+  ]
+ }
+}

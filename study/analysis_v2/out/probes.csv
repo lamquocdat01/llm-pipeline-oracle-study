@@ -1,0 +1,19 @@
+nguon,stage,be,probe,n,probe_art_doi,probe_dec_doi,cap_1_2_art_doi,cap_1_2_dec_doi,doc
+P2,classify,hosted,t08,20,7,1,1,0,probe đổi nhiều hơn cặp 1→2
+P2,route,hosted,t08,20,19,3,8,1,probe đổi nhiều hơn cặp 1→2
+P2,generate,hosted,t08,20,5,0,0,0,probe đổi nhiều hơn cặp 1→2
+P2,live,hosted,t08,20,20,0,20,0,không xác nhận được (C2)
+P2,classify,local,t08,20,2,1,0,0,probe đổi nhiều hơn cặp 1→2
+P2,classify,local,seed1,20,2,0,0,0,probe đổi nhiều hơn cặp 1→2
+P2,route,local,t08,20,20,4,2,1,probe đổi nhiều hơn cặp 1→2
+P2,route,local,seed1,20,5,0,2,1,probe đổi nhiều hơn cặp 1→2
+P2,generate,local,t08,20,10,3,0,0,probe đổi nhiều hơn cặp 1→2
+P2,generate,local,seed1,20,5,0,0,0,probe đổi nhiều hơn cặp 1→2
+P3,route,local,t08,20,20,0,1,0,probe đổi nhiều hơn cặp 1→2
+P3,route,local,seed1,20,0,0,1,0,không xác nhận được (C2)
+P3,generate,local,t08,20,10,2,0,0,probe đổi nhiều hơn cặp 1→2
+P3,generate,local,seed1,20,2,0,0,0,probe đổi nhiều hơn cặp 1→2
+MD3,M2,local,t08,100,100,1,25,1,probe đổi nhiều hơn cặp 1→2
+MD3,M2,local,seed1,100,25,1,25,1,không xác nhận được (C2)
+MD3,M4,local,t08,10,10,0,2,0,probe đổi nhiều hơn cặp 1→2
+MD3,M4,local,seed1,10,2,0,2,0,không xác nhận được (C2)

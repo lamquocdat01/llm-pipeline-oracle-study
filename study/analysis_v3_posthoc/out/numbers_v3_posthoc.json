@@ -1,0 +1,2661 @@
+{
+ "KIEM": {
+  "classify_art_chinh_xac": [
+   48,
+   67
+  ],
+  "naive_cap_dang_ky_1to5": {
+   "không phân định": 3,
+   "n": 17,
+   "sai": 7,
+   "đúng": 7
+  },
+  "naive_cap_dang_ky_1to5_MD3_goc": {
+   "không phân định": 3,
+   "n": 17,
+   "sai": 9,
+   "đúng": 5
+  },
+  "naive_chinh_V2-07_cung_runtime": {
+   "không phân định": 3,
+   "n": 17,
+   "sai": 3,
+   "đúng": 11
+  },
+  "registered_MD3R_dung": {
+   "không phân định": 1,
+   "sai": 6,
+   "đúng": 10
+  },
+  "registered_MD3_goc_dung": {
+   "không phân định": 1,
+   "sai": 8,
+   "đúng": 8
+  },
+  "wilson_10_58": [
+   0.096443,
+   0.289083
+  ]
+ },
+ "N1": {
+  "theo_lan": {
+   "hosted|C1": {
+    "chi_art_do": 1,
+    "cung_json_chi_dinh_dang": 1,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": [
+     {
+      "golden": "{\"language\": \"en\", \"answerable\": false}",
+      "loai": "cung_json_chi_dinh_dang",
+      "qid": "5a25ade0ef59cd001a623c46",
+      "run": "```json\n{\"language\": \"en\", \"answerable\": false}\n```"
+     }
+    ]
+   },
+   "hosted|C2": {
+    "chi_art_do": 1,
+    "cung_json_chi_dinh_dang": 1,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": [
+     {
+      "golden": "{\"language\": \"en\", \"answerable\": false}",
+      "loai": "cung_json_chi_dinh_dang",
+      "qid": "5a25ade0ef59cd001a623c46",
+      "run": "```json\n{\"language\": \"en\", \"answerable\": false}\n```"
+     }
+    ]
+   },
+   "hosted|C3": {
+    "chi_art_do": 0,
+    "cung_json_chi_dinh_dang": 0,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": []
+   },
+   "hosted|K1": {
+    "chi_art_do": 0,
+    "cung_json_chi_dinh_dang": 0,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": []
+   },
+   "hosted|P1": {
+    "chi_art_do": 3,
+    "cung_json_chi_dinh_dang": 3,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": [
+     {
+      "golden": "{\"language\": \"en\", \"answerable\": false}",
+      "loai": "cung_json_chi_dinh_dang",
+      "qid": "5a1c8aedb4fb5d00187146a3",
+      "run": "```json\n{\n  \"language\": \"en\",\n  \"answerable\": false\n}\n```"
+     },
+     {
+      "golden": "{\"language\": \"en\", \"answerable\": false}",
+      "loai": "cung_json_chi_dinh_dang",
+      "qid": "5a25ade0ef59cd001a623c46",
+      "run": "```json\n{\n  \"language\": \"en\",\n  \"answerable\": false\n}\n```"
+     },
+     {
+      "golden": "{\"language\": \"en\", \"answerable\": false}",
+      "loai": "cung_json_chi_dinh_dang",
+      "qid": "5ad04de377cf76001a686fa8",
+      "run": "```json\n{\n  \"language\": \"en\",\n  \"answerable\": false\n}\n```"
+     }
+    ]
+   },
+   "hosted|P2": {
+    "chi_art_do": 14,
+    "cung_json_chi_dinh_dang": 14,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": [
+     {
+      "golden": "```json\n{\n  \"language\": \"en\",\n  \"answerable\": true\n}\n```",
+      "loai": "cung_json_chi_dinh_dang",
+      "qid": "570d2af0fed7b91900d45c95",
+      "run": "{\"language\": \"en\", \"answerable\": true}"
+     },
+     {
+      "golden": "```json\n{\n  \"language\": \"en\",\n  \"answerable\": true\n}\n```",
+      "loai": "cung_json_chi_dinh_dang",
+      "qid": "571098f8a58dae1900cd6ab2",
+      "run": "{\"language\": \"en\", \"answerable\": true}"
+     },
+     {
+      "golden": "```json\n{\n  \"language\": \"en\",\n  \"answerable\": true\n}\n```",
+      "loai": "cung_json_chi_dinh_dang",
+      "qid": "571166352419e314009555f3",
+      "run": "{\"language\": \"en\", \"answerable\": true}"
+     }
+    ]
+   },
+   "hosted|T1": {
+    "chi_art_do": 2,
+    "cung_json_chi_dinh_dang": 2,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": [
+     {
+      "golden": "{\"language\": \"en\", \"answerable\": false}",
+      "loai": "cung_json_chi_dinh_dang",
+      "qid": "5a25ade0ef59cd001a623c46",
+      "run": "```json\n{\"language\": \"en\", \"answerable\": false}\n```"
+     },
+     {
+      "golden": "{\"language\": \"en\", \"answerable\": false}",
+      "loai": "cung_json_chi_dinh_dang",
+      "qid": "5ad04de377cf76001a686fa8",
+      "run": "```json\n{\n  \"language\": \"en\",\n  \"answerable\": false\n}\n```"
+     }
+    ]
+   },
+   "local|C1": {
+    "chi_art_do": 0,
+    "cung_json_chi_dinh_dang": 0,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": []
+   },
+   "local|C2": {
+    "chi_art_do": 0,
+    "cung_json_chi_dinh_dang": 0,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": []
+   },
+   "local|C3": {
+    "chi_art_do": 0,
+    "cung_json_chi_dinh_dang": 0,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": []
+   },
+   "local|K1": {
+    "chi_art_do": 0,
+    "cung_json_chi_dinh_dang": 0,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": []
+   },
+   "local|M1": {
+    "chi_art_do": 0,
+    "cung_json_chi_dinh_dang": 0,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": []
+   },
+   "local|P1": {
+    "chi_art_do": 0,
+    "cung_json_chi_dinh_dang": 0,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": []
+   },
+   "local|P2": {
+    "chi_art_do": 0,
+    "cung_json_chi_dinh_dang": 0,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": []
+   },
+   "local|R1-A2": {
+    "chi_art_do": 0,
+    "cung_json_chi_dinh_dang": 0,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": []
+   },
+   "local|R1-B": {
+    "chi_art_do": 0,
+    "cung_json_chi_dinh_dang": 0,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": []
+   },
+   "local|T1": {
+    "chi_art_do": 0,
+    "cung_json_chi_dinh_dang": 0,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0,
+    "vi_du": []
+   }
+  },
+  "tong": {
+   "doi_chung": {
+    "chi_art_do": 2,
+    "cung_json_chi_dinh_dang": 2,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0
+   },
+   "thay_doi": {
+    "chi_art_do": 19,
+    "cung_json_chi_dinh_dang": 19,
+    "decision_bo_qua": 0,
+    "json_hop_le_doi": 0,
+    "khac": 0,
+    "language_doi": 0
+   }
+  }
+ },
+ "N2": {
+  "bien_the_moi_test": {
+   "1": 16,
+   "2": 11,
+   "3": 4,
+   "4": 9
+  },
+  "khac_golden_nc3": {
+   "NC2-lan01-A": 0,
+   "NC2-lan17-D": 0,
+   "NC2-lan18-D": 0,
+   "NC2-lan19-D": 5,
+   "NC2-lan21-D": 0,
+   "NC2-lan22-D": 0,
+   "NC2-lan23-D": 0,
+   "NC2-lan24-D": 0,
+   "NC2-lan25-D": 0,
+   "NC2-lan26-D": 0,
+   "NC2-lan27-D": 2,
+   "NC2-lan28-D": 2,
+   "NC2-lan29-D": 0,
+   "NC2-lan30-D": 0,
+   "NC2-lan31-D": 12,
+   "NC2-lan32-D": 12,
+   "NC2-lan33-D": 0,
+   "NC2-lan34-D": 0,
+   "NC2-lan35-D": 0,
+   "NC2-lan37-D": 0,
+   "NC3-C1": 22,
+   "NC3-C2": 18,
+   "NC3-C3": 22,
+   "NC3-R1-A2": 0
+  },
+  "lan": [
+   "NC2-lan01-A",
+   "NC2-lan17-D",
+   "NC2-lan18-D",
+   "NC2-lan19-D",
+   "NC2-lan21-D",
+   "NC2-lan22-D",
+   "NC2-lan23-D",
+   "NC2-lan24-D",
+   "NC2-lan25-D",
+   "NC2-lan26-D",
+   "NC2-lan27-D",
+   "NC2-lan28-D",
+   "NC2-lan29-D",
+   "NC2-lan30-D",
+   "NC2-lan31-D",
+   "NC2-lan32-D",
+   "NC2-lan33-D",
+   "NC2-lan34-D",
+   "NC2-lan35-D",
+   "NC2-lan37-D",
+   "NC3-C1",
+   "NC3-C2",
+   "NC3-C3",
+   "NC3-R1-A2",
+   "NC3-golden"
+  ],
+  "n_test": 40,
+  "nhom_trung_nhau": [
+   [
+    "NC2-lan01-A",
+    "NC2-lan17-D",
+    "NC2-lan18-D",
+    "NC2-lan21-D",
+    "NC2-lan22-D",
+    "NC2-lan23-D",
+    "NC2-lan24-D",
+    "NC2-lan25-D",
+    "NC2-lan26-D",
+    "NC2-lan29-D",
+    "NC2-lan30-D",
+    "NC2-lan33-D",
+    "NC2-lan34-D",
+    "NC2-lan35-D",
+    "NC2-lan37-D",
+    "NC3-R1-A2",
+    "NC3-golden"
+   ],
+   [
+    "NC2-lan19-D"
+   ],
+   [
+    "NC2-lan27-D",
+    "NC2-lan28-D"
+   ],
+   [
+    "NC2-lan31-D",
+    "NC2-lan32-D"
+   ],
+   [
+    "NC3-C1",
+    "NC3-C3"
+   ],
+   [
+    "NC3-C2"
+   ]
+  ],
+  "thu_tu_local": [
+   {
+    "api_version": "0.30.10",
+    "model": "qwen2.5:3b",
+    "phut": 18.4,
+    "run": "golden",
+    "ts": "2026-11-12T23:00:09+07:00",
+    "ts_end": "2026-11-12T23:18:31+07:00"
+   },
+   {
+    "api_version": "0.30.10",
+    "model": "qwen2.5:3b",
+    "phut": 20.1,
+    "run": "P2",
+    "ts": "2026-11-12T23:18:31+07:00",
+    "ts_end": "2026-11-12T23:38:36+07:00"
+   },
+   {
+    "api_version": "0.30.10",
+    "model": "qwen2.5:3b",
+    "phut": 20.6,
+    "run": "P1",
+    "ts": "2026-11-12T23:38:36+07:00",
+    "ts_end": "2026-11-12T23:59:11+07:00"
+   },
+   {
+    "api_version": "0.30.10",
+    "model": "qwen2.5:7b",
+    "phut": 38.4,
+    "run": "M1",
+    "ts": "2026-11-12T23:59:37+07:00",
+    "ts_end": "2026-11-13T00:38:02+07:00"
+   },
+   {
+    "api_version": "0.30.10",
+    "model": "qwen2.5:3b",
+    "phut": 19.3,
+    "run": "T1",
+    "ts": "2026-11-13T00:38:03+07:00",
+    "ts_end": "2026-11-13T00:57:21+07:00"
+   },
+   {
+    "api_version": "0.30.10",
+    "model": "qwen2.5:3b",
+    "phut": 2.2,
+    "run": "K1",
+    "ts": "2026-11-13T00:57:21+07:00",
+    "ts_end": "2026-11-13T00:59:36+07:00"
+   },
+   {
+    "api_version": "0.30.10",
+    "model": "qwen2.5:3b",
+    "phut": 11.4,
+    "run": "C2",
+    "ts": "2026-11-13T00:59:36+07:00",
+    "ts_end": "2026-11-13T01:11:00+07:00"
+   },
+   {
+    "api_version": "0.30.10",
+    "model": "qwen2.5:3b",
+    "phut": 6.6,
+    "run": "C1",
+    "ts": "2026-11-13T01:11:00+07:00",
+    "ts_end": "2026-11-13T01:17:35+07:00"
+   },
+   {
+    "api_version": "0.30.10",
+    "model": "qwen2.5:3b",
+    "phut": 6.5,
+    "run": "C3",
+    "ts": "2026-11-13T01:17:35+07:00",
+    "ts_end": "2026-11-13T01:24:08+07:00"
+   },
+   {
+    "api_version": "0.40.16",
+    "model": "qwen2.5:3b",
+    "phut": 15.6,
+    "run": "R1-B",
+    "ts": "2026-11-13T01:24:19+07:00",
+    "ts_end": "2026-11-13T01:39:54+07:00"
+   },
+   {
+    "api_version": "0.30.10",
+    "model": "qwen2.5:3b",
+    "phut": 18.9,
+    "run": "R1-A2",
+    "ts": "2026-11-13T01:40:04+07:00",
+    "ts_end": "2026-11-13T01:58:56+07:00"
+   }
+  ]
+ },
+ "N2B": {
+  "_nhan": "post hoc",
+  "lan_dau_sau_khoi_dong": [
+   "V2-08 R1-A2",
+   "V2-08 R1-B",
+   "V2-09 A1",
+   "V2-09 A2",
+   "V2-09 A3",
+   "V2-09 B1",
+   "V2-09 B2",
+   "V2-09 B3",
+   "V2-09 golden"
+  ],
+  "n_lan": 19,
+  "nhom": [
+   {
+    "dau_sau_khoi_dong": [
+     "V2-08 R1-A2",
+     "V2-09 A1",
+     "V2-09 A2",
+     "V2-09 A3",
+     "V2-09 golden"
+    ],
+    "lan": [
+     "V2-08 R1-A2",
+     "V2-08 golden",
+     "V2-09 A1",
+     "V2-09 A2",
+     "V2-09 A3",
+     "V2-09 golden"
+    ],
+    "server": "0.30.10"
+   },
+   {
+    "dau_sau_khoi_dong": [],
+    "lan": [
+     "V2-09 C2",
+     "V2-09 C3",
+     "V2-09 D1",
+     "V2-09 D2",
+     "V2-09 D3"
+    ],
+    "server": "0.30.10"
+   },
+   {
+    "dau_sau_khoi_dong": [
+     "V2-08 R1-B",
+     "V2-09 B1",
+     "V2-09 B2",
+     "V2-09 B3"
+    ],
+    "lan": [
+     "V2-08 R1-B",
+     "V2-09 B1",
+     "V2-09 B2",
+     "V2-09 B3"
+    ],
+    "server": "0.40.16"
+   },
+   {
+    "dau_sau_khoi_dong": [],
+    "lan": [
+     "V2-08 C1",
+     "V2-08 C3"
+    ],
+    "server": "0.30.10"
+   },
+   {
+    "dau_sau_khoi_dong": [],
+    "lan": [
+     "V2-08 C2"
+    ],
+    "server": "0.30.10"
+   },
+   {
+    "dau_sau_khoi_dong": [],
+    "lan": [
+     "V2-09 C1"
+    ],
+    "server": "0.30.10"
+   }
+  ],
+  "nhom_lan_dau_A": 6,
+  "nhom_lan_dau_B": 4
+ },
+ "N3": {
+  "generate_sot_theo_chieu": {
+   "doi_chung": {
+    "sot_dung_sang_sai": 0,
+    "sot_sai_sang_dung": 0,
+    "that_dung_sang_sai": 8,
+    "that_sai_sang_dung": 2,
+    "wilson_sot_dung_sang_sai": [
+     0.0,
+     0.324408
+    ],
+    "wilson_sot_sai_sang_dung": [
+     0.0,
+     0.65762
+    ]
+   },
+   "thay_doi": {
+    "sot_dung_sang_sai": 1,
+    "sot_sai_sang_dung": 9,
+    "that_dung_sang_sai": 26,
+    "that_sai_sang_dung": 32,
+    "wilson_sot_dung_sang_sai": [
+     0.006822,
+     0.188928
+    ],
+    "wilson_sot_sai_sang_dung": [
+     0.155646,
+     0.453745
+    ]
+   }
+  },
+  "oracle_khong_tra_loi_duoc": 21,
+  "oracle_n": 40,
+  "theo_lan": {
+   "hosted|C1": {
+    "classify": {
+     "art_bat": 0,
+     "art_do": 1,
+     "art_do_that": 0,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 0,
+     "dec_do": 0,
+     "dec_do_that": 0,
+     "doi_that": 0,
+     "dung_sang_sai": 0,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 0,
+     "that_tra_loi_duoc": 0,
+     "wilson": {
+      "art_chinh_xac": [
+       0.0,
+       0.793451
+      ],
+      "bo_sot": [
+       null,
+       null
+      ],
+      "bo_sot_tra_loi_duoc": [
+       null,
+       null
+      ],
+      "dec_bat": [
+       null,
+       null
+      ],
+      "dec_chinh_xac": [
+       null,
+       null
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 0,
+     "art_do": 2,
+     "art_do_that": 0,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 0,
+     "dec_do": 0,
+     "dec_do_that": 0,
+     "doi_that": 0,
+     "dung_sang_sai": 0,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 0,
+     "that_tra_loi_duoc": 0,
+     "wilson": {
+      "art_chinh_xac": [
+       0.0,
+       0.65762
+      ],
+      "bo_sot": [
+       null,
+       null
+      ],
+      "bo_sot_tra_loi_duoc": [
+       null,
+       null
+      ],
+      "dec_bat": [
+       null,
+       null
+      ],
+      "dec_chinh_xac": [
+       null,
+       null
+      ]
+     }
+    }
+   },
+   "hosted|C2": {
+    "classify": {
+     "art_bat": 0,
+     "art_do": 1,
+     "art_do_that": 0,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 0,
+     "dec_do": 0,
+     "dec_do_that": 0,
+     "doi_that": 0,
+     "dung_sang_sai": 0,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 0,
+     "that_tra_loi_duoc": 0,
+     "wilson": {
+      "art_chinh_xac": [
+       0.0,
+       0.793451
+      ],
+      "bo_sot": [
+       null,
+       null
+      ],
+      "bo_sot_tra_loi_duoc": [
+       null,
+       null
+      ],
+      "dec_bat": [
+       null,
+       null
+      ],
+      "dec_chinh_xac": [
+       null,
+       null
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 1,
+     "art_do": 5,
+     "art_do_that": 1,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 1,
+     "dec_do": 1,
+     "dec_do_that": 1,
+     "doi_that": 1,
+     "dung_sang_sai": 1,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 0,
+     "that_tra_loi_duoc": 1,
+     "wilson": {
+      "art_chinh_xac": [
+       0.036224,
+       0.624465
+      ],
+      "bo_sot": [
+       0.0,
+       0.793451
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.793451
+      ],
+      "dec_bat": [
+       0.206549,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.206549,
+       1.0
+      ]
+     }
+    }
+   },
+   "hosted|C3": {
+    "classify": {
+     "art_bat": 0,
+     "art_do": 0,
+     "art_do_that": 0,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 0,
+     "dec_do": 0,
+     "dec_do_that": 0,
+     "doi_that": 0,
+     "dung_sang_sai": 0,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 0,
+     "that_tra_loi_duoc": 0,
+     "wilson": {
+      "art_chinh_xac": [
+       null,
+       null
+      ],
+      "bo_sot": [
+       null,
+       null
+      ],
+      "bo_sot_tra_loi_duoc": [
+       null,
+       null
+      ],
+      "dec_bat": [
+       null,
+       null
+      ],
+      "dec_chinh_xac": [
+       null,
+       null
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 1,
+     "art_do": 3,
+     "art_do_that": 1,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 1,
+     "dec_do": 1,
+     "dec_do_that": 1,
+     "doi_that": 1,
+     "dung_sang_sai": 1,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 0,
+     "that_tra_loi_duoc": 1,
+     "wilson": {
+      "art_chinh_xac": [
+       0.061492,
+       0.79234
+      ],
+      "bo_sot": [
+       0.0,
+       0.793451
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.793451
+      ],
+      "dec_bat": [
+       0.206549,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.206549,
+       1.0
+      ]
+     }
+    }
+   },
+   "hosted|K1": {
+    "generate": {
+     "art_bat": 3,
+     "art_do": 16,
+     "art_do_that": 3,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 3,
+     "dec_do": 3,
+     "dec_do_that": 3,
+     "doi_that": 3,
+     "dung_sang_sai": 3,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 1,
+     "that_tra_loi_duoc": 2,
+     "wilson": {
+      "art_chinh_xac": [
+       0.065916,
+       0.430089
+      ],
+      "bo_sot": [
+       0.0,
+       0.561497
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.65762
+      ],
+      "dec_bat": [
+       0.438503,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.438503,
+       1.0
+      ]
+     }
+    }
+   },
+   "hosted|P1": {
+    "classify": {
+     "art_bat": 8,
+     "art_do": 11,
+     "art_do_that": 8,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 8,
+     "dec_do": 8,
+     "dec_do_that": 8,
+     "doi_that": 8,
+     "dung_sang_sai": 3,
+     "sai_sang_dung": 5,
+     "that_khong_tra_loi_duoc": 4,
+     "that_tra_loi_duoc": 4,
+     "wilson": {
+      "art_chinh_xac": [
+       0.434355,
+       0.902539
+      ],
+      "bo_sot": [
+       0.0,
+       0.324408
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.489891
+      ],
+      "dec_bat": [
+       0.675592,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.675592,
+       1.0
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 5,
+     "art_do": 19,
+     "art_do_that": 5,
+     "bo_sot": 1,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 1,
+     "dec_bat": 4,
+     "dec_do": 4,
+     "dec_do_that": 4,
+     "doi_that": 5,
+     "dung_sang_sai": 5,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 3,
+     "that_tra_loi_duoc": 2,
+     "wilson": {
+      "art_chinh_xac": [
+       0.118064,
+       0.487916
+      ],
+      "bo_sot": [
+       0.036224,
+       0.624465
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.094531,
+       0.905469
+      ],
+      "dec_bat": [
+       0.375535,
+       0.963776
+      ],
+      "dec_chinh_xac": [
+       0.510109,
+       1.0
+      ]
+     }
+    }
+   },
+   "hosted|P2": {
+    "classify": {
+     "art_bat": 7,
+     "art_do": 21,
+     "art_do_that": 7,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 7,
+     "dec_do": 7,
+     "dec_do_that": 7,
+     "doi_that": 7,
+     "dung_sang_sai": 3,
+     "sai_sang_dung": 4,
+     "that_khong_tra_loi_duoc": 3,
+     "that_tra_loi_duoc": 4,
+     "wilson": {
+      "art_chinh_xac": [
+       0.171948,
+       0.546265
+      ],
+      "bo_sot": [
+       0.0,
+       0.35433
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.489891
+      ],
+      "dec_bat": [
+       0.64567,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.64567,
+       1.0
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 3,
+     "art_do": 19,
+     "art_do_that": 3,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 3,
+     "dec_do": 19,
+     "dec_do_that": 3,
+     "doi_that": 3,
+     "dung_sang_sai": 2,
+     "sai_sang_dung": 1,
+     "that_khong_tra_loi_duoc": 1,
+     "that_tra_loi_duoc": 2,
+     "wilson": {
+      "art_chinh_xac": [
+       0.055205,
+       0.375655
+      ],
+      "bo_sot": [
+       0.0,
+       0.561497
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.65762
+      ],
+      "dec_bat": [
+       0.438503,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.055205,
+       0.375655
+      ]
+     }
+    }
+   },
+   "hosted|T1": {
+    "classify": {
+     "art_bat": 4,
+     "art_do": 6,
+     "art_do_that": 4,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 4,
+     "dec_do": 4,
+     "dec_do_that": 4,
+     "doi_that": 4,
+     "dung_sang_sai": 2,
+     "sai_sang_dung": 2,
+     "that_khong_tra_loi_duoc": 3,
+     "that_tra_loi_duoc": 1,
+     "wilson": {
+      "art_chinh_xac": [
+       0.299993,
+       0.903229
+      ],
+      "bo_sot": [
+       0.0,
+       0.489891
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.793451
+      ],
+      "dec_bat": [
+       0.510109,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.510109,
+       1.0
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 4,
+     "art_do": 17,
+     "art_do_that": 4,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 4,
+     "dec_do": 4,
+     "dec_do_that": 4,
+     "doi_that": 4,
+     "dung_sang_sai": 2,
+     "sai_sang_dung": 2,
+     "that_khong_tra_loi_duoc": 2,
+     "that_tra_loi_duoc": 2,
+     "wilson": {
+      "art_chinh_xac": [
+       0.09555,
+       0.472618
+      ],
+      "bo_sot": [
+       0.0,
+       0.489891
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.65762
+      ],
+      "dec_bat": [
+       0.510109,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.510109,
+       1.0
+      ]
+     }
+    }
+   },
+   "local|C1": {
+    "classify": {
+     "art_bat": 0,
+     "art_do": 0,
+     "art_do_that": 0,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 0,
+     "dec_do": 0,
+     "dec_do_that": 0,
+     "doi_that": 0,
+     "dung_sang_sai": 0,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 0,
+     "that_tra_loi_duoc": 0,
+     "wilson": {
+      "art_chinh_xac": [
+       null,
+       null
+      ],
+      "bo_sot": [
+       null,
+       null
+      ],
+      "bo_sot_tra_loi_duoc": [
+       null,
+       null
+      ],
+      "dec_bat": [
+       null,
+       null
+      ],
+      "dec_chinh_xac": [
+       null,
+       null
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 3,
+     "art_do": 22,
+     "art_do_that": 3,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 3,
+     "dec_do": 8,
+     "dec_do_that": 3,
+     "doi_that": 3,
+     "dung_sang_sai": 2,
+     "sai_sang_dung": 1,
+     "that_khong_tra_loi_duoc": 2,
+     "that_tra_loi_duoc": 1,
+     "wilson": {
+      "art_chinh_xac": [
+       0.04749,
+       0.33335
+      ],
+      "bo_sot": [
+       0.0,
+       0.561497
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.793451
+      ],
+      "dec_bat": [
+       0.438503,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.136844,
+       0.694258
+      ]
+     }
+    }
+   },
+   "local|C2": {
+    "classify": {
+     "art_bat": 0,
+     "art_do": 0,
+     "art_do_that": 0,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 0,
+     "dec_do": 0,
+     "dec_do_that": 0,
+     "doi_that": 0,
+     "dung_sang_sai": 0,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 0,
+     "that_tra_loi_duoc": 0,
+     "wilson": {
+      "art_chinh_xac": [
+       null,
+       null
+      ],
+      "bo_sot": [
+       null,
+       null
+      ],
+      "bo_sot_tra_loi_duoc": [
+       null,
+       null
+      ],
+      "dec_bat": [
+       null,
+       null
+      ],
+      "dec_chinh_xac": [
+       null,
+       null
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 2,
+     "art_do": 18,
+     "art_do_that": 2,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 2,
+     "dec_do": 4,
+     "dec_do_that": 2,
+     "doi_that": 2,
+     "dung_sang_sai": 2,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 2,
+     "that_tra_loi_duoc": 0,
+     "wilson": {
+      "art_chinh_xac": [
+       0.03102,
+       0.327998
+      ],
+      "bo_sot": [
+       0.0,
+       0.65762
+      ],
+      "bo_sot_tra_loi_duoc": [
+       null,
+       null
+      ],
+      "dec_bat": [
+       0.34238,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.150039,
+       0.849961
+      ]
+     }
+    }
+   },
+   "local|C3": {
+    "classify": {
+     "art_bat": 0,
+     "art_do": 0,
+     "art_do_that": 0,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 0,
+     "dec_do": 0,
+     "dec_do_that": 0,
+     "doi_that": 0,
+     "dung_sang_sai": 0,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 0,
+     "that_tra_loi_duoc": 0,
+     "wilson": {
+      "art_chinh_xac": [
+       null,
+       null
+      ],
+      "bo_sot": [
+       null,
+       null
+      ],
+      "bo_sot_tra_loi_duoc": [
+       null,
+       null
+      ],
+      "dec_bat": [
+       null,
+       null
+      ],
+      "dec_chinh_xac": [
+       null,
+       null
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 3,
+     "art_do": 22,
+     "art_do_that": 3,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 3,
+     "dec_do": 8,
+     "dec_do_that": 3,
+     "doi_that": 3,
+     "dung_sang_sai": 2,
+     "sai_sang_dung": 1,
+     "that_khong_tra_loi_duoc": 2,
+     "that_tra_loi_duoc": 1,
+     "wilson": {
+      "art_chinh_xac": [
+       0.04749,
+       0.33335
+      ],
+      "bo_sot": [
+       0.0,
+       0.561497
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.793451
+      ],
+      "dec_bat": [
+       0.438503,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.136844,
+       0.694258
+      ]
+     }
+    }
+   },
+   "local|K1": {
+    "generate": {
+     "art_bat": 6,
+     "art_do": 25,
+     "art_do_that": 6,
+     "bo_sot": 2,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 2,
+     "dec_bat": 4,
+     "dec_do": 9,
+     "dec_do_that": 4,
+     "doi_that": 6,
+     "dung_sang_sai": 2,
+     "sai_sang_dung": 4,
+     "that_khong_tra_loi_duoc": 4,
+     "that_tra_loi_duoc": 2,
+     "wilson": {
+      "art_chinh_xac": [
+       0.114963,
+       0.434297
+      ],
+      "bo_sot": [
+       0.096771,
+       0.700007
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.34238,
+       1.0
+      ],
+      "dec_bat": [
+       0.299993,
+       0.903229
+      ],
+      "dec_chinh_xac": [
+       0.188779,
+       0.733349
+      ]
+     }
+    }
+   },
+   "local|M1": {
+    "classify": {
+     "art_bat": 10,
+     "art_do": 10,
+     "art_do_that": 10,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 10,
+     "dec_do": 10,
+     "dec_do_that": 10,
+     "doi_that": 10,
+     "dung_sang_sai": 2,
+     "sai_sang_dung": 8,
+     "that_khong_tra_loi_duoc": 6,
+     "that_tra_loi_duoc": 4,
+     "wilson": {
+      "art_chinh_xac": [
+       0.722467,
+       1.0
+      ],
+      "bo_sot": [
+       0.0,
+       0.277533
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.489891
+      ],
+      "dec_bat": [
+       0.722467,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.722467,
+       1.0
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 10,
+     "art_do": 31,
+     "art_do_that": 10,
+     "bo_sot": 1,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 1,
+     "dec_bat": 9,
+     "dec_do": 12,
+     "dec_do_that": 9,
+     "doi_that": 10,
+     "dung_sang_sai": 2,
+     "sai_sang_dung": 8,
+     "that_khong_tra_loi_duoc": 4,
+     "that_tra_loi_duoc": 6,
+     "wilson": {
+      "art_chinh_xac": [
+       0.185694,
+       0.49859
+      ],
+      "bo_sot": [
+       0.017876,
+       0.40415
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.030053,
+       0.563503
+      ],
+      "dec_bat": [
+       0.59585,
+       0.982124
+      ],
+      "dec_chinh_xac": [
+       0.467695,
+       0.911058
+      ]
+     }
+    }
+   },
+   "local|P1": {
+    "classify": {
+     "art_bat": 11,
+     "art_do": 11,
+     "art_do_that": 11,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 11,
+     "dec_do": 11,
+     "dec_do_that": 11,
+     "doi_that": 11,
+     "dung_sang_sai": 7,
+     "sai_sang_dung": 4,
+     "that_khong_tra_loi_duoc": 8,
+     "that_tra_loi_duoc": 3,
+     "wilson": {
+      "art_chinh_xac": [
+       0.741167,
+       1.0
+      ],
+      "bo_sot": [
+       0.0,
+       0.258833
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.561497
+      ],
+      "dec_bat": [
+       0.741167,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.741167,
+       1.0
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 10,
+     "art_do": 30,
+     "art_do_that": 10,
+     "bo_sot": 4,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 4,
+     "dec_bat": 6,
+     "dec_do": 13,
+     "dec_do_that": 6,
+     "doi_that": 10,
+     "dung_sang_sai": 2,
+     "sai_sang_dung": 8,
+     "that_khong_tra_loi_duoc": 4,
+     "that_tra_loi_duoc": 6,
+     "wilson": {
+      "art_chinh_xac": [
+       0.192305,
+       0.512199
+      ],
+      "bo_sot": [
+       0.16818,
+       0.687326
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.299993,
+       0.903229
+      ],
+      "dec_bat": [
+       0.312674,
+       0.83182
+      ],
+      "dec_chinh_xac": [
+       0.232061,
+       0.708562
+      ]
+     }
+    }
+   },
+   "local|P2": {
+    "classify": {
+     "art_bat": 7,
+     "art_do": 7,
+     "art_do_that": 7,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 7,
+     "dec_do": 7,
+     "dec_do_that": 7,
+     "doi_that": 7,
+     "dung_sang_sai": 2,
+     "sai_sang_dung": 5,
+     "that_khong_tra_loi_duoc": 3,
+     "that_tra_loi_duoc": 4,
+     "wilson": {
+      "art_chinh_xac": [
+       0.64567,
+       1.0
+      ],
+      "bo_sot": [
+       0.0,
+       0.35433
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.489891
+      ],
+      "dec_bat": [
+       0.64567,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.64567,
+       1.0
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 6,
+     "art_do": 33,
+     "art_do_that": 6,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 6,
+     "dec_do": 27,
+     "dec_do_that": 6,
+     "doi_that": 6,
+     "dung_sang_sai": 3,
+     "sai_sang_dung": 3,
+     "that_khong_tra_loi_duoc": 4,
+     "that_tra_loi_duoc": 2,
+     "wilson": {
+      "art_chinh_xac": [
+       0.086108,
+       0.343882
+      ],
+      "bo_sot": [
+       0.0,
+       0.390334
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.0,
+       0.65762
+      ],
+      "dec_bat": [
+       0.609666,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.106072,
+       0.407569
+      ]
+     }
+    }
+   },
+   "local|R1-A2": {
+    "classify": {
+     "art_bat": 0,
+     "art_do": 0,
+     "art_do_that": 0,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 0,
+     "dec_do": 0,
+     "dec_do_that": 0,
+     "doi_that": 0,
+     "dung_sang_sai": 0,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 0,
+     "that_tra_loi_duoc": 0,
+     "wilson": {
+      "art_chinh_xac": [
+       null,
+       null
+      ],
+      "bo_sot": [
+       null,
+       null
+      ],
+      "bo_sot_tra_loi_duoc": [
+       null,
+       null
+      ],
+      "dec_bat": [
+       null,
+       null
+      ],
+      "dec_chinh_xac": [
+       null,
+       null
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 0,
+     "art_do": 0,
+     "art_do_that": 0,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 0,
+     "dec_do": 0,
+     "dec_do_that": 0,
+     "doi_that": 0,
+     "dung_sang_sai": 0,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 0,
+     "that_tra_loi_duoc": 0,
+     "wilson": {
+      "art_chinh_xac": [
+       null,
+       null
+      ],
+      "bo_sot": [
+       null,
+       null
+      ],
+      "bo_sot_tra_loi_duoc": [
+       null,
+       null
+      ],
+      "dec_bat": [
+       null,
+       null
+      ],
+      "dec_chinh_xac": [
+       null,
+       null
+      ]
+     }
+    }
+   },
+   "local|R1-B": {
+    "classify": {
+     "art_bat": 0,
+     "art_do": 0,
+     "art_do_that": 0,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 0,
+     "dec_do": 0,
+     "dec_do_that": 0,
+     "doi_that": 0,
+     "dung_sang_sai": 0,
+     "sai_sang_dung": 0,
+     "that_khong_tra_loi_duoc": 0,
+     "that_tra_loi_duoc": 0,
+     "wilson": {
+      "art_chinh_xac": [
+       null,
+       null
+      ],
+      "bo_sot": [
+       null,
+       null
+      ],
+      "bo_sot_tra_loi_duoc": [
+       null,
+       null
+      ],
+      "dec_bat": [
+       null,
+       null
+      ],
+      "dec_chinh_xac": [
+       null,
+       null
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 5,
+     "art_do": 25,
+     "art_do_that": 5,
+     "bo_sot": 1,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 1,
+     "dec_bat": 4,
+     "dec_do": 7,
+     "dec_do_that": 4,
+     "doi_that": 5,
+     "dung_sang_sai": 2,
+     "sai_sang_dung": 3,
+     "that_khong_tra_loi_duoc": 3,
+     "that_tra_loi_duoc": 2,
+     "wilson": {
+      "art_chinh_xac": [
+       0.088606,
+       0.39131
+      ],
+      "bo_sot": [
+       0.036224,
+       0.624465
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.094531,
+       0.905469
+      ],
+      "dec_bat": [
+       0.375535,
+       0.963776
+      ],
+      "dec_chinh_xac": [
+       0.250458,
+       0.84178
+      ]
+     }
+    }
+   },
+   "local|T1": {
+    "classify": {
+     "art_bat": 1,
+     "art_do": 1,
+     "art_do_that": 1,
+     "bo_sot": 0,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 0,
+     "dec_bat": 1,
+     "dec_do": 1,
+     "dec_do_that": 1,
+     "doi_that": 1,
+     "dung_sang_sai": 0,
+     "sai_sang_dung": 1,
+     "that_khong_tra_loi_duoc": 1,
+     "that_tra_loi_duoc": 0,
+     "wilson": {
+      "art_chinh_xac": [
+       0.206549,
+       1.0
+      ],
+      "bo_sot": [
+       0.0,
+       0.793451
+      ],
+      "bo_sot_tra_loi_duoc": [
+       null,
+       null
+      ],
+      "dec_bat": [
+       0.206549,
+       1.0
+      ],
+      "dec_chinh_xac": [
+       0.206549,
+       1.0
+      ]
+     }
+    },
+    "generate": {
+     "art_bat": 6,
+     "art_do": 28,
+     "art_do_that": 6,
+     "bo_sot": 1,
+     "bo_sot_khong_tra_loi_duoc": 0,
+     "bo_sot_tra_loi_duoc": 1,
+     "dec_bat": 5,
+     "dec_do": 11,
+     "dec_do_that": 5,
+     "doi_that": 6,
+     "dung_sang_sai": 3,
+     "sai_sang_dung": 3,
+     "that_khong_tra_loi_duoc": 4,
+     "that_tra_loi_duoc": 2,
+     "wilson": {
+      "art_chinh_xac": [
+       0.102125,
+       0.395386
+      ],
+      "bo_sot": [
+       0.030053,
+       0.563503
+      ],
+      "bo_sot_tra_loi_duoc": [
+       0.094531,
+       0.905469
+      ],
+      "dec_bat": [
+       0.436497,
+       0.969947
+      ],
+      "dec_chinh_xac": [
+       0.212713,
+       0.719908
+      ]
+     }
+    }
+   }
+  },
+  "tong": {
+   "doi_chung|ca_hai|classify": {
+    "art_bat": 0,
+    "art_do": 2,
+    "art_do_that": 0,
+    "bo_sot": 0,
+    "bo_sot_khong_tra_loi_duoc": 0,
+    "bo_sot_tra_loi_duoc": 0,
+    "dec_bat": 0,
+    "dec_do": 0,
+    "dec_do_that": 0,
+    "doi_that": 0,
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 0,
+    "that_khong_tra_loi_duoc": 0,
+    "that_tra_loi_duoc": 0,
+    "wilson_art_chinh_xac": [
+     0.0,
+     0.65762
+    ],
+    "wilson_bo_sot": [
+     null,
+     null
+    ],
+    "wilson_bo_sot_tra_loi_duoc": [
+     null,
+     null
+    ],
+    "wilson_dec_bat": [
+     null,
+     null
+    ],
+    "wilson_dec_chinh_xac": [
+     null,
+     null
+    ]
+   },
+   "doi_chung|ca_hai|generate": {
+    "art_bat": 10,
+    "art_do": 72,
+    "art_do_that": 10,
+    "bo_sot": 0,
+    "bo_sot_khong_tra_loi_duoc": 0,
+    "bo_sot_tra_loi_duoc": 0,
+    "dec_bat": 10,
+    "dec_do": 22,
+    "dec_do_that": 10,
+    "doi_that": 10,
+    "dung_sang_sai": 8,
+    "sai_sang_dung": 2,
+    "that_khong_tra_loi_duoc": 6,
+    "that_tra_loi_duoc": 4,
+    "wilson_art_chinh_xac": [
+     0.077227,
+     0.237132
+    ],
+    "wilson_bo_sot": [
+     0.0,
+     0.277533
+    ],
+    "wilson_bo_sot_tra_loi_duoc": [
+     0.0,
+     0.489891
+    ],
+    "wilson_dec_bat": [
+     0.722467,
+     1.0
+    ],
+    "wilson_dec_chinh_xac": [
+     0.269203,
+     0.653402
+    ]
+   },
+   "doi_chung|hosted|classify": {
+    "art_bat": 0,
+    "art_do": 2,
+    "art_do_that": 0,
+    "bo_sot": 0,
+    "bo_sot_khong_tra_loi_duoc": 0,
+    "bo_sot_tra_loi_duoc": 0,
+    "dec_bat": 0,
+    "dec_do": 0,
+    "dec_do_that": 0,
+    "doi_that": 0,
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 0,
+    "that_khong_tra_loi_duoc": 0,
+    "that_tra_loi_duoc": 0,
+    "wilson_art_chinh_xac": [
+     0.0,
+     0.65762
+    ],
+    "wilson_bo_sot": [
+     null,
+     null
+    ],
+    "wilson_bo_sot_tra_loi_duoc": [
+     null,
+     null
+    ],
+    "wilson_dec_bat": [
+     null,
+     null
+    ],
+    "wilson_dec_chinh_xac": [
+     null,
+     null
+    ]
+   },
+   "doi_chung|hosted|generate": {
+    "art_bat": 2,
+    "art_do": 10,
+    "art_do_that": 2,
+    "bo_sot": 0,
+    "bo_sot_khong_tra_loi_duoc": 0,
+    "bo_sot_tra_loi_duoc": 0,
+    "dec_bat": 2,
+    "dec_do": 2,
+    "dec_do_that": 2,
+    "doi_that": 2,
+    "dung_sang_sai": 2,
+    "sai_sang_dung": 0,
+    "that_khong_tra_loi_duoc": 0,
+    "that_tra_loi_duoc": 2,
+    "wilson_art_chinh_xac": [
+     0.056682,
+     0.509838
+    ],
+    "wilson_bo_sot": [
+     0.0,
+     0.65762
+    ],
+    "wilson_bo_sot_tra_loi_duoc": [
+     0.0,
+     0.65762
+    ],
+    "wilson_dec_bat": [
+     0.34238,
+     1.0
+    ],
+    "wilson_dec_chinh_xac": [
+     0.34238,
+     1.0
+    ]
+   },
+   "doi_chung|local|classify": {
+    "art_bat": 0,
+    "art_do": 0,
+    "art_do_that": 0,
+    "bo_sot": 0,
+    "bo_sot_khong_tra_loi_duoc": 0,
+    "bo_sot_tra_loi_duoc": 0,
+    "dec_bat": 0,
+    "dec_do": 0,
+    "dec_do_that": 0,
+    "doi_that": 0,
+    "dung_sang_sai": 0,
+    "sai_sang_dung": 0,
+    "that_khong_tra_loi_duoc": 0,
+    "that_tra_loi_duoc": 0,
+    "wilson_art_chinh_xac": [
+     null,
+     null
+    ],
+    "wilson_bo_sot": [
+     null,
+     null
+    ],
+    "wilson_bo_sot_tra_loi_duoc": [
+     null,
+     null
+    ],
+    "wilson_dec_bat": [
+     null,
+     null
+    ],
+    "wilson_dec_chinh_xac": [
+     null,
+     null
+    ]
+   },
+   "doi_chung|local|generate": {
+    "art_bat": 8,
+    "art_do": 62,
+    "art_do_that": 8,
+    "bo_sot": 0,
+    "bo_sot_khong_tra_loi_duoc": 0,
+    "bo_sot_tra_loi_duoc": 0,
+    "dec_bat": 8,
+    "dec_do": 20,
+    "dec_do_that": 8,
+    "doi_that": 8,
+    "dung_sang_sai": 6,
+    "sai_sang_dung": 2,
+    "that_khong_tra_loi_duoc": 6,
+    "that_tra_loi_duoc": 2,
+    "wilson_art_chinh_xac": [
+     0.066859,
+     0.234493
+    ],
+    "wilson_bo_sot": [
+     0.0,
+     0.324408
+    ],
+    "wilson_bo_sot_tra_loi_duoc": [
+     0.0,
+     0.65762
+    ],
+    "wilson_dec_bat": [
+     0.675592,
+     1.0
+    ],
+    "wilson_dec_chinh_xac": [
+     0.218807,
+     0.613419
+    ]
+   },
+   "thay_doi|ca_hai|classify": {
+    "art_bat": 48,
+    "art_do": 67,
+    "art_do_that": 48,
+    "bo_sot": 0,
+    "bo_sot_khong_tra_loi_duoc": 0,
+    "bo_sot_tra_loi_duoc": 0,
+    "dec_bat": 48,
+    "dec_do": 48,
+    "dec_do_that": 48,
+    "doi_that": 48,
+    "dung_sang_sai": 19,
+    "sai_sang_dung": 29,
+    "that_khong_tra_loi_duoc": 28,
+    "that_tra_loi_duoc": 20,
+    "wilson_art_chinh_xac": [
+     0.599068,
+     0.810297
+    ],
+    "wilson_bo_sot": [
+     0.0,
+     0.0741
+    ],
+    "wilson_bo_sot_tra_loi_duoc": [
+     0.0,
+     0.161125
+    ],
+    "wilson_dec_bat": [
+     0.9259,
+     1.0
+    ],
+    "wilson_dec_chinh_xac": [
+     0.9259,
+     1.0
+    ]
+   },
+   "thay_doi|ca_hai|generate": {
+    "art_bat": 58,
+    "art_do": 243,
+    "art_do_that": 58,
+    "bo_sot": 10,
+    "bo_sot_khong_tra_loi_duoc": 0,
+    "bo_sot_tra_loi_duoc": 10,
+    "dec_bat": 48,
+    "dec_do": 109,
+    "dec_do_that": 48,
+    "doi_that": 58,
+    "dung_sang_sai": 26,
+    "sai_sang_dung": 32,
+    "that_khong_tra_loi_duoc": 30,
+    "that_tra_loi_duoc": 28,
+    "wilson_art_chinh_xac": [
+     0.189417,
+     0.296083
+    ],
+    "wilson_bo_sot": [
+     0.096443,
+     0.289083
+    ],
+    "wilson_bo_sot_tra_loi_duoc": [
+     0.207058,
+     0.541697
+    ],
+    "wilson_dec_bat": [
+     0.710917,
+     0.903557
+    ],
+    "wilson_dec_chinh_xac": [
+     0.350779,
+     0.534015
+    ]
+   },
+   "thay_doi|hosted|classify": {
+    "art_bat": 19,
+    "art_do": 38,
+    "art_do_that": 19,
+    "bo_sot": 0,
+    "bo_sot_khong_tra_loi_duoc": 0,
+    "bo_sot_tra_loi_duoc": 0,
+    "dec_bat": 19,
+    "dec_do": 19,
+    "dec_do_that": 19,
+    "doi_that": 19,
+    "dung_sang_sai": 8,
+    "sai_sang_dung": 11,
+    "that_khong_tra_loi_duoc": 10,
+    "that_tra_loi_duoc": 9,
+    "wilson_art_chinh_xac": [
+     0.348499,
+     0.651501
+    ],
+    "wilson_bo_sot": [
+     0.0,
+     0.168179
+    ],
+    "wilson_bo_sot_tra_loi_duoc": [
+     0.0,
+     0.299145
+    ],
+    "wilson_dec_bat": [
+     0.831821,
+     1.0
+    ],
+    "wilson_dec_chinh_xac": [
+     0.831821,
+     1.0
+    ]
+   },
+   "thay_doi|hosted|generate": {
+    "art_bat": 15,
+    "art_do": 71,
+    "art_do_that": 15,
+    "bo_sot": 1,
+    "bo_sot_khong_tra_loi_duoc": 0,
+    "bo_sot_tra_loi_duoc": 1,
+    "dec_bat": 14,
+    "dec_do": 30,
+    "dec_do_that": 14,
+    "doi_that": 15,
+    "dung_sang_sai": 12,
+    "sai_sang_dung": 3,
+    "that_khong_tra_loi_duoc": 7,
+    "that_tra_loi_duoc": 8,
+    "wilson_art_chinh_xac": [
+     0.132426,
+     0.31975
+    ],
+    "wilson_bo_sot": [
+     0.011867,
+     0.298165
+    ],
+    "wilson_bo_sot_tra_loi_duoc": [
+     0.022417,
+     0.470888
+    ],
+    "wilson_dec_bat": [
+     0.701835,
+     0.988133
+    ],
+    "wilson_dec_chinh_xac": [
+     0.302324,
+     0.638577
+    ]
+   },
+   "thay_doi|local|classify": {
+    "art_bat": 29,
+    "art_do": 29,
+    "art_do_that": 29,
+    "bo_sot": 0,
+    "bo_sot_khong_tra_loi_duoc": 0,
+    "bo_sot_tra_loi_duoc": 0,
+    "dec_bat": 29,
+    "dec_do": 29,
+    "dec_do_that": 29,
+    "doi_that": 29,
+    "dung_sang_sai": 11,
+    "sai_sang_dung": 18,
+    "that_khong_tra_loi_duoc": 18,
+    "that_tra_loi_duoc": 11,
+    "wilson_art_chinh_xac": [
+     0.88303,
+     1.0
+    ],
+    "wilson_bo_sot": [
+     0.0,
+     0.11697
+    ],
+    "wilson_bo_sot_tra_loi_duoc": [
+     0.0,
+     0.258833
+    ],
+    "wilson_dec_bat": [
+     0.88303,
+     1.0
+    ],
+    "wilson_dec_chinh_xac": [
+     0.88303,
+     1.0
+    ]
+   },
+   "thay_doi|local|generate": {
+    "art_bat": 43,
+    "art_do": 172,
+    "art_do_that": 43,
+    "bo_sot": 9,
+    "bo_sot_khong_tra_loi_duoc": 0,
+    "bo_sot_tra_loi_duoc": 9,
+    "dec_bat": 34,
+    "dec_do": 79,
+    "dec_do_that": 34,
+    "doi_that": 43,
+    "dung_sang_sai": 14,
+    "sai_sang_dung": 29,
+    "that_khong_tra_loi_duoc": 23,
+    "that_tra_loi_duoc": 20,
+    "wilson_art_chinh_xac": [
+     0.191228,
+     0.319695
+    ],
+    "wilson_bo_sot": [
+     0.114228,
+     0.352056
+    ],
+    "wilson_bo_sot_tra_loi_duoc": [
+     0.258198,
+     0.657915
+    ],
+    "wilson_dec_bat": [
+     0.647944,
+     0.885772
+    ],
+    "wilson_dec_chinh_xac": [
+     0.326938,
+     0.540278
+    ]
+   }
+  }
+ },
+ "N6": {
+  "dem": {
+   "hosted|P1|classify": {
+    "art_do": 11,
+    "dec_do": 8,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "hosted|P1|generate": {
+    "art_do": 19,
+    "dec_do": 4,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "hosted|P1|route": {
+    "art_do": 40,
+    "dec_do": 10,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "hosted|P2|classify": {
+    "art_do": 21,
+    "dec_do": 7,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "hosted|P2|generate": {
+    "art_do": 19,
+    "dec_do": 19,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "hosted|P2|route": {
+    "art_do": 40,
+    "dec_do": 6,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "hosted|T1|classify": {
+    "art_do": 6,
+    "dec_do": 4,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "hosted|T1|generate": {
+    "art_do": 17,
+    "dec_do": 4,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "hosted|T1|route": {
+    "art_do": 39,
+    "dec_do": 7,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|M1|classify": {
+    "art_do": 10,
+    "dec_do": 10,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|M1|generate": {
+    "art_do": 31,
+    "dec_do": 12,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|M1|route": {
+    "art_do": 40,
+    "dec_do": 26,
+    "dec_do_parse_fail": 14,
+    "n": 40
+   },
+   "local|P1|classify": {
+    "art_do": 11,
+    "dec_do": 11,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|P1|generate": {
+    "art_do": 30,
+    "dec_do": 13,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|P1|route": {
+    "art_do": 40,
+    "dec_do": 24,
+    "dec_do_parse_fail": 20,
+    "n": 40
+   },
+   "local|P2|classify": {
+    "art_do": 7,
+    "dec_do": 7,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|P2|generate": {
+    "art_do": 33,
+    "dec_do": 27,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|P2|route": {
+    "art_do": 38,
+    "dec_do": 10,
+    "dec_do_parse_fail": 4,
+    "n": 40
+   },
+   "local|R1-A2|classify": {
+    "art_do": 0,
+    "dec_do": 0,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|R1-A2|generate": {
+    "art_do": 0,
+    "dec_do": 0,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|R1-A2|route": {
+    "art_do": 0,
+    "dec_do": 0,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|R1-B|classify": {
+    "art_do": 0,
+    "dec_do": 0,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|R1-B|generate": {
+    "art_do": 25,
+    "dec_do": 7,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|R1-B|route": {
+    "art_do": 35,
+    "dec_do": 9,
+    "dec_do_parse_fail": 4,
+    "n": 40
+   },
+   "local|T1|classify": {
+    "art_do": 1,
+    "dec_do": 1,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|T1|generate": {
+    "art_do": 28,
+    "dec_do": 11,
+    "dec_do_parse_fail": 0,
+    "n": 40
+   },
+   "local|T1|route": {
+    "art_do": 37,
+    "dec_do": 5,
+    "dec_do_parse_fail": 5,
+    "n": 40
+   }
+  },
+  "nc2_doan_B": [
+   {
+    "art_do": 1,
+    "cap": "classify|hosted",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 0,
+    "cap": "classify|local",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 9,
+    "cap": "route|hosted",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 35,
+    "cap": "route|local",
+    "dec_do": 9,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 0,
+    "cap": "retrieve|bm25",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 2,
+    "cap": "generate|hosted",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 25,
+    "cap": "generate|local",
+    "dec_do": 7,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 1,
+    "cap": "classify|hosted",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   },
+   {
+    "art_do": 0,
+    "cap": "classify|local",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   },
+   {
+    "art_do": 12,
+    "cap": "route|hosted",
+    "dec_do": 1,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   },
+   {
+    "art_do": 35,
+    "cap": "route|local",
+    "dec_do": 9,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   },
+   {
+    "art_do": 0,
+    "cap": "retrieve|bm25",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   },
+   {
+    "art_do": 4,
+    "cap": "generate|hosted",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   },
+   {
+    "art_do": 25,
+    "cap": "generate|local",
+    "dec_do": 7,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   }
+  ]
+ },
+ "VI_DU": {
+  "art_do_khong_doi": [
+   {
+    "arm": "hosted",
+    "dec_golden": "gold",
+    "dec_run": "gold",
+    "dung_golden": true,
+    "dung_run": true,
+    "gold": [
+     "second",
+     "second-most"
+    ],
+    "golden": "Victoria is Australia's second-most populous state overall [d0153]. It is also Australia's most densely populated state [d0153]. Most of its population is concentrated around Port Phillip Bay, including Melbourne [d0153].",
+    "qid": "570d2af0fed7b91900d45c95",
+    "question": "How populous is Victoria compared to other Australian states?",
+    "run": "K1",
+    "run_out": "Victoria is Australia's second-most populous state overall [d0153]. It is also Australia's most densely populated state [d0153]. Most of its population is concentrated in the area surrounding Port Phillip Bay, which includes Melbourne [d0153]."
+   },
+   {
+    "arm": "hosted",
+    "dec_golden": "gold",
+    "dec_run": "gold",
+    "dung_golden": true,
+    "dung_run": true,
+    "gold": [
+     "West Lothian question",
+     "West Lothian question"
+    ],
+    "golden": "The West Lothian question has led to criticism [d0986]. This phenomenon occurs because Scottish MPs in the UK House of Commons can vote on domestic legislation applying only to England, Wales, and Northern Ireland, while other Westminster MPs cannot vote on Scottish Parliament's domestic legislation [d0986].",
+    "qid": "572fdd03a23a5019007fca9f",
+    "question": "What phenomenon has led to criticism?",
+    "run": "K1",
+    "run_out": "The phenomenon known as the West Lothian question has led to criticism [d0986]. This occurs because Scottish MPs in the UK House of Commons can vote on domestic legislation applying only to England, Wales, and Northern Ireland, while other Westminster MPs cannot vote on Scottish Parliament's domestic legislation [d0986]."
+   },
+   {
+    "arm": "hosted",
+    "dec_golden": "gold",
+    "dec_run": "gold",
+    "dung_golden": true,
+    "dung_run": true,
+    "gold": [
+     "recalled and replaced by Jeffery Amherst, victor at Louisbourg.",
+     "Abercrombie was recalled and replaced"
+    ],
+    "golden": "Abercrombie was recalled and replaced by Jeffery Amherst after the French victory in the Battle of Carillon [d1152]. He did, however, manage to save something from the disaster by sending John Bradstreet on a successful expedition to destroy Fort Frontenac [d1152].",
+    "qid": "573403394776f419006616e0",
+    "question": "What impact did this loss have on Abercrombie?",
+    "run": "K1",
+    "run_out": "Abercrombie was recalled and replaced by Jeffery Amherst after the defeat in the Battle of Carillon [d1152]. He did, however, manage to salvage some success by sending John Bradstreet on an expedition that destroyed Fort Frontenac [d1152]."
+   },
+   {
+    "arm": "hosted",
+    "dec_golden": "gold",
+    "dec_run": "gold",
+    "dung_golden": true,
+    "dung_run": true,
+    "gold": [
+     "Most went to Cuba,",
+     "Most went to Cuba"
+    ],
+    "golden": "Most of Florida's Spanish Catholic population moved to Cuba after the British takeover, including the entire governmental records from St. Augustine [d1159]. Some Christianized Yamasee were also resettled to the coast of Mexico [d1159].",
+    "qid": "57340d124776f419006617c3",
+    "question": "Where did many Spanish Catholic move after British takeover in Florida?",
+    "run": "K1",
+    "run_out": "Most of the Spanish Catholic population of Florida moved to Cuba after the British takeover [d1159]. Some Christianized Yamasee were resettled to the coast of Mexico [d1159]."
+   }
+  ],
+  "sot": [
+   {
+    "arm": "local",
+    "dec_golden": "gold",
+    "dec_run": "gold",
+    "dung_golden": false,
+    "dung_run": true,
+    "gold": [
+     "electrical generator",
+     "electrical generator"
+    ],
+    "golden": "In a nuclear power plant, the steam turbines are typically directly connected to generators without reduction gearing. This connection allows for efficient operation at relatively high speeds, which is typical in large electric generating stations. [d0261]",
+    "qid": "571166352419e314009555f3",
+    "question": "In a nuclear power plant, what is the steam turbine connected to?",
+    "run": "M1",
+    "run_out": "In a nuclear power plant, the steam turbine is connected to an electrical generator [d0261]."
+   },
+   {
+    "arm": "local",
+    "dec_golden": "gold",
+    "dec_run": "gold",
+    "dung_golden": false,
+    "dung_run": true,
+    "gold": [
+     "electrical generator",
+     "electrical generator"
+    ],
+    "golden": "In a nuclear power plant, the steam turbines are typically directly connected to generators without reduction gearing. This connection allows for efficient operation at relatively high speeds, which is typical in large electric generating stations. [d0261]",
+    "qid": "571166352419e314009555f3",
+    "question": "In a nuclear power plant, what is the steam turbine connected to?",
+    "run": "P1",
+    "run_out": "In a nuclear power plant, the steam turbine is directly connected to an electrical generator. [d0261]"
+   },
+   {
+    "arm": "local",
+    "dec_golden": "gold",
+    "dec_run": "gold",
+    "dung_golden": false,
+    "dung_run": true,
+    "gold": [
+     "endowments",
+     "endowments"
+    ],
+    "golden": "Funding for private schools comes from several sources including tuition, scholarships, vouchers, donations, and grants. Additionally, it can also include government funding in some cases, though this is subject to restrictions or possibly forbidden according to the courts' interpretation of the Establishment Clause of the First Amendment or individual state Blaine Amendments. [d0618]",
+    "qid": "572758e0f1498d1400e8f6ae",
+    "question": "Along with tuition, scholarships, vouchers, donations and grants, where does funding for private schools come from?",
+    "run": "P1",
+    "run_out": "Funding for private schools comes from student tuition, endowments, scholarship/voucher funds, donations and grants from religious organizations or private individuals [d0618]."
+   }
+  ]
+ },
+ "_nhan": "post hoc — viết 13-11-2026 sau khi biết kết quả NC3 và đọc phản biện vòng 2; không đổi verdict đăng ký"
+}

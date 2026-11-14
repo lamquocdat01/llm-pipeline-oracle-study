@@ -1,0 +1,30 @@
+o,nguon,stage,be,quan_sat,pin,ho,du_doan,tinh_diem,n_dang_ky,n,k,ty_le,wilson_lo,wilson_hi,phan_quyet,thieu_luc,vao_mau_so,luat_cap,k_lan_dung,gap_median_h,gap_min_h,gap_max_h,dk_1to5_k,dk_1to5_n,dk_1to5_phan_quyet
+1,P2,classify,hosted,answerable,delegated,gemini,ổn định,True,200,200,0,0.0,0.0,0.018845,đúng,False,True,1to5,"[""5""]",49.513344,48.849108,50.421424,,,
+2,P2,classify,hosted,JSON thô,delegated,gemini,không,True,200,200,12,0.06,0.034652,0.101932,sai,False,True,1to5,"[""5""]",49.513344,48.849108,50.421424,,,
+3,P2,classify,local,answerable,pinnable,qwen,ổn định,False,200,200,0,0.0,0.0,0.018845,không tính điểm — suy từ ô 4 (A06.1); quan sát: đúng,False,True,cung_runtime,"[""5"", ""6""]",163.547911,160.964443,184.333454,4,200,đúng
+4,P2,classify,local,JSON thô,pinnable,qwen,ổn định,True,200,200,0,0.0,0.0,0.018845,đúng,False,True,cung_runtime,"[""5"", ""6""]",163.547911,160.964443,184.333454,14,200,không phân định
+5,P2,route,hosted,route,delegated,gemini,ổn định,True,200,200,4,0.02,0.007804,0.050287,đúng,False,True,1to5,"[""5""]",49.514133,48.848774,50.42145,,,
+6,P2,route,hosted,text thô,delegated,gemini,không,True,200,200,55,0.275,0.217797,0.340683,đúng,False,True,1to5,"[""5""]",49.514133,48.848774,50.42145,,,
+7,P2,route,local,route,pinnable,qwen,ổn định,False,200,200,2,0.01,0.002747,0.035722,không tính điểm — suy từ ô 8 (A06.1); quan sát: đúng,False,True,cung_runtime,"[""5"", ""6""]",163.500857,160.965448,184.332809,27,200,sai
+8,P2,route,local,text thô,pinnable,qwen,ổn định,True,200,200,10,0.05,0.027383,0.089578,đúng,False,True,cung_runtime,"[""5"", ""6""]",163.500857,160.965448,184.332809,106,200,sai
+9,P2,retrieve,bm25,top-5 id,pinnable,bm25,ổn định,True,200,200,0,0.0,0.0,0.018845,đúng,False,True,1to5,"[""5""]",49.634862,49.628446,49.639849,,,
+10,P2,retrieve,bm25,đoạn trích,pinnable,bm25,ổn định,False,200,200,0,0.0,0.0,0.018845,không tính điểm — suy từ ô 9 (A06.1); quan sát: đúng,False,True,1to5,"[""5""]",49.634862,49.628446,49.639849,,,
+11,P2,live,hosted,SOURCES,delegated,gemini,ổn định,True,50,50,0,0.0,0.0,0.071348,đúng,False,True,1to5,"[""5""]",48.708576,48.708064,50.420194,,,
+12,P2,live,hosted,tập tên miền (A),delegated,gemini,không,True,50,50,42,0.84,0.714858,0.916626,đúng,False,True,1to5,"[""5""]",48.708576,48.708064,50.420194,,,
+13,P2,live,hosted,văn bản (B),delegated,gemini,không,True,50,50,50,1.0,0.928652,1.0,đúng,False,True,1to5,"[""5""]",48.708576,48.708064,50.420194,,,
+14,P2,generate,hosted,kết cục,delegated,gemini,ổn định,True,200,200,1,0.005,0.000883,0.027774,đúng,False,True,1to5,"[""5""]",49.513646,48.848491,50.421467,,,
+15,P2,generate,hosted,văn bản,delegated,gemini,không,True,200,200,13,0.065,0.038376,0.108019,sai,False,True,1to5,"[""5""]",49.513646,48.848491,50.421467,,,
+16,P2,generate,local,kết cục,pinnable,qwen,ổn định,False,200,200,1,0.005,0.000883,0.027774,không tính điểm — suy từ ô 17 (A06.1); quan sát: đúng,False,True,cung_runtime,"[""5"", ""6""]",163.50002,160.963977,184.33271,21,200,không phân định
+17,P2,generate,local,văn bản,pinnable,qwen,ổn định,True,200,200,4,0.02,0.007804,0.050287,đúng,False,True,cung_runtime,"[""5"", ""6""]",163.50002,160.963977,184.33271,70,200,sai
+18,P3,route,local,route,pinnable,llama,ổn định,False,200,200,0,0.0,0.0,0.018845,không tính điểm — suy từ ô 19 (A06.1); quan sát: đúng,False,True,cung_runtime,"[""5"", ""6""]",155.433574,137.559098,162.276142,5,200,đúng
+19,P3,route,local,text thô,pinnable,llama,ổn định,True,200,200,21,0.105,0.069707,0.15518,không phân định,False,True,cung_runtime,"[""5"", ""6""]",155.433574,137.559098,162.276142,145,200,sai
+20,P3,generate,local,kết cục,pinnable,llama,ổn định,False,200,200,0,0.0,0.0,0.018845,không tính điểm — suy từ ô 21 (A06.1); quan sát: đúng,False,True,cung_runtime,"[""5"", ""6""]",155.432058,137.53241,162.373534,5,200,đúng
+21,P3,generate,local,văn bản,pinnable,llama,ổn định,True,200,200,7,0.035,0.017056,0.070471,đúng,False,True,cung_runtime,"[""5"", ""6""]",155.432058,137.53241,162.373534,90,200,sai
+22,MD3R,M2,local,lookup,pinnable,llama,ổn định,False,100,100,0,0.0,0.0,0.036993,không tính điểm — suy từ ô 23 (A06.1); quan sát: đúng,False,True,md3r,"[""t24h""]",24.01335,24.000311,24.024292,,,
+23,MD3R,M2,local,text thô,pinnable,llama,ổn định,True,100,100,0,0.0,0.0,0.036993,đúng,False,True,md3r,"[""t24h""]",24.01335,24.000311,24.024292,,,
+24,MD3R,M4,local,nhãn ngôn ngữ,pinnable,llama,ổn định,False,50,50,0,0.0,0.0,0.071348,không tính điểm — suy từ ô 25 (A06.1); quan sát: đúng,False,True,md3r,"[""t24h""]",24.011197,24.00149,24.017226,,,
+25,MD3R,M4,local,reply_text,pinnable,llama,ổn định,True,50,50,0,0.0,0.0,0.071348,đúng,False,True,md3r,"[""t24h""]",24.011197,24.00149,24.017226,,,
+26,P3H,route,openrouter,route,delegated,llama,ổn định,True,200,200,0,0.0,0.0,0.018845,đúng,False,True,1to5,"[""5""]",29.635153,24.710609,29.755485,,,
+27,P3H,route,openrouter,text thô,delegated,llama,không,True,200,200,19,0.095,0.061663,0.143602,sai,False,True,1to5,"[""5""]",29.635153,24.710609,29.755485,,,
+28,P3H,generate,openrouter,kết cục,delegated,llama,ổn định,True,200,200,10,0.05,0.027383,0.089578,đúng,False,True,1to5,"[""5""]",29.635744,24.710199,29.755362,,,
+29,P3H,generate,openrouter,văn bản,delegated,llama,không,True,200,200,51,0.255,0.199605,0.319629,đúng,False,True,1to5,"[""5""]",29.635744,24.710199,29.755362,,,

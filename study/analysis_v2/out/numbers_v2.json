@@ -1,0 +1,6058 @@
+{
+ "_schema": "numbers_v2/1",
+ "d10": {
+  "nhan": "khám phá (mô tả, không kiểm định — D10)",
+  "parse_fail": [
+   {
+    "be": "hosted",
+    "n_ban_ghi": 2000,
+    "nguon": "P2",
+    "parse_fail": 0,
+    "stage": "classify",
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.001917
+    ]
+   },
+   {
+    "be": "local",
+    "n_ban_ghi": 2000,
+    "nguon": "P2",
+    "parse_fail": 0,
+    "stage": "classify",
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.001917
+    ]
+   },
+   {
+    "be": "hosted",
+    "n_ban_ghi": 2000,
+    "nguon": "P2",
+    "parse_fail": 0,
+    "stage": "generate",
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.001917
+    ]
+   },
+   {
+    "be": "local",
+    "n_ban_ghi": 2000,
+    "nguon": "P2",
+    "parse_fail": 0,
+    "stage": "generate",
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.001917
+    ]
+   },
+   {
+    "be": "hosted",
+    "n_ban_ghi": 2000,
+    "nguon": "P2",
+    "parse_fail": 0,
+    "stage": "route",
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.001917
+    ]
+   },
+   {
+    "be": "local",
+    "n_ban_ghi": 2000,
+    "nguon": "P2",
+    "parse_fail": 120,
+    "stage": "route",
+    "ty_le": 0.06,
+    "wilson": [
+     0.050411,
+     0.071276
+    ]
+   },
+   {
+    "be": "local",
+    "n_ban_ghi": 2000,
+    "nguon": "P3",
+    "parse_fail": 0,
+    "stage": "generate",
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.001917
+    ]
+   },
+   {
+    "be": "local",
+    "n_ban_ghi": 2000,
+    "nguon": "P3",
+    "parse_fail": 0,
+    "stage": "route",
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.001917
+    ]
+   },
+   {
+    "be": "openrouter",
+    "n_ban_ghi": 1000,
+    "nguon": "P3H",
+    "parse_fail": 0,
+    "stage": "generate",
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.003827
+    ]
+   },
+   {
+    "be": "openrouter",
+    "n_ban_ghi": 1000,
+    "nguon": "P3H",
+    "parse_fail": 0,
+    "stage": "route",
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.003827
+    ]
+   }
+  ],
+  "probe": [
+   {
+    "be": "hosted",
+    "cap_1_2_art_doi": 1,
+    "cap_1_2_dec_doi": 0,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 20,
+    "nguon": "P2",
+    "probe": "t08",
+    "probe_art_doi": 7,
+    "probe_dec_doi": 1,
+    "stage": "classify"
+   },
+   {
+    "be": "hosted",
+    "cap_1_2_art_doi": 8,
+    "cap_1_2_dec_doi": 1,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 20,
+    "nguon": "P2",
+    "probe": "t08",
+    "probe_art_doi": 19,
+    "probe_dec_doi": 3,
+    "stage": "route"
+   },
+   {
+    "be": "hosted",
+    "cap_1_2_art_doi": 0,
+    "cap_1_2_dec_doi": 0,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 20,
+    "nguon": "P2",
+    "probe": "t08",
+    "probe_art_doi": 5,
+    "probe_dec_doi": 0,
+    "stage": "generate"
+   },
+   {
+    "be": "hosted",
+    "cap_1_2_art_doi": 20,
+    "cap_1_2_dec_doi": 0,
+    "doc": "không xác nhận được (C2)",
+    "n": 20,
+    "nguon": "P2",
+    "probe": "t08",
+    "probe_art_doi": 20,
+    "probe_dec_doi": 0,
+    "stage": "live"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 0,
+    "cap_1_2_dec_doi": 0,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 20,
+    "nguon": "P2",
+    "probe": "t08",
+    "probe_art_doi": 2,
+    "probe_dec_doi": 1,
+    "stage": "classify"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 0,
+    "cap_1_2_dec_doi": 0,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 20,
+    "nguon": "P2",
+    "probe": "seed1",
+    "probe_art_doi": 2,
+    "probe_dec_doi": 0,
+    "stage": "classify"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 2,
+    "cap_1_2_dec_doi": 1,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 20,
+    "nguon": "P2",
+    "probe": "t08",
+    "probe_art_doi": 20,
+    "probe_dec_doi": 4,
+    "stage": "route"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 2,
+    "cap_1_2_dec_doi": 1,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 20,
+    "nguon": "P2",
+    "probe": "seed1",
+    "probe_art_doi": 5,
+    "probe_dec_doi": 0,
+    "stage": "route"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 0,
+    "cap_1_2_dec_doi": 0,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 20,
+    "nguon": "P2",
+    "probe": "t08",
+    "probe_art_doi": 10,
+    "probe_dec_doi": 3,
+    "stage": "generate"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 0,
+    "cap_1_2_dec_doi": 0,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 20,
+    "nguon": "P2",
+    "probe": "seed1",
+    "probe_art_doi": 5,
+    "probe_dec_doi": 0,
+    "stage": "generate"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 1,
+    "cap_1_2_dec_doi": 0,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 20,
+    "nguon": "P3",
+    "probe": "t08",
+    "probe_art_doi": 20,
+    "probe_dec_doi": 0,
+    "stage": "route"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 1,
+    "cap_1_2_dec_doi": 0,
+    "doc": "không xác nhận được (C2)",
+    "n": 20,
+    "nguon": "P3",
+    "probe": "seed1",
+    "probe_art_doi": 0,
+    "probe_dec_doi": 0,
+    "stage": "route"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 0,
+    "cap_1_2_dec_doi": 0,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 20,
+    "nguon": "P3",
+    "probe": "t08",
+    "probe_art_doi": 10,
+    "probe_dec_doi": 2,
+    "stage": "generate"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 0,
+    "cap_1_2_dec_doi": 0,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 20,
+    "nguon": "P3",
+    "probe": "seed1",
+    "probe_art_doi": 2,
+    "probe_dec_doi": 0,
+    "stage": "generate"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 25,
+    "cap_1_2_dec_doi": 1,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 100,
+    "nguon": "MD3",
+    "probe": "t08",
+    "probe_art_doi": 100,
+    "probe_dec_doi": 1,
+    "stage": "M2"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 25,
+    "cap_1_2_dec_doi": 1,
+    "doc": "không xác nhận được (C2)",
+    "n": 100,
+    "nguon": "MD3",
+    "probe": "seed1",
+    "probe_art_doi": 25,
+    "probe_dec_doi": 1,
+    "stage": "M2"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 2,
+    "cap_1_2_dec_doi": 0,
+    "doc": "probe đổi nhiều hơn cặp 1→2",
+    "n": 10,
+    "nguon": "MD3",
+    "probe": "t08",
+    "probe_art_doi": 10,
+    "probe_dec_doi": 0,
+    "stage": "M4"
+   },
+   {
+    "be": "local",
+    "cap_1_2_art_doi": 2,
+    "cap_1_2_dec_doi": 0,
+    "doc": "không xác nhận được (C2)",
+    "n": 10,
+    "nguon": "MD3",
+    "probe": "seed1",
+    "probe_art_doi": 2,
+    "probe_dec_doi": 0,
+    "stage": "M4"
+   }
+  ]
+ },
+ "d4_depth": {
+  "ghi_chu": "pinnable × decision chỉ ô 9 — không so (§7(a))",
+  "nhan": "chính (3 nhóm §7(a)); dòng +23,25 in riêng",
+  "nhom": {
+   "delegated × artefact": {
+    "don_vi_xep": [
+     {
+      "do_sau": 2,
+      "k": 55,
+      "loai": "không ổn định",
+      "n": 200,
+      "o": 6
+     },
+     {
+      "do_sau": 3,
+      "k": 42,
+      "loai": "không ổn định",
+      "n": 50,
+      "o": 12
+     },
+     {
+      "do_sau": 3,
+      "k": 50,
+      "loai": "không ổn định",
+      "n": 50,
+      "o": 13
+     }
+    ],
+    "ket_qua": "hỗ trợ",
+    "o": [
+     2,
+     6,
+     12,
+     13,
+     15
+    ]
+   },
+   "delegated × decision": {
+    "don_vi_xep": [
+     {
+      "do_sau": 1,
+      "k": 0,
+      "loai": "ổn định",
+      "n": 200,
+      "o": 1
+     },
+     {
+      "do_sau": 2,
+      "k": 4,
+      "loai": "ổn định",
+      "n": 200,
+      "o": 5
+     },
+     {
+      "do_sau": 3,
+      "k": 0,
+      "loai": "ổn định",
+      "n": 50,
+      "o": 11
+     },
+     {
+      "do_sau": 4,
+      "k": 1,
+      "loai": "ổn định",
+      "n": 200,
+      "o": 14
+     }
+    ],
+    "ket_qua": "hỗ trợ",
+    "o": [
+     1,
+     5,
+     11,
+     14
+    ]
+   },
+   "pinnable × artefact": {
+    "don_vi_xep": [
+     {
+      "do_sau": 1,
+      "k": 0,
+      "loai": "ổn định",
+      "n": 200,
+      "o": 4
+     },
+     {
+      "do_sau": 2,
+      "k": 10,
+      "loai": "ổn định",
+      "n": 200,
+      "o": 8
+     },
+     {
+      "do_sau": 4,
+      "k": 4,
+      "loai": "ổn định",
+      "n": 200,
+      "o": 17
+     },
+     {
+      "do_sau": 4,
+      "k": 7,
+      "loai": "ổn định",
+      "n": 200,
+      "o": 21
+     }
+    ],
+    "ket_qua": "hỗ trợ",
+    "o": [
+     4,
+     8,
+     17,
+     19,
+     21
+    ]
+   },
+   "pinnable × artefact + 23, 25 (dòng in riêng, D4)": {
+    "don_vi_xep": [
+     {
+      "do_sau": 1,
+      "k": 0,
+      "loai": "ổn định",
+      "n": 200,
+      "o": 4
+     },
+     {
+      "do_sau": 2,
+      "k": 10,
+      "loai": "ổn định",
+      "n": 200,
+      "o": 8
+     },
+     {
+      "do_sau": 4,
+      "k": 4,
+      "loai": "ổn định",
+      "n": 200,
+      "o": 17
+     },
+     {
+      "do_sau": 4,
+      "k": 7,
+      "loai": "ổn định",
+      "n": 200,
+      "o": 21
+     },
+     {
+      "do_sau": 2,
+      "k": 0,
+      "loai": "ổn định",
+      "n": 100,
+      "o": 23
+     },
+     {
+      "do_sau": 4,
+      "k": 0,
+      "loai": "ổn định",
+      "n": 50,
+      "o": 25
+     }
+    ],
+    "ket_qua": "hỗ trợ",
+    "o": [
+     4,
+     8,
+     17,
+     19,
+     21,
+     23,
+     25
+    ]
+   }
+  }
+ },
+ "d7_runtime": {
+  "ghi_chu": "mẫu con không ngẫu nhiên (thứ tự chạy theo plan) — chỉ mô tả, không kiểm định (V2-05 D7, V2-07(e))",
+  "hang": [
+   {
+    "art_doi": 14,
+    "art_wilson": [
+     0.078074,
+     0.204104
+    ],
+    "cap": "A→B (silent runtime update)",
+    "dec_doi": 4,
+    "dec_wilson": [
+     0.014362,
+     0.090577
+    ],
+    "ho": "qwen",
+    "n": 109,
+    "nguon": "P2",
+    "stage": "classify"
+   },
+   {
+    "art_doi": 0,
+    "art_wilson": [
+     0.0,
+     0.018845
+    ],
+    "cap": "A→cùng runtime kế tiếp",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.018845
+    ],
+    "ho": "qwen",
+    "n": 200,
+    "nguon": "P2",
+    "stage": "classify"
+   },
+   {
+    "art_doi": 14,
+    "art_wilson": [
+     0.078074,
+     0.204104
+    ],
+    "cap": "1to5 đoạn AB",
+    "dec_doi": 4,
+    "dec_wilson": [
+     0.014362,
+     0.090577
+    ],
+    "ho": "qwen",
+    "n": 109,
+    "nguon": "P2",
+    "stage": "classify"
+   },
+   {
+    "art_doi": 0,
+    "art_wilson": [
+     0.0,
+     0.040504
+    ],
+    "cap": "1to5 đoạn AD",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.040504
+    ],
+    "ho": "qwen",
+    "n": 91,
+    "nguon": "P2",
+    "stage": "classify"
+   },
+   {
+    "art_doi": 0,
+    "art_wilson": [
+     0.0,
+     0.018845
+    ],
+    "cap": "cung_runtime đoạn AD",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.018845
+    ],
+    "ho": "qwen",
+    "n": 200,
+    "nguon": "P2",
+    "stage": "classify"
+   },
+   {
+    "art_doi": 104,
+    "art_wilson": [
+     0.908618,
+     0.985504
+    ],
+    "cap": "A→B (silent runtime update)",
+    "dec_doi": 27,
+    "dec_wilson": [
+     0.177878,
+     0.339295
+    ],
+    "ho": "qwen",
+    "n": 108,
+    "nguon": "P2",
+    "stage": "route"
+   },
+   {
+    "art_doi": 5,
+    "art_wilson": [
+     0.010725,
+     0.057178
+    ],
+    "cap": "A→cùng runtime kế tiếp",
+    "dec_doi": 2,
+    "dec_wilson": [
+     0.002747,
+     0.035722
+    ],
+    "ho": "qwen",
+    "n": 200,
+    "nguon": "P2",
+    "stage": "route"
+   },
+   {
+    "art_doi": 104,
+    "art_wilson": [
+     0.908618,
+     0.985504
+    ],
+    "cap": "1to5 đoạn AB",
+    "dec_doi": 27,
+    "dec_wilson": [
+     0.177878,
+     0.339295
+    ],
+    "ho": "qwen",
+    "n": 108,
+    "nguon": "P2",
+    "stage": "route"
+   },
+   {
+    "art_doi": 2,
+    "art_wilson": [
+     0.005982,
+     0.075835
+    ],
+    "cap": "1to5 đoạn AD",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.040081
+    ],
+    "ho": "qwen",
+    "n": 92,
+    "nguon": "P2",
+    "stage": "route"
+   },
+   {
+    "art_doi": 10,
+    "art_wilson": [
+     0.027383,
+     0.089578
+    ],
+    "cap": "cung_runtime đoạn AD",
+    "dec_doi": 2,
+    "dec_wilson": [
+     0.002747,
+     0.035722
+    ],
+    "ho": "qwen",
+    "n": 200,
+    "nguon": "P2",
+    "stage": "route"
+   },
+   {
+    "art_doi": 68,
+    "art_wilson": [
+     0.53557,
+     0.714785
+    ],
+    "cap": "A→B (silent runtime update)",
+    "dec_doi": 20,
+    "dec_wilson": [
+     0.1232,
+     0.268797
+    ],
+    "ho": "qwen",
+    "n": 108,
+    "nguon": "P2",
+    "stage": "generate"
+   },
+   {
+    "art_doi": 2,
+    "art_wilson": [
+     0.002747,
+     0.035722
+    ],
+    "cap": "A→cùng runtime kế tiếp",
+    "dec_doi": 1,
+    "dec_wilson": [
+     0.000883,
+     0.027774
+    ],
+    "ho": "qwen",
+    "n": 200,
+    "nguon": "P2",
+    "stage": "generate"
+   },
+   {
+    "art_doi": 68,
+    "art_wilson": [
+     0.53557,
+     0.714785
+    ],
+    "cap": "1to5 đoạn AB",
+    "dec_doi": 20,
+    "dec_wilson": [
+     0.1232,
+     0.268797
+    ],
+    "ho": "qwen",
+    "n": 108,
+    "nguon": "P2",
+    "stage": "generate"
+   },
+   {
+    "art_doi": 2,
+    "art_wilson": [
+     0.005982,
+     0.075835
+    ],
+    "cap": "1to5 đoạn AD",
+    "dec_doi": 1,
+    "dec_wilson": [
+     0.001921,
+     0.059028
+    ],
+    "ho": "qwen",
+    "n": 92,
+    "nguon": "P2",
+    "stage": "generate"
+   },
+   {
+    "art_doi": 4,
+    "art_wilson": [
+     0.007804,
+     0.050287
+    ],
+    "cap": "cung_runtime đoạn AD",
+    "dec_doi": 1,
+    "dec_wilson": [
+     0.000883,
+     0.027774
+    ],
+    "ho": "qwen",
+    "n": 200,
+    "nguon": "P2",
+    "stage": "generate"
+   },
+   {
+    "art_doi": 196,
+    "art_wilson": [
+     0.949713,
+     0.992196
+    ],
+    "cap": "A→B (silent runtime update)",
+    "dec_doi": 8,
+    "dec_wilson": [
+     0.020406,
+     0.076932
+    ],
+    "ho": "llama",
+    "n": 200,
+    "nguon": "P3",
+    "stage": "route"
+   },
+   {
+    "art_doi": 11,
+    "art_wilson": [
+     0.030985,
+     0.095787
+    ],
+    "cap": "A→cùng runtime kế tiếp",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.018845
+    ],
+    "ho": "llama",
+    "n": 200,
+    "nguon": "P3",
+    "stage": "route"
+   },
+   {
+    "art_doi": 140,
+    "art_wilson": [
+     0.950104,
+     0.996129
+    ],
+    "cap": "1to5 đoạn AB",
+    "dec_doi": 5,
+    "dec_wilson": [
+     0.015132,
+     0.079775
+    ],
+    "ho": "llama",
+    "n": 142,
+    "nguon": "P3",
+    "stage": "route"
+   },
+   {
+    "art_doi": 5,
+    "art_wilson": [
+     0.037385,
+     0.186436
+    ],
+    "cap": "1to5 đoạn AD",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.062118
+    ],
+    "ho": "llama",
+    "n": 58,
+    "nguon": "P3",
+    "stage": "route"
+   },
+   {
+    "art_doi": 21,
+    "art_wilson": [
+     0.069707,
+     0.15518
+    ],
+    "cap": "cung_runtime đoạn AD",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.018845
+    ],
+    "ho": "llama",
+    "n": 200,
+    "nguon": "P3",
+    "stage": "route"
+   },
+   {
+    "art_doi": 129,
+    "art_wilson": [
+     0.576521,
+     0.708014
+    ],
+    "cap": "A→B (silent runtime update)",
+    "dec_doi": 8,
+    "dec_wilson": [
+     0.020406,
+     0.076932
+    ],
+    "ho": "llama",
+    "n": 200,
+    "nguon": "P3",
+    "stage": "generate"
+   },
+   {
+    "art_doi": 2,
+    "art_wilson": [
+     0.002747,
+     0.035722
+    ],
+    "cap": "A→cùng runtime kế tiếp",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.018845
+    ],
+    "ho": "llama",
+    "n": 200,
+    "nguon": "P3",
+    "stage": "generate"
+   },
+   {
+    "art_doi": 87,
+    "art_wilson": [
+     0.534691,
+     0.693145
+    ],
+    "cap": "1to5 đoạn AB",
+    "dec_doi": 5,
+    "dec_wilson": [
+     0.01524,
+     0.080323
+    ],
+    "ho": "llama",
+    "n": 141,
+    "nguon": "P3",
+    "stage": "generate"
+   },
+   {
+    "art_doi": 3,
+    "art_wilson": [
+     0.017443,
+     0.139165
+    ],
+    "cap": "1to5 đoạn AD",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.061129
+    ],
+    "ho": "llama",
+    "n": 59,
+    "nguon": "P3",
+    "stage": "generate"
+   },
+   {
+    "art_doi": 7,
+    "art_wilson": [
+     0.017056,
+     0.070471
+    ],
+    "cap": "cung_runtime đoạn AD",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.018845
+    ],
+    "ho": "llama",
+    "n": 200,
+    "nguon": "P3",
+    "stage": "generate"
+   },
+   {
+    "art_doi": 4,
+    "art_wilson": [
+     0.510109,
+     1.0
+    ],
+    "cap": "t0→t24h đoạn AB",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.489891
+    ],
+    "ho": "llama",
+    "n": 4,
+    "nguon": "MD3 (cũ)",
+    "stage": "M2"
+   },
+   {
+    "art_doi": 89,
+    "art_wilson": [
+     0.85707,
+     0.964232
+    ],
+    "cap": "t0→t24h đoạn BD",
+    "dec_doi": 2,
+    "dec_wilson": [
+     0.005732,
+     0.072807
+    ],
+    "ho": "llama",
+    "n": 96,
+    "nguon": "MD3 (cũ)",
+    "stage": "M2"
+   },
+   {
+    "art_doi": 2,
+    "art_wilson": [
+     0.150039,
+     0.849961
+    ],
+    "cap": "t0→t0p đoạn AA",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.489891
+    ],
+    "ho": "llama",
+    "n": 4,
+    "nguon": "MD3 (cũ)",
+    "stage": "M2"
+   },
+   {
+    "art_doi": 23,
+    "art_wilson": [
+     0.165282,
+     0.333924
+    ],
+    "cap": "t0→t0p đoạn BB",
+    "dec_doi": 1,
+    "dec_wilson": [
+     0.001841,
+     0.056666
+    ],
+    "ho": "llama",
+    "n": 96,
+    "nguon": "MD3 (cũ)",
+    "stage": "M2"
+   },
+   {
+    "art_doi": 50,
+    "art_wilson": [
+     0.928652,
+     1.0
+    ],
+    "cap": "t0→t24h đoạn BD",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.071348
+    ],
+    "ho": "llama",
+    "n": 50,
+    "nguon": "MD3 (cũ)",
+    "stage": "M4"
+   },
+   {
+    "art_doi": 21,
+    "art_wilson": [
+     0.29375,
+     0.557666
+    ],
+    "cap": "t0→t0p đoạn BB",
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.071348
+    ],
+    "ho": "llama",
+    "n": 50,
+    "nguon": "MD3 (cũ)",
+    "stage": "M4"
+   }
+  ],
+  "nhan": "khám phá"
+ },
+ "d9_ho": {
+  "generate": {
+   "llama_margin": {
+    "cap_1to5_dang_ky": {
+     "hi": 0.4957,
+     "k_art": 90,
+     "k_dec": 5,
+     "lo": 0.350349,
+     "margin": 0.425,
+     "n_art": 200,
+     "n_dec": 200,
+     "r_art": 0.45,
+     "r_dec": 0.025
+    },
+    "ghep_art_doi_dec_khong": 7,
+    "ghep_ca_hai_doi": 0,
+    "ghep_dec_doi_art_khong": 0,
+    "ghep_n": 200,
+    "hi": 0.070471,
+    "ho": "llama",
+    "k_art": 7,
+    "k_dec": 0,
+    "lo": 0.008978,
+    "margin": 0.035,
+    "margin_theo_chu_s8_dec_tru_art": -0.035,
+    "n_art": 200,
+    "n_dec": 200,
+    "nguon": "P3",
+    "o_art": 21,
+    "o_dec": 20,
+    "pin": "pinnable",
+    "r_art": 0.035,
+    "r_dec": 0.0,
+    "stage": "generate"
+   },
+   "qwen_margin": {
+    "cap_1to5_dang_ky": {
+     "hi": 0.321938,
+     "k_art": 70,
+     "k_dec": 21,
+     "lo": 0.164683,
+     "margin": 0.245,
+     "n_art": 200,
+     "n_dec": 200,
+     "r_art": 0.35,
+     "r_dec": 0.105
+    },
+    "ghep_art_doi_dec_khong": 3,
+    "ghep_ca_hai_doi": 1,
+    "ghep_dec_doi_art_khong": 0,
+    "ghep_n": 200,
+    "hi": 0.045566,
+    "ho": "qwen",
+    "k_art": 4,
+    "k_dec": 1,
+    "lo": -0.010834,
+    "margin": 0.015,
+    "margin_theo_chu_s8_dec_tru_art": -0.015,
+    "n_art": 200,
+    "n_dec": 200,
+    "nguon": "P2",
+    "o_art": 17,
+    "o_dec": 16,
+    "pin": "pinnable",
+    "r_art": 0.02,
+    "r_dec": 0.005,
+    "stage": "generate"
+   },
+   "r_art_llama_tru_qwen": {
+    "d": 0.015,
+    "hi": 0.052509,
+    "lo": -0.020204
+   }
+  },
+  "nhan": "khám phá",
+  "route": {
+   "llama_margin": {
+    "cap_1to5_dang_ky": {
+     "hi": 0.758957,
+     "k_art": 145,
+     "k_dec": 5,
+     "lo": 0.626858,
+     "margin": 0.7,
+     "n_art": 200,
+     "n_dec": 200,
+     "r_art": 0.725,
+     "r_dec": 0.025
+    },
+    "ghep_art_doi_dec_khong": 21,
+    "ghep_ca_hai_doi": 0,
+    "ghep_dec_doi_art_khong": 0,
+    "ghep_n": 200,
+    "hi": 0.15518,
+    "ho": "llama",
+    "k_art": 21,
+    "k_dec": 0,
+    "lo": 0.064991,
+    "margin": 0.105,
+    "margin_theo_chu_s8_dec_tru_art": -0.105,
+    "n_art": 200,
+    "n_dec": 200,
+    "nguon": "P3",
+    "o_art": 19,
+    "o_dec": 18,
+    "pin": "pinnable",
+    "r_art": 0.105,
+    "r_dec": 0.0,
+    "stage": "route"
+   },
+   "qwen_margin": {
+    "cap_1to5_dang_ky": {
+     "hi": 0.474124,
+     "k_art": 106,
+     "k_dec": 27,
+     "lo": 0.307136,
+     "margin": 0.395,
+     "n_art": 200,
+     "n_dec": 200,
+     "r_art": 0.53,
+     "r_dec": 0.135
+    },
+    "ghep_art_doi_dec_khong": 8,
+    "ghep_ca_hai_doi": 2,
+    "ghep_dec_doi_art_khong": 0,
+    "ghep_n": 200,
+    "hi": 0.080237,
+    "ho": "qwen",
+    "k_art": 10,
+    "k_dec": 2,
+    "lo": 0.005749,
+    "margin": 0.04,
+    "margin_theo_chu_s8_dec_tru_art": -0.04,
+    "n_art": 200,
+    "n_dec": 200,
+    "nguon": "P2",
+    "o_art": 8,
+    "o_dec": 7,
+    "pin": "pinnable",
+    "r_art": 0.05,
+    "r_dec": 0.01,
+    "stage": "route"
+   },
+   "r_art_llama_tru_qwen": {
+    "d": 0.055,
+    "hi": 0.110042,
+    "lo": 0.001972
+   }
+  }
+ },
+ "dem_don_vi": {
+  "n3": 4,
+  "p3h_k": 4,
+  "pipeline2": 13,
+  "tong": 21
+ },
+ "don_vi": {
+  "1": {
+   "be": "hosted",
+   "do_sau": 1,
+   "doan": {
+    "AA": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 50.421424,
+    "median_h": 49.513344,
+    "min_h": 48.849108
+   },
+   "ho": "gemini",
+   "k": 0,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 200,
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.018845
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 1,
+   "obs": "dec",
+   "phan_quyet": "đúng",
+   "pin": "delegated",
+   "quan_sat": "answerable",
+   "stage": "classify",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.018845
+   ]
+  },
+  "10": {
+   "be": "bm25",
+   "do_sau": 3,
+   "doan": {
+    "AA": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 49.639849,
+    "median_h": 49.634862,
+    "min_h": 49.628446
+   },
+   "ho": "bm25",
+   "k": 0,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 200,
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.018845
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 10,
+   "obs": "art",
+   "phan_quyet": "không tính điểm — suy từ ô 9 (A06.1); quan sát: đúng",
+   "pin": "pinnable",
+   "quan_sat": "đoạn trích",
+   "stage": "retrieve",
+   "suy_tu": 9,
+   "thieu_luc": false,
+   "tinh_diem": false,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.018845
+   ]
+  },
+  "11": {
+   "be": "hosted",
+   "do_sau": 3,
+   "doan": {
+    "AA": 50
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 50.420194,
+    "median_h": 48.708576,
+    "min_h": 48.708064
+   },
+   "ho": "gemini",
+   "k": 0,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 50,
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.071348
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 50,
+   "n_dang_ky": 50,
+   "nguon": "P2",
+   "o": 11,
+   "obs": "dec",
+   "phan_quyet": "đúng",
+   "pin": "delegated",
+   "quan_sat": "SOURCES",
+   "stage": "live",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.071348
+   ]
+  },
+  "12": {
+   "be": "hosted",
+   "do_sau": 3,
+   "doan": {
+    "AA": 50
+   },
+   "du_doan": "không",
+   "gap": {
+    "max_h": 50.420194,
+    "median_h": 48.708576,
+    "min_h": 48.708064
+   },
+   "ho": "gemini",
+   "k": 42,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 42,
+    "n": 50,
+    "ty_le": 0.84,
+    "wilson": [
+     0.714858,
+     0.916626
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 50,
+   "n_dang_ky": 50,
+   "nguon": "P2",
+   "o": 12,
+   "obs": "art",
+   "phan_quyet": "đúng",
+   "pin": "delegated",
+   "quan_sat": "tập tên miền (A)",
+   "stage": "live",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.84,
+   "vao_mau_so": true,
+   "wilson": [
+    0.714858,
+    0.916626
+   ]
+  },
+  "13": {
+   "be": "hosted",
+   "do_sau": 3,
+   "doan": {
+    "AA": 50
+   },
+   "du_doan": "không",
+   "gap": {
+    "max_h": 50.420194,
+    "median_h": 48.708576,
+    "min_h": 48.708064
+   },
+   "ho": "gemini",
+   "k": 50,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 50,
+    "n": 50,
+    "ty_le": 1.0,
+    "wilson": [
+     0.928652,
+     1.0
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 50,
+   "n_dang_ky": 50,
+   "nguon": "P2",
+   "o": 13,
+   "obs": "art",
+   "phan_quyet": "đúng",
+   "pin": "delegated",
+   "quan_sat": "văn bản (B)",
+   "stage": "live",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 1.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.928652,
+    1.0
+   ]
+  },
+  "14": {
+   "be": "hosted",
+   "do_sau": 4,
+   "doan": {
+    "AA": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 50.421467,
+    "median_h": 49.513646,
+    "min_h": 48.848491
+   },
+   "ho": "gemini",
+   "k": 1,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 1,
+    "n": 200,
+    "ty_le": 0.005,
+    "wilson": [
+     0.000883,
+     0.027774
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 14,
+   "obs": "dec",
+   "phan_quyet": "đúng",
+   "pin": "delegated",
+   "quan_sat": "kết cục",
+   "stage": "generate",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.005,
+   "vao_mau_so": true,
+   "wilson": [
+    0.000883,
+    0.027774
+   ]
+  },
+  "15": {
+   "be": "hosted",
+   "do_sau": 4,
+   "doan": {
+    "AA": 200
+   },
+   "du_doan": "không",
+   "gap": {
+    "max_h": 50.421467,
+    "median_h": 49.513646,
+    "min_h": 48.848491
+   },
+   "ho": "gemini",
+   "k": 13,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 13,
+    "n": 200,
+    "ty_le": 0.065,
+    "wilson": [
+     0.038376,
+     0.108019
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 15,
+   "obs": "art",
+   "phan_quyet": "sai",
+   "pin": "delegated",
+   "quan_sat": "văn bản",
+   "stage": "generate",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.065,
+   "vao_mau_so": true,
+   "wilson": [
+    0.038376,
+    0.108019
+   ]
+  },
+  "16": {
+   "be": "local",
+   "cap_1to5_dang_ky": {
+    "doan": {
+     "AB": 108,
+     "AD": 92
+    },
+    "gap": {
+     "max_h": 161.130349,
+     "median_h": 68.252178,
+     "min_h": 67.532608
+    },
+    "k": 21,
+    "n": 200,
+    "phan_quyet": "không phân định",
+    "thieu_luc": false,
+    "ty_le": 0.105,
+    "vao_mau_so": true,
+    "wilson": [
+     0.069707,
+     0.15518
+    ]
+   },
+   "do_sau": 4,
+   "doan": {
+    "AD": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 184.33271,
+    "median_h": 163.50002,
+    "min_h": 160.963977
+   },
+   "ho": "qwen",
+   "k": 1,
+   "k_lan_dung": [
+    "5",
+    "6"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 0,
+    "ty_le": null,
+    "wilson": [
+     0.0,
+     1.0
+    ]
+   },
+   "luat_cap": "cung_runtime",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 16,
+   "obs": "dec",
+   "phan_quyet": "không tính điểm — suy từ ô 17 (A06.1); quan sát: đúng",
+   "pin": "pinnable",
+   "quan_sat": "kết cục",
+   "stage": "generate",
+   "suy_tu": 17,
+   "thieu_luc": false,
+   "tinh_diem": false,
+   "ty_le": 0.005,
+   "vao_mau_so": true,
+   "wilson": [
+    0.000883,
+    0.027774
+   ]
+  },
+  "17": {
+   "be": "local",
+   "cap_1to5_dang_ky": {
+    "doan": {
+     "AB": 108,
+     "AD": 92
+    },
+    "gap": {
+     "max_h": 161.130349,
+     "median_h": 68.252178,
+     "min_h": 67.532608
+    },
+    "k": 70,
+    "n": 200,
+    "phan_quyet": "sai",
+    "thieu_luc": false,
+    "ty_le": 0.35,
+    "vao_mau_so": true,
+    "wilson": [
+     0.287288,
+     0.418365
+    ]
+   },
+   "do_sau": 4,
+   "doan": {
+    "AD": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 184.33271,
+    "median_h": 163.50002,
+    "min_h": 160.963977
+   },
+   "ho": "qwen",
+   "k": 4,
+   "k_lan_dung": [
+    "5",
+    "6"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 0,
+    "ty_le": null,
+    "wilson": [
+     0.0,
+     1.0
+    ]
+   },
+   "luat_cap": "cung_runtime",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 17,
+   "obs": "art",
+   "phan_quyet": "đúng",
+   "pin": "pinnable",
+   "quan_sat": "văn bản",
+   "stage": "generate",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.02,
+   "vao_mau_so": true,
+   "wilson": [
+    0.007804,
+    0.050287
+   ]
+  },
+  "18": {
+   "be": "local",
+   "cap_1to5_dang_ky": {
+    "doan": {
+     "AB": 142,
+     "AD": 58
+    },
+    "gap": {
+     "max_h": 162.276142,
+     "median_h": 61.581536,
+     "min_h": 59.571932
+    },
+    "k": 5,
+    "n": 200,
+    "phan_quyet": "đúng",
+    "thieu_luc": false,
+    "ty_le": 0.025,
+    "vao_mau_so": true,
+    "wilson": [
+     0.010725,
+     0.057178
+    ]
+   },
+   "do_sau": 2,
+   "doan": {
+    "AD": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 162.276142,
+    "median_h": 155.433574,
+    "min_h": 137.559098
+   },
+   "ho": "llama",
+   "k": 0,
+   "k_lan_dung": [
+    "5",
+    "6"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 0,
+    "ty_le": null,
+    "wilson": [
+     0.0,
+     1.0
+    ]
+   },
+   "luat_cap": "cung_runtime",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P3",
+   "o": 18,
+   "obs": "dec",
+   "phan_quyet": "không tính điểm — suy từ ô 19 (A06.1); quan sát: đúng",
+   "pin": "pinnable",
+   "quan_sat": "route",
+   "stage": "route",
+   "suy_tu": 19,
+   "thieu_luc": false,
+   "tinh_diem": false,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.018845
+   ]
+  },
+  "19": {
+   "be": "local",
+   "cap_1to5_dang_ky": {
+    "doan": {
+     "AB": 142,
+     "AD": 58
+    },
+    "gap": {
+     "max_h": 162.276142,
+     "median_h": 61.581536,
+     "min_h": 59.571932
+    },
+    "k": 145,
+    "n": 200,
+    "phan_quyet": "sai",
+    "thieu_luc": false,
+    "ty_le": 0.725,
+    "vao_mau_so": true,
+    "wilson": [
+     0.659317,
+     0.782203
+    ]
+   },
+   "do_sau": 2,
+   "doan": {
+    "AD": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 162.276142,
+    "median_h": 155.433574,
+    "min_h": 137.559098
+   },
+   "ho": "llama",
+   "k": 21,
+   "k_lan_dung": [
+    "5",
+    "6"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 0,
+    "ty_le": null,
+    "wilson": [
+     0.0,
+     1.0
+    ]
+   },
+   "luat_cap": "cung_runtime",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P3",
+   "o": 19,
+   "obs": "art",
+   "phan_quyet": "không phân định",
+   "pin": "pinnable",
+   "quan_sat": "text thô",
+   "stage": "route",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.105,
+   "vao_mau_so": true,
+   "wilson": [
+    0.069707,
+    0.15518
+   ]
+  },
+  "2": {
+   "be": "hosted",
+   "do_sau": 1,
+   "doan": {
+    "AA": 200
+   },
+   "du_doan": "không",
+   "gap": {
+    "max_h": 50.421424,
+    "median_h": 49.513344,
+    "min_h": 48.849108
+   },
+   "ho": "gemini",
+   "k": 12,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 12,
+    "n": 200,
+    "ty_le": 0.06,
+    "wilson": [
+     0.034652,
+     0.101932
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 2,
+   "obs": "art",
+   "phan_quyet": "sai",
+   "pin": "delegated",
+   "quan_sat": "JSON thô",
+   "stage": "classify",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.06,
+   "vao_mau_so": true,
+   "wilson": [
+    0.034652,
+    0.101932
+   ]
+  },
+  "20": {
+   "be": "local",
+   "cap_1to5_dang_ky": {
+    "doan": {
+     "AB": 141,
+     "AD": 59
+    },
+    "gap": {
+     "max_h": 162.373534,
+     "median_h": 61.599192,
+     "min_h": 59.603214
+    },
+    "k": 5,
+    "n": 200,
+    "phan_quyet": "đúng",
+    "thieu_luc": false,
+    "ty_le": 0.025,
+    "vao_mau_so": true,
+    "wilson": [
+     0.010725,
+     0.057178
+    ]
+   },
+   "do_sau": 4,
+   "doan": {
+    "AD": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 162.373534,
+    "median_h": 155.432058,
+    "min_h": 137.53241
+   },
+   "ho": "llama",
+   "k": 0,
+   "k_lan_dung": [
+    "5",
+    "6"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 0,
+    "ty_le": null,
+    "wilson": [
+     0.0,
+     1.0
+    ]
+   },
+   "luat_cap": "cung_runtime",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P3",
+   "o": 20,
+   "obs": "dec",
+   "phan_quyet": "không tính điểm — suy từ ô 21 (A06.1); quan sát: đúng",
+   "pin": "pinnable",
+   "quan_sat": "kết cục",
+   "stage": "generate",
+   "suy_tu": 21,
+   "thieu_luc": false,
+   "tinh_diem": false,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.018845
+   ]
+  },
+  "21": {
+   "be": "local",
+   "cap_1to5_dang_ky": {
+    "doan": {
+     "AB": 141,
+     "AD": 59
+    },
+    "gap": {
+     "max_h": 162.373534,
+     "median_h": 61.599192,
+     "min_h": 59.603214
+    },
+    "k": 90,
+    "n": 200,
+    "phan_quyet": "sai",
+    "thieu_luc": false,
+    "ty_le": 0.45,
+    "vao_mau_so": true,
+    "wilson": [
+     0.382641,
+     0.519244
+    ]
+   },
+   "do_sau": 4,
+   "doan": {
+    "AD": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 162.373534,
+    "median_h": 155.432058,
+    "min_h": 137.53241
+   },
+   "ho": "llama",
+   "k": 7,
+   "k_lan_dung": [
+    "5",
+    "6"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 0,
+    "ty_le": null,
+    "wilson": [
+     0.0,
+     1.0
+    ]
+   },
+   "luat_cap": "cung_runtime",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P3",
+   "o": 21,
+   "obs": "art",
+   "phan_quyet": "đúng",
+   "pin": "pinnable",
+   "quan_sat": "văn bản",
+   "stage": "generate",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.035,
+   "vao_mau_so": true,
+   "wilson": [
+    0.017056,
+    0.070471
+   ]
+  },
+  "22": {
+   "be": "local",
+   "do_sau": 2,
+   "doan": {
+    "DD": 100
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 24.024292,
+    "median_h": 24.01335,
+    "min_h": 24.000311
+   },
+   "ho": "llama",
+   "k": 0,
+   "k_lan_dung": [
+    "t24h"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 100,
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.036993
+    ]
+   },
+   "luat_cap": "md3r",
+   "n": 100,
+   "n_dang_ky": 100,
+   "nguon": "MD3R",
+   "o": 22,
+   "obs": "dec",
+   "phan_quyet": "không tính điểm — suy từ ô 23 (A06.1); quan sát: đúng",
+   "pin": "pinnable",
+   "quan_sat": "lookup",
+   "stage": "M2",
+   "suy_tu": 23,
+   "thieu_luc": false,
+   "tinh_diem": false,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.036993
+   ]
+  },
+  "23": {
+   "be": "local",
+   "do_sau": 2,
+   "doan": {
+    "DD": 100
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 24.024292,
+    "median_h": 24.01335,
+    "min_h": 24.000311
+   },
+   "ho": "llama",
+   "k": 0,
+   "k_lan_dung": [
+    "t24h"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 100,
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.036993
+    ]
+   },
+   "luat_cap": "md3r",
+   "n": 100,
+   "n_dang_ky": 100,
+   "nguon": "MD3R",
+   "o": 23,
+   "obs": "art",
+   "phan_quyet": "đúng",
+   "pin": "pinnable",
+   "quan_sat": "text thô",
+   "stage": "M2",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.036993
+   ]
+  },
+  "24": {
+   "be": "local",
+   "do_sau": 4,
+   "doan": {
+    "DD": 50
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 24.017226,
+    "median_h": 24.011197,
+    "min_h": 24.00149
+   },
+   "ho": "llama",
+   "k": 0,
+   "k_lan_dung": [
+    "t24h"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 50,
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.071348
+    ]
+   },
+   "luat_cap": "md3r",
+   "n": 50,
+   "n_dang_ky": 50,
+   "nguon": "MD3R",
+   "o": 24,
+   "obs": "dec",
+   "phan_quyet": "không tính điểm — suy từ ô 25 (A06.1); quan sát: đúng",
+   "pin": "pinnable",
+   "quan_sat": "nhãn ngôn ngữ",
+   "stage": "M4",
+   "suy_tu": 25,
+   "thieu_luc": false,
+   "tinh_diem": false,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.071348
+   ]
+  },
+  "25": {
+   "be": "local",
+   "do_sau": 4,
+   "doan": {
+    "DD": 50
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 24.017226,
+    "median_h": 24.011197,
+    "min_h": 24.00149
+   },
+   "ho": "llama",
+   "k": 0,
+   "k_lan_dung": [
+    "t24h"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 50,
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.071348
+    ]
+   },
+   "luat_cap": "md3r",
+   "n": 50,
+   "n_dang_ky": 50,
+   "nguon": "MD3R",
+   "o": 25,
+   "obs": "art",
+   "phan_quyet": "đúng",
+   "pin": "pinnable",
+   "quan_sat": "reply_text",
+   "stage": "M4",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.071348
+   ]
+  },
+  "26": {
+   "be": "openrouter",
+   "do_sau": 2,
+   "doan": {
+    "DD": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 29.755485,
+    "median_h": 29.635153,
+    "min_h": 24.710609
+   },
+   "ho": "llama",
+   "k": 0,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 200,
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.018845
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P3H",
+   "o": 26,
+   "obs": "dec",
+   "phan_quyet": "đúng",
+   "pin": "delegated",
+   "quan_sat": "route",
+   "stage": "route",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.018845
+   ]
+  },
+  "27": {
+   "be": "openrouter",
+   "do_sau": 2,
+   "doan": {
+    "DD": 200
+   },
+   "du_doan": "không",
+   "gap": {
+    "max_h": 29.755485,
+    "median_h": 29.635153,
+    "min_h": 24.710609
+   },
+   "ho": "llama",
+   "k": 19,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 19,
+    "n": 200,
+    "ty_le": 0.095,
+    "wilson": [
+     0.061663,
+     0.143602
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P3H",
+   "o": 27,
+   "obs": "art",
+   "phan_quyet": "sai",
+   "pin": "delegated",
+   "quan_sat": "text thô",
+   "stage": "route",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.095,
+   "vao_mau_so": true,
+   "wilson": [
+    0.061663,
+    0.143602
+   ]
+  },
+  "28": {
+   "be": "openrouter",
+   "do_sau": 4,
+   "doan": {
+    "DD": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 29.755362,
+    "median_h": 29.635744,
+    "min_h": 24.710199
+   },
+   "ho": "llama",
+   "k": 10,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 10,
+    "n": 200,
+    "ty_le": 0.05,
+    "wilson": [
+     0.027383,
+     0.089578
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P3H",
+   "o": 28,
+   "obs": "dec",
+   "phan_quyet": "đúng",
+   "pin": "delegated",
+   "quan_sat": "kết cục",
+   "stage": "generate",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.05,
+   "vao_mau_so": true,
+   "wilson": [
+    0.027383,
+    0.089578
+   ]
+  },
+  "29": {
+   "be": "openrouter",
+   "do_sau": 4,
+   "doan": {
+    "DD": 200
+   },
+   "du_doan": "không",
+   "gap": {
+    "max_h": 29.755362,
+    "median_h": 29.635744,
+    "min_h": 24.710199
+   },
+   "ho": "llama",
+   "k": 51,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 51,
+    "n": 200,
+    "ty_le": 0.255,
+    "wilson": [
+     0.199605,
+     0.319629
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P3H",
+   "o": 29,
+   "obs": "art",
+   "phan_quyet": "đúng",
+   "pin": "delegated",
+   "quan_sat": "văn bản",
+   "stage": "generate",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.255,
+   "vao_mau_so": true,
+   "wilson": [
+    0.199605,
+    0.319629
+   ]
+  },
+  "3": {
+   "be": "local",
+   "cap_1to5_dang_ky": {
+    "doan": {
+     "AB": 109,
+     "AD": 91
+    },
+    "gap": {
+     "max_h": 161.130447,
+     "median_h": 68.23377,
+     "min_h": 67.525495
+    },
+    "k": 4,
+    "n": 200,
+    "phan_quyet": "đúng",
+    "thieu_luc": false,
+    "ty_le": 0.02,
+    "vao_mau_so": true,
+    "wilson": [
+     0.007804,
+     0.050287
+    ]
+   },
+   "do_sau": 1,
+   "doan": {
+    "AD": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 184.333454,
+    "median_h": 163.547911,
+    "min_h": 160.964443
+   },
+   "ho": "qwen",
+   "k": 0,
+   "k_lan_dung": [
+    "5",
+    "6"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 0,
+    "ty_le": null,
+    "wilson": [
+     0.0,
+     1.0
+    ]
+   },
+   "luat_cap": "cung_runtime",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 3,
+   "obs": "dec",
+   "phan_quyet": "không tính điểm — suy từ ô 4 (A06.1); quan sát: đúng",
+   "pin": "pinnable",
+   "quan_sat": "answerable",
+   "stage": "classify",
+   "suy_tu": 4,
+   "thieu_luc": false,
+   "tinh_diem": false,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.018845
+   ]
+  },
+  "4": {
+   "be": "local",
+   "cap_1to5_dang_ky": {
+    "doan": {
+     "AB": 109,
+     "AD": 91
+    },
+    "gap": {
+     "max_h": 161.130447,
+     "median_h": 68.23377,
+     "min_h": 67.525495
+    },
+    "k": 14,
+    "n": 200,
+    "phan_quyet": "không phân định",
+    "thieu_luc": false,
+    "ty_le": 0.07,
+    "vao_mau_so": true,
+    "wilson": [
+     0.042152,
+     0.114055
+    ]
+   },
+   "do_sau": 1,
+   "doan": {
+    "AD": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 184.333454,
+    "median_h": 163.547911,
+    "min_h": 160.964443
+   },
+   "ho": "qwen",
+   "k": 0,
+   "k_lan_dung": [
+    "5",
+    "6"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 0,
+    "ty_le": null,
+    "wilson": [
+     0.0,
+     1.0
+    ]
+   },
+   "luat_cap": "cung_runtime",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 4,
+   "obs": "art",
+   "phan_quyet": "đúng",
+   "pin": "pinnable",
+   "quan_sat": "JSON thô",
+   "stage": "classify",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.018845
+   ]
+  },
+  "5": {
+   "be": "hosted",
+   "do_sau": 2,
+   "doan": {
+    "AA": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 50.42145,
+    "median_h": 49.514133,
+    "min_h": 48.848774
+   },
+   "ho": "gemini",
+   "k": 4,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 4,
+    "n": 200,
+    "ty_le": 0.02,
+    "wilson": [
+     0.007804,
+     0.050287
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 5,
+   "obs": "dec",
+   "phan_quyet": "đúng",
+   "pin": "delegated",
+   "quan_sat": "route",
+   "stage": "route",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.02,
+   "vao_mau_so": true,
+   "wilson": [
+    0.007804,
+    0.050287
+   ]
+  },
+  "6": {
+   "be": "hosted",
+   "do_sau": 2,
+   "doan": {
+    "AA": 200
+   },
+   "du_doan": "không",
+   "gap": {
+    "max_h": 50.42145,
+    "median_h": 49.514133,
+    "min_h": 48.848774
+   },
+   "ho": "gemini",
+   "k": 55,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 55,
+    "n": 200,
+    "ty_le": 0.275,
+    "wilson": [
+     0.217797,
+     0.340683
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 6,
+   "obs": "art",
+   "phan_quyet": "đúng",
+   "pin": "delegated",
+   "quan_sat": "text thô",
+   "stage": "route",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.275,
+   "vao_mau_so": true,
+   "wilson": [
+    0.217797,
+    0.340683
+   ]
+  },
+  "7": {
+   "be": "local",
+   "cap_1to5_dang_ky": {
+    "doan": {
+     "AB": 108,
+     "AD": 92
+    },
+    "gap": {
+     "max_h": 161.130347,
+     "median_h": 68.253623,
+     "min_h": 67.524925
+    },
+    "k": 27,
+    "n": 200,
+    "phan_quyet": "sai",
+    "thieu_luc": false,
+    "ty_le": 0.135,
+    "vao_mau_so": true,
+    "wilson": [
+     0.094466,
+     0.189291
+    ]
+   },
+   "do_sau": 2,
+   "doan": {
+    "AD": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 184.332809,
+    "median_h": 163.500857,
+    "min_h": 160.965448
+   },
+   "ho": "qwen",
+   "k": 2,
+   "k_lan_dung": [
+    "5",
+    "6"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 0,
+    "ty_le": null,
+    "wilson": [
+     0.0,
+     1.0
+    ]
+   },
+   "luat_cap": "cung_runtime",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 7,
+   "obs": "dec",
+   "phan_quyet": "không tính điểm — suy từ ô 8 (A06.1); quan sát: đúng",
+   "pin": "pinnable",
+   "quan_sat": "route",
+   "stage": "route",
+   "suy_tu": 8,
+   "thieu_luc": false,
+   "tinh_diem": false,
+   "ty_le": 0.01,
+   "vao_mau_so": true,
+   "wilson": [
+    0.002747,
+    0.035722
+   ]
+  },
+  "8": {
+   "be": "local",
+   "cap_1to5_dang_ky": {
+    "doan": {
+     "AB": 108,
+     "AD": 92
+    },
+    "gap": {
+     "max_h": 161.130347,
+     "median_h": 68.253623,
+     "min_h": 67.524925
+    },
+    "k": 106,
+    "n": 200,
+    "phan_quyet": "sai",
+    "thieu_luc": false,
+    "ty_le": 0.53,
+    "vao_mau_so": true,
+    "wilson": [
+     0.460917,
+     0.597952
+    ]
+   },
+   "do_sau": 2,
+   "doan": {
+    "AD": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 184.332809,
+    "median_h": 163.500857,
+    "min_h": 160.965448
+   },
+   "ho": "qwen",
+   "k": 10,
+   "k_lan_dung": [
+    "5",
+    "6"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 0,
+    "ty_le": null,
+    "wilson": [
+     0.0,
+     1.0
+    ]
+   },
+   "luat_cap": "cung_runtime",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 8,
+   "obs": "art",
+   "phan_quyet": "đúng",
+   "pin": "pinnable",
+   "quan_sat": "text thô",
+   "stage": "route",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.05,
+   "vao_mau_so": true,
+   "wilson": [
+    0.027383,
+    0.089578
+   ]
+  },
+  "9": {
+   "be": "bm25",
+   "do_sau": 3,
+   "doan": {
+    "AA": 200
+   },
+   "du_doan": "ổn định",
+   "gap": {
+    "max_h": 49.639849,
+    "median_h": 49.634862,
+    "min_h": 49.628446
+   },
+   "ho": "bm25",
+   "k": 0,
+   "k_lan_dung": [
+    "5"
+   ],
+   "kham_pha_cap_le_72h": {
+    "k": 0,
+    "n": 200,
+    "ty_le": 0.0,
+    "wilson": [
+     0.0,
+     0.018845
+    ]
+   },
+   "luat_cap": "1to5",
+   "n": 200,
+   "n_dang_ky": 200,
+   "nguon": "P2",
+   "o": 9,
+   "obs": "dec",
+   "phan_quyet": "đúng",
+   "pin": "pinnable",
+   "quan_sat": "top-5 id",
+   "stage": "retrieve",
+   "suy_tu": null,
+   "thieu_luc": false,
+   "tinh_diem": true,
+   "ty_le": 0.0,
+   "vao_mau_so": true,
+   "wilson": [
+    0.0,
+    0.018845
+   ]
+  }
+ },
+ "h1": {
+  "chinh": {
+   "depth_ci": [
+    -0.195365,
+    -0.041366
+   ],
+   "ket_luan": "bác",
+   "luat": "§7(b): H1 được ủng hộ khi CI hệ số pinnable > 0 và CI hệ số depth chứa 0. (V2-05 D3: cluster theo câu; tách hoàn toàn ⇒ Firth + bootstrap cluster B = 2 000, 5 seed, báo khoảng rộng nhất.)",
+   "mo_hinh": {
+    "G": 200,
+    "N": 2550,
+    "beta": [
+     5.194716,
+     -0.118365,
+     2.036929,
+     -3.782318
+    ],
+    "boot_rong_nhat_hi": [
+     6.82711,
+     -0.038619,
+     2.450035,
+     -3.094809
+    ],
+    "boot_rong_nhat_lo": [
+     4.490382,
+     -0.198986,
+     1.686495,
+     -5.398712
+    ],
+    "bootstrap": [
+     {
+      "B": 2000,
+      "firth_fallback": 14,
+      "hi": [
+       6.82711,
+       -0.04422,
+       2.434378,
+       -3.111235
+      ],
+      "lo": [
+       4.511031,
+       -0.198175,
+       1.7136,
+       -5.382749
+      ],
+      "seed": 20261112
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 11,
+      "hi": [
+       6.791871,
+       -0.042202,
+       2.450035,
+       -3.094809
+      ],
+      "lo": [
+       4.49273,
+       -0.194408,
+       1.704476,
+       -5.34935
+      ],
+      "seed": 20261113
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 12,
+      "hi": [
+       6.782269,
+       -0.038619,
+       2.419827,
+       -3.096383
+      ],
+      "lo": [
+       4.490382,
+       -0.193982,
+       1.703604,
+       -5.365447
+      ],
+      "seed": 20261114
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 23,
+      "hi": [
+       6.823197,
+       -0.039228,
+       2.436521,
+       -3.103899
+      ],
+      "lo": [
+       4.498062,
+       -0.198986,
+       1.686495,
+       -5.398712
+      ],
+      "seed": 20261115
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 18,
+      "hi": [
+       6.789293,
+       -0.041484,
+       2.421649,
+       -3.136572
+      ],
+      "lo": [
+       4.535132,
+       -0.198233,
+       1.699048,
+       -5.357614
+      ],
+      "seed": 20261116
+     }
+    ],
+    "ci_hi": [
+     6.08965,
+     -0.041366,
+     2.398065,
+     -2.911724
+    ],
+    "ci_lo": [
+     4.299783,
+     -0.195365,
+     1.675792,
+     -4.652911
+    ],
+    "ci_nguon": "Wald, sai số cluster theo câu (CR1)",
+    "hoi_tu": true,
+    "ml_beta": [
+     5.194716,
+     -0.118365,
+     2.036929,
+     -3.782318
+    ],
+    "ml_hoi_tu": true,
+    "se_cluster": [
+     0.456607,
+     0.039286,
+     0.184257,
+     0.444189
+    ],
+    "so_to_hop": 12,
+    "tach_hoan_toan": false,
+    "ten": [
+     "const",
+     "depth",
+     "pinnable",
+     "artefact"
+    ],
+    "uoc_luong": "ML",
+    "wald_hi": [
+     6.08965,
+     -0.041366,
+     2.398065,
+     -2.911724
+    ],
+    "wald_lo": [
+     4.299783,
+     -0.195365,
+     1.675792,
+     -4.652911
+    ]
+   },
+   "nhan": "chính",
+   "pinnable_ci": [
+    1.675792,
+    2.398065
+   ],
+   "ty_le_tho_theo_o": {
+    "1": {
+     "k": 0,
+     "n": 200
+    },
+    "11": {
+     "k": 0,
+     "n": 50
+    },
+    "12": {
+     "k": 42,
+     "n": 50
+    },
+    "13": {
+     "k": 50,
+     "n": 50
+    },
+    "14": {
+     "k": 1,
+     "n": 200
+    },
+    "15": {
+     "k": 13,
+     "n": 200
+    },
+    "17": {
+     "k": 4,
+     "n": 200
+    },
+    "19": {
+     "k": 21,
+     "n": 200
+    },
+    "2": {
+     "k": 12,
+     "n": 200
+    },
+    "21": {
+     "k": 7,
+     "n": 200
+    },
+    "4": {
+     "k": 0,
+     "n": 200
+    },
+    "5": {
+     "k": 4,
+     "n": 200
+    },
+    "6": {
+     "k": 55,
+     "n": 200
+    },
+    "8": {
+     "k": 10,
+     "n": 200
+    },
+    "9": {
+     "k": 0,
+     "n": 200
+    }
+   },
+   "xs_du_doan": [
+    {
+     "artefact": 0,
+     "doi_moi_bac": [
+      -0.000774,
+      -0.00087,
+      -0.000977
+     ],
+     "p_depth_1_4": [
+      0.993796,
+      0.993022,
+      0.992152,
+      0.991175
+     ],
+     "pinnable": 0
+    },
+    {
+     "artefact": 1,
+     "doi_moi_bac": [
+      -0.020661,
+      -0.021993,
+      -0.02329
+     ],
+     "p_depth_1_4": [
+      0.784829,
+      0.764168,
+      0.742175,
+      0.718885
+     ],
+     "pinnable": 0
+    },
+    {
+     "artefact": 0,
+     "doi_moi_bac": [
+      -0.000102,
+      -0.000115,
+      -0.000129
+     ],
+     "p_depth_1_4": [
+      0.999186,
+      0.999084,
+      0.998969,
+      0.99884
+     ],
+     "pinnable": 1
+    },
+    {
+     "artefact": 1,
+     "doi_moi_bac": [
+      -0.00417,
+      -0.004651,
+      -0.005182
+     ],
+     "p_depth_1_4": [
+      0.965476,
+      0.961306,
+      0.956654,
+      0.951472
+     ],
+     "pinnable": 1
+    }
+   ]
+  },
+  "kham_pha": {
+   "depth_phan_loai": {
+    "G": 200,
+    "N": 2550,
+    "beta": [
+     7.780572,
+     1.607054,
+     -4.864136,
+     -2.045231,
+     -4.853467,
+     -0.586815
+    ],
+    "boot_rong_nhat_hi": [
+     9.820308,
+     2.088502,
+     -3.883476,
+     -1.478383,
+     -4.12035,
+     0.092208
+    ],
+    "boot_rong_nhat_lo": [
+     6.671391,
+     1.177691,
+     -6.695417,
+     -2.788209,
+     -5.910658,
+     -1.360868
+    ],
+    "bootstrap": [
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       9.776754,
+       2.07493,
+       -3.897917,
+       -1.478383,
+       -4.139808,
+       0.045211
+      ],
+      "lo": [
+       6.687631,
+       1.19739,
+       -6.554232,
+       -2.788209,
+       -5.889078,
+       -1.314503
+      ],
+      "seed": 20261112
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       9.710103,
+       2.088502,
+       -3.884669,
+       -1.490119,
+       -4.156127,
+       0.059198
+      ],
+      "lo": [
+       6.697085,
+       1.195603,
+       -6.66439,
+       -2.777551,
+       -5.884755,
+       -1.322332
+      ],
+      "seed": 20261113
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       9.663944,
+       2.046826,
+       -3.883476,
+       -1.489574,
+       -4.143813,
+       0.092208
+      ],
+      "lo": [
+       6.671391,
+       1.197398,
+       -6.540554,
+       -2.743712,
+       -5.818797,
+       -1.338452
+      ],
+      "seed": 20261114
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       9.820308,
+       2.063174,
+       -3.885122,
+       -1.495653,
+       -4.12035,
+       0.076787
+      ],
+      "lo": [
+       6.694934,
+       1.177691,
+       -6.695417,
+       -2.769769,
+       -5.910658,
+       -1.360868
+      ],
+      "seed": 20261115
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       9.758859,
+       2.052146,
+       -3.92321,
+       -1.49099,
+       -4.166111,
+       0.02038
+      ],
+      "lo": [
+       6.736652,
+       1.201447,
+       -6.636024,
+       -2.753209,
+       -5.866828,
+       -1.347731
+      ],
+      "seed": 20261116
+     }
+    ],
+    "ci_hi": [
+     9.820308,
+     2.088502,
+     -3.883476,
+     -1.478383,
+     -4.12035,
+     0.092208
+    ],
+    "ci_lo": [
+     6.671391,
+     1.177691,
+     -6.695417,
+     -2.788209,
+     -5.910658,
+     -1.360868
+    ],
+    "ci_nguon": "bootstrap cluster Firth, khoảng rộng nhất qua seed",
+    "hoi_tu": true,
+    "ml_beta": [
+     7.949664,
+     1.616005,
+     -4.993002,
+     -2.081611,
+     -4.926936,
+     -0.60747
+    ],
+    "ml_hoi_tu": true,
+    "so_to_hop": 12,
+    "tach_hoan_toan": false,
+    "ten": [
+     "const",
+     "pinnable",
+     "artefact",
+     "depth2",
+     "depth3",
+     "depth4"
+    ],
+    "uoc_luong": "Firth"
+   },
+   "depth_x_pinnable": {
+    "G": 200,
+    "N": 2550,
+    "beta": [
+     5.23259,
+     -0.171788,
+     1.42459,
+     -3.688696,
+     0.226782
+    ],
+    "boot_rong_nhat_hi": [
+     6.585493,
+     -0.075056,
+     2.118214,
+     -3.046074,
+     0.446761
+    ],
+    "boot_rong_nhat_lo": [
+     4.523695,
+     -0.271433,
+     0.82969,
+     -4.997746,
+     0.009974
+    ],
+    "bootstrap": [
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       6.55617,
+       -0.081005,
+       2.090481,
+       -3.064955,
+       0.446761
+      ],
+      "lo": [
+       4.561579,
+       -0.262177,
+       0.839403,
+       -4.979444,
+       0.018696
+      ],
+      "seed": 20261112
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       6.529039,
+       -0.07876,
+       2.118214,
+       -3.048221,
+       0.44652
+      ],
+      "lo": [
+       4.523695,
+       -0.266257,
+       0.855769,
+       -4.94605,
+       0.009974
+      ],
+      "seed": 20261113
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       6.533912,
+       -0.078434,
+       2.108621,
+       -3.046074,
+       0.444376
+      ],
+      "lo": [
+       4.547328,
+       -0.262773,
+       0.85466,
+       -4.962868,
+       0.011407
+      ],
+      "seed": 20261114
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       6.585493,
+       -0.075056,
+       2.084858,
+       -3.058027,
+       0.444942
+      ],
+      "lo": [
+       4.551727,
+       -0.271433,
+       0.82969,
+       -4.997746,
+       0.013246
+      ],
+      "seed": 20261115
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       6.522722,
+       -0.077471,
+       2.075656,
+       -3.081762,
+       0.437391
+      ],
+      "lo": [
+       4.58783,
+       -0.260285,
+       0.857081,
+       -4.951922,
+       0.016175
+      ],
+      "seed": 20261116
+     }
+    ],
+    "ci_hi": [
+     6.585493,
+     -0.075056,
+     2.118214,
+     -3.046074,
+     0.446761
+    ],
+    "ci_lo": [
+     4.523695,
+     -0.271433,
+     0.82969,
+     -4.997746,
+     0.009974
+    ],
+    "ci_nguon": "bootstrap cluster Firth, khoảng rộng nhất qua seed",
+    "hoi_tu": true,
+    "ml_beta": [
+     5.332328,
+     -0.17236,
+     1.436606,
+     -3.783198,
+     0.229439
+    ],
+    "ml_hoi_tu": true,
+    "so_to_hop": 12,
+    "tach_hoan_toan": false,
+    "ten": [
+     "const",
+     "depth",
+     "pinnable",
+     "artefact",
+     "depth:pinnable"
+    ],
+    "uoc_luong": "Firth"
+   },
+   "nhan": "khám phá",
+   "them_md3_v11_pipeline_fe": {
+    "G": 375,
+    "N": 4974,
+    "beta": [
+     6.199198,
+     -0.460551,
+     2.474229,
+     -3.965407,
+     -0.377131
+    ],
+    "boot_rong_nhat_hi": [
+     7.424608,
+     -0.186972,
+     3.25054,
+     -3.191266,
+     0.897793
+    ],
+    "boot_rong_nhat_lo": [
+     5.038176,
+     -0.687852,
+     1.808716,
+     -5.13368,
+     -1.408734
+    ],
+    "bootstrap": [
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       7.387269,
+       -0.190216,
+       3.22791,
+       -3.205944,
+       0.884751
+      ],
+      "lo": [
+       5.071992,
+       -0.687852,
+       1.842637,
+       -5.083903,
+       -1.344123
+      ],
+      "seed": 20261112
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       7.420865,
+       -0.197648,
+       3.213627,
+       -3.191266,
+       0.855029
+      ],
+      "lo": [
+       5.065704,
+       -0.669565,
+       1.81829,
+       -5.071438,
+       -1.388718
+      ],
+      "seed": 20261113
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       7.400707,
+       -0.191674,
+       3.25054,
+       -3.257701,
+       0.897793
+      ],
+      "lo": [
+       5.075191,
+       -0.675038,
+       1.808716,
+       -5.058747,
+       -1.408734
+      ],
+      "seed": 20261114
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       7.322027,
+       -0.186972,
+       3.18326,
+       -3.218834,
+       0.881925
+      ],
+      "lo": [
+       5.038176,
+       -0.676502,
+       1.850175,
+       -5.032142,
+       -1.327657
+      ],
+      "seed": 20261115
+     },
+     {
+      "B": 2000,
+      "firth_fallback": 0,
+      "hi": [
+       7.424608,
+       -0.196079,
+       3.2413,
+       -3.234001,
+       0.835777
+      ],
+      "lo": [
+       5.065378,
+       -0.670564,
+       1.860777,
+       -5.13368,
+       -1.400673
+      ],
+      "seed": 20261116
+     }
+    ],
+    "ci_hi": [
+     7.424608,
+     -0.186972,
+     3.25054,
+     -3.191266,
+     0.897793
+    ],
+    "ci_lo": [
+     5.038176,
+     -0.687852,
+     1.808716,
+     -5.13368,
+     -1.408734
+    ],
+    "ci_nguon": "bootstrap cluster Firth, khoảng rộng nhất qua seed",
+    "ghi_chu": "pipeline_microduck = 1 cho MD3R và v1.1; v1.1 dựng lại từ k/n từng đơn vị (§11c), mỗi đơn vị một cluster",
+    "hoi_tu": true,
+    "ml_beta": [
+     6.265691,
+     -0.461635,
+     2.484426,
+     -4.026655,
+     -0.378098
+    ],
+    "ml_hoi_tu": true,
+    "so_to_hop": 24,
+    "tach_hoan_toan": false,
+    "ten": [
+     "const",
+     "depth",
+     "pinnable",
+     "artefact",
+     "pipeline_microduck"
+    ],
+    "uoc_luong": "Firth"
+   }
+  }
+ },
+ "h2": {
+  "dat": {
+   "i": true,
+   "ii": false,
+   "iii": true
+  },
+  "ghi_chu_dau": "§8 viết 'margin = R^dec − R^art' nhưng (i) đòi cận dưới > 0 và (iii) so với M6 0,750 = art − dec; theo cấu trúc R^dec ≤ R^art (A06.1) nên đọc nguyên chữ thì (i) luôn bác. Phân tích dùng R^art − R^dec (như §5, V2-06, M6); in kèm dấu nguyên chữ.",
+  "i": {
+   "P2 classify hosted": {
+    "dat": true,
+    "lo": 0.028414
+   },
+   "P2 generate hosted": {
+    "dat": true,
+    "lo": 0.024965
+   },
+   "P2 live A (tên miền)": {
+    "dat": true,
+    "lo": 0.695948
+   },
+   "P2 live B (văn bản)": {
+    "dat": true,
+    "lo": 0.899099
+   },
+   "P2 route hosted": {
+    "dat": true,
+    "lo": 0.190274
+   }
+  },
+  "ii": {
+   "MD3R reply llama": {
+    "dat": true,
+    "hi": 0.071348,
+    "lo": -0.071348,
+    "margin": 0.0
+   },
+   "MD3R routing llama": {
+    "dat": true,
+    "hi": 0.036993,
+    "lo": -0.036993,
+    "margin": 0.0
+   },
+   "P2 classify qwen": {
+    "dat": true,
+    "hi": 0.018845,
+    "lo": -0.018845,
+    "margin": 0.0
+   },
+   "P2 generate qwen": {
+    "dat": true,
+    "hi": 0.045566,
+    "lo": -0.010834,
+    "margin": 0.015
+   },
+   "P2 route qwen": {
+    "dat": true,
+    "hi": 0.080237,
+    "lo": 0.005749,
+    "margin": 0.04
+   },
+   "P3 generate llama": {
+    "dat": true,
+    "hi": 0.070471,
+    "lo": 0.008978,
+    "margin": 0.035
+   },
+   "P3 route llama": {
+    "dat": false,
+    "hi": 0.15518,
+    "lo": 0.064991,
+    "margin": 0.105
+   }
+  },
+  "iii": {
+   "dat": true,
+   "p2o_hi": 0.669508,
+   "p2o_lo": 0.333537,
+   "p2o_route_hosted": 0.525,
+   "phu_mprotocol": {
+    "v11_t0": {
+     "cung_bac_cung_dau": true,
+     "p2_1to5": 0.255,
+     "ti_so": 1.961538,
+     "v11": {
+      "hi": 0.209804,
+      "k_art": 13,
+      "k_dec": 0,
+      "lo": 0.065834,
+      "margin": 0.13,
+      "n_art": 100,
+      "n_dec": 100,
+      "r_art": 0.13,
+      "r_dec": 0.0
+     }
+    },
+    "v11_t08": {
+     "cung_bac_cung_dau": true,
+     "p2_1to5": 0.255,
+     "ti_so": 0.322785,
+     "v11": {
+      "hi": 0.85714,
+      "k_art": 80,
+      "k_dec": 1,
+      "lo": 0.690654,
+      "margin": 0.79,
+      "n_art": 100,
+      "n_dec": 100,
+      "r_art": 0.8,
+      "r_dec": 0.01
+     }
+    }
+   },
+   "ti_so": 0.7,
+   "v11_m6": 0.75
+  },
+  "ket_luan": "bác ở phần ii",
+  "luat": "§8: H2 ủng hộ khi: (i) ở mọi stage delegated của P2 (classify, route, generate; live A/B so với SOURCES) cận dưới Newcombe > 0; (ii) ở stage pinnable (qwen P2, llama P3, llama MD3) |margin| ≤ 0,05 hoặc khoảng chứa 0; (iii) dấu và bậc độ lớn (cùng thập phân bậc, tỉ ≤ 10) của margin delegated trùng giữa Microduck v1.1 (M6 routing 0,750) và P2 route. Bất kỳ phần nào ngược ⇒ in như kết quả. (V2-05 D5: chính = margin oracle P2O route hosted; cùng bậc = tỉ số trong [0,1; 10] và cùng dấu, trên ước lượng điểm.)",
+  "nhan": "chính"
+ },
+ "h3": {
+  "dat_oracle": false,
+  "du_doan_o": {
+   "can": 9,
+   "dat": true,
+   "dung": 11,
+   "dung_tren_13": "11/13",
+   "khong_phan_dinh": 0,
+   "phan_dinh": 13,
+   "sai": 2,
+   "thieu_luc_khong_tinh": 0
+  },
+  "ket_luan": "bác ở phần oracle",
+  "luat": "§9: H3 ủng hộ khi ở ô oracle delegated (classify, route, generate hosted) cận dưới Newcombe của margin > 0, và ở ô pinnable (qwen, BM25) khoảng chứa 0. Cùng với phần dự đoán ô (§6): ≥ 2/3 đơn vị pipeline 2 đã phân định là đúng, tức ≥ ⌈2/3 × số đã phân định⌉; báo cả đúng/13.",
+  "nhan": "chính",
+  "oracle": {
+   "classify|hosted": {
+    "dat": false,
+    "hi": 0.165039,
+    "lo": -0.044797,
+    "margin": 0.05
+   },
+   "classify|local": {
+    "dat": true,
+    "hi": 0.087622,
+    "lo": -0.087622,
+    "margin": 0.0
+   },
+   "generate|hosted": {
+    "dat": true,
+    "hi": 0.295957,
+    "lo": 0.0142,
+    "margin": 0.15
+   },
+   "generate|local": {
+    "dat": false,
+    "hi": 0.437554,
+    "lo": 0.096564,
+    "margin": 0.275
+   },
+   "retrieve|bm25": {
+    "dat": true,
+    "hi": 0.087622,
+    "lo": -0.087622,
+    "margin": 0.0
+   },
+   "route|hosted": {
+    "dat": true,
+    "hi": 0.669508,
+    "lo": 0.333537,
+    "margin": 0.525
+   },
+   "route|local": {
+    "dat": true,
+    "hi": 0.087622,
+    "lo": -0.087622,
+    "margin": 0.0
+   }
+  }
+ },
+ "hau_kiem": {
+  "mprotocol_cap_lien_ke_trong_D": [
+   {
+    "art_doi": 0,
+    "art_wilson": [
+     0.0,
+     0.004293
+    ],
+    "dec_doi": 0,
+    "dec_wilson": [
+     0.0,
+     0.004293
+    ],
+    "n_cap": 891,
+    "nguon": "P2",
+    "stage": "classify"
+   },
+   {
+    "art_doi": 10,
+    "art_wilson": [
+     0.006101,
+     0.020513
+    ],
+    "dec_doi": 2,
+    "dec_wilson": [
+     0.000615,
+     0.008138
+    ],
+    "n_cap": 892,
+    "nguon": "P2",
+    "stage": "route"
+   },
+   {
+    "art_doi": 37,
+    "art_wilson": [
+     0.030242,
+     0.05665
+    ],
+    "dec_doi": 7,
+    "dec_wilson": [
+     0.003806,
+     0.016109
+    ],
+    "n_cap": 892,
+    "nguon": "P2",
+    "stage": "generate"
+   },
+   {
+    "art_doi": 76,
+    "art_wilson": [
+     0.06869,
+     0.105465
+    ],
+    "dec_doi": 2,
+    "dec_wilson": [
+     0.000616,
+     0.008147
+    ],
+    "n_cap": 891,
+    "nguon": "P3",
+    "stage": "route"
+   },
+   {
+    "art_doi": 43,
+    "art_wilson": [
+     0.035984,
+     0.064303
+    ],
+    "dec_doi": 5,
+    "dec_wilson": [
+     0.002397,
+     0.013054
+    ],
+    "n_cap": 892,
+    "nguon": "P3",
+    "stage": "generate"
+   }
+  ],
+  "nhan": "HẬU KIỂM — viết sau khi xem kết quả (12-11-2026), không dùng cho kết luận H",
+  "oracle_local_bien_the": {
+   "classify|local": {
+    "cap_lan_lien_ke_do_trung_tap_test": 0,
+    "lan_co_test_do": [],
+    "n_tests": 40,
+    "so_bien_the_toi_da": 1,
+    "so_lan_co_test_do": 0,
+    "so_test_do_theo_lan": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "test_co_hon_1_bien_the": 0
+   },
+   "generate|local": {
+    "cap_lan_lien_ke_do_trung_tap_test": 2,
+    "lan_co_test_do": [
+     "P2O|lan19",
+     "P2O|lan27",
+     "P2O|lan28",
+     "P2O|lan31",
+     "P2O|lan32"
+    ],
+    "n_tests": 40,
+    "so_bien_the_toi_da": 2,
+    "so_lan_co_test_do": 5,
+    "so_test_do_theo_lan": [
+     0,
+     0,
+     5,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     2,
+     2,
+     0,
+     0,
+     12,
+     12,
+     0,
+     0,
+     0,
+     0
+    ],
+    "test_co_hon_1_bien_the": 14
+   },
+   "route|local": {
+    "cap_lan_lien_ke_do_trung_tap_test": 0,
+    "lan_co_test_do": [],
+    "n_tests": 40,
+    "so_bien_the_toi_da": 1,
+    "so_lan_co_test_do": 0,
+    "so_test_do_theo_lan": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "test_co_hon_1_bien_the": 0
+   }
+  }
+ },
+ "inputs": {
+  "MD3R_20261102_v1.jsonl": {
+   "dong": 300,
+   "ok": 300,
+   "sha256": "a2b4dea8cfb906da876cb6baff686bdc8b6724d14882110534fa76d052c91449",
+   "status": {
+    "ok": 300
+   }
+  },
+  "MD3_20261102_v1.jsonl": {
+   "dong": 670,
+   "ok": 670,
+   "sha256": "d749b4a12b8e7bfca8bd203daace6b193be4a4ec5b4d71d23f0891949fdf7cb4",
+   "status": {
+    "ok": 670
+   }
+  },
+  "P2O_20261102_v1.jsonl": {
+   "dong": 37,
+   "ok": 22,
+   "sha256": "36d0ec8d8d126bfc8dc62b3bf311d27b76a6f3f823537617b8e0345ed8690e62",
+   "status": {
+    "missed": 15,
+    "ok": 22
+   }
+  },
+  "P2_20261102_v1.jsonl": {
+   "dong": 14700,
+   "ok": 14700,
+   "sha256": "c81e5ecd9cd1be38e6dfca7b245f38fc82f1e070ef8679c78db955fb50ec8a4b",
+   "status": {
+    "ok": 14700
+   }
+  },
+  "P3H_20261102_v1.jsonl": {
+   "dong": 2000,
+   "ok": 2000,
+   "sha256": "8c96765a4e6a1ecb05084bb2a628990af4953c9a0a41b53b857ecf560597099f",
+   "status": {
+    "ok": 2000
+   }
+  },
+  "P3_20261102_v1.jsonl": {
+   "dong": 4080,
+   "ok": 4080,
+   "sha256": "9e756657202e3bfe08edfe5e8414459486f3a6191851f9b044f4bc6782d22920",
+   "status": {
+    "ok": 4080
+   }
+  }
+ },
+ "luat_s6": "Luật (A04.4, nguyên văn): dự đoán ổn định đúng ⇔ k/n ≤ 5 % và cận trên Wilson ≤ 10 %; sai ⇔ k/n ≥ 20 %. Dự đoán không ổn định đúng ⇔ k/n ≥ 20 %; sai ⇔ k/n ≤ 5 %. Vùng giữa: không phân định, nhưng tính sai nếu ước lượng điểm ở nửa ngược chiều (ranh 12,5 %). Kiểm lực: … đơn vị n < 35 mang nhãn thiếu lực cho dự đoán ổn định (vẫn có thể sai).",
+ "margin": {
+  "MD3R reply llama": {
+   "ghep_art_doi_dec_khong": 0,
+   "ghep_ca_hai_doi": 0,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 50,
+   "hi": 0.071348,
+   "ho": "llama",
+   "k_art": 0,
+   "k_dec": 0,
+   "lo": -0.071348,
+   "margin": 0.0,
+   "margin_theo_chu_s8_dec_tru_art": 0.0,
+   "n_art": 50,
+   "n_dec": 50,
+   "nguon": "MD3R",
+   "o_art": 25,
+   "o_dec": 24,
+   "pin": "pinnable",
+   "r_art": 0.0,
+   "r_dec": 0.0,
+   "stage": "M4"
+  },
+  "MD3R routing llama": {
+   "ghep_art_doi_dec_khong": 0,
+   "ghep_ca_hai_doi": 0,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 100,
+   "hi": 0.036993,
+   "ho": "llama",
+   "k_art": 0,
+   "k_dec": 0,
+   "lo": -0.036993,
+   "margin": 0.0,
+   "margin_theo_chu_s8_dec_tru_art": 0.0,
+   "n_art": 100,
+   "n_dec": 100,
+   "nguon": "MD3R",
+   "o_art": 23,
+   "o_dec": 22,
+   "pin": "pinnable",
+   "r_art": 0.0,
+   "r_dec": 0.0,
+   "stage": "M2"
+  },
+  "P2 classify hosted": {
+   "ghep_art_doi_dec_khong": 12,
+   "ghep_ca_hai_doi": 0,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 200,
+   "hi": 0.101932,
+   "ho": "gemini",
+   "k_art": 12,
+   "k_dec": 0,
+   "lo": 0.028414,
+   "margin": 0.06,
+   "margin_theo_chu_s8_dec_tru_art": -0.06,
+   "n_art": 200,
+   "n_dec": 200,
+   "nguon": "P2",
+   "o_art": 2,
+   "o_dec": 1,
+   "pin": "delegated",
+   "r_art": 0.06,
+   "r_dec": 0.0,
+   "stage": "classify"
+  },
+  "P2 classify qwen": {
+   "cap_1to5_dang_ky": {
+    "hi": 0.095712,
+    "k_art": 14,
+    "k_dec": 4,
+    "lo": 0.008856,
+    "margin": 0.05,
+    "n_art": 200,
+    "n_dec": 200,
+    "r_art": 0.07,
+    "r_dec": 0.02
+   },
+   "ghep_art_doi_dec_khong": 0,
+   "ghep_ca_hai_doi": 0,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 200,
+   "hi": 0.018845,
+   "ho": "qwen",
+   "k_art": 0,
+   "k_dec": 0,
+   "lo": -0.018845,
+   "margin": 0.0,
+   "margin_theo_chu_s8_dec_tru_art": 0.0,
+   "n_art": 200,
+   "n_dec": 200,
+   "nguon": "P2",
+   "o_art": 4,
+   "o_dec": 3,
+   "pin": "pinnable",
+   "r_art": 0.0,
+   "r_dec": 0.0,
+   "stage": "classify"
+  },
+  "P2 generate hosted": {
+   "ghep_art_doi_dec_khong": 12,
+   "ghep_ca_hai_doi": 1,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 200,
+   "hi": 0.103216,
+   "ho": "gemini",
+   "k_art": 13,
+   "k_dec": 1,
+   "lo": 0.024965,
+   "margin": 0.06,
+   "margin_theo_chu_s8_dec_tru_art": -0.06,
+   "n_art": 200,
+   "n_dec": 200,
+   "nguon": "P2",
+   "o_art": 15,
+   "o_dec": 14,
+   "pin": "delegated",
+   "r_art": 0.065,
+   "r_dec": 0.005,
+   "stage": "generate"
+  },
+  "P2 generate qwen": {
+   "cap_1to5_dang_ky": {
+    "hi": 0.321938,
+    "k_art": 70,
+    "k_dec": 21,
+    "lo": 0.164683,
+    "margin": 0.245,
+    "n_art": 200,
+    "n_dec": 200,
+    "r_art": 0.35,
+    "r_dec": 0.105
+   },
+   "ghep_art_doi_dec_khong": 3,
+   "ghep_ca_hai_doi": 1,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 200,
+   "hi": 0.045566,
+   "ho": "qwen",
+   "k_art": 4,
+   "k_dec": 1,
+   "lo": -0.010834,
+   "margin": 0.015,
+   "margin_theo_chu_s8_dec_tru_art": -0.015,
+   "n_art": 200,
+   "n_dec": 200,
+   "nguon": "P2",
+   "o_art": 17,
+   "o_dec": 16,
+   "pin": "pinnable",
+   "r_art": 0.02,
+   "r_dec": 0.005,
+   "stage": "generate"
+  },
+  "P2 live A (tên miền)": {
+   "ghep_art_doi_dec_khong": 42,
+   "ghep_ca_hai_doi": 0,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 50,
+   "hi": 0.916626,
+   "ho": "gemini",
+   "k_art": 42,
+   "k_dec": 0,
+   "lo": 0.695948,
+   "margin": 0.84,
+   "margin_theo_chu_s8_dec_tru_art": -0.84,
+   "n_art": 50,
+   "n_dec": 50,
+   "nguon": "P2",
+   "o_art": 12,
+   "o_dec": 11,
+   "pin": "delegated",
+   "r_art": 0.84,
+   "r_dec": 0.0,
+   "stage": "live"
+  },
+  "P2 live B (văn bản)": {
+   "ghep_art_doi_dec_khong": 50,
+   "ghep_ca_hai_doi": 0,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 50,
+   "hi": 1.0,
+   "ho": "gemini",
+   "k_art": 50,
+   "k_dec": 0,
+   "lo": 0.899099,
+   "margin": 1.0,
+   "margin_theo_chu_s8_dec_tru_art": -1.0,
+   "n_art": 50,
+   "n_dec": 50,
+   "nguon": "P2",
+   "o_art": 13,
+   "o_dec": 11,
+   "pin": "delegated",
+   "r_art": 1.0,
+   "r_dec": 0.0,
+   "stage": "live"
+  },
+  "P2 retrieve BM25": {
+   "ghep_art_doi_dec_khong": 0,
+   "ghep_ca_hai_doi": 0,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 200,
+   "hi": 0.018845,
+   "ho": "bm25",
+   "k_art": 0,
+   "k_dec": 0,
+   "lo": -0.018845,
+   "margin": 0.0,
+   "margin_theo_chu_s8_dec_tru_art": 0.0,
+   "n_art": 200,
+   "n_dec": 200,
+   "nguon": "P2",
+   "o_art": 10,
+   "o_dec": 9,
+   "pin": "pinnable",
+   "r_art": 0.0,
+   "r_dec": 0.0,
+   "stage": "retrieve"
+  },
+  "P2 route hosted": {
+   "ghep_art_doi_dec_khong": 51,
+   "ghep_ca_hai_doi": 4,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 200,
+   "hi": 0.321806,
+   "ho": "gemini",
+   "k_art": 55,
+   "k_dec": 4,
+   "lo": 0.190274,
+   "margin": 0.255,
+   "margin_theo_chu_s8_dec_tru_art": -0.255,
+   "n_art": 200,
+   "n_dec": 200,
+   "nguon": "P2",
+   "o_art": 6,
+   "o_dec": 5,
+   "pin": "delegated",
+   "r_art": 0.275,
+   "r_dec": 0.02,
+   "stage": "route"
+  },
+  "P2 route qwen": {
+   "cap_1to5_dang_ky": {
+    "hi": 0.474124,
+    "k_art": 106,
+    "k_dec": 27,
+    "lo": 0.307136,
+    "margin": 0.395,
+    "n_art": 200,
+    "n_dec": 200,
+    "r_art": 0.53,
+    "r_dec": 0.135
+   },
+   "ghep_art_doi_dec_khong": 8,
+   "ghep_ca_hai_doi": 2,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 200,
+   "hi": 0.080237,
+   "ho": "qwen",
+   "k_art": 10,
+   "k_dec": 2,
+   "lo": 0.005749,
+   "margin": 0.04,
+   "margin_theo_chu_s8_dec_tru_art": -0.04,
+   "n_art": 200,
+   "n_dec": 200,
+   "nguon": "P2",
+   "o_art": 8,
+   "o_dec": 7,
+   "pin": "pinnable",
+   "r_art": 0.05,
+   "r_dec": 0.01,
+   "stage": "route"
+  },
+  "P3 generate llama": {
+   "cap_1to5_dang_ky": {
+    "hi": 0.4957,
+    "k_art": 90,
+    "k_dec": 5,
+    "lo": 0.350349,
+    "margin": 0.425,
+    "n_art": 200,
+    "n_dec": 200,
+    "r_art": 0.45,
+    "r_dec": 0.025
+   },
+   "ghep_art_doi_dec_khong": 7,
+   "ghep_ca_hai_doi": 0,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 200,
+   "hi": 0.070471,
+   "ho": "llama",
+   "k_art": 7,
+   "k_dec": 0,
+   "lo": 0.008978,
+   "margin": 0.035,
+   "margin_theo_chu_s8_dec_tru_art": -0.035,
+   "n_art": 200,
+   "n_dec": 200,
+   "nguon": "P3",
+   "o_art": 21,
+   "o_dec": 20,
+   "pin": "pinnable",
+   "r_art": 0.035,
+   "r_dec": 0.0,
+   "stage": "generate"
+  },
+  "P3 route llama": {
+   "cap_1to5_dang_ky": {
+    "hi": 0.758957,
+    "k_art": 145,
+    "k_dec": 5,
+    "lo": 0.626858,
+    "margin": 0.7,
+    "n_art": 200,
+    "n_dec": 200,
+    "r_art": 0.725,
+    "r_dec": 0.025
+   },
+   "ghep_art_doi_dec_khong": 21,
+   "ghep_ca_hai_doi": 0,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 200,
+   "hi": 0.15518,
+   "ho": "llama",
+   "k_art": 21,
+   "k_dec": 0,
+   "lo": 0.064991,
+   "margin": 0.105,
+   "margin_theo_chu_s8_dec_tru_art": -0.105,
+   "n_art": 200,
+   "n_dec": 200,
+   "nguon": "P3",
+   "o_art": 19,
+   "o_dec": 18,
+   "pin": "pinnable",
+   "r_art": 0.105,
+   "r_dec": 0.0,
+   "stage": "route"
+  },
+  "P3H generate llama": {
+   "ghep_art_doi_dec_khong": 41,
+   "ghep_ca_hai_doi": 10,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 200,
+   "hi": 0.273473,
+   "ho": "llama",
+   "k_art": 51,
+   "k_dec": 10,
+   "lo": 0.136919,
+   "margin": 0.205,
+   "margin_theo_chu_s8_dec_tru_art": -0.205,
+   "n_art": 200,
+   "n_dec": 200,
+   "nguon": "P3H",
+   "o_art": 29,
+   "o_dec": 28,
+   "pin": "delegated",
+   "r_art": 0.255,
+   "r_dec": 0.05,
+   "stage": "generate"
+  },
+  "P3H route llama": {
+   "ghep_art_doi_dec_khong": 19,
+   "ghep_ca_hai_doi": 0,
+   "ghep_dec_doi_art_khong": 0,
+   "ghep_n": 200,
+   "hi": 0.143602,
+   "ho": "llama",
+   "k_art": 19,
+   "k_dec": 0,
+   "lo": 0.056705,
+   "margin": 0.095,
+   "margin_theo_chu_s8_dec_tru_art": -0.095,
+   "n_art": 200,
+   "n_dec": 200,
+   "nguon": "P3H",
+   "o_art": 27,
+   "o_dec": 26,
+   "pin": "delegated",
+   "r_art": 0.095,
+   "r_dec": 0.0,
+   "stage": "route"
+  }
+ },
+ "oracle": {
+  "bang_lan": [
+   {
+    "cach_golden_h": 0.0,
+    "doan": "A",
+    "due": "2026-11-03T12:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 1,
+    "late_by_s": 74.9,
+    "status": "ok",
+    "task_id": "P2O|lan01",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-03T12:01:14.882+07:00"
+   },
+   {
+    "due": "2026-11-03T18:00+07:00",
+    "hop_le": false,
+    "lan": 2,
+    "late_by_s": 7615.4,
+    "status": "missed",
+    "task_id": "P2O|lan02",
+    "ts": "2026-11-03T20:06:55.350+07:00"
+   },
+   {
+    "art_do_280": 72,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 2,
+    "art_do|generate|local": 25,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 9,
+    "art_do|route|local": 35,
+    "cach_golden_h": 12.214947,
+    "dec_do_280": 16,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 0,
+    "dec_do|generate|local": 7,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 0,
+    "dec_do|route|local": 9,
+    "doan": "B",
+    "due": "2026-11-04T00:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 3,
+    "late_by_s": 848.7,
+    "status": "ok",
+    "task_id": "P2O|lan03",
+    "trong_20_hosted": true,
+    "trong_20_local": false,
+    "ts": "2026-11-04T00:14:08.691+07:00"
+   },
+   {
+    "art_do_280": 77,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 4,
+    "art_do|generate|local": 25,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 12,
+    "art_do|route|local": 35,
+    "cach_golden_h": 17.980932,
+    "dec_do_280": 17,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 0,
+    "dec_do|generate|local": 7,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 1,
+    "dec_do|route|local": 9,
+    "doan": "B",
+    "due": "2026-11-04T06:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 4,
+    "late_by_s": 6.2,
+    "status": "ok",
+    "task_id": "P2O|lan04",
+    "trong_20_hosted": true,
+    "trong_20_local": false,
+    "ts": "2026-11-04T06:00:06.236+07:00"
+   },
+   {
+    "due": "2026-11-04T12:00+07:00",
+    "hop_le": false,
+    "lan": 5,
+    "late_by_s": 255438.3,
+    "status": "missed",
+    "task_id": "P2O|lan05",
+    "ts": "2026-11-07T10:57:18.251+07:00"
+   },
+   {
+    "due": "2026-11-04T18:00+07:00",
+    "hop_le": false,
+    "lan": 6,
+    "late_by_s": 233838.3,
+    "status": "missed",
+    "task_id": "P2O|lan06",
+    "ts": "2026-11-07T10:57:18.251+07:00"
+   },
+   {
+    "due": "2026-11-05T00:00+07:00",
+    "hop_le": false,
+    "lan": 7,
+    "late_by_s": 212238.3,
+    "status": "missed",
+    "task_id": "P2O|lan07",
+    "ts": "2026-11-07T10:57:18.251+07:00"
+   },
+   {
+    "due": "2026-11-05T06:00+07:00",
+    "hop_le": false,
+    "lan": 8,
+    "late_by_s": 190638.3,
+    "status": "missed",
+    "task_id": "P2O|lan08",
+    "ts": "2026-11-07T10:57:18.251+07:00"
+   },
+   {
+    "due": "2026-11-05T12:00+07:00",
+    "hop_le": false,
+    "lan": 9,
+    "late_by_s": 169038.3,
+    "status": "missed",
+    "task_id": "P2O|lan09",
+    "ts": "2026-11-07T10:57:18.251+07:00"
+   },
+   {
+    "due": "2026-11-05T18:00+07:00",
+    "hop_le": false,
+    "lan": 10,
+    "late_by_s": 147438.3,
+    "status": "missed",
+    "task_id": "P2O|lan10",
+    "ts": "2026-11-07T10:57:18.251+07:00"
+   },
+   {
+    "due": "2026-11-06T00:00+07:00",
+    "hop_le": false,
+    "lan": 11,
+    "late_by_s": 125838.3,
+    "status": "missed",
+    "task_id": "P2O|lan11",
+    "ts": "2026-11-07T10:57:18.251+07:00"
+   },
+   {
+    "due": "2026-11-06T06:00+07:00",
+    "hop_le": false,
+    "lan": 12,
+    "late_by_s": 104238.3,
+    "status": "missed",
+    "task_id": "P2O|lan12",
+    "ts": "2026-11-07T10:57:18.251+07:00"
+   },
+   {
+    "due": "2026-11-06T12:00+07:00",
+    "hop_le": false,
+    "lan": 13,
+    "late_by_s": 82638.3,
+    "status": "missed",
+    "task_id": "P2O|lan13",
+    "ts": "2026-11-07T10:57:18.251+07:00"
+   },
+   {
+    "due": "2026-11-06T18:00+07:00",
+    "hop_le": false,
+    "lan": 14,
+    "late_by_s": 61038.3,
+    "status": "missed",
+    "task_id": "P2O|lan14",
+    "ts": "2026-11-07T10:57:18.251+07:00"
+   },
+   {
+    "due": "2026-11-07T00:00+07:00",
+    "hop_le": false,
+    "lan": 15,
+    "late_by_s": 39438.3,
+    "status": "missed",
+    "task_id": "P2O|lan15",
+    "ts": "2026-11-07T10:57:18.251+07:00"
+   },
+   {
+    "due": "2026-11-07T06:00+07:00",
+    "hop_le": false,
+    "lan": 16,
+    "late_by_s": 17838.3,
+    "status": "missed",
+    "task_id": "P2O|lan16",
+    "ts": "2026-11-07T10:57:18.251+07:00"
+   },
+   {
+    "art_do_280": 17,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 5,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 11,
+    "art_do|route|local": 0,
+    "cach_golden_h": 95.989865,
+    "dec_do_280": 3,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 1,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 2,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-07T12:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 17,
+    "late_by_s": 38.4,
+    "status": "ok",
+    "task_id": "P2O|lan17",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-07T12:00:38.397+07:00"
+   },
+   {
+    "art_do_280": 16,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 4,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 11,
+    "art_do|route|local": 0,
+    "cach_golden_h": 102.406691,
+    "dec_do_280": 0,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 0,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 0,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-07T18:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 18,
+    "late_by_s": 1539.0,
+    "status": "ok",
+    "task_id": "P2O|lan18",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-07T18:25:38.969+07:00"
+   },
+   {
+    "art_do_280": 21,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 2,
+    "art_do|generate|local": 5,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 13,
+    "art_do|route|local": 0,
+    "cach_golden_h": 108.153494,
+    "dec_do_280": 3,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 0,
+    "dec_do|generate|local": 1,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 2,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-08T00:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 19,
+    "late_by_s": 627.5,
+    "status": "ok",
+    "task_id": "P2O|lan19",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-08T00:10:27.459+07:00"
+   },
+   {
+    "due": "2026-11-08T06:00+07:00",
+    "hop_le": false,
+    "lan": 20,
+    "late_by_s": 11289.2,
+    "status": "missed",
+    "task_id": "P2O|lan20",
+    "ts": "2026-11-08T09:08:09.162+07:00"
+   },
+   {
+    "art_do_280": 20,
+    "art_do|classify|hosted": 2,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 5,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 13,
+    "art_do|route|local": 0,
+    "cach_golden_h": 120.021026,
+    "dec_do_280": 3,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 1,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 2,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-08T12:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 21,
+    "late_by_s": 150.6,
+    "status": "ok",
+    "task_id": "P2O|lan21",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-08T12:02:30.575+07:00"
+   },
+   {
+    "art_do_280": 18,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 2,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 15,
+    "art_do|route|local": 0,
+    "cach_golden_h": 126.054479,
+    "dec_do_280": 2,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 0,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 2,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-08T18:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 22,
+    "late_by_s": 271.0,
+    "status": "ok",
+    "task_id": "P2O|lan22",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-08T18:04:31.008+07:00"
+   },
+   {
+    "art_do_280": 19,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 4,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 14,
+    "art_do|route|local": 0,
+    "cach_golden_h": 131.986235,
+    "dec_do_280": 3,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 1,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 2,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-09T00:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 23,
+    "late_by_s": 25.3,
+    "status": "ok",
+    "task_id": "P2O|lan23",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-09T00:00:25.328+07:00"
+   },
+   {
+    "art_do_280": 16,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 2,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 13,
+    "art_do|route|local": 0,
+    "cach_golden_h": 137.981916,
+    "dec_do_280": 3,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 1,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 2,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-09T06:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 24,
+    "late_by_s": 9.8,
+    "status": "ok",
+    "task_id": "P2O|lan24",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-09T06:00:09.780+07:00"
+   },
+   {
+    "art_do_280": 13,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 2,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 10,
+    "art_do|route|local": 0,
+    "cach_golden_h": 143.97927,
+    "dec_do_280": 2,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 1,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 1,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-09T12:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 25,
+    "late_by_s": 0.3,
+    "status": "ok",
+    "task_id": "P2O|lan25",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-09T12:00:00.255+07:00"
+   },
+   {
+    "art_do_280": 17,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 5,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 11,
+    "art_do|route|local": 0,
+    "cach_golden_h": 150.891041,
+    "dec_do_280": 3,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 1,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 2,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-09T18:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 26,
+    "late_by_s": 3282.6,
+    "status": "ok",
+    "task_id": "P2O|lan26",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-09T18:54:42.628+07:00"
+   },
+   {
+    "art_do_280": 13,
+    "art_do|classify|hosted": 0,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 3,
+    "art_do|generate|local": 2,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 8,
+    "art_do|route|local": 0,
+    "cach_golden_h": 155.986292,
+    "dec_do_280": 3,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 1,
+    "dec_do|generate|local": 1,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 1,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-10T00:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 27,
+    "late_by_s": 25.5,
+    "status": "ok",
+    "task_id": "P2O|lan27",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-10T00:00:25.533+07:00"
+   },
+   {
+    "art_do_280": 16,
+    "art_do|classify|hosted": 0,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 2,
+    "art_do|generate|local": 2,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 12,
+    "art_do|route|local": 0,
+    "cach_golden_h": 161.984775,
+    "dec_do_280": 2,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 0,
+    "dec_do|generate|local": 1,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 1,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-10T06:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 28,
+    "late_by_s": 20.1,
+    "status": "ok",
+    "task_id": "P2O|lan28",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-10T06:00:20.072+07:00"
+   },
+   {
+    "art_do_280": 17,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 4,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 12,
+    "art_do|route|local": 0,
+    "cach_golden_h": 167.987639,
+    "dec_do_280": 2,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 1,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 1,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-10T12:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 29,
+    "late_by_s": 30.4,
+    "status": "ok",
+    "task_id": "P2O|lan29",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-10T12:00:30.381+07:00"
+   },
+   {
+    "art_do_280": 10,
+    "art_do|classify|hosted": 0,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 4,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 6,
+    "art_do|route|local": 0,
+    "cach_golden_h": 173.98763,
+    "dec_do_280": 1,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 0,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 1,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-10T18:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 30,
+    "late_by_s": 30.3,
+    "status": "ok",
+    "task_id": "P2O|lan30",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-10T18:00:30.349+07:00"
+   },
+   {
+    "art_do_280": 29,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 4,
+    "art_do|generate|local": 12,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 12,
+    "art_do|route|local": 0,
+    "cach_golden_h": 179.983851,
+    "dec_do_280": 5,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 0,
+    "dec_do|generate|local": 3,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 2,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-11T00:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 31,
+    "late_by_s": 16.7,
+    "status": "ok",
+    "task_id": "P2O|lan31",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-11T00:00:16.747+07:00"
+   },
+   {
+    "art_do_280": 28,
+    "art_do|classify|hosted": 2,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 4,
+    "art_do|generate|local": 12,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 10,
+    "art_do|route|local": 0,
+    "cach_golden_h": 185.979276,
+    "dec_do_280": 6,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 1,
+    "dec_do|generate|local": 3,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 2,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-11T06:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 32,
+    "late_by_s": 0.3,
+    "status": "ok",
+    "task_id": "P2O|lan32",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-11T06:00:00.277+07:00"
+   },
+   {
+    "art_do_280": 16,
+    "art_do|classify|hosted": 1,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 3,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 12,
+    "art_do|route|local": 0,
+    "cach_golden_h": 191.987636,
+    "dec_do_280": 2,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 1,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 1,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-11T12:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 33,
+    "late_by_s": 30.4,
+    "status": "ok",
+    "task_id": "P2O|lan33",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-11T12:00:30.371+07:00"
+   },
+   {
+    "art_do_280": 21,
+    "art_do|classify|hosted": 2,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 5,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 14,
+    "art_do|route|local": 0,
+    "cach_golden_h": 198.428259,
+    "dec_do_280": 2,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 1,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 1,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-11T18:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 34,
+    "late_by_s": 1616.6,
+    "status": "ok",
+    "task_id": "P2O|lan34",
+    "trong_20_hosted": true,
+    "trong_20_local": true,
+    "ts": "2026-11-11T18:26:56.614+07:00"
+   },
+   {
+    "art_do_280": 15,
+    "art_do|classify|hosted": 0,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 5,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 10,
+    "art_do|route|local": 0,
+    "cach_golden_h": 203.987629,
+    "dec_do_280": 3,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 1,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 2,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-12T00:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 35,
+    "late_by_s": 30.3,
+    "status": "ok",
+    "task_id": "P2O|lan35",
+    "trong_20_hosted": false,
+    "trong_20_local": true,
+    "ts": "2026-11-12T00:00:30.345+07:00"
+   },
+   {
+    "due": "2026-11-12T06:00+07:00",
+    "hop_le": false,
+    "lan": 36,
+    "late_by_s": 11413.3,
+    "status": "missed",
+    "task_id": "P2O|lan36",
+    "ts": "2026-11-12T09:10:13.348+07:00"
+   },
+   {
+    "art_do_280": 12,
+    "art_do|classify|hosted": 2,
+    "art_do|classify|local": 0,
+    "art_do|generate|hosted": 1,
+    "art_do|generate|local": 0,
+    "art_do|retrieve|bm25": 0,
+    "art_do|route|hosted": 9,
+    "art_do|route|local": 0,
+    "cach_golden_h": 215.987669,
+    "dec_do_280": 0,
+    "dec_do|classify|hosted": 0,
+    "dec_do|classify|local": 0,
+    "dec_do|generate|hosted": 0,
+    "dec_do|generate|local": 0,
+    "dec_do|retrieve|bm25": 0,
+    "dec_do|route|hosted": 0,
+    "dec_do|route|local": 0,
+    "doan": "D",
+    "due": "2026-11-12T12:00:00.000+07:00",
+    "hop_le": true,
+    "lan": 37,
+    "late_by_s": 30.5,
+    "status": "ok",
+    "task_id": "P2O|lan37",
+    "trong_20_hosted": false,
+    "trong_20_local": true,
+    "ts": "2026-11-12T12:00:30.489+07:00"
+   }
+  ],
+  "golden": "P2O|lan01",
+  "lan_hosted": [
+   "P2O|lan01",
+   "P2O|lan03",
+   "P2O|lan04",
+   "P2O|lan17",
+   "P2O|lan18",
+   "P2O|lan19",
+   "P2O|lan21",
+   "P2O|lan22",
+   "P2O|lan23",
+   "P2O|lan24",
+   "P2O|lan25",
+   "P2O|lan26",
+   "P2O|lan27",
+   "P2O|lan28",
+   "P2O|lan29",
+   "P2O|lan30",
+   "P2O|lan31",
+   "P2O|lan32",
+   "P2O|lan33",
+   "P2O|lan34"
+  ],
+  "lan_local": [
+   "P2O|lan01",
+   "P2O|lan17",
+   "P2O|lan18",
+   "P2O|lan19",
+   "P2O|lan21",
+   "P2O|lan22",
+   "P2O|lan23",
+   "P2O|lan24",
+   "P2O|lan25",
+   "P2O|lan26",
+   "P2O|lan27",
+   "P2O|lan28",
+   "P2O|lan29",
+   "P2O|lan30",
+   "P2O|lan31",
+   "P2O|lan32",
+   "P2O|lan33",
+   "P2O|lan34",
+   "P2O|lan35",
+   "P2O|lan37"
+  ],
+  "lech_junit": 0,
+  "missed": 15,
+  "o": {
+   "classify|hosted": {
+    "art_do": 2,
+    "art_wilson": [
+     0.013821,
+     0.165039
+    ],
+    "dec_do": 0,
+    "dec_wilson": [
+     0.0,
+     0.087622
+    ],
+    "ghep_art_do_dec_khong": 2,
+    "ghep_ca_hai_do": 0,
+    "ghep_dec_do_art_khong": 0,
+    "khoang_chua_0": true,
+    "lan": [
+     1,
+     3,
+     4,
+     17,
+     18,
+     19,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34
+    ],
+    "luy_ke_art": [
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "luy_ke_dec": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "margin_hi": 0.165039,
+    "margin_lo": -0.044797,
+    "margin_margin": 0.05,
+    "n_tests": 40,
+    "pin": "delegated",
+    "so_lan_doc": 20
+   },
+   "classify|local": {
+    "art_do": 0,
+    "art_wilson": [
+     0.0,
+     0.087622
+    ],
+    "dec_do": 0,
+    "dec_wilson": [
+     0.0,
+     0.087622
+    ],
+    "ghep_art_do_dec_khong": 0,
+    "ghep_ca_hai_do": 0,
+    "ghep_dec_do_art_khong": 0,
+    "khoang_chua_0": true,
+    "lan": [
+     1,
+     17,
+     18,
+     19,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     37
+    ],
+    "luy_ke_art": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "luy_ke_dec": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "margin_hi": 0.087622,
+    "margin_lo": -0.087622,
+    "margin_margin": 0.0,
+    "n_tests": 40,
+    "pin": "pinnable",
+    "so_lan_doc": 20
+   },
+   "generate|hosted": {
+    "art_do": 7,
+    "art_wilson": [
+     0.087454,
+     0.3195
+    ],
+    "dec_do": 1,
+    "dec_wilson": [
+     0.004427,
+     0.128814
+    ],
+    "ghep_art_do_dec_khong": 6,
+    "ghep_ca_hai_do": 1,
+    "ghep_dec_do_art_khong": 0,
+    "khoang_chua_0": false,
+    "lan": [
+     1,
+     3,
+     4,
+     17,
+     18,
+     19,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34
+    ],
+    "luy_ke_art": [
+     2,
+     5,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "luy_ke_dec": [
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "margin_hi": 0.295957,
+    "margin_lo": 0.0142,
+    "margin_margin": 0.15,
+    "n_tests": 40,
+    "pin": "delegated",
+    "so_lan_doc": 20
+   },
+   "generate|local": {
+    "art_do": 14,
+    "art_wilson": [
+     0.221345,
+     0.504941
+    ],
+    "dec_do": 3,
+    "dec_wilson": [
+     0.025836,
+     0.198642
+    ],
+    "ghep_art_do_dec_khong": 11,
+    "ghep_ca_hai_do": 3,
+    "ghep_dec_do_art_khong": 0,
+    "khoang_chua_0": false,
+    "lan": [
+     1,
+     17,
+     18,
+     19,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     37
+    ],
+    "luy_ke_art": [
+     0,
+     0,
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     6,
+     6,
+     6,
+     6,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14
+    ],
+    "luy_ke_dec": [
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "margin_hi": 0.437554,
+    "margin_lo": 0.096564,
+    "margin_margin": 0.275,
+    "n_tests": 40,
+    "pin": "pinnable",
+    "so_lan_doc": 20
+   },
+   "retrieve|bm25": {
+    "art_do": 0,
+    "art_wilson": [
+     0.0,
+     0.087622
+    ],
+    "dec_do": 0,
+    "dec_wilson": [
+     0.0,
+     0.087622
+    ],
+    "ghep_art_do_dec_khong": 0,
+    "ghep_ca_hai_do": 0,
+    "ghep_dec_do_art_khong": 0,
+    "khoang_chua_0": true,
+    "lan": [
+     1,
+     3,
+     4,
+     17,
+     18,
+     19,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34
+    ],
+    "luy_ke_art": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "luy_ke_dec": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "margin_hi": 0.087622,
+    "margin_lo": -0.087622,
+    "margin_margin": 0.0,
+    "n_tests": 40,
+    "pin": "pinnable",
+    "so_lan_doc": 20
+   },
+   "route|hosted": {
+    "art_do": 23,
+    "art_wilson": [
+     0.421951,
+     0.714906
+    ],
+    "dec_do": 2,
+    "dec_wilson": [
+     0.013821,
+     0.165039
+    ],
+    "ghep_art_do_dec_khong": 21,
+    "ghep_ca_hai_do": 2,
+    "ghep_dec_do_art_khong": 0,
+    "khoang_chua_0": false,
+    "lan": [
+     1,
+     3,
+     4,
+     17,
+     18,
+     19,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34
+    ],
+    "luy_ke_art": [
+     9,
+     17,
+     20,
+     21,
+     23,
+     23,
+     23,
+     23,
+     23,
+     23,
+     23,
+     23,
+     23,
+     23,
+     23,
+     23,
+     23,
+     23,
+     23
+    ],
+    "luy_ke_dec": [
+     0,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "margin_hi": 0.669508,
+    "margin_lo": 0.333537,
+    "margin_margin": 0.525,
+    "n_tests": 40,
+    "pin": "delegated",
+    "so_lan_doc": 20
+   },
+   "route|local": {
+    "art_do": 0,
+    "art_wilson": [
+     0.0,
+     0.087622
+    ],
+    "dec_do": 0,
+    "dec_wilson": [
+     0.0,
+     0.087622
+    ],
+    "ghep_art_do_dec_khong": 0,
+    "ghep_ca_hai_do": 0,
+    "ghep_dec_do_art_khong": 0,
+    "khoang_chua_0": true,
+    "lan": [
+     1,
+     17,
+     18,
+     19,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     37
+    ],
+    "luy_ke_art": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "luy_ke_dec": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "margin_hi": 0.087622,
+    "margin_lo": -0.087622,
+    "margin_margin": 0.0,
+    "n_tests": 40,
+    "pin": "pinnable",
+    "so_lan_doc": 20
+   }
+  },
+  "silent_runtime_update": [
+   {
+    "art_do": 1,
+    "cap": "classify|hosted",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 0,
+    "cap": "classify|local",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 9,
+    "cap": "route|hosted",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 35,
+    "cap": "route|local",
+    "dec_do": 9,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 0,
+    "cap": "retrieve|bm25",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 2,
+    "cap": "generate|hosted",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 25,
+    "cap": "generate|local",
+    "dec_do": 7,
+    "n": 40,
+    "task_id": "P2O|lan03"
+   },
+   {
+    "art_do": 1,
+    "cap": "classify|hosted",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   },
+   {
+    "art_do": 0,
+    "cap": "classify|local",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   },
+   {
+    "art_do": 12,
+    "cap": "route|hosted",
+    "dec_do": 1,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   },
+   {
+    "art_do": 35,
+    "cap": "route|local",
+    "dec_do": 9,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   },
+   {
+    "art_do": 0,
+    "cap": "retrieve|bm25",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   },
+   {
+    "art_do": 4,
+    "cap": "generate|hosted",
+    "dec_do": 0,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   },
+   {
+    "art_do": 25,
+    "cap": "generate|local",
+    "dec_do": 7,
+    "n": 40,
+    "task_id": "P2O|lan04"
+   }
+  ],
+  "so_hop_le": 22,
+  "so_hop_le_hosted_doc": 20,
+  "so_hop_le_local_doc": 20
+ },
+ "sai_o": [
+  {
+   "du_doan": "không",
+   "k": 12,
+   "n": 200,
+   "nguon": "P2",
+   "o": 2,
+   "pin": "delegated",
+   "quan_sat": "JSON thô",
+   "stage": "classify",
+   "ty_le": 0.06,
+   "v11_tuong_tu": "ô 2 (STT transcript delegated): SAI ở cả S1–S3",
+   "wilson": [
+    0.034652,
+    0.101932
+   ]
+  },
+  {
+   "du_doan": "không",
+   "k": 13,
+   "n": 200,
+   "nguon": "P2",
+   "o": 15,
+   "pin": "delegated",
+   "quan_sat": "văn bản",
+   "stage": "generate",
+   "ty_le": 0.065,
+   "v11_tuong_tu": "ô 8 (text delegated t0): không phân định",
+   "wilson": [
+    0.038376,
+    0.108019
+   ]
+  },
+  {
+   "du_doan": "không",
+   "k": 19,
+   "n": 200,
+   "nguon": "P3H",
+   "o": 27,
+   "pin": "delegated",
+   "quan_sat": "text thô",
+   "stage": "route",
+   "ty_le": 0.095,
+   "v11_tuong_tu": "ô 6/8",
+   "wilson": [
+    0.061663,
+    0.143602
+   ]
+  }
+ ],
+ "tham_so": {
+  "B": 2000,
+  "seeds": [
+   20261112,
+   20261113,
+   20261114,
+   20261115,
+   20261116
+  ]
+ },
+ "tom_tat_don_vi": {
+  "n3_4": {
+   "khong_co_cap": 0,
+   "không phân định": 1,
+   "sai": 0,
+   "thieu_luc": 0,
+   "đúng": 3
+  },
+  "p3h_4": {
+   "khong_co_cap": 0,
+   "không phân định": 0,
+   "sai": 1,
+   "thieu_luc": 0,
+   "đúng": 3
+  },
+  "pipeline2_13": {
+   "khong_co_cap": 0,
+   "không phân định": 0,
+   "sai": 2,
+   "thieu_luc": 0,
+   "đúng": 11
+  },
+  "v11_15_bao_rieng": {
+   "don_vi": 15,
+   "dung": 9,
+   "khong_phan_dinh": 2,
+   "loai_a06": 11,
+   "sai": 4,
+   "thieu_luc_khong_tinh": 3
+  }
+ },
+ "v11": {
+  "m2_t0": {
+   "art_k": 13,
+   "dec_k": 0,
+   "n": 100,
+   "nhan": "delegated t=0.0 (ô 7/8 v1.1)"
+  },
+  "m2_t08": {
+   "art_k": 80,
+   "dec_k": 1,
+   "n": 100,
+   "nhan": "delegated t=0.8 (ô 5/6 v1.1)"
+  },
+  "m6_routing_hosted": {
+   "art_k": 40,
+   "dec_k": 10,
+   "hi": 0.858,
+   "lo": 0.575,
+   "margin": 0.75,
+   "n": 40
+  },
+  "sai": [
+   "ô 2 STT transcript delegated (S1, S2, S3): dự đoán không, đo 3/31, 13/110, 9/205",
+   "ô 12 reply_text pinnable qwen 7b (M4): dự đoán ổn định, đo 9/50"
+  ]
+ },
+ "v206_p3h": {
+  "co_du_lieu": true,
+  "generate": {
+   "delta_r_art": {
+    "d": 0.22,
+    "hi": 0.287074,
+    "lo": 0.154222
+   },
+   "p3_local_cung_runtime": {
+    "art_wilson": [
+     0.017056,
+     0.070471
+    ],
+    "dec_wilson": [
+     0.0,
+     0.018845
+    ],
+    "hi": 0.070471,
+    "lo": 0.008978,
+    "margin": 0.035,
+    "n": 200,
+    "r_art": 0.035,
+    "r_dec": 0.0
+   },
+   "p3h": {
+    "art_wilson": [
+     0.199605,
+     0.319629
+    ],
+    "dec_wilson": [
+     0.027383,
+     0.089578
+    ],
+    "hi": 0.273473,
+    "lo": 0.136919,
+    "margin": 0.205,
+    "n": 200,
+    "r_art": 0.255,
+    "r_dec": 0.05
+   }
+  },
+  "ket_luan": "hai stage trái nhau — báo riêng: route: không ủng hộ; generate: cận dưới Δ > 0",
+  "luat": "V2-06: cận dưới Δ > 0 ở cả hai stage ⇒ trong cùng họ, nhánh delegated đổi artefact nhiều hơn: hệ số pinnable không chỉ là hiệu ứng họ. Khoảng chứa 0 hoặc cận trên Δ < 0 ⇒ báo nguyên văn rằng đối chứng không ủng hộ: khác biệt ở P2 có thể do họ model. Hai stage trái nhau ⇒ báo riêng từng stage.",
+  "nhan": "chính",
+  "route": {
+   "delta_r_art": {
+    "d": -0.01,
+    "hi": 0.050064,
+    "lo": -0.070245
+   },
+   "p3_local_cung_runtime": {
+    "art_wilson": [
+     0.069707,
+     0.15518
+    ],
+    "dec_wilson": [
+     0.0,
+     0.018845
+    ],
+    "hi": 0.15518,
+    "lo": 0.064991,
+    "margin": 0.105,
+    "n": 200,
+    "r_art": 0.105,
+    "r_dec": 0.0
+   },
+   "p3h": {
+    "art_wilson": [
+     0.061663,
+     0.143602
+    ],
+    "dec_wilson": [
+     0.0,
+     0.018845
+    ],
+    "hi": 0.143602,
+    "lo": 0.056705,
+    "margin": 0.095,
+    "n": 200,
+    "r_art": 0.095,
+    "r_dec": 0.0
+   }
+  }
+ }
+}

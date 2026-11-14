@@ -1,0 +1,11 @@
+nguon,stage,be,n_ban_ghi,parse_fail,ty_le,wilson
+P2,classify,hosted,2000,0,0.0,"[0.0, 0.001917]"
+P2,classify,local,2000,0,0.0,"[0.0, 0.001917]"
+P2,generate,hosted,2000,0,0.0,"[0.0, 0.001917]"
+P2,generate,local,2000,0,0.0,"[0.0, 0.001917]"
+P2,route,hosted,2000,0,0.0,"[0.0, 0.001917]"
+P2,route,local,2000,120,0.06,"[0.050411, 0.071276]"
+P3,generate,local,2000,0,0.0,"[0.0, 0.001917]"
+P3,route,local,2000,0,0.0,"[0.0, 0.001917]"
+P3H,generate,openrouter,1000,0,0.0,"[0.0, 0.003827]"
+P3H,route,openrouter,1000,0,0.0,"[0.0, 0.003827]"
