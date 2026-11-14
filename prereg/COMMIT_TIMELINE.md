@@ -30,5 +30,5 @@ before the calls*, not a preregistration.
 | `6091f5a` | Post hoc 3 | Plan of post hoc analysis 3 (token-F1 thresholds), before its script ran | 2026-11-14 14:25:19 | — | — | 1 |
 | `e287aaf` | Post hoc 4 | Plan of post hoc analysis 4 (naive rule on both pair sets, detection side), before its script ran | 2026-11-14 17:45:30 | — | — | 1 |
 
-Study 1 (plan committed 2026-09-16 16:32:29, first call 2026-09-16 23:10:58) is released under tag `tse-v1.0`,
-whose public history starts on 2026-09-23, after its measurements.
+Study 1 (plan committed 2026-09-16 16:32:29, first call 2026-09-16 23:10:58) is not part of this
+release; its data are available from the author on request.

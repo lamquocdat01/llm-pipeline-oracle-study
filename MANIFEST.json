@@ -1056,8 +1056,8 @@
  },
  {
   "path": "prereg/COMMIT_TIMELINE.md",
-  "bytes": 3245,
-  "sha256": "0739f06b478455698e9d050c04e7ea0de83bed04365c3050800cc70f7ca30297"
+  "bytes": 3224,
+  "sha256": "d168b9403b61332812eb9697364a19f2c100c9e7f39e1c3b51e8ac037f6468e0"
  },
  {
   "path": "prereg/verify_commit_proofs.py",
@@ -1066,8 +1066,8 @@
  },
  {
   "path": "README.md",
-  "bytes": 1877,
-  "sha256": "58b5ff8d6dca9884e5634ab1004697887293dab9cba86ce3e6262dfa74f86916"
+  "bytes": 1878,
+  "sha256": "fcc3569b6329963a7e86510db6a03c98ea77f9e43e2039b66e698300fd4f51a1"
  },
  {
   "path": "repro_ist.py",
