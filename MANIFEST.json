@@ -70,6 +70,11 @@
   "sha256": "44b5c2be4c00971faeb3d6d9f80ff1237c9564827176dd750b0289970aea3402"
  },
  {
+  "path": "LICENSE",
+  "bytes": 1153,
+  "sha256": "d71bed8740d66b3535aec3c383d18cf08657070e0ed25d3f91dc3c820dd1a6eb"
+ },
+ {
   "path": "prereg/commit_proofs/008b84f99c51785ca1ed15bd4d97d77b6d4848b9.tree",
   "bytes": 167,
   "sha256": "d420ea0f3256775f0d025480d2127e0f09373566c1d5fdf3a5fd42e248bcf74a"
@@ -375,6 +380,11 @@
   "sha256": "6392a2a1b378a161d51672b6febdc10bfe094a183debd04e736a3eaf52f1da27"
  },
  {
+  "path": "prereg/commit_proofs/5630b2a4a3ede896fdfec244c1e6b8fa0b50bcf3.tree",
+  "bytes": 44,
+  "sha256": "14d32897ad17c47abc3c747400c42ea4bd849d52427ab60bcd23d429c3ca1246"
+ },
+ {
   "path": "prereg/commit_proofs/58513d5bf276a34c9ac30dbca3cdf9fcdd9708aa.tree",
   "bytes": 418,
   "sha256": "ed4acfe8b6fd00a6a949120a76525caddd1207116ebfe2e7edcaec37524b3c22"
@@ -468,6 +478,11 @@
   "path": "prereg/commit_proofs/6fddf25896210a1d70c2dc88964e4dde5627f4f9.tree",
   "bytes": 837,
   "sha256": "d1806070e5bebc3e1396a102cefc5db6a775203aaaf53222834ec020bb5a6467"
+ },
+ {
+  "path": "prereg/commit_proofs/6fed1e7a1ac96976905f7113f37dd57b13ed756c.blob",
+  "bytes": 977,
+  "sha256": "7411043297036fc9f700581c95cef729fe4b8719b5bc7d721469d09c6580bbf0"
  },
  {
   "path": "prereg/commit_proofs/7227aad34b3356acfce7a03406bab9d4efc77b24.blob",
@@ -870,6 +885,11 @@
   "sha256": "cce65203af061aae1d70ca1e2780b690ea90c661ad841a49868093d2e9684380"
  },
  {
+  "path": "prereg/commit_proofs/ccbb31f57efbe42ac70f0ee7cb5b6bef1d77b505.tree",
+  "bytes": 44,
+  "sha256": "7df8b81c5c0e1b67d32217d66afa9dadd53be0fcdb9eb4f0bf8c610182f625c5"
+ },
+ {
   "path": "prereg/commit_proofs/cd83aaa0a5ccc18ccca118845e8be11c7e3b82a6.tree",
   "bytes": 336,
   "sha256": "dadfb7918ab6c2a1afd543fadbeefa8d71d96816010755b8496ca988f144bf6d"
@@ -1020,6 +1040,11 @@
   "sha256": "f0b80f93ab4f1fc37c964a9490998a57ffd6ca1c72205a9efdc072b564732446"
  },
  {
+  "path": "prereg/commit_proofs/f53ac15dd8e766472f1b6b41cf4bbcd37112b542.blob",
+  "bytes": 818,
+  "sha256": "e78e811ed35490675a50d1987dc927a171cd69c9ecaac1be1fb7627012f5bfe4"
+ },
+ {
   "path": "prereg/commit_proofs/f6bc99067238bb1d417db3d53e439c2291074cc2.tree",
   "bytes": 116,
   "sha256": "1fff704c493c1b8d1e53a22119f01879f519414566498c76c022325e7d4d631c"
@@ -1051,13 +1076,13 @@
  },
  {
   "path": "prereg/commit_proofs/INDEX.json",
-  "bytes": 31876,
-  "sha256": "c681fe37abeef238c8a2f86a2af0d95fbda5eeed1daaa79461c33ab6839bd34f"
+  "bytes": 32594,
+  "sha256": "30e6a901baac23f915bf30f62fa1f3347053e557dbe2978d9827de27190bc77a"
  },
  {
   "path": "prereg/COMMIT_TIMELINE.md",
   "bytes": 3224,
-  "sha256": "d168b9403b61332812eb9697364a19f2c100c9e7f39e1c3b51e8ac037f6468e0"
+  "sha256": "c6bfad2d47dd600bc6c9c92ed0fbb6cc623d79dbadf139cf115195fee8954249"
  },
  {
   "path": "prereg/verify_commit_proofs.py",
@@ -1066,8 +1091,8 @@
  },
  {
   "path": "README.md",
-  "bytes": 1878,
-  "sha256": "fcc3569b6329963a7e86510db6a03c98ea77f9e43e2039b66e698300fd4f51a1"
+  "bytes": 3750,
+  "sha256": "14f70d02374ae9337035a508e797208e433fb3156ec47527c58df6e655ef734c"
  },
  {
   "path": "repro_ist.py",
@@ -1668,5 +1693,15 @@
   "path": "study/pipeline2/tests/test_s3b.py",
   "bytes": 4096,
   "sha256": "8c1f4c75e11d3d5147a66ba17e281bd2b443a2c4190ff6cecbc984894618dd75"
+ },
+ {
+  "path": "study/pipeline2/tests_p2_artefact/test_artefact.py",
+  "bytes": 977,
+  "sha256": "7411043297036fc9f700581c95cef729fe4b8719b5bc7d721469d09c6580bbf0"
+ },
+ {
+  "path": "study/pipeline2/tests_p2_decision/test_decision.py",
+  "bytes": 818,
+  "sha256": "e78e811ed35490675a50d1987dc927a171cd69c9ecaac1be1fb7627012f5bfe4"
  }
 ]

@@ -12,7 +12,7 @@ before the calls*, not a preregistration.
 
 | Commit | Role | What it records | Commit time (+07:00) | First governed call | Commit → call | Files proved |
 |---|---|---|---|---|---|---|
-| `203c724` | Study 2 plan | Study-2 plan, measurement code and run plan | 2026-11-01 09:20:20 | 2026-11-01 09:21:23 | 64 s | 11 |
+| `203c724` | Study 2 plan | Study-2 plan, measurement code and run plan | 2026-11-01 09:20:20 | 2026-11-01 09:21:23 | 64 s | 13 |
 | `39b530c` | Study 2 plan | Records hash 203c724 inside the plan | 2026-11-01 09:20:28 | — | — | 1 |
 | `a6abb01` | V2-01 | Runner renamed (operational) | 2026-11-01 09:26:06 | — | — | 4 |
 | `b8355eb` | V2-02 | Oracle milestones 4 per day | 2026-11-03 10:17:04 | 2026-11-03 12:01:14 | 1.7 h | 5 |

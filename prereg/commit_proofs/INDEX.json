@@ -114,6 +114,26 @@
      "cbeeb6870d0d64e6bf2e5b6a2b751ff9aff4a397"
     ],
     "blob": "b20874cda228ef5928d138529671206af722e5ac"
+   },
+   {
+    "path": "study/pipeline2/tests_p2_artefact/test_artefact.py",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "5630b2a4a3ede896fdfec244c1e6b8fa0b50bcf3"
+    ],
+    "blob": "6fed1e7a1ac96976905f7113f37dd57b13ed756c"
+   },
+   {
+    "path": "study/pipeline2/tests_p2_decision/test_decision.py",
+    "trees": [
+     "fd7193b2626f2f248adcfcc6f4d86366050c1ff7",
+     "f6bc99067238bb1d417db3d53e439c2291074cc2",
+     "81efff7dfca7dc62c7050fd1dc4ed654fdb6afab",
+     "ccbb31f57efbe42ac70f0ee7cb5b6bef1d77b505"
+    ],
+    "blob": "f53ac15dd8e766472f1b6b41cf4bbcd37112b542"
    }
   ],
   "commit_time": "2026-11-01T09:20:20+07:00",
