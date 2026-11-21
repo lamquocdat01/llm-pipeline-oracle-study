@@ -1,7 +1,7 @@
 # Where to Put the Oracle — data and scripts for studies 2, 3 and the follow-up V2-09
 
 Release for the manuscript "Where to Put the Oracle: Decision-Level Assertions and the Limits of Pinning in Regression
-Testing of LLM Pipeline Stages" (submitted to Information and Software Technology). The data of study 1 are available from the
+Testing of LLM Pipeline Stages". The data of study 1 are available from the
 author on request.
 
 * `study/pipeline2/prereg/PREREG_V2.md` — analysis plan with every amendment (Vietnamese);
