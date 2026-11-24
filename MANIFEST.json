@@ -1091,8 +1091,8 @@
  },
  {
   "path": "README.md",
-  "bytes": 5101,
-  "sha256": "d9a637df16cfee6942270da51c860592d06d14f40b8543827b781710276b4d86"
+  "bytes": 5338,
+  "sha256": "ce5fc215c4d9e7e14c7ec772e8e37680ce629c18fea0923a5354aa58125a5f4f"
  },
  {
   "path": "repro_ist.py",
@@ -1851,12 +1851,27 @@
  },
  {
   "path": "repro_p6.py",
-  "bytes": 2073,
-  "sha256": "5a3c7dbf5e2a63810fece1b4cf1d68f361be561712ab1688959a21da9e4e66d9"
+  "bytes": 2201,
+  "sha256": "826d46ebe1ca28e1018655697f15b97249755b55099ecac1fc17c12fcfee7167"
  },
  {
   "path": "requirements_p6.txt",
   "bytes": 297,
   "sha256": "d2ff7502955130c7152903ed91f985cb3317229346c6fb4fb328a48767b2928e"
+ },
+ {
+  "path": "prereg/p6/POSTHOC_R2B_MD_20261124.md",
+  "bytes": 6007,
+  "sha256": "c7b76a35a7c3acd906c8a57850fa5ba1fe15e7e49ab0084dff1463775df7c9c2"
+ },
+ {
+  "path": "study/analysis_p6/out/numbers_p6_r2b.json",
+  "bytes": 30325,
+  "sha256": "8cd3f9a8297ca7fac5b21ca35318a6398a818d97d2fd9b3874043c58f49930c7"
+ },
+ {
+  "path": "study/analysis_p6/run_posthoc_r2b.py",
+  "bytes": 11779,
+  "sha256": "9d99bca34aad9949a46be6156fcdd7d267d9928c6b70108cd2c53327f06ac94e"
  }
 ]

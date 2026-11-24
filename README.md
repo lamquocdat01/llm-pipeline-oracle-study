@@ -22,6 +22,8 @@ author on request.
   (the final session), `S3C_SMOKE_*.jsonl` (smoke tests, not part of the sample), `S3C_local_*.log` (runner logs,
   UTF-16). Runner: `study/pipeline2/p2/s3c.py`, `scripts/run_s3c.py`; analyses: `study/analysis_p6/run_b1.py`,
   `run_b2.py`, `run_s3c.py`, outputs in `study/analysis_p6/out/`.
+  Post hoc analyses after the second review of the manuscript (server state, the two standards, units):
+  `study/analysis_p6/run_posthoc_r2b.py`, described in `prereg/p6/POSTHOC_R2B_MD_20261124.md` (added in tag `jss-v2.3-submission`).
 * `datasets/pipeline2_corpus/dev-v2.0.json` — SQuAD 2.0 dev (CC BY-SA 4.0).
 * `prereg/COMMIT_TIMELINE.md` — when each analysis plan was committed, against its first call. The plans were committed
   in the author's own repository, whose full history also holds unrelated private work and is not released.
@@ -46,7 +48,7 @@ compares each JSON key by key with the shipped outputs. On Linux or macOS use `.
 The addendum needs a second environment, because its embedding oracle pins a newer numpy:
 `python -m venv .venv_p6 && .venv_p6/Scripts/python -m pip install -r requirements_p6.txt`, then
 `THS_DATASETS=datasets .venv_p6/Scripts/python repro_p6.py` (downloads `intfloat/multilingual-e5-small` at the pinned
-revision on first use; reruns the three analyses and compares key by key, restoring the shipped outputs).
+revision on first use; reruns the four analyses and compares key by key, restoring the shipped outputs).
 
 Notes:
 

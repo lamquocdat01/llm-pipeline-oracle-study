@@ -21,7 +21,8 @@ from repro_ist import so  # key-by-key comparison of two JSON files
 
 ROOT = Path(__file__).resolve().parent
 P6 = ROOT / "study" / "analysis_p6"
-JOBS = [("run_b1.py", "numbers_p6_b1.json"), ("run_b2.py", "numbers_p6_b2.json"), ("run_s3c.py", "numbers_p6_s3c.json")]
+JOBS = [("run_b1.py", "numbers_p6_b1.json"), ("run_b2.py", "numbers_p6_b2.json"), ("run_s3c.py", "numbers_p6_s3c.json"),
+        ("run_posthoc_r2b.py", "numbers_p6_r2b.json")]   # v2.3: post hoc after the second review (server state, two standards)
 
 
 def main() -> int:
