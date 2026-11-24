@@ -1,4 +1,4 @@
-# Where to Put the Oracle — data and scripts for studies 2, 3 and the follow-up V2-09
+# Where to Put the Oracle — data and scripts for studies 2, 3, the follow-up V2-09 and the re-analysis addendum
 
 Release for the manuscript "Where to Put the Oracle: Decision-Level Assertions and the Limits of Pinning in Regression
 Testing of LLM Pipeline Stages". The data of study 1 are available from the
@@ -13,6 +13,15 @@ author on request.
   `203c724`, before the first call). `study/pipeline2/p2/oracle.py` runs them on each oracle run against the golden run.
 * `study/analysis_v2` (registered, study 2), `analysis_v3` (registered, study 3), `analysis_v3b` (registered, V2-09),
   `analysis_v2_posthoc`, `analysis_v3_posthoc` (post hoc) — analysis scripts and their outputs in `out/`.
+* Re-analysis addendum and repeated measurement (P6, added in tag `jss-v2.2-submission`):
+  `prereg/p6/PREREG_ADDENDUM_MD_20261121.md` (plan, committed before the analyses and the first call),
+  `PREREG_ADDENDUM_MD_AMEND1_20261122.md` and `PREREG_ADDENDUM_MD_AMEND2_20261124.md` (two amendments after failures of
+  the host, each committed before the runs it governs), `INCIDENT_S3C_20261122.md` (what failed and why),
+  `RESULTS_ADDENDUM_MD.md` (results; all in Vietnamese). Records: `study/pipeline2/results/S3C_20261121_v1.jsonl` and its
+  manifest (22 runs; five runs voided by a full disk are kept and excluded by the analysis), `S3C_LUOT_20261124.json`
+  (the final session), `S3C_SMOKE_*.jsonl` (smoke tests, not part of the sample), `S3C_local_*.log` (runner logs,
+  UTF-16). Runner: `study/pipeline2/p2/s3c.py`, `scripts/run_s3c.py`; analyses: `study/analysis_p6/run_b1.py`,
+  `run_b2.py`, `run_s3c.py`, outputs in `study/analysis_p6/out/`.
 * `datasets/pipeline2_corpus/dev-v2.0.json` — SQuAD 2.0 dev (CC BY-SA 4.0).
 * `prereg/COMMIT_TIMELINE.md` — when each analysis plan was committed, against its first call. The plans were committed
   in the author's own repository, whose full history also holds unrelated private work and is not released.
@@ -33,6 +42,11 @@ Reproduce every number file: `python -m venv .venv && .venv/Scripts/python -m pi
 `THS_DATASETS=datasets .venv/Scripts/python repro_ist.py`. The script reruns all analyses into a temporary folder and
 compares each JSON key by key with the shipped outputs. On Linux or macOS use `.venv/bin/python` and
 `THS_DATASETS=datasets .venv/bin/python repro_ist.py`.
+
+The addendum needs a second environment, because its embedding oracle pins a newer numpy:
+`python -m venv .venv_p6 && .venv_p6/Scripts/python -m pip install -r requirements_p6.txt`, then
+`THS_DATASETS=datasets .venv_p6/Scripts/python repro_p6.py` (downloads `intfloat/multilingual-e5-small` at the pinned
+revision on first use; reruns the three analyses and compares key by key, restoring the shipped outputs).
 
 Notes:
 

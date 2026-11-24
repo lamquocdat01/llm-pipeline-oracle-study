@@ -1,0 +1,412 @@
+{
+ "_nhan": "P6 addendum (kế hoạch P6/PREREG_ADDENDUM_MD_20261121.md; viết sau khi biết kết quả cũ và đọc R2) — B1",
+ "golden": "P2O|lan01",
+ "o": {
+  "classify|hosted": {
+   "artefact": {
+    "do_moi_lan_golden_dang_ky": 0.025,
+    "drift_chiem_da_so": false,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 2,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 38
+    },
+    "luot_do": 19,
+    "luot_do_theo_lop": {
+     "chap_chon": 19,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.026184,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": 0.0,
+    "xoay_golden_max": 0.027632,
+    "xoay_golden_min": 0.025,
+    "xoay_golden_tb": 0.026184
+   },
+   "decision": {
+    "do_moi_lan_golden_dang_ky": 0.0,
+    "drift_chiem_da_so": null,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 40
+    },
+    "luot_do": 0,
+    "luot_do_theo_lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.0,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": null,
+    "xoay_golden_max": 0.0,
+    "xoay_golden_min": 0.0,
+    "xoay_golden_tb": 0.0
+   }
+  },
+  "classify|local": {
+   "artefact": {
+    "do_moi_lan_golden_dang_ky": 0.0,
+    "drift_chiem_da_so": null,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 40
+    },
+    "luot_do": 0,
+    "luot_do_theo_lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.0,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": null,
+    "xoay_golden_max": 0.0,
+    "xoay_golden_min": 0.0,
+    "xoay_golden_tb": 0.0
+   },
+   "decision": {
+    "do_moi_lan_golden_dang_ky": 0.0,
+    "drift_chiem_da_so": null,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 40
+    },
+    "luot_do": 0,
+    "luot_do_theo_lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.0,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": null,
+    "xoay_golden_max": 0.0,
+    "xoay_golden_min": 0.0,
+    "xoay_golden_tb": 0.0
+   }
+  },
+  "generate|hosted": {
+   "artefact": {
+    "do_moi_lan_golden_dang_ky": 0.086842,
+    "drift_chiem_da_so": false,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 7,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 33
+    },
+    "luot_do": 66,
+    "luot_do_theo_lop": {
+     "chap_chon": 66,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.09,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": 0.0,
+    "xoay_golden_max": 0.1,
+    "xoay_golden_min": 0.081579,
+    "xoay_golden_tb": 0.09
+   },
+   "decision": {
+    "do_moi_lan_golden_dang_ky": 0.014474,
+    "drift_chiem_da_so": false,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 1,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 39
+    },
+    "luot_do": 11,
+    "luot_do_theo_lop": {
+     "chap_chon": 11,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.013026,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": 0.0,
+    "xoay_golden_max": 0.014474,
+    "xoay_golden_min": 0.011842,
+    "xoay_golden_tb": 0.013026
+   }
+  },
+  "generate|local": {
+   "artefact": {
+    "do_moi_lan_golden_dang_ky": 0.043421,
+    "drift_chiem_da_so": false,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 14,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 26
+    },
+    "luot_do": 33,
+    "luot_do_theo_lop": {
+     "chap_chon": 33,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.074605,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": 0.0,
+    "xoay_golden_max": 0.277632,
+    "xoay_golden_min": 0.043421,
+    "xoay_golden_tb": 0.074605
+   },
+   "decision": {
+    "do_moi_lan_golden_dang_ky": 0.011842,
+    "drift_chiem_da_so": false,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 3,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 37
+    },
+    "luot_do": 9,
+    "luot_do_theo_lop": {
+     "chap_chon": 9,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.019342,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": 0.0,
+    "xoay_golden_max": 0.067105,
+    "xoay_golden_min": 0.011842,
+    "xoay_golden_tb": 0.019342
+   }
+  },
+  "retrieve|bm25": {
+   "artefact": {
+    "do_moi_lan_golden_dang_ky": 0.0,
+    "drift_chiem_da_so": null,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 40
+    },
+    "luot_do": 0,
+    "luot_do_theo_lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.0,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": null,
+    "xoay_golden_max": 0.0,
+    "xoay_golden_min": 0.0,
+    "xoay_golden_tb": 0.0
+   },
+   "decision": {
+    "do_moi_lan_golden_dang_ky": 0.0,
+    "drift_chiem_da_so": null,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 40
+    },
+    "luot_do": 0,
+    "luot_do_theo_lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.0,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": null,
+    "xoay_golden_max": 0.0,
+    "xoay_golden_min": 0.0,
+    "xoay_golden_tb": 0.0
+   }
+  },
+  "route|hosted": {
+   "artefact": {
+    "do_moi_lan_golden_dang_ky": 0.286842,
+    "drift_chiem_da_so": false,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 23,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 17
+    },
+    "luot_do": 218,
+    "luot_do_theo_lop": {
+     "chap_chon": 218,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.284211,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": 0.0,
+    "xoay_golden_max": 0.318421,
+    "xoay_golden_min": 0.265789,
+    "xoay_golden_tb": 0.284211
+   },
+   "decision": {
+    "do_moi_lan_golden_dang_ky": 0.034211,
+    "drift_chiem_da_so": false,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 2,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 38
+    },
+    "luot_do": 26,
+    "luot_do_theo_lop": {
+     "chap_chon": 26,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.022895,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": 0.0,
+    "xoay_golden_max": 0.034211,
+    "xoay_golden_min": 0.018421,
+    "xoay_golden_tb": 0.022895
+   }
+  },
+  "route|local": {
+   "artefact": {
+    "do_moi_lan_golden_dang_ky": 0.0,
+    "drift_chiem_da_so": null,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 40
+    },
+    "luot_do": 0,
+    "luot_do_theo_lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.0,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": null,
+    "xoay_golden_max": 0.0,
+    "xoay_golden_min": 0.0,
+    "xoay_golden_tb": 0.0
+   },
+   "decision": {
+    "do_moi_lan_golden_dang_ky": 0.0,
+    "drift_chiem_da_so": null,
+    "drift_diem_doi_trung_chuyen_doan": 0,
+    "lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 40
+    },
+    "luot_do": 0,
+    "luot_do_theo_lop": {
+     "chap_chon": 0,
+     "chua_phan_loai": 0,
+     "drift": 0,
+     "golden_lech": 0,
+     "on_dinh": 0
+    },
+    "moi_cap_lech_tb": 0.0,
+    "n_test": 40,
+    "so_cap": 190,
+    "so_lan": 20,
+    "ty_le_luot_do_drift": null,
+    "xoay_golden_max": 0.0,
+    "xoay_golden_min": 0.0,
+    "xoay_golden_tb": 0.0
+   }
+  }
+ }
+}

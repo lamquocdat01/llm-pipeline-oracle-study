@@ -1,0 +1,10 @@
+# Python 3.11. Separate environment for repro_p6.py (re-analysis addendum and repeated measurement; local embedding model).
+numpy==2.4.6
+scipy==1.17.1
+scikit-learn==1.9.0
+torch==2.14.0
+transformers==5.16.1
+tokenizers==0.23.2
+huggingface-hub==1.30.0
+safetensors==0.8.0
+sentence-transformers==6.0.1
